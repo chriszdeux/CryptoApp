@@ -7,8 +7,11 @@
 @import './global//cards';
 @import './global/buttons';
 @import './global/crypto-table-style';
-
+@import './global/icons';
+@import './global//forms';
 @import './pages/home';
+@import './global/menu';
+
 
 body {
   background: $main-background-color;
@@ -70,6 +73,7 @@ body {
   height: 100vh;
   border-bottom: 2px solid $base-color;
   margin-bottom: 1rem;
+  position: relative;
   // position: fixed;
   // top: 0;
   // left: 0;

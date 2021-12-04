@@ -7,6 +7,12 @@
   top: 0;
   left: 0;
   z-index: 1;
+
+  .search {
+    position: absolute;
+    right: 1%;
+    top: 100%;
+  }
 }
 .top__news__container {
   display: flex;
@@ -19,10 +25,10 @@
   border-bottom-left-radius: 1rem;
   .list__news{
     display: flex;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     .news--item {
       width: 10rem;
-      margin-right: 1rem;
+      // margin-right: 1rem;
       font-size: $extra-small-font-size;
       color: $font-color;
     }

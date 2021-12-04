@@ -5,18 +5,9 @@ export const CryptoTable = () => {
   return (
     <section className="crypto__coins c100">
       <div className="glass"></div>
-      <table className="crypto__table c95">
+      <table className="crypto__table c95 pd">
         <TableHeader />
         {/* <hr /> */}
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
         <TableRow />
         <TableRow />
         <TableRow />

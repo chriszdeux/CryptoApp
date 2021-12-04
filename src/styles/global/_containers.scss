@@ -17,9 +17,11 @@
   margin: 1rem 0;
   // padding-left: 1rem;
   .wrapper--title {
-    font-size: $large-font-size;
-    color: $active-color;
+    font-size: $extra-large-font-size;
+    color: $font-color;
     padding-left: 1rem;
+    // width: 100%;
+    // border: 1px solid $active-color;
   }
   .wrapper__cards {
     display: flex;
@@ -29,12 +31,17 @@
     min-height: 10rem;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    scrollbar-width: none;
     
-    .card {
-      margin: 0 .5rem;
-    }
+    // .card {
+    //   margin: 0 .5rem;
+    // }
 
   }
+}
+
+.wrapper__cards::-webkit-scrollbar {
+  display: none;
 }
 
 .w--h {

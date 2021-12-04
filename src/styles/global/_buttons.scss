@@ -12,3 +12,14 @@
   font-size: $regular-font-size;
   // font-weight: $bold-font;
 }
+
+.btn--swap {
+  width: 7rem;
+  height: 7rem;
+  background-color: $btn-color;
+  outline: 2px solid $border-color;
+  border-radius: 50%;
+  font-size: $large-font-size;
+  font-weight: $bold-font;
+  color: $font-color;
+}

@@ -7,7 +7,7 @@ export const TableRow = () => {
 
   return (
       <>
-    <tr className="table__row c100">
+    <tr className="table__row c100 ">
       {/* <td>1</td> */}
       <td className="rank">1</td>
       <td className="coin">
@@ -17,7 +17,7 @@ export const TableRow = () => {
       </td>
       <td className="coin--name">
         
-            Shiba Inu <br /><span className="short--name">SHIB</span></td>
+            Shiba Inu <br /><span className="short--name pd--h">SHIB</span></td>
       <td className="market--cap"><span className="market--mark">{ icons.up_icon } 6.5%</span></td>
       <td className="volume">$3,845,965,256.2641</td>
       <td className="price">

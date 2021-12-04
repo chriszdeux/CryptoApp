@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Button = () => {
+export const MainButton = ( {message} ) => {
+  // debugger
   return (
     <button className="btn btn--primary">
-      Start Trading
+      {message}
     </button>
   )
 }

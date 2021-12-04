@@ -3,7 +3,8 @@ import shib from '../../temp/shib.png';
 import { icons } from '../../utils/icons/icons_object';
 export const SmallCardCoins = () => {
   return (
-    <div className="card">
+    <div className="card mg">
+      
       <figure className="card__image">
         <img className="card--image" src={ shib } alt="" />
       </figure>

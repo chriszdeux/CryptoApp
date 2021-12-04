@@ -1,0 +1,42 @@
+.search {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+
+  .search__icon {
+    // border: 1px solid red;
+    width: 3rem;
+    height: 3.2rem;
+    .icon {
+      width: inherit;
+      height: inherit;
+      font-size: $extra-large-font-size;
+      color: $active-color;
+      cursor: pointer;
+      // border: 1px solid $active-color;
+      // width: 5rem;
+      // height: 5rem;
+      // background-color: $base-color;
+    }
+  }
+  .search__form {
+    // display: none;
+    width: 20rem;
+    height: 3rem;
+
+    .search--input {
+      all: unset;
+      width: 100%;
+      height: inherit;
+      outline: 1px solid $active-color;
+      color: $font-color;
+      font-size: $regular-font-size;
+      border-radius: none;
+      text-align: center;
+      background: $btn-color;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+}

@@ -1,0 +1,62 @@
+.menu {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: $second-background-color;
+  border-right: 3px solid $active-color;
+  z-index: 1;
+
+  .btn {
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+  }
+  // text-align: center;
+}
+
+.profile__image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 2px solid $active-color;
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+
+}
+.menu__stats {
+
+  text-align: center;
+  color: $font-color;
+}
+
+.navbar {
+  text-align: start;
+
+  .navbar__list {
+
+    .navbar--item {
+      font-size: $large-font-size;
+      color: $font-color;
+    }
+  }
+}
+
+.username {
+  font-size: $large-font-size;
+}
+.balance {
+  font-size: $large-font-size;
+  span {
+    color: $active-color;
+  }
+}

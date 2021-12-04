@@ -1,17 +1,19 @@
 import React from 'react'
-
+import kraken from '../../temp/kraken.png';
 export const NewsCard = () => {
   return (
-    <div>
-      <figure>
-        <img src="" alt="" />
+    <article className="news__card mg--h">
+      <figure className="card__cover">
+        <img className="card--cover" src={ kraken } alt="" />
       </figure>
-      <h2>Event - NTF's </h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, expedita.</p>
-      <div>
-        <h3>By CryptoDeux</h3>
-        <h3>date</h3>
+      <div className="news__info mg--b pd">
+        <h2 className="mg--b">Event - NTF's </h2>
+        <p className="mg--b">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, expedita.</p>
+        <div className="conference mg--b">
+          <h3>By CryptoDeux</h3>
+          <h3>date</h3>
+        </div>
       </div>
-    </div>
+    </article>
   )
 }

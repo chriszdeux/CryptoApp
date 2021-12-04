@@ -3,7 +3,7 @@ import kraken from '../../temp/kraken.png';
 import { icons } from '../../utils/icons/icons_object';
 export const SmallCardExchange = () => {
   return (
-    <div className="card">
+    <div className="card mg">
       <figure className="card__image">
         <img className="card--image" src={ kraken } alt="" />
       </figure>

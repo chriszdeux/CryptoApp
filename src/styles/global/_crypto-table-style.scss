@@ -1,9 +1,10 @@
 .crypto__coins {
   position: relative;
+  margin-bottom: 3rem;
 }
 
 .crypto__table {
-  padding: 1rem;
+  // padding: 1rem;
   // position: relative;
   border: 1px solid $active-color;
   border-radius: 5px;
@@ -13,7 +14,7 @@
 
 .table__header {
   position: relative;
-  font-size: $small-font-size;
+  font-size: $regular-font-size;
   color: $active-color;
   height: 3rem;
   border-bottom: 1px solid $active-color;
@@ -37,7 +38,8 @@
   font-weight: $bold-font;
   text-align: end;
   .supply {
-    font-weight: $ligh-font;
+    font-size: $small-font-size;
+    font-weight: $regular-font;
     color: $base-color;
   }
 }
@@ -49,14 +51,14 @@ tr {
   position: relative;
   border-bottom: 1px solid $active-color;
   align-items: center;
-  font-size: $small-font-size;
+  font-size: $regular-font-size;
   color: $active-color;
-  padding-bottom: 10rem;
+  // padding-bottom: 10rem;
   td {
     padding-bottom: 1rem;
   }
   hr {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: absolute;
     bottom: 0;
@@ -125,6 +127,7 @@ tr {
 
 .coin--name {
   font-weight: $bold-font;
+  font-size: $regular-font-size;
   // letter-spacing: 2px;
   text-align: start;
   // width: auto;
@@ -135,7 +138,7 @@ tr {
     
     background-color: $btn-color;
     color: $font-color;
-    padding: 0 1rem;
+    // padding: 0 1rem;
     border-radius: 5px;
   }
 }

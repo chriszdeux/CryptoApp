@@ -17,7 +17,7 @@
 @mixin text-mixin($size, $color) {
   font-size: $size;
   color: $color;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 }
 
 .card {
@@ -102,31 +102,33 @@
   @include cards-mixin(flex, 25rem);
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 .5rem;
+  // margin: 0 .5rem;
   outline: none;
   .card__cover {
     width: 100%;
-    height: 10rem;
+    height: 12rem;
     box-shadow: $box-shadow;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     .card--cover {
       width: inherit;
       height: inherit;
       object-fit: cover;
     }
-
+    
   }
-
+  
   .conference {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    // align-items: space-around;
     font-size: $regular-font-size;
     color: $active-color;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
   }
-
+  
   .news__info {
-
+    // padding: 1rem;
+    
     h2 {
       @include text-mixin($large-font-size, $active-color)
     }
@@ -135,4 +137,99 @@
     }
   }
 
+}
+
+.read__more__card {
+  @include cards-mixin(flex, 25rem);
+  text-align: start;
+  // padding: .5rem;
+  transition: $regular-transition;
+
+  .icon {
+    font-size: $jumbo-font-size;
+    color: $active-color;
+    height: 100%;
+  }
+  .icon:hover {
+    outline: 1px solid $active-color;
+  }
+
+  .read__more {
+    h2 {
+      // margin-bottom: 1rem;
+      font-size: $large-font-size;
+      color: $font-color;
+    }
+
+    .read__cover {
+      opacity: .8;
+    }
+  }
+}
+
+.interest__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  height: 15rem;
+  background-color: $btn-color;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  
+  .interest--earned {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    font-size: $large-font-size;
+    color: $font-color;
+    z-index: 1;
+  }
+
+  .learn__earn {
+    h2 {
+      font-size: $large-font-size;
+      color: $active-color;
+    }
+    p{
+      font-size: $regular-font-size;
+      font-weight: $regular-font;
+      color: $base-color;
+    }
+    z-index: 1;
+  }
+
+  .img--fix {
+
+  }
+  .study__image {
+    width: 30rem;
+    position: absolute;
+    right: -15%;
+    bottom: -15%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      opacity: .4;
+    }
+  }
+
+  .earned {
+    font-size: $extra-large-font-size;
+    color: $active-color;
+
+    span {
+      color: $font-color;
+    }
+  }
+
+  .icon {
+    font-size: $extra-large-font-size;
+    color: $active-color;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
 }
