@@ -1,0 +1,14 @@
+.btn {
+  width: 15rem;
+  height: 4rem;
+  outline: none;
+  border: none;
+}
+
+.btn--primary {
+  background: $btn-main-color;
+  // border: 1px solid $base-color;
+  color: $active-color;
+  font-size: $regular-font-size;
+  // font-weight: $bold-font;
+}

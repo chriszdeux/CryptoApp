@@ -1,0 +1,42 @@
+@mixin containers($width) {
+  width: $width;
+  margin: 0 auto;
+}
+
+.c100 {
+  @include containers(100%)
+}
+.c95 {
+  @include containers(95%)
+}
+.c90 {
+  @include containers(90%)
+}
+
+.wrapper {
+  margin: 1rem 0;
+  // padding-left: 1rem;
+  .wrapper--title {
+    font-size: $large-font-size;
+    color: $active-color;
+    padding-left: 1rem;
+  }
+  .wrapper__cards {
+    display: flex;
+    align-items: center;
+    // justify-content: space-around;
+    // width: 100%;
+    min-height: 10rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    
+    .card {
+      margin: 0 .5rem;
+    }
+
+  }
+}
+
+.w--h {
+  height: 30rem;
+}

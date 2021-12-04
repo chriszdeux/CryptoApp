@@ -1,0 +1,141 @@
+.crypto__coins {
+  position: relative;
+}
+
+.crypto__table {
+  padding: 1rem;
+  // position: relative;
+  border: 1px solid $active-color;
+  border-radius: 5px;
+  text-align: center;
+  // background-color: red;
+}
+
+.table__header {
+  position: relative;
+  font-size: $small-font-size;
+  color: $active-color;
+  height: 3rem;
+  border-bottom: 1px solid $active-color;
+
+  hr {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .2;
+    border: 1px solid $active-color;
+    // border-radius: .5rem;
+  }
+  
+}
+
+.price {
+  // display: block;
+  font-weight: $bold-font;
+  text-align: end;
+  .supply {
+    font-weight: $ligh-font;
+    color: $base-color;
+  }
+}
+
+tr {
+  border-bottom: 1px solid $active-color;
+}
+.table__row {
+  position: relative;
+  border-bottom: 1px solid $active-color;
+  align-items: center;
+  font-size: $small-font-size;
+  color: $active-color;
+  padding-bottom: 10rem;
+  td {
+    padding-bottom: 1rem;
+  }
+  hr {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .2;
+    border: 1px solid $active-color;
+    // border-radius: .5rem;
+  }
+  
+}
+.rank {
+  display: none;
+}
+.market--cap {
+  // display: none;
+  // color: $gainer-color;
+  .market--mark {
+    .icon {
+      font-size: $regular-font-size;
+    }
+    // color: #0DC96E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gainer-color;
+  }
+
+}
+
+.volume {
+  display: none;
+}
+.coin--rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  background-color: $base-color;
+  color: $active-color;
+  border-radius: 5px;
+}
+
+.coin {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  // width: 10rem;
+  margin: 0 auto;
+}
+
+.crypto__coin {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .coin--image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+
+}
+
+.coin--name {
+  font-weight: $bold-font;
+  // letter-spacing: 2px;
+  text-align: start;
+  // width: auto;
+  // display: block;
+  .short--name {
+    width: 5rem;
+    text-align: start;
+    
+    background-color: $btn-color;
+    color: $font-color;
+    padding: 0 1rem;
+    border-radius: 5px;
+  }
+}

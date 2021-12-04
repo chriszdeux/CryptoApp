@@ -1,0 +1,138 @@
+@mixin cards-mixin($display, $height) {
+  display: $display;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 24rem;
+  height: $height;
+  // max-height: 22rem;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+  // outline: 1px solid $border-color;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+@mixin text-mixin($size, $color) {
+  font-size: $size;
+  color: $color;
+  margin-bottom: 1rem;
+}
+
+.card {
+  @include cards-mixin(flex, 7.5rem);
+  // border: 1px solid red;
+
+  .card__info {
+    h2 {
+      font-size: $regular-font-size;
+      color: $active-color;
+    }
+
+    h3{
+      color: $base-color;
+    }
+
+    p {
+      color: $base-color;
+    }
+
+    .conference {
+      display: flex;
+      justify-content: space-around;
+
+      h3 {
+        color: $active-color;
+      }
+    }
+    .trade--volume {
+      color: $gainer-color;
+    }
+  }
+
+  .card__percent {
+    color: $gainer-color;
+    h2 {
+      display: flex;
+      align-items: center;
+      .icon {
+        font-size: $regular-font-size;
+      }
+    }
+  }
+  .card__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    // border: 1px solid $active-color;
+    overflow: hidden;
+    .card--image {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+
+  .card__percent {
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+  }
+
+  .rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $base-color;
+    color: $active-color;
+  }
+}
+
+.news__card {
+  @include cards-mixin(flex, 25rem);
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 .5rem;
+  outline: none;
+  .card__cover {
+    width: 100%;
+    height: 10rem;
+    box-shadow: $box-shadow;
+    margin-bottom: 1rem;
+    .card--cover {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+
+  }
+
+  .conference {
+    display: flex;
+    justify-content: space-around;
+    font-size: $regular-font-size;
+    color: $active-color;
+    margin-bottom: 1rem;
+  }
+
+  .news__info {
+
+    h2 {
+      @include text-mixin($large-font-size, $active-color)
+    }
+    p {
+      @include text-mixin($small-font-size, $base-color)
+    }
+  }
+
+}
