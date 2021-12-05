@@ -539,23 +539,66 @@ html {
   height: 4rem;
   outline: none;
   border: none;
+  border-radius: 5px;
 }
 
 .btn--primary {
-  background: linear-gradient(131deg, #04767d 61%, #00b4bf 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(54%, #1f9ea6), to(#008088));
+  background: linear-gradient(180deg, #1f9ea6 54%, #008088 100%);
   color: #07F1FF;
   font-size: 1.6rem;
 }
 
 .btn--swap {
-  width: 7rem;
-  height: 7rem;
-  background-color: #04767d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(54%, #1f9ea6), to(#008088));
+  background-image: linear-gradient(180deg, #1f9ea6 54%, #008088 100%);
   outline: 2px solid #00B4BF;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #F0F0F0;
+}
+
+.btn--swap .icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.menu--button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  background-color: #08ACB6;
+  border-left: 3px solid #07F1FF;
+  z-index: 1;
+}
+
+.menu--button .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #07F1FF;
 }
 
 .crypto__coins {
@@ -773,7 +816,9 @@ tr {
 }
 
 .menu {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -795,12 +840,26 @@ tr {
 }
 
 .menu .btn {
-  position: fixed;
+  position: absolute;
   right: 5%;
   bottom: 10%;
 }
 
+.menu .menu--button {
+  position: absolute;
+  left: 100%;
+}
+
 .profile__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -809,8 +868,10 @@ tr {
 }
 
 .profile__image img {
-  width: inherit;
-  height: inherit;
+  width: calc($profile-image-size - 1rem);
+  height: calc($profile-image-size - 1rem);
+  border-radius: 50%;
+  border: 1px solid #08ACB6;
 }
 
 .menu__stats {
@@ -839,11 +900,6 @@ tr {
   color: #07F1FF;
 }
 
-body {
-  background: linear-gradient(228deg, #04747c 22%, #252525 100%);
-  background-repeat: no-repeat;
-}
-
 .title {
   font-size: 2rem;
   color: #F0F0F0;
@@ -859,6 +915,16 @@ body {
   -webkit-filter: blur(1px);
           filter: blur(1px);
   opacity: .3;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(228deg, #04747c 22%, #252525 100%);
+  z-index: -2;
 }
 
 .glass {

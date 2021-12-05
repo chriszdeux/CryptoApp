@@ -1,10 +1,12 @@
 $background-color:              #008088;
 $main-background-color: linear-gradient(228deg, rgb(4, 116, 124) 22%, rgb(37, 37, 37) 100%);
 $second-background-color: linear-gradient(352deg, rgba(3,208,221,1) 22%, rgba(1,68,73,1) 100%);
+$third-background-color: linear-gradient(180deg, rgba(31,158,166,1) 54%, rgba(0,128,136,1) 100%);
 
-$btn-color: rgb(4,118,125);
-$btn-main-color: linear-gradient(131deg, rgba(4,118,125,1) 61%, rgba(0,180,191,1) 100%);
+// $btn-main-color: linear-gradient(131deg, rgba(4,118,125,1) 61%, rgba(0,180,191,1) 100%);
+
 $base-color: #08ACB6;
+$second-base-color: rgb(4,118,125);
 $active-color: #07F1FF;
 $border-color: #00B4BF;
 
@@ -32,3 +34,5 @@ $bold-font: 700;
 $box-shadow: 0px 0px 11px $shadow-color;
 
 $regular-transition: .3s ease;
+
+$profile-image-size: 10rem;

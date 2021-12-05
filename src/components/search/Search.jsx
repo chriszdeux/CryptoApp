@@ -16,7 +16,7 @@ export const Search = () => {
         className="search__icon"
         onClick={ handleShowComponent }
       >
-        { icons.search_icon }
+        { showComponent ? icons.close_icon : icons.search_icon }
       </div>
     </div>
   )

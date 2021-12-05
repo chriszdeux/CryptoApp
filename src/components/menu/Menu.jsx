@@ -1,9 +1,11 @@
 import React from 'react'
 import shib from '../../temp/shib.png';
 import { MainButton } from '../buttons/MainButton';
+import { MenuButton } from '../buttons/MenuButton';
 
-export const Menu = () => {
-
+export const Menu = ({values}) => {
+  const { handleShowComponent, showComponent } = values
+// debugger
   return (
     <section className="menu pd--t--3">
       <figure className="profile__image mg--b--3">
@@ -25,6 +27,7 @@ export const Menu = () => {
       </nav>
 
       <MainButton message={'Logout'}/>
+      <MenuButton values={{handleShowComponent, showComponent }}/>
     </section>
   )
 }

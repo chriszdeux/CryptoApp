@@ -9,6 +9,7 @@ export const BackgroundImage = () => {
       {/* <div className="blur">
       </div> */}
     </figure>
+    <div className="background"></div>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export const useShowComponent = () => {
-  const [showComponent, setShowComponent] = useState(false);
+export const useShowComponent = ( initialState = false) => {
+  const [showComponent, setShowComponent] = useState(initialState);
 
   const handleShowComponent = () => {
     setShowComponent(!showComponent)
