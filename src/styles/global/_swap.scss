@@ -207,7 +207,7 @@
     left: 10%;
     font-size: $jumbo-font-size;
     color: $font-color;
-    background-color: $active-color;
+    background-color: $base-color;
     border-radius: 50%;
     // border: 1px solid red;
 
@@ -303,6 +303,7 @@
   overflow-y: scroll;
   position: relative;
   font-size: $regular-font-size;
+  padding: 0 1rem;
   .asset--item {
     display: flex;
     justify-content: space-between;
@@ -361,6 +362,7 @@
   // display: flex;
   overflow: hidden;
   border-radius: 1rem;
+  box-shadow: $box-shadow;
   .asset--bank {
     display: flex;
     justify-content: space-between;

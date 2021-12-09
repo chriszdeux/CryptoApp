@@ -7,6 +7,7 @@ import { CryptoTable } from '../../components/crytp-table/CryptoTable'
 import { CryptoFeature } from '../../components/feature/CryptoFeature'
 import { MainDisplay } from '../../components/main/MainDisplay'
 import { SwapCrypto } from '../../components/swap-crypto/SwapCrypto'
+import { VideoTest, videotest } from '../../components/VideoTest'
 import { useShowComponent } from '../../hooks/ShowComponent'
 
 export const HomePage = () => {
@@ -40,6 +41,7 @@ export const HomePage = () => {
       <SwapCrypto handleShowComponent={ handleShowComponent }/>
       </>
     }
+    {/* <VideoTest /> */}
     </section>
     </>
   )

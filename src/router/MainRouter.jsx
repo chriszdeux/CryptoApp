@@ -36,7 +36,7 @@ export const MainRouter = () => {
         <Routes>
           <Route exact path="/" element={ <HomePage /> }/>
           <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
-          <Route exact path="/swap" element={ <SwapCrypto /> }/>
+          {/* <Route exact path="/swap" element={ <SwapCrypto /> }/> */}
         </Routes>
       {/* </div> */}
     </Router>

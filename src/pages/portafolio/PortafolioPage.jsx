@@ -25,7 +25,7 @@ export const PortafolioPage = () => {
       </div>
 
       <aside>
-        <SwapCrypto />
+        {/* <SwapCrypto /> */}
       </aside>
     </section>
   )

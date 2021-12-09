@@ -1162,7 +1162,7 @@ tr {
   left: 10%;
   font-size: 3.5rem;
   color: #F0F0F0;
-  background-color: #07F1FF;
+  background-color: #08ACB6;
   border-radius: 50%;
 }
 
@@ -1263,6 +1263,7 @@ tr {
   overflow-y: scroll;
   position: relative;
   font-size: 1.6rem;
+  padding: 0 1rem;
 }
 
 .asset__list .asset--item {
@@ -1333,6 +1334,8 @@ tr {
   border: 1px solid #00B4BF;
   overflow: hidden;
   border-radius: 1rem;
+  -webkit-box-shadow: 0px 0px 11px #022d33;
+          box-shadow: 0px 0px 11px #022d33;
 }
 
 .asset--bank--item .asset--bank {
