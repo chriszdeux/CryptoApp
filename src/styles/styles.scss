@@ -11,6 +11,7 @@
 @import './global//forms';
 @import './pages/home';
 @import './global/menu';
+@import './global/swap';
 
 
 body {
@@ -19,6 +20,9 @@ body {
   // height: ;
 }
 
+::placeholder {
+  color: $base-color;
+}
 .title {
   font-size: $large-font-size;
   color: $font-color;

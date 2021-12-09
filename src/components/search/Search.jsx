@@ -4,11 +4,14 @@ import { icons } from '../../utils/icons/icons_object'
 
 export const Search = () => {
   const { showComponent, handleShowComponent } = useShowComponent()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className="search">
       {
         showComponent &&
-          <form onSubmit="" className="search__form">
+          <form onSubmit={ handleShowComponent } className="search__form">
             <input type="text" className="search--input"/>
           </form>    
       }

@@ -1,11 +1,10 @@
 import React from 'react'
-import world from '../../utils/vector/world.svg';
 
-export const BackgroundImage = () => {
+export const BackgroundImage = ({image}) => {
   return (
     <>
     <figure className="background__image">
-      <img className="background--image" src={ world } alt="" />
+      <img className="background--image" src={ image } alt="" />
       {/* <div className="blur">
       </div> */}
     </figure>

@@ -19,6 +19,7 @@ import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { HomePage } from '../pages/main-page/HomePage';
 import { PortafolioPage } from '../pages/portafolio/PortafolioPage';
+import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
   const { showComponent, handleShowComponent } = useShowComponent()
@@ -27,7 +28,7 @@ export const MainRouter = () => {
       {/* <div> */}
 
         <Header />
-        <BackgroundImage />
+        <BackgroundImage image={ image }/>
         <MenuButton values={{ showComponent, handleShowComponent }}/>
         {
           showComponent && <Menu values={{ showComponent, handleShowComponent }}/>
