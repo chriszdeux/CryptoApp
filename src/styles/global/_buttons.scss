@@ -18,6 +18,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+  z-index: 1;
   width: 5rem;
   height: 5rem;
   background-image: $third-background-color;

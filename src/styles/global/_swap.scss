@@ -96,6 +96,10 @@
         border: none;
         color: $font-color;
       }
+
+      .amount--error {
+        color: $losser-color;
+      }
     }
     h2 {
       display: flex;
@@ -194,6 +198,7 @@
 .swap__trade {
   position: relative;
   margin-bottom: 3rem;
+  // box-shadow: $box;
   .swap--icon {
     // border: 1px solid red;
     display: flex;

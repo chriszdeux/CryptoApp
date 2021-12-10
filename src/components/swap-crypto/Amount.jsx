@@ -34,7 +34,8 @@ export const Amount = ({ setValidateAmount }) => {
           <form className="amount__input">
             <label htmlFor="amount">$</label>
             <input 
-              className="amount--input" 
+            // style={{ backgroundColor: 'red' } }
+              className={ `amount--input ${ amount > 35000 && 'amount--error' }` } 
               type="number" 
               name="amount" 
               placeholder="0"

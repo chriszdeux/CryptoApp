@@ -1,0 +1,26 @@
+.chart {
+  position: relative;
+  height: auto;
+}
+
+.chart .portafolio__balance {
+  position: absolute;
+  top: 10%;
+}
+
+.chart .chart__options {
+  width: 30%;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+
+.chart .chart__options .chart__list__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=.chart.css.map */

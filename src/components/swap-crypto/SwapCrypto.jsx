@@ -11,11 +11,26 @@ import { BuyPay } from './BuyPay'
 import { Amount } from './Amount'
 import { SwapNavbar } from './SwapNavbar'
 import { SwapBalance } from './SwapBalance'
-export const SwapCrypto = ({ handleShowComponent }) => {
+export const SwapCrypto = ({ handleShowComponent2 }) => {
   const [validateAmount, setValidateAmount] = useState(false)
+  // debugger
+  const [warningAmount, setWarningAmount] = useState(false)
+
+  useEffect(() => {
+    if(validateAmount > 0 && validateAmount < 10) {
+      return setWarningAmount(false)
+    } else if ( validateAmount > 35000 ) {
+      return setWarningAmount(false)
+
+    } else if(validateAmount >=10 && validateAmount <=35000){
+      return setWarningAmount(true)
+    }
+    // debugger
+  }, [  validateAmount])
+  // debugger
   return (
     <div className="swap c100">
-      <div className="swap__back" onClick={ handleShowComponent }>
+      <div className="swap__back" onClick={ handleShowComponent2 }>
       { icons.back_icon }
       </div>
       <SwapNavbar />
@@ -23,7 +38,7 @@ export const SwapCrypto = ({ handleShowComponent }) => {
       <Amount setValidateAmount={ setValidateAmount }/>
       <BuyPay />
       {
-        validateAmount >= 10 &&
+        warningAmount &&
         <MainButton message={'Preview Buy'}/>
       }
       <SwapBalance />

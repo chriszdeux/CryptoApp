@@ -11,18 +11,18 @@ import { VideoTest, videotest } from '../../components/VideoTest'
 import { useShowComponent } from '../../hooks/ShowComponent'
 
 export const HomePage = () => {
-  const [swappComponent, setSwappComponent] = useState(null);
-  const { showComponent, handleShowComponent } = useShowComponent()
-  console.log('home')
-  useEffect(() => {
-    const swapButton = setTimeout(() => {
-      setSwappComponent( <SwapButton values={{ showComponent, handleShowComponent }}/> )
-    }, 2000);
+  // const [swappComponent, setSwappComponent] = useState(null);
+  // const { showComponent, handleShowComponent } = useShowComponent()
+  // console.log('home')
+  // useEffect(() => {
+  //   const swapButton = setTimeout(() => {
+  //     setSwappComponent( <SwapButton values={{ showComponent, handleShowComponent }}/> )
+  //   }, 2000);
 
-    return () => {
-      cleanup(swapButton)
-    }
-  }, [  ])
+  //   return () => {
+  //     cleanup(swapButton)
+  //   }
+  // }, [  ])
   return (
     <>
     <section className="home__page">
@@ -33,14 +33,14 @@ export const HomePage = () => {
         <LearnAndEarnCard /> 
         <InterestedEarned />
       </div>
-      { swappComponent }
+      {/* { swappComponent }
     {
       showComponent &&
       <>
       { console.log(`${ showComponent ? 'opened' : 'closed' }`) }
       <SwapCrypto handleShowComponent={ handleShowComponent }/>
       </>
-    }
+    } */}
     {/* <VideoTest /> */}
     </section>
     </>

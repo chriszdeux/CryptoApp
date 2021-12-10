@@ -1,0 +1,41 @@
+@mixin portafolio-titles {
+  padding-left: 1rem;
+  font-size: $large-font-size;
+  color: $font-color;
+}
+.portafolio {
+  padding-top: 5rem;
+  .portafolio__chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .portafolio__balance {
+    font-size: $large-font-size;
+    color: $font-color;
+
+    h2 {
+      font-size: $regular-font-size;
+      color: $active-color;
+    }
+  }
+  
+  .portafolio__assets {
+    
+    h2 {
+      @include portafolio-titles();
+    }
+  }
+
+  .portafolio__wishlist {
+    h2 {
+      @include portafolio-titles();
+    }
+  }
+
+  .portaolio__aside {
+    // display: ;
+  }
+}

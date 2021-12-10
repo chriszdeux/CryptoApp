@@ -3,7 +3,7 @@ import { useEffect } from 'react/cjs/react.development'
 import { icons } from '../../utils/icons/icons_object'
 
 export const SwapButton = ({values}) => {
-  const { handleShowComponent, showComponent } = values;
+  const { handleShowComponent2, showComponent } = values;
   // debugger
   const [flip, setFlip] = useState(false)
   
@@ -18,7 +18,7 @@ export const SwapButton = ({values}) => {
   },)
   console.log('rendered')
   return (
-    <button className="btn btn--swap " onClick={ handleShowComponent }>
+    <button className="btn btn--swap " onClick={ handleShowComponent2}>
       {
         flip 
           ? icons.convert_icon

@@ -1,0 +1,41 @@
+.chart {
+
+  // background-color: $second-base-color;
+  position: relative;
+  height: auto;
+  border: 1px solid $active-color;
+  border-radius: 1rem;
+  // padding: 1rem;
+  // margin: 0 3rem;
+  color: $active-color;
+
+  .portafolio__balance {
+    // position: absolute;
+    // top: 10%;
+  }
+
+}
+
+.chart__options {
+  width: 30%;
+  // position: absolute;
+  // top: 15%;
+  // right: 5%;
+  
+  .chart__list__options {
+    display: flex;
+    justify-content: space-between;
+    
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      // border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: $base-color;
+      color: $second-font-color;
+    }
+  }
+}

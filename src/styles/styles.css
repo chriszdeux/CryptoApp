@@ -566,6 +566,10 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+  z-index: 1;
   width: 5rem;
   height: 5rem;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(54%, #1f9ea6), to(#008088));
@@ -1024,6 +1028,10 @@ tr {
   color: #F0F0F0;
 }
 
+.swap__amount .amount .amount__input .amount--error {
+  color: #f56b6b;
+}
+
 .swap__amount .amount h2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1376,6 +1384,82 @@ tr {
   padding: 1rem;
   color: #08ACB6;
   background-color: #008088;
+}
+
+.chart {
+  position: relative;
+  height: auto;
+  border: 1px solid #07F1FF;
+  border-radius: 1rem;
+  color: #07F1FF;
+}
+
+.chart__options {
+  width: 30%;
+}
+
+.chart__options .chart__list__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chart__options .chart__list__options li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #08ACB6;
+  color: #AFFAFF;
+}
+
+.portafolio {
+  padding-top: 5rem;
+}
+
+.portafolio .portafolio__chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portafolio .portafolio__balance {
+  font-size: 2rem;
+  color: #F0F0F0;
+}
+
+.portafolio .portafolio__balance h2 {
+  font-size: 1.6rem;
+  color: #07F1FF;
+}
+
+.portafolio .portafolio__assets h2 {
+  padding-left: 1rem;
+  font-size: 2rem;
+  color: #F0F0F0;
+}
+
+.portafolio .portafolio__wishlist h2 {
+  padding-left: 1rem;
+  font-size: 2rem;
+  color: #F0F0F0;
 }
 
 ::-webkit-input-placeholder {
