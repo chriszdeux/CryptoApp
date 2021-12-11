@@ -13,7 +13,10 @@
 @import './global/menu';
 @import './global/swap';
 @import './global/chart';
+@import './global/video';
+@import './global/asset-info';
 @import './pages/portafolio';
+@import './pages//Asset';
 
 
 body {
@@ -22,8 +25,22 @@ body {
   // height: ;
 }
 
+a {
+  text-decoration: none;
+  // color: $font-color;
+  &:link {
+    text-decoration: none;
+  }
+}
+
+
 ::placeholder {
   color: $base-color;
+}
+
+.router {
+  position: relative;
+  padding-top: 4rem;
 }
 .title {
   font-size: $large-font-size;

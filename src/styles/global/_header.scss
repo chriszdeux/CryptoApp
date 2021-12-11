@@ -13,6 +13,24 @@
     right: 1%;
     top: 100%;
   }
+
+
+  
+
+  .header__info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    height: 5rem;
+    margin-top: 3rem;
+
+    // .main__news__card {
+    //   left: 10%;
+    // }
+  }
+
 }
 .top__news__container {
   display: flex;

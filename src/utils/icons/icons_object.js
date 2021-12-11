@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline } from 'react-icons/io5';
+import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline, IoServerOutline } from 'react-icons/io5';
 import { AiOutlineBank } from 'react-icons/ai';
 
 export const icons = {
@@ -30,4 +30,5 @@ export const icons = {
   copy_icon: <IoCopyOutline  className="icon"/>,
   check_icon: <IoCheckmarkOutline  className="icon"/>,
   source_icon: <IoCodeSlashOutline  className="icon"/>,
+  server_icon: <IoServerOutline  className="icon"/>,
 }

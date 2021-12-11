@@ -5,13 +5,13 @@ import React from 'react';
 // import { Line } from 'react-chartjs-2';
 import { getRelativePosition } from 'chart.js/helpers';
 
-import { CryptoTable } from '../../components/crytp-table/CryptoTable'
-import { SwapCrypto } from '../../components/swap-crypto/SwapCrypto';
-import { icons } from '../../utils/icons/icons_object';
-import { ChartTest } from './ChartTest';
-import { PortafolioChart } from '../../components/charts/PortafolioChart';
-import { LearnAndEarnCard } from '../../components/cards/LearnAndEarnCard';
-import { InterestedEarned } from '../../components/cards/InterestedEarned';
+import { CryptoTable } from '../components/crytp-table/CryptoTable'
+import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
+import { icons } from '../utils/icons/icons_object';
+// import { ChartTest } from '../../components/charts/ChartTest';
+import { PortafolioChart } from '../components/charts/PortafolioChart';
+import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard';
+import { InterestedEarned } from '../components/cards/InterestedEarned';
 export const PortafolioPage = () => {
   return (
     <section className="portafolio">

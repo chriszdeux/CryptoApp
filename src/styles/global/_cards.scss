@@ -233,3 +233,21 @@
     bottom: 5%;
   }
 }
+
+.main__news__card {
+  position: absolute;
+  // top: 4rem;
+  left: 10%;
+  font-size: $small-font-size;  
+  color: $font-color;
+
+  h2 {
+    display: inline-grid;
+    align-items: center;
+    a {
+      font-weight: $ligh-font;
+      color: $active-color;
+    }
+
+  }
+}

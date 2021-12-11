@@ -1,0 +1,312 @@
+@mixin bordering-list($justify, $width) {
+  display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        justify-content: $justify;
+        align-items: center;
+        width: $width;
+        height: 3rem;
+        margin: .5rem;
+        padding: 1rem 2rem;
+        border: 1px solid $border-color;
+        border-radius: .5rem;
+      }
+}
+
+@mixin transaction--items($display, $text) {
+  display: $display;
+  font-size: $regular-font-size;
+  text-align: $text;
+
+  span {
+    font-size: $small-font-size;
+    color: $base-color
+  }
+}
+
+.asset__page {
+  padding-top: 5rem;
+  position: relative;
+  font-size: $small-font-size;
+}
+
+.asset__main__info {
+
+  .portafolio__chart {
+    position: relative;
+  }
+  .asset__about {
+    background-color: $background-color;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+      color: $font-color;
+      .about__header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+        text-align: justify;
+        line-height: 2rem;
+      }
+    }
+  // display: flex;
+  // justify-content: space-between;
+
+}
+
+.asset__info {
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  width: 100%;
+  color: $second-font-color;
+  text-align: center;
+
+
+  .asset__network {
+    .asset__name {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .asset__stat {
+      @include bordering-list(center, 15rem);
+    }
+    
+    .asset__social__network {
+      @include bordering-list(space-between, 18rem);
+    }
+    .asset__contracts {
+      @include bordering-list(space-between, 100%);
+    }
+    .asset__tags {
+      @include bordering-list(center, 10rem);
+    }
+  
+  }
+  
+  .asset__stats {
+    text-align: start;
+    color: $font-color;
+
+    .asset__stats__top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .asset__price {
+        margin-bottom: 2rem;
+  
+        h3 {
+          color: $active-color;
+        }
+  
+        h2 {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          font-size: 3rem;
+  
+          span {
+            width: 10rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $font-color;
+            font-size: 1.4rem;
+            margin-left: 1rem;
+            background-color: $gainer-color;
+            border-radius: .5rem;
+          }
+        }
+      }
+    }
+
+    .asset__btc__eth {
+      width: 40%;
+      // border: 1px solid red;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          display: flex;
+          align-items: center;
+          color: $gainer-color;
+        }
+      }
+    }    
+
+    .asset__low__high {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 59%;
+      padding-right: 1rem;
+      h3 {
+        font-size: $small-font-size;
+      }
+      .progress__bar {
+        width: 100%;
+        // border: 2px solid $base-color;
+        background-color: $base-color;
+        border-radius: .5rem;
+        height: 1.5rem;
+        /* overflow: hidden; */
+        position: relative;
+
+        .current__progress {
+          // width: 72%;
+          position: relative;
+          height: inherit;
+          background-color: $active-color;
+          border-radius: inherit;
+          /* position: absolute; */
+          /* top: 0; */
+          .progress--pointer {
+            // border: 1px solid red;
+            right: -1rem;
+            position: absolute;
+            bottom: -2rem;
+            // left: 72%;
+            // transform: translateX(-72%);
+  
+            .icon {
+              color: $active-color;
+            }
+          }
+        }
+
+      }
+    }
+
+    .asset__global__stats {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        width: 50%;
+        // height: 1rem;
+        padding: 1rem;
+
+        margin-bottom: 1rem;
+        // border: 1px solid red;
+        border-right: 1px solid $active-color;
+        
+        h4 {
+          // font-size: $regular-font-size;
+          color: $second-font-color;
+          // text-align: end;
+        }
+        h3 {
+          font-size: $regular-font-size;
+          color: $active-color;
+          &:last-child {
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            border-radius: .5rem;
+            background-color: $second-base-color;
+            color: $gainer-color;
+          }
+        }
+
+        .icon {
+          width: 3rem;
+          height: 3rem;
+          color: $active-color;
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          font-weight: $bold-font;
+          color: $active-color;
+          font-size: $large-font-size;
+          span {
+            font-size: $regular-font-size;
+            color: $font-color;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+.right__side {
+
+}
+
+.asset__transactions {
+  width: 100%;
+  box-shadow: $box-shadow;
+  h2 {
+    // border: 2px solid $border-color;
+    border-bottom: none;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background-color: $second-base-color;
+    color: $active-color;
+    padding: 1rem;
+    // padding-bottom: none;
+    // padding-bottom: none;
+  }
+
+  .asset__transaction__list {
+    // border: 2px solid $border-color;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    background-color: $background-color;
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+      font-size: $extra-small-font-size;
+      color: $second-font-color;
+      // border-bottom: 1px solid $border-color;
+      .transaction--date {
+        @include transaction--items(inline-grid, center);
+        
+      }
+      .transaction--completed {
+        @include transaction--items(inline-grid, center);
+
+        
+      }
+      .asset--amount {
+        @include transaction--items(inline-grid, end);
+        
+
+      }
+
+      .icon {
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem;
+        border: 3px solid $border-color;
+        border-radius: 50%;
+      }
+    }
+  }
+}

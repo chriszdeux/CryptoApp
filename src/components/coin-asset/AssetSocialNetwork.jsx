@@ -1,9 +1,9 @@
 import React from 'react'
 import { icons } from '../../utils/icons/icons_object'
 
-export const AssetNetwork = () => {
+export const AssetSocialNetwork = () => {
   return (
-    <ul>
+    <ul className="asset__social__network mg--b">
       <li>{ icons.link_icon } bitcoin.com { icons.open_icon }</li>
       <li>{ icons.search_icon } Explorers { icons.down_icon }</li>
       <li>{ icons.person_icon } Community { icons.down_icon }</li>

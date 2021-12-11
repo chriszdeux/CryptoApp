@@ -12,6 +12,12 @@
 .c90 {
   @include containers(90%)
 }
+.c50 {
+  @include containers(50%)
+}
+.c45 {
+  @include containers(45%)
+}
 
 .wrapper {
   margin: 1rem 0;

@@ -14,6 +14,8 @@ Link,
 import { useEffect } from 'react/cjs/react.development';
 import { MenuButton } from '../components/buttons/MenuButton';
 import { SwapButton } from '../components/buttons/SwapButton';
+import { MainNewsCard } from '../components/cards/MainNewsCard';
+import { GenericFooter } from '../components/footer/GenericFooter';
 import { Header } from '../components/header/Header';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { Menu } from '../components/menu/Menu';
@@ -21,8 +23,8 @@ import { Search } from '../components/search/Search';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { AssetPage } from '../pages/AssetPage';
-import { HomePage } from '../pages/main-page/HomePage';
-import { PortafolioPage } from '../pages/portafolio/PortafolioPage';
+import { HomePage } from '../pages/HomePage';
+import { PortafolioPage } from '../pages/PortafolioPage';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
@@ -42,10 +44,12 @@ export const MainRouter = () => {
   }, [  ])
   return (
     <Router>
-      {/* <div> */}
+      <div className="router">
 
         <Header />
         <BackgroundImage image={ image }/>
+        <MainNewsCard />
+
         <MenuButton values={{ showComponent, handleShowComponent }}/>
         {
           showComponent && <Menu values={{ showComponent, handleShowComponent }}/>
@@ -66,7 +70,8 @@ export const MainRouter = () => {
           <SwapCrypto handleShowComponent2={ handleShowComponent2 }/>
           </>
         }
-      {/* </div> */}
+        <GenericFooter />
+      </div>
     </Router>
 
   )
