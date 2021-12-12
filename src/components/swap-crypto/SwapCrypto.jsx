@@ -11,11 +11,17 @@ import { BuyPay } from './BuyPay'
 import { Amount } from './Amount'
 import { SwapNavbar } from './SwapNavbar'
 import { SwapBalance } from './SwapBalance'
+import { PreviewTransaction } from './PreviewTransaction'
+import { useShowComponent } from '../../hooks/ShowComponent'
+import { BackgroundImage } from '../main/BackgroundImage'
+import image from '../../utils/vector/server.svg'
+import { RecurrentTransaction } from './RecurrentTransaction'
+
 export const SwapCrypto = ({ handleShowComponent2 }) => {
   const [validateAmount, setValidateAmount] = useState(false)
   // debugger
   const [warningAmount, setWarningAmount] = useState(false)
-
+  const { showComponent, handleShowComponent } = useShowComponent()
   useEffect(() => {
     if(validateAmount > 0 && validateAmount < 10) {
       return setWarningAmount(false)
@@ -36,12 +42,21 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       <SwapNavbar />
       <Divider />
       <Amount setValidateAmount={ setValidateAmount }/>
+      <RecurrentTransaction />
+       
       <BuyPay />
       {
         warningAmount &&
-        <MainButton message={'Preview Buy'}/>
+        <button className="btn btn--primary" onClick={ handleShowComponent }>
+          Preview Transaction
+        </button>
       }
       <SwapBalance />
+      {
+        showComponent && <PreviewTransaction handleShowComponent={ handleShowComponent }/>
+      }
+            {/* <BackgroundImage image={ image }/> */}
+
     </div>
   )
 }

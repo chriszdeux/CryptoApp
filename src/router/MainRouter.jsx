@@ -58,7 +58,7 @@ export const MainRouter = () => {
           <Route exact path="/" element={ <HomePage /> }/>
           <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
           <Route exact path="/asset" element={ <AssetPage /> }/>
-          {/* <Route exact path="/swap" element={ <SwapCrypto /> }/> */}
+          <Route exact path="/swap" element={ <SwapCrypto /> }/>
         </Routes>
         { swappComponent }
 

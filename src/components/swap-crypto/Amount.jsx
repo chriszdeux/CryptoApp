@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react/cjs/react.development';
+import { useShowComponent } from '../../hooks/ShowComponent';
 import { useForm } from '../../hooks/useForm';
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 import { useWidthNumber } from '../../hooks/useWidthNumber';
@@ -9,21 +10,23 @@ export const Amount = ({ setValidateAmount }) => {
   
   const { handleInputChange, inputValues } = useForm({
     amount: '', 
+    asset: 0.000034, 
     // amount_total: Number
   });
-  const { amount } = inputValues
+  const { amount, asset } = inputValues
 
-
+  const [convertedAsset, setConvertedAsset] = useState()
+  
   const { inputWidth, handleWidth } =useWidthNumber( amount )
   const { width, font } = inputWidth
   // debugger
   const { formatNumber, handleFormatNumber } = useFormatNumbers( amount )
-
   useEffect(() => {
     
     handleWidth(amount)
     handleFormatNumber(amount)
     setValidateAmount(amount)
+    setConvertedAsset( new Intl.NumberFormat(4).format(amount/asset) )
   }, [ amount ])
 
 
@@ -35,7 +38,7 @@ export const Amount = ({ setValidateAmount }) => {
             <label htmlFor="amount">$</label>
             <input 
             // style={{ backgroundColor: 'red' } }
-              className={ `amount--input ${ amount > 35000 && 'amount--error' }` } 
+              className={ `amount--input ${ amount > 35000 || amount < 10 && 'amount--error' }` } 
               type="number" 
               name="amount" 
               placeholder="0"
@@ -48,16 +51,16 @@ export const Amount = ({ setValidateAmount }) => {
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           {
             formatNumber &&
-          <p className="mg--b--3">$ { formatNumber }</p>
+          <p className="mg--b--3">{ convertedAsset } asset coins</p>
           }
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           <p className="mg--b--3">You can buy up to $35,000</p>
-          <p className="time__purchase">One time purchase  { icons.down_icon }</p> 
+          
         </div>
-        <div className="swap__crypto">
+        {/* <div className="swap__crypto">
           { icons.convert_icon }
           <h3>Eth</h3>
-        </div>
+        </div> */}
       </div>
   )
 }
