@@ -1,0 +1,187 @@
+@mixin send-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5rem;
+  font-size: $regular-font-size;
+  color: $active-color;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+  label {
+    text-align: start;
+  }
+  input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 60%;
+    font-size: $regular-font-size;
+    height: 2rems;
+    color: white;
+  }
+  .icon {
+    margin-left: 1rem;
+  }
+  figure {
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 1rem;
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+}
+
+.transaction__section {
+  text-align: center;
+  position: relative;
+  // border: 1px solid;
+  // margin-top: 10rem;
+  // margin-top: 5rem;
+  .buy__recieve{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    font-size: $large-font-size;
+    color: $active-color;
+    margin: 5rem 0;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 4rem;
+    }
+  }
+
+}
+
+.send__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+.swap__balance {
+  margin: 5rem 0;
+}
+}
+
+.recieve__section  {
+  // margin-bottom: 3rem;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: .5rem;
+  box-shadow: $box-shadow;
+  .qr--code {
+    overflow: hidden;
+    width: 100%;
+    // border-bottom: 1px solid $border-color;
+    border-radius: .5rem;
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  .recieve__asset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-
+    border-bottom: 1px solid $border-color;
+    figure {
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+
+      img {
+        width: 3rem;
+        border-radius: 50%;
+      }
+    }
+
+    h3 {
+      display: inline-grid;
+      text-align: start;
+      padding-left: 1rem;
+      color: $font-color;
+
+      span {
+        display: inline-table;
+      }
+    }
+
+    .icon {
+      color: $font-color;
+    }
+  }
+
+  .recieve__address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $border-color;
+
+    h3 {
+      text-align: initial;
+      color: $font-color;
+      
+      span {
+        color: $second-font-color;
+      }
+    }
+
+    .icon {
+      color: $font-color;
+    }
+  }
+}
+
+.form__send {
+  border: 1px solid $border-color;
+  border-radius: .5rem;
+  margin-top: 3rem;
+  background: $main-background-color;
+  margin-bottom: 3rem;
+  .to {
+    @include send-input();
+  }
+  .note {
+    @include send-input();
+  }
+  .pay__with {
+    @include send-input();
+    label {
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      padding: 0 1rem;
+    }
+    margin-bottom: 0;
+    justify-content: space-between;
+    padding: 0 1rem;
+    // width: 50%;
+    position: relative;
+    .pay__asset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      float: right;
+      font-size: $large-font-size;
+    }
+  }
+}
+
+.swap__balance {
+  position: relative;
+}

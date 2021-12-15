@@ -12,6 +12,8 @@ import { icons } from '../utils/icons/icons_object';
 import { PortafolioChart } from '../components/charts/PortafolioChart';
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard';
 import { InterestedEarned } from '../components/cards/InterestedEarned';
+import { BackgroundImage } from '../components/main/BackgroundImage';
+import image from '../utils/vector/portafolio.svg'
 export const PortafolioPage = () => {
   return (
     <section className="portafolio">
@@ -30,6 +32,7 @@ export const PortafolioPage = () => {
         <LearnAndEarnCard />
         <InterestedEarned />
         {/* <SwapCrypto /> */}
+        <BackgroundImage image={ image }/>
       </aside>
     </section>
   )

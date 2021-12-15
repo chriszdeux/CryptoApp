@@ -1,0 +1,10 @@
+.regular__pagination {
+  display: flex;
+  justify-content: space-between;
+  
+  .icon {
+    font-size: $extra-large-font-size;
+    // width: 5rem;
+    color: $active-color;
+  }
+}

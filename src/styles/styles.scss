@@ -14,9 +14,17 @@
 @import './global/swap';
 @import './global/chart';
 @import './global/video';
+@import './global/news';
+@import './global/pagination';
+@import './global/pay-section';
 @import './global/asset-info';
+@import './global/quiz';
 @import './pages/portafolio';
 @import './pages//Asset';
+@import './pages//pay';
+@import './pages//news';
+@import './pages//earn';
+@import './pages//trade';
 
 
 body {
@@ -89,7 +97,7 @@ a {
   z-index: -1;
   
   .background--image {
-    width: 150%;
+    width: 100%;
     height: inherit;
     // object-fit: cover;
     position: absolute;

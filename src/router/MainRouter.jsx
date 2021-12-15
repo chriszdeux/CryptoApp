@@ -19,12 +19,17 @@ import { GenericFooter } from '../components/footer/GenericFooter';
 import { Header } from '../components/header/Header';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { Menu } from '../components/menu/Menu';
+import { Quiz } from '../components/quiz/Quiz';
 import { Search } from '../components/search/Search';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { AssetPage } from '../pages/AssetPage';
 import { HomePage } from '../pages/HomePage';
+import { LearnAndEarnPage } from '../pages/LearnAndEarnPage';
+import { NewsPage } from '../pages/NewsPage';
+import { PayPage } from '../pages/PayPage';
 import { PortafolioPage } from '../pages/PortafolioPage';
+import { TradePage } from '../pages/TradePage';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
@@ -47,7 +52,7 @@ export const MainRouter = () => {
       <div className="router">
 
         <Header />
-        <BackgroundImage image={ image }/>
+        {/* <BackgroundImage image={ image }/> */}
         <MainNewsCard />
 
         <MenuButton values={{ showComponent, handleShowComponent }}/>
@@ -57,8 +62,13 @@ export const MainRouter = () => {
         <Routes>
           <Route exact path="/" element={ <HomePage /> }/>
           <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
+          <Route exact path="/trade" element={ <TradePage /> }/>
           <Route exact path="/asset" element={ <AssetPage /> }/>
           <Route exact path="/swap" element={ <SwapCrypto /> }/>
+          <Route exact path="/pay" element={ <PayPage /> }/>
+          <Route exact path="/news" element={ <NewsPage /> }/>
+          <Route exact path="/earn" element={ <LearnAndEarnPage /> }/>
+          <Route exact path="/quiz" element={ <Quiz /> }/>
         </Routes>
         { swappComponent }
 

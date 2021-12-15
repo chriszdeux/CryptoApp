@@ -1,0 +1,118 @@
+.news__page {
+  position: relative;
+};
+.news__info__aside {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background: $main-background-color;
+  border-left: 3px solid $border-color;
+  z-index: 2;
+  overflow: hidden;
+  overflow-y: scroll;
+  
+  .news__content {
+    h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+      font-size: $extra-large-font-size;
+      color: $font-color;
+      // float: r;
+      text-align: end;
+    }
+  
+    figure {
+      width: 100%;
+      height: 20rem;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+      border-radius: .5rem;
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+  
+    ul {
+      // display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      // gap: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        &:first-child {
+          width: 100%;
+          font-size: $large-font-size;
+        }
+        width: 50%;
+        flex-shrink: 0;
+        font-size: $regular-font-size;
+        color: $active-color;
+        margin-bottom: 1rem;
+        text-align: start;
+        font-weight: $bold-font;
+        span {
+          font-weight: $regular-font;
+          color: $font-color;
+        }
+      }
+    }
+  
+    p {
+      font-size: $regular-font-size;
+      color: $second-font-color;
+      letter-spacing: 1px;
+      text-align: justify;
+      line-height: 2rem;
+    }
+  
+  }
+  // .background__image {
+  //   width: auto;
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+
+  //   .background--image {
+  //     width: 100%;
+  //     object-fit: cover;
+  //   }
+  // }
+ 
+
+  .news__background {
+    position: fixed;
+    width: 100%;
+    height: 27rem;
+    right: -26%;
+    bottom: -10%;
+    opacity: 0.2;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+}
+.news__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  margin-top: 5rem;
+  .news__card {
+    width: 100%;
+    margin: 1rem;
+  }
+}

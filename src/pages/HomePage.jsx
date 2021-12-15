@@ -6,10 +6,12 @@ import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { MainNewsCard } from '../components/cards/MainNewsCard'
 import { CryptoTable } from '../components/crytp-table/CryptoTable'
 import { CryptoFeature } from '../components/feature/CryptoFeature'
+import { BackgroundImage } from '../components/main/BackgroundImage'
 import { MainDisplay } from '../components/main/MainDisplay'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
+import image from '../utils/vector/world.svg';
 
 export const HomePage = () => {
   // const [swappComponent, setSwappComponent] = useState(null);
@@ -44,6 +46,8 @@ export const HomePage = () => {
       </>
     } */}
     {/* <VideoTest /> */}
+    <BackgroundImage image={ image }/>
+
     </section>
     </>
   )

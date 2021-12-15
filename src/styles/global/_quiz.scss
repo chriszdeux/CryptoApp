@@ -1,0 +1,136 @@
+.quiz__layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $dark-background;
+  z-index: 2;
+  overflow-y: scroll;
+
+  .quiz--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+    .icon {
+      color: $active-color;
+      font-size: $extra-large-font-size;
+    }
+    
+  }
+  .quiz__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // align-items: center;
+    // align-items: center;
+    // justify-content: space-evenly;
+    width: 90%;
+    height: 50rem;
+    // justify-content: center;
+
+    // text-align: center;
+
+    .quiz__video {
+      
+     width: 100%;
+      height: 20rem;
+     .video--frame {
+       width: 100%;
+       height: inherit;
+     }
+    }
+
+    h2 {
+      font-size: $extra-large-font-size;
+      color: $active-color;
+    }
+    
+    p {
+      font-size: $regular-font-size;
+      color: $font-color;
+    }
+
+    .btn {
+      align-self: flex-end;
+    }
+
+    
+  }
+
+  figure {
+    position: absolute;
+    width: 100%;
+    // height: 50vh;
+    bottom: 0;
+    opacity: .1;
+    z-index: -1;
+    // overflow: hidden;
+    
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
+
+.quiz__completed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  width: 100%;
+  height: 50rem;
+  // text-align: center;
+  
+  h1 {
+    font-size: $jumbo-font-size;
+    color: $active-color;
+  }
+  h2 {
+    font-size: $extra-large-font-size;
+    color: $font-color;
+    span {
+      color: $gainer-color;
+    }
+  }
+  .quiz__asset {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    opacity: 1;
+    z-index: 0;
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      position: absolute;
+      border-radius: 50%;
+      &:nth-child(2) {
+        filter: blur(2rem);
+        z-index: -1;
+      }
+    }
+  }
+
+  .winner {
+    width: 100%;
+    opacity: 0.5;
+    overflow: hidden;
+    img {
+      
+      // transform: scale(1.5);
+    }
+  }
+}

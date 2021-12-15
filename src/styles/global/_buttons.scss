@@ -1,4 +1,7 @@
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 15rem;
   height: 4rem;
   outline: none;
@@ -9,11 +12,24 @@
 .btn--primary {
   background: $third-background-color;
   // border: 1px solid $base-color;
-  color: $active-color;
   font-size: $regular-font-size;
+  color: $active-color;
   // font-weight: $bold-font;
 }
 
+.btn--large {
+  width: 100%;
+  background: $third-background-color;
+  font-size: $regular-font-size;
+  color: $active-color;
+  // color: ;
+}
+
+.btn--outline {
+  border: 1px solid $border-color;
+  background: none;
+  color: $active-color;
+}
 .btn--swap {
   display: flex;
   justify-content: center;

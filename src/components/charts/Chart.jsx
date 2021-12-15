@@ -5,9 +5,9 @@ import { DateOptions } from './DateOptions'
 export const Chart = () => {
   return (
     <>
-      <div className="portafolio__chart mg--b--3 pd--b">
+      <div className="portafolio__chart">
         <DateOptions />
-        <div className="chart mg--b">
+        <div className="chart ">
           <ChartTest />
         </div>
       </div>

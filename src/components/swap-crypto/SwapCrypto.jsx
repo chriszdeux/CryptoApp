@@ -16,21 +16,22 @@ import { useShowComponent } from '../../hooks/ShowComponent'
 import { BackgroundImage } from '../main/BackgroundImage'
 import image from '../../utils/vector/server.svg'
 import { RecurrentTransaction } from './RecurrentTransaction'
+import { useValidateAmount } from '../../hooks/useValidateAmount'
 
 export const SwapCrypto = ({ handleShowComponent2 }) => {
-  const [validateAmount, setValidateAmount] = useState(false)
+
+  const [swapOperations, setSwapOperations] = useState({
+    buy: false,
+    sell: false,
+    convert: false
+  })
+
+  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount()
   // debugger
-  const [warningAmount, setWarningAmount] = useState(false)
+  // const [warningAmount, setWarningAmount] = useState(false)
   const { showComponent, handleShowComponent } = useShowComponent()
   useEffect(() => {
-    if(validateAmount > 0 && validateAmount < 10) {
-      return setWarningAmount(false)
-    } else if ( validateAmount > 35000 ) {
-      return setWarningAmount(false)
-
-    } else if(validateAmount >=10 && validateAmount <=35000){
-      return setWarningAmount(true)
-    }
+    handleWarningAmount()
     // debugger
   }, [  validateAmount])
   // debugger

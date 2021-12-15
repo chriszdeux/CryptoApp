@@ -7,9 +7,10 @@ import { PortafolioChart } from '../components/charts/PortafolioChart'
 import { AssetAbout } from '../components/coin-asset/AssetAbout'
 import { AssetInfo,  } from '../components/coin-asset/AssetInfo'
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions'
+import { BackgroundImage } from '../components/main/BackgroundImage'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoComponent } from '../components/videos-components/VideoComponent'
-
+import image from '../utils/vector/asset-background.svg'
 export const AssetPage = () => {
 
   return (
@@ -29,6 +30,8 @@ export const AssetPage = () => {
         <LearnAndEarnCard />
         {/* <SwapCrypto /> */}
       </aside>
+
+      <BackgroundImage image={ image }/>
     </section>
   )
 }

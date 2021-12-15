@@ -6,7 +6,7 @@ export const MenuButton = ({ values }) => {
   const { handleShowComponent, showComponent } = values
   return (
     <div className="menu--button" onClick={ handleShowComponent }>
-    { showComponent ? icons.back_icon : icons.foward_icon}      
+    { showComponent ? icons.back_icon : icons.forward_icon}      
     </div>
 
   )

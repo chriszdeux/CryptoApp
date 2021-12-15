@@ -25,6 +25,36 @@
 .wrapper {
   margin: 1rem 0;
   // padding-left: 1rem;
+
+  .learn__header {
+    display: flex;
+    justify-content: space-between;
+    figure {
+      // border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 30%;
+      font-size: $regular-font-size;
+      color: $font-color;
+      img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      h3 {
+        display: inline-grid;
+        
+        span {
+          font-size: $small-font-size;
+          color: $gainer-color;
+        }
+      }
+    }
+  }
+
   .wrapper--title {
     font-size: $extra-large-font-size;
     color: $font-color;
@@ -38,6 +68,7 @@
     // justify-content: space-around;
     // width: 100%;
     min-height: 10rem;
+    padding: 1rem 0;
     overflow-x: scroll;
     scroll-behavior: smooth;
     scrollbar-width: none;

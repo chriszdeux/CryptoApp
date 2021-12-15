@@ -193,11 +193,14 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      
+      
 
       li {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        // align-items: center;
         flex-shrink: 0;
         width: 50%;
         // height: 1rem;
@@ -227,10 +230,18 @@
           }
         }
 
+        span {
+
+          .icon {
+            color: $font-color;
+          }
+        }
+
         .icon {
           width: 3rem;
           height: 3rem;
-          color: $active-color;
+          color: $gainer-color;
+
         }
 
         &:last-child {
@@ -245,6 +256,13 @@
             font-size: $regular-font-size;
             color: $font-color;
           }
+        }
+      }
+
+      .total__supply {
+        span {
+          display: flex;  
+          align-items: center;
         }
       }
 
