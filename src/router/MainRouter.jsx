@@ -20,6 +20,7 @@ import { Header } from '../components/header/Header';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { Menu } from '../components/menu/Menu';
 import { Quiz } from '../components/quiz/Quiz';
+import { QuizVideo } from '../components/quiz/QuizVideo';
 import { Search } from '../components/search/Search';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { useShowComponent } from '../hooks/ShowComponent';
@@ -69,6 +70,7 @@ export const MainRouter = () => {
           <Route exact path="/news" element={ <NewsPage /> }/>
           <Route exact path="/earn" element={ <LearnAndEarnPage /> }/>
           <Route exact path="/quiz" element={ <Quiz /> }/>
+          {/* <Route exact path="/video" element={ <QuizVideo /> }/> */}
         </Routes>
         { swappComponent }
 

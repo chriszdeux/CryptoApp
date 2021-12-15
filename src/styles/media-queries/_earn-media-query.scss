@@ -1,0 +1,16 @@
+@media only screen and ( min-width: 667px ) and ( min-height: 375px ) {
+  .quiz__completed {
+    // height: 100vh;
+  }
+
+  .quiz__layout {
+    padding-top: 20rem;
+    .quiz__content {
+      
+      .quiz__video {
+        height: 25rem;
+      }
+    }
+  }
+
+}

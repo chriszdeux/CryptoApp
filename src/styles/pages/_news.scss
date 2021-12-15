@@ -1,5 +1,11 @@
 .news__page {
   position: relative;
+  margin-top: 5rem;
+
+  h2 {
+    font-size: $extra-large-font-size;
+    color: $active-color
+  }
 };
 .news__info__aside {
   display: flex;
@@ -110,7 +116,7 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  margin-top: 5rem;
+  // margin-top: 5rem;
   .news__card {
     width: 100%;
     margin: 1rem;

@@ -1,0 +1,11 @@
+@media only screen and ( min-height: 375px ) {
+  .chart__options {
+    width: auto;
+    .chart__list__options {
+      
+      li {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

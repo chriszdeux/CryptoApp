@@ -26,6 +26,13 @@
 @import './pages//earn';
 @import './pages//trade';
 
+@import './media-queries/home-media-query';
+@import './media-queries/swap-media-query';
+@import './media-queries/portafolio-media-query';
+@import './media-queries/trade-media-query';
+@import './media-queries/earn-media-query';
+@import './media-queries/news-media-query';
+
 
 body {
   // background: $main-background-color;

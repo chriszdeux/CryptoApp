@@ -867,6 +867,10 @@ tr {
   display: none;
 }
 
+.coin--image {
+  width: 6rem;
+}
+
 .market--cap .market--mark {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2604,12 +2608,28 @@ tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   width: 100%;
-  height: 50rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1a2122;
+}
+
+.quiz__completed .close {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.quiz__completed .close .icon {
+  color: #07F1FF;
 }
 
 .quiz__completed h1 {
@@ -2656,7 +2676,7 @@ tr {
 }
 
 .portafolio {
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 .portafolio .portafolio__chart {
@@ -2715,6 +2735,12 @@ tr {
 
 .news__page {
   position: relative;
+  margin-top: 5rem;
+}
+
+.news__page h2 {
+  font-size: 2.4rem;
+  color: #07F1FF;
 }
 
 .news__info__aside {
@@ -2835,7 +2861,6 @@ tr {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  margin-top: 5rem;
 }
 
 .news__grid .news__card {
@@ -2856,6 +2881,10 @@ tr {
   margin: 1rem;
 }
 
+.crypto__coins {
+  margin-top: 5rem;
+}
+
 .crypto__coins .crypto__table .glass {
   left: 0;
   top: 0;
@@ -2863,6 +2892,78 @@ tr {
 
 .crypto__coins .regular__pagination {
   margin-top: 3rem;
+}
+
+@media only screen and (min-width: 667px) and (min-height: 375px) {
+  .menu {
+    width: 70%;
+  }
+  .menu .profile__image {
+    width: 5rem;
+    height: 5rem;
+    margin: 0;
+  }
+  .menu .profile__image img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .volume {
+    display: inline;
+  }
+  .rank {
+    display: inline;
+  }
+}
+
+@media only screen and (min-height: 375px) {
+  .swap {
+    overflow-y: scroll;
+  }
+  .swap .swap__back {
+    position: fixed;
+  }
+  .swap .swap__options {
+    margin-top: 3rem;
+  }
+  .swap .asset__swap {
+    height: auto;
+  }
+  .swap .asset__swap .asset__search {
+    width: 80%;
+    margin: 0;
+  }
+  .swap .asset__swap .close {
+    position: fixed;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-height: 375px) {
+  .chart__options {
+    width: auto;
+  }
+  .chart__options .chart__list__options li {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 667px) and (min-height: 375px) {
+  .quiz__layout {
+    padding-top: 20rem;
+  }
+  .quiz__layout .quiz__content .quiz__video {
+    height: 25rem;
+  }
+}
+
+@media only screen and (min-width: 667px) and (min-height: 375px) {
+  .news__grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 a {
