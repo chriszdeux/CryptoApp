@@ -27,10 +27,15 @@
 }
 
 @media only screen and ( min-width: 768px ) {
-
-  .menu {
-    width: 30%;
-  }
+  // .home__page {
+  //   .home__main {
+  //     width: 80%;
+  //     float: right;
+  //   }
+  // }
+  // .menu {
+  //   width: 30%;
+  // }
   .gainers__losers {
     display: flex;
     justify-content: space-between;
@@ -45,6 +50,7 @@
     }
   }
 
+
   .for__you {
     display: flex;
     justify-content: space-between;
@@ -58,5 +64,44 @@
     width: 60%;
     right: 0;
     left: unset;
+  }
+}
+
+@media only screen and ( min-width: 1024px ) {
+  .main {
+    display: none;
+  }
+  
+  .home__page {
+    .home__main {
+      width: 80%;
+      float: right;
+    }
+  }
+  .menu {
+    // display: none;
+  }
+
+  .desk__menu {
+    display: flex;
+    width: 20%;
+  }
+}
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
+  .desk__menu {
+    display: none;
+  }
+
+  .menu {
+    // display: none;
+    width: 30%;
+  }
+  .home__page {
+    .home__main {
+
+      width: 100%;
+    }
+    // float: revert;
   }
 }

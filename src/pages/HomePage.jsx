@@ -7,8 +7,13 @@ import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { MainNewsCard } from '../components/cards/MainNewsCard'
 import { CryptoTable } from '../components/crytp-table/CryptoTable'
 import { CryptoFeature } from '../components/feature/CryptoFeature'
+import { GenericFooter } from '../components/footer/GenericFooter'
+import { Header } from '../components/header/Header'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { MainDisplay } from '../components/main/MainDisplay'
+import { DeskMenu } from '../components/menu/DeskMenu'
+import { Menu } from '../components/menu/Menu'
+import { Navbar } from '../components/navbar/Navbar'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
@@ -31,13 +36,18 @@ export const HomePage = () => {
     <>
     <section className="home__page">
       {/* <MainNewsCard />   */}
+      {/* <DeskMenu/> */}
+      <div className="home__main">
       <MainDisplay />
-      <GainerLoser />
-      <CryptoFeature />
-      <CryptoTable />
-      <div className="for__you c95">
-        <LearnAndEarnCard /> 
-        <InterestedEarned />
+        <GainerLoser />
+        <CryptoFeature />
+        <CryptoTable />
+
+        <div className="for__you c95">
+          <LearnAndEarnCard /> 
+          <InterestedEarned />
+        </div>
+        <GenericFooter />
       </div>
       {/* { swappComponent }
     {
@@ -49,7 +59,7 @@ export const HomePage = () => {
     } */}
     {/* <VideoTest /> */}
     <BackgroundImage image={ image }/>
-
+    {/* <GenericFooter /> */}
     </section>
     </>
   )

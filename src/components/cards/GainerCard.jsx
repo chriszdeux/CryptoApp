@@ -10,8 +10,6 @@ export const GainerCard = () => {
         <TopAsset />
         <TopAsset />
         <TopAsset />
-        <TopAsset />
-        <TopAsset />
       </ul>
       <div className="glass"></div>
     </div> 

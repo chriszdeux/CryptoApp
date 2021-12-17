@@ -1,6 +1,6 @@
 @media only screen and ( min-width: 768px ) {
   .asset__page {
-
+    // width: 95%;
     .right__side {
       .only__for__you {
         display: flex;
@@ -14,7 +14,11 @@
 }
 
 @media only screen and ( min-width: 1024px ) {
+
+
   .asset__page {
+    width: 79%;
+    float: right;
     .right__side {
       display: flex;
       justify-content: space-between;

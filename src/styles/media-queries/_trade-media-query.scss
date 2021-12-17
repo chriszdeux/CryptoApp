@@ -1,0 +1,17 @@
+@media only screen and ( min-width: 1024px ) {
+  .trade__section {
+    width: 79%;
+    float: right;
+
+    .crypto__coins {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
+  .trade__section {
+    width: 100%;
+  }
+  
+}

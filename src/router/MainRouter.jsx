@@ -18,6 +18,7 @@ import { MainNewsCard } from '../components/cards/MainNewsCard';
 import { GenericFooter } from '../components/footer/GenericFooter';
 import { Header } from '../components/header/Header';
 import { BackgroundImage } from '../components/main/BackgroundImage';
+import { DeskMenu } from '../components/menu/DeskMenu';
 import { Menu } from '../components/menu/Menu';
 import { Quiz } from '../components/quiz/Quiz';
 import { QuizVideo } from '../components/quiz/QuizVideo';
@@ -55,7 +56,7 @@ export const MainRouter = () => {
         <Header />
         {/* <BackgroundImage image={ image }/> */}
         <MainNewsCard />
-
+        <DeskMenu/>
         <MenuButton values={{ showComponent, handleShowComponent }}/>
         {
           showComponent && <Menu values={{ showComponent, handleShowComponent }}/>
@@ -82,7 +83,7 @@ export const MainRouter = () => {
           <SwapCrypto handleShowComponent2={ handleShowComponent2 }/>
           </>
         }
-        <GenericFooter />
+        {/* <GenericFooter /> */}
       </div>
     </Router>
 

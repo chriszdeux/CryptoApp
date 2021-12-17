@@ -5,3 +5,22 @@
     gap: 1rem;
   }
 }
+
+@media only screen and ( min-width: 1024px ) {
+  .news__page {
+    width: 79%;
+    float: right;
+  }
+  .main__news__card {
+    left: 25%;
+  }
+
+  .news__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .news__card {
+      width: 45%;
+    }
+  }
+}

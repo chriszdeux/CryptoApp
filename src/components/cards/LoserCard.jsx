@@ -11,8 +11,6 @@ export const LoserCard = () => {
         <TopAsset />
         <TopAsset />
         <TopAsset />
-        <TopAsset />
-        <TopAsset />
       </ul>
       <div className="glass"></div>
 

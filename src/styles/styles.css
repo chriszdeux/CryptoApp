@@ -1231,6 +1231,11 @@ tr {
   left: 100%;
 }
 
+.desk__menu {
+  width: 15%;
+  display: none;
+}
+
 .profile__image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3124,9 +3129,6 @@ tr {
 }
 
 @media only screen and (min-width: 768px) {
-  .menu {
-    width: 30%;
-  }
   .gainers__losers {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3156,6 +3158,34 @@ tr {
     width: 60%;
     right: 0;
     left: unset;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    display: none;
+  }
+  .home__page .home__main {
+    width: 80%;
+    float: right;
+  }
+  .desk__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .desk__menu {
+    display: none;
+  }
+  .menu {
+    width: 30%;
+  }
+  .home__page .home__main {
+    width: 100%;
   }
 }
 
@@ -3237,6 +3267,35 @@ tr {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .portafolio {
+    width: 79%;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .portafolio {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .trade__section {
+    width: 79%;
+    float: right;
+  }
+  .trade__section .crypto__coins {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .trade__section {
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width: 667px) and (min-height: 375px) {
   .quiz__layout {
     padding-top: 20rem;
@@ -3258,6 +3317,19 @@ tr {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .earn__page {
+    width: 80%;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .earn__page {
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width: 667px) and (min-height: 375px) {
   .news__grid {
     display: -ms-grid;
@@ -3265,6 +3337,29 @@ tr {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .news__page {
+    width: 79%;
+    float: right;
+  }
+  .main__news__card {
+    left: 25%;
+  }
+  .news__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .news__grid .news__card {
+    width: 45%;
   }
 }
 
@@ -3283,6 +3378,10 @@ tr {
 }
 
 @media only screen and (min-width: 1024px) {
+  .asset__page {
+    width: 79%;
+    float: right;
+  }
   .asset__page .right__side {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3355,6 +3454,19 @@ tr {
   }
   .pay__page .pay__aside .only__for__you {
     width: 49%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .pay__page {
+    width: 79%;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .pay__page {
+    width: 100%;
   }
 }
 
