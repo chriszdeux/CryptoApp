@@ -18,6 +18,7 @@ export const PortafolioPage = () => {
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
+      <div className="portafolio__main__section">
         <PortafolioChart />
         <div className="portafolio__assets mg--v--3">
           <h2 className="pd--l mg--b">Your Assets</h2>
@@ -27,7 +28,7 @@ export const PortafolioPage = () => {
           <h2 className="pd--l mg--b">Wish list</h2>
           <CryptoTable />
         </div>
-
+      </div>
       <aside className="portafolio__aside c95">
         <LearnAndEarnCard />
         <InterestedEarned />

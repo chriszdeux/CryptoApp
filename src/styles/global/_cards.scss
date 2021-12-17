@@ -14,12 +14,75 @@
   overflow: hidden;
 }
 
+
 @mixin text-mixin($size, $color) {
   font-size: $size;
   color: $color;
   // margin-bottom: 1rem;
 }
 
+@mixin gainers-losers($color) {
+    // width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+
+    h2 {
+      font-size: 3rem;
+      color: $color;
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      span {
+        color: $color;
+        .icon {
+          font-size: 5rem;
+
+        }
+      }
+    }
+
+    .feature__list {
+      position: relative;
+      .top--asset {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: $regular-font-size;
+        margin-bottom: 1rem;
+
+        figure {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          color: $color;
+          // span {
+          //   .icon {
+          //     font-size: $large-font-size;
+          //   }
+          // }
+          &:nth-child(2) {
+            display: flex;
+            align-items: center;
+            color: $active-color;
+
+          }
+        }
+      }
+    }
+}
 .card {
   @include cards-mixin(flex, 7.5rem);
   // border: 1px solid red;
@@ -288,4 +351,40 @@
       color: $base-color;
     }
   }
+}
+
+.feature {
+  // display: flex;
+  margin-top: 5rem;
+  h2 {
+    font-size: $extra-large-font-size;
+    color: $font-color;
+  }
+
+  .gainers__losers {
+
+    .feature__gainers {
+      position: relative;
+  
+      .glass {
+        top: 0;
+        left: 0
+      }
+      /* width: 100%; */
+      @include gainers-losers($gainer-color);
+      margin-top: 1rem;
+    }
+    .feature__losers {
+      position: relative;
+  
+      .glass {
+        top: 0;
+        left: 0
+      }
+      /* width: 100%; */
+      @include gainers-losers($loser-color);
+      margin-top: 1rem;
+    }
+  }
+
 }

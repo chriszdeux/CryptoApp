@@ -6,7 +6,7 @@ import { DateOptions } from './DateOptions'
 
 export const PortafolioChart = () => {
   return (
-    <div className="portafolio c95">
+    <div className=" c95">
         <Balance />
         <Chart />
     </div>

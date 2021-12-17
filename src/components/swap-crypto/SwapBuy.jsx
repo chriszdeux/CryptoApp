@@ -30,9 +30,9 @@ export const SwapBuy = ({ values }) => {
           ? <PaymentSelection handleShowComponent2={ handleShowComponent2 }/>
           :  <AssetSelection handleShowComponent={ handleShowComponent }/>
         }
-      </div>
       <div className="swap--icon" onClick={ handleSwap }>
         { icons.convert_icon }
+      </div>
       </div>
   </>
   )

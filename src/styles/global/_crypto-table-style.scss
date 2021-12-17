@@ -1,3 +1,16 @@
+@mixin market-percent {
+  .market--mark {
+    .icon {
+      font-size: $regular-font-size;
+    }
+    // color: #0DC96E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gainer-color;
+  }
+}
+
 .crypto__coins {
   position: relative;
   margin-bottom: 3rem;
@@ -38,7 +51,7 @@
 .price {
   // display: block;
   font-weight: $bold-font;
-  text-align: end;
+  // text-align: end;
   .supply {
     font-size: $small-font-size;
     font-weight: $regular-font;
@@ -79,19 +92,17 @@ tr {
 .coin--image {
   width: 6rem;
 }
-.market--cap {
+
+.market--cap--24h {
+  // display: none;
+  @include market-percent();
+  // align-items: center
+  
+}
+.market--cap--7d {
   // display: none;
   // color: $gainer-color;
-  .market--mark {
-    .icon {
-      font-size: $regular-font-size;
-    }
-    // color: #0DC96E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $gainer-color;
-  }
+  @include market-percent();
 
 }
 

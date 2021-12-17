@@ -18,7 +18,45 @@
     display: inline;
   }
   .rank {
-    display: inline;
+    display: revert;
+  }
+  .market--cap--24h {
+    display: revert;
   }
     
+}
+
+@media only screen and ( min-width: 768px ) {
+
+  .menu {
+    width: 30%;
+  }
+  .gainers__losers {
+    display: flex;
+    justify-content: space-between;
+
+
+
+    .feature__gainers {
+      width: 49%;
+    }
+    .feature__losers {
+      width: 49%;
+    }
+  }
+
+  .for__you {
+    display: flex;
+    justify-content: space-between;
+
+    .interest__card {
+      width: 49%;
+    }
+  }
+
+  .swap {
+    width: 60%;
+    right: 0;
+    left: unset;
+  }
 }

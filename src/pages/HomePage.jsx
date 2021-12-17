@@ -1,6 +1,7 @@
 import { cleanup } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import { SwapButton } from '../components/buttons/SwapButton'
+import { GainerLoser } from '../components/cards/GainerLoser'
 import { InterestedEarned } from '../components/cards/InterestedEarned'
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { MainNewsCard } from '../components/cards/MainNewsCard'
@@ -31,6 +32,7 @@ export const HomePage = () => {
     <section className="home__page">
       {/* <MainNewsCard />   */}
       <MainDisplay />
+      <GainerLoser />
       <CryptoFeature />
       <CryptoTable />
       <div className="for__you c95">
