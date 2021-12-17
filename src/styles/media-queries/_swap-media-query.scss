@@ -9,7 +9,7 @@
     }
 
     .asset__swap {
-      height: auto;
+      // height: auto;
       
       .asset__search {
         width: 80%;
@@ -40,6 +40,19 @@
 
     .swap__balance {
       width: 50%;
+    }
+
+    .asset__swap {
+      overflow: hidden;
+      .close {
+        position: absolute;
+      }
+      .backgroun__image {
+        opacity: 0.3;
+      }
+      .background{
+       display: none;
+      }
     }
   }
 }

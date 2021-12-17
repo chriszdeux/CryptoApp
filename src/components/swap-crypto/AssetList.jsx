@@ -17,7 +17,7 @@ export const AssetList = ({ handleShowComponent }) => {
       </form>
       <Divider />
       <ListAssets />
-      <BackgroundImage image={ image }/>
+      {/* <BackgroundImage image={ image }/> */}
     </div>
   )
 }

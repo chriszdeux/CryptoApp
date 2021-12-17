@@ -30,6 +30,8 @@ export const AssetInfo = () => {
           <Divider />
           <AssetGlobalInfo />
         </div>
+
+        <div className="glass"></div>
       </div>
   )
 }

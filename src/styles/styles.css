@@ -2259,9 +2259,19 @@ tr {
 }
 
 .asset__info {
+  padding: 1rem;
+  position: relative;
   width: 100%;
   color: #AFFAFF;
   text-align: center;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+}
+
+.asset__info .glass {
+  top: 0;
+  left: 0;
 }
 
 .asset__info .asset__network .asset__name {
@@ -3152,9 +3162,6 @@ tr {
   .swap .swap__options {
     margin-top: 3rem;
   }
-  .swap .asset__swap {
-    height: auto;
-  }
   .swap .asset__swap .asset__search {
     width: 80%;
     margin: 0;
@@ -3180,6 +3187,18 @@ tr {
   }
   .swap .swap__balance {
     width: 50%;
+  }
+  .swap .asset__swap {
+    overflow: hidden;
+  }
+  .swap .asset__swap .close {
+    position: absolute;
+  }
+  .swap .asset__swap .backgroun__image {
+    opacity: 0.3;
+  }
+  .swap .asset__swap .background {
+    display: none;
   }
 }
 
@@ -3230,6 +3249,54 @@ tr {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .asset__page .right__side .only__for__you {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .asset__page .right__side .interest__card {
+    width: 49%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .asset__page .right__side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .asset__page .right__side .asset__transactions {
+    width: 49%;
+  }
+  .asset__page .right__side .only__for__you {
+    display: block;
+    width: 49%;
+  }
+  .asset__page .right__side .only__for__you .interest__card {
+    width: 100%;
+  }
+  .asset__info .asset__stats .asset__stats__top {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .asset__info .asset__stats .asset__global__stats li {
+    width: 20%;
+  }
+  .asset__info .asset__stats .asset__global__stats li:last-child {
+    font-size: 2.4rem;
+  }
+  .asset__info .asset__stats .asset__global__stats li:last-child span {
+    font-size: 2.4rem;
   }
 }
 

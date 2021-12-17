@@ -17,7 +17,7 @@ export const PaymentList = ({ handleShowComponent2 }) => {
         <AssetBank />
         <AssetBank />
       </ul>
-      <BackgroundImage image={ image }/>
+      {/* <BackgroundImage image={ image }/> */}
     </div>
   )
 }

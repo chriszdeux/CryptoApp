@@ -26,8 +26,10 @@ export const AssetPage = () => {
 
       <aside className="right__side">
         <AssetTransactions />
-        <InterestedEarned />
-        <LearnAndEarnCard />
+        <div className="only__for__you">
+          <InterestedEarned />
+          <LearnAndEarnCard />
+        </div>
         {/* <SwapCrypto /> */}
       </aside>
 

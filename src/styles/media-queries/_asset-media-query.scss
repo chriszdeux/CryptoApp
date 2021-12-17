@@ -1,0 +1,61 @@
+@media only screen and ( min-width: 768px ) {
+  .asset__page {
+
+    .right__side {
+      .only__for__you {
+        display: flex;
+        justify-content: space-between;
+      }
+      .interest__card {
+        width: 49%;
+      }
+    }
+  }
+}
+
+@media only screen and ( min-width: 1024px ) {
+  .asset__page {
+    .right__side {
+      display: flex;
+      justify-content: space-between;
+  
+      .asset__transactions {
+        width: 49%;
+      }
+  
+      .only__for__you {
+        display: block;
+        width: 49%;
+  
+        .interest__card {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .asset__info {
+    .asset__stats {
+      // border: 1px solid red;
+      .asset__stats__top {
+        flex-wrap: nowrap;
+      }
+      .asset__global__stats {
+        li {
+          width: 20%;
+
+          &:last-child {
+            font-size: $extra-large-font-size;
+            span {
+              font-size: $extra-large-font-size;
+
+            }
+          }
+        }
+        
+      }
+    }
+  }
+
+  
+}
