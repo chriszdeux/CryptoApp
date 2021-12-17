@@ -2926,6 +2926,10 @@ tr {
   overflow-y: hidden;
 }
 
+.pay__page .pay__aside {
+  margin-bottom: 3rem;
+}
+
 .pay__page .send__section .swap__amount {
   height: 10rem;
 }
@@ -3242,6 +3246,18 @@ tr {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .quiz__layout {
+    padding-top: 20rem;
+  }
+  .quiz__layout .quiz__content {
+    height: auto;
+  }
+  .quiz__layout .quiz__content .quiz__video {
+    height: 45rem;
+  }
+}
+
 @media only screen and (min-width: 667px) and (min-height: 375px) {
   .news__grid {
     display: -ms-grid;
@@ -3297,6 +3313,48 @@ tr {
   }
   .asset__info .asset__stats .asset__global__stats li:last-child span {
     font-size: 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .pay__page .recieve__section .qr--code {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .pay__page .send__section {
+    width: 50%;
+  }
+  .pay__page .send__section .form__send {
+    width: 100%;
+  }
+  .pay__page .asset__swap {
+    width: 50%;
+    left: revert;
+    right: 0;
+    z-index: 2;
+  }
+  .pay__page .pay__aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .pay__page .pay__aside .asset__transactions {
+    width: 49%;
+  }
+  .pay__page .pay__aside .asset__transactions li {
+    margin: 0;
+  }
+  .pay__page .pay__aside .only__for__you {
+    width: 49%;
   }
 }
 

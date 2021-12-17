@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { InterestedEarned } from '../components/cards/InterestedEarned'
+import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { Pay } from '../components/pay/Pay'
@@ -45,7 +47,12 @@ export const PayPage = () => {
         }
         <RandomCoinsToYou />
       </div>
-      <aside className="c95">
+      
+      <aside className="pay__aside c95">
+        <div className="only__for__you">
+          <InterestedEarned />
+          <LearnAndEarnCard />
+        </div>
         <AssetTransactions />
       </aside>
       {

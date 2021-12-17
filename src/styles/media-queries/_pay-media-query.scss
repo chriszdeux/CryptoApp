@@ -1,0 +1,46 @@
+@media only screen and ( min-width: 768px ) {
+  .pay__page {
+
+    .recieve__section {
+
+      .qr--code {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        margin: 0 auto;
+
+      }
+    }
+    
+    .send__section {
+      width: 50%;
+
+      .form__send {
+        width: 100%;
+      }
+    }
+    .asset__swap {
+      width: 50%;
+      left: revert;
+      right: 0;
+      z-index: 2;
+    }
+
+    .pay__aside {
+      display: flex;
+      justify-content: space-between;
+      // width: 100%;
+      .asset__transactions {
+        width: 49%;
+
+        li {
+          margin: 0;
+        }
+      }
+
+      .only__for__you {
+        width: 49%;
+      }
+    }
+  }
+}

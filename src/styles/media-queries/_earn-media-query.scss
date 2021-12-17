@@ -14,3 +14,20 @@
   }
 
 }
+
+@media only screen and ( min-width: 768px ) {
+  .quiz__completed {
+    // height: 100vh;
+  }
+
+  .quiz__layout {
+    padding-top: 20rem;
+    .quiz__content {
+      height: auto;
+      .quiz__video {
+        height: 45rem;
+      }
+    }
+  }
+
+}
