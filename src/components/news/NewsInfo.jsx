@@ -1,16 +1,19 @@
 import React from 'react'
+import { useShowComponent } from '../../hooks/ShowComponent';
 import kraken from '../../temp/kraken.png';
 import { icons } from '../../utils/icons/icons_object';
 import image from '../../utils/vector/news.svg';
 import { BackgroundImage } from '../main/BackgroundImage'
 import { NewsStats } from './NewsStats';
-export const NewsInfo = () => {
+export const NewsInfo = ({ handleShowComponent }) => {
   
   return (
     <div className="news__info__aside">
       <div className="news__content c95">
-        
-        <h2 className="mg--v--3 pd--b">{ icons.forward_icon }  New crypto event soon</h2>
+        <div className="close" onClick={ handleShowComponent }>
+          { icons.forward_icon } 
+        </div>
+        <h2 className="mg--v--3 pd--b"> New crypto event soon</h2>
         <figure className="mg--b--3">
           <img src={ kraken } alt="" />
         </figure>

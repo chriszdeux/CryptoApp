@@ -2,7 +2,8 @@ import React from 'react'
 import { AssetLearnCard } from './AssetLearnCard'
 import { LearnAndEarnCard } from './LearnAndEarnCard'
 import kraken from '../../temp/kraken.png';
-export const LearnCardWrapper = () => {
+export const LearnCardWrapper = ({ handleShowComponent }) => {
+
   return (
     <div className="wrapper learn__section">
       <div className="learn__header ">
@@ -14,10 +15,10 @@ export const LearnCardWrapper = () => {
       </div>
       <h2 className="learn--short--description mg">Description of the coin</h2>
       <div className="wrapper__cards ">
-        <AssetLearnCard />
-        <AssetLearnCard />
-        <AssetLearnCard />
-        <AssetLearnCard />
+        <AssetLearnCard handleShowComponent={ handleShowComponent }/>
+        <AssetLearnCard handleShowComponent={ handleShowComponent }/>
+        <AssetLearnCard handleShowComponent={ handleShowComponent }/>
+        <AssetLearnCard handleShowComponent={ handleShowComponent }/>
       </div>
     </div>
   )

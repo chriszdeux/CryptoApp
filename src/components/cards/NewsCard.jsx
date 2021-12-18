@@ -1,8 +1,8 @@
 import React from 'react'
 import kraken from '../../temp/kraken.png';
-export const NewsCard = () => {
+export const NewsCard = ({ handleShowComponent }) => {
   return (
-    <article className="news__card mg--h">
+    <article className="news__card mg--h" onClick={ handleShowComponent }>
       <figure className="card__cover">
         <img className="card--cover" src={ kraken } alt="" />
       </figure>

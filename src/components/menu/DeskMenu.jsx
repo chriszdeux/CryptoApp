@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import shib from '../../temp/shib.png';
 import { MainButton } from '../buttons/MainButton';
 import { MenuButton } from '../buttons/MenuButton';
@@ -16,12 +17,14 @@ export const DeskMenu = () => {
       </div>
       <nav className="navbar c95 ">
         <ul className="navbar__list mg--t--3">
-          <li className="navbar--item mg--b">Portafolio</li>
-          <li className="navbar--item mg--b">Trade</li>
-          <li className="navbar--item mg--b">Pay</li>
-          <li className="navbar--item mg--b">For you</li>
-          <li className="navbar--item mg--b">Learn and earn</li>
-          <li className="navbar--item mg--b">Notifications</li>
+        <li className="navbar--item mg--b"> <Link to="/">Main</Link> </li>
+          <li className="navbar--item mg--b"> <Link to="/portafolio">Portafolio</Link> </li>
+          <li className="navbar--item mg--b"><Link to="/trade">Trade</Link></li>
+          <li className="navbar--item mg--b"><Link to="/pay">Pay</Link></li>
+          {/* <li className="navbar--item mg--b">For you</li> */}
+          <li className="navbar--item mg--b"><Link to="/earn">Learn and earn</Link></li>
+          <li className="navbar--item mg--b"><Link to="/news">Crypto News</Link></li>
+          {/* <li className="navbar--item mg--b"><Link>Notifications</Link></li> */}
         </ul>
       </nav>
 {/* 

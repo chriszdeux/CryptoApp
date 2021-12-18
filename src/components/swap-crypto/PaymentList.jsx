@@ -17,6 +17,7 @@ export const PaymentList = ({ handleShowComponent2 }) => {
         <AssetBank />
         <AssetBank />
       </ul>
+      <button className="btn btn--primary">Add new payment method</button>
       {/* <BackgroundImage image={ image }/> */}
     </div>
   )

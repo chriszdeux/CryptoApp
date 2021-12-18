@@ -43,10 +43,17 @@
 
 
     .feature__gainers {
-      width: 49%;
+      width: 32%;
+      
     }
     .feature__losers {
-      width: 49%;
+      width: 32%;
+      
+    }
+    
+    .feature__assets__random {
+      width: 32%;
+      
     }
   }
 
@@ -103,5 +110,58 @@
       width: 100%;
     }
     // float: revert;
+  }
+}
+
+@media only screen and ( min-width: 1680px ) {
+  .navbar {
+    
+    .navbar__list {
+      .navbar--item {
+        font-size: $extra-large-font-size;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .feature {
+    .gainers__losers {
+     .feature__losers {
+      .feature__list {
+        .top--asset {
+          h3 {
+            font-size: $extra-large-font-size;
+          }
+    
+          figure {
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+      }
+     }
+     .feature__gainers {
+      .feature__list {
+        .top--asset {
+          h3 {
+            font-size: $extra-large-font-size;
+          }
+    
+          figure {
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+      }
+     }
+    }
+  }
+  .table__header {
+    font-size: $large-font-size;
+  }
+  
+  .table__row {
+    font-size: $large-font-size;
+
   }
 }

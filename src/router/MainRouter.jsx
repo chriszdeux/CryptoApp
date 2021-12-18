@@ -10,7 +10,8 @@ import { BrowserRouter as Router,
 Routes,
 Route,
 Link,
-} from 'react-router-dom'
+} from 'react-router-dom';
+
 import { useEffect } from 'react/cjs/react.development';
 import { MenuButton } from '../components/buttons/MenuButton';
 import { SwapButton } from '../components/buttons/SwapButton';
@@ -20,9 +21,11 @@ import { Header } from '../components/header/Header';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { DeskMenu } from '../components/menu/DeskMenu';
 import { Menu } from '../components/menu/Menu';
+import { NewsInfo } from '../components/news/NewsInfo';
 import { Quiz } from '../components/quiz/Quiz';
 import { QuizVideo } from '../components/quiz/QuizVideo';
 import { Search } from '../components/search/Search';
+import { RegisterCard } from '../components/swap-crypto/RegisterCard';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { AssetPage } from '../pages/AssetPage';
@@ -71,6 +74,8 @@ export const MainRouter = () => {
           <Route exact path="/news" element={ <NewsPage /> }/>
           <Route exact path="/earn" element={ <LearnAndEarnPage /> }/>
           <Route exact path="/quiz" element={ <Quiz /> }/>
+          <Route exact path="/billing" element={ <RegisterCard /> }/>
+          <Route exact path="/test" element={ <NewsInfo /> }/>
           {/* <Route exact path="/video" element={ <QuizVideo /> }/> */}
         </Routes>
         { swappComponent }

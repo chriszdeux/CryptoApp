@@ -1,6 +1,7 @@
 import React from 'react'
 import { GainerCard } from './GainerCard'
 import { LoserCard } from './LoserCard'
+import { RandomAssetsCard } from './RandomAssetsCard'
 
 export const GainerLoser = () => {
   return (
@@ -9,6 +10,7 @@ export const GainerLoser = () => {
       <div className="gainers__losers">
         <GainerCard />
         <LoserCard />
+        <RandomAssetsCard />
       </div>
     </div>
   )

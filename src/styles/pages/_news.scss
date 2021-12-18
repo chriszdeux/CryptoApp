@@ -17,12 +17,26 @@
   top: 0;
   right: 0;
   background: $main-background-color;
-  border-left: 3px solid $border-color;
+  // border-left: 3px solid $border-color;
   z-index: 2;
   overflow: hidden;
   overflow-y: scroll;
   
   .news__content {
+    .close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      top: 2%;
+      right: 5%;
+
+      .icon {
+        color: $active-color;
+      }
+    }
     h2 {
       display: flex;
       justify-content: space-between;

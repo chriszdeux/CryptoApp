@@ -62,8 +62,11 @@
   .navbar__list {
 
     .navbar--item {
-      font-size: $large-font-size;
-      color: $font-color;
+      a {
+        
+        font-size: $large-font-size;
+        color: $font-color;
+      }
     }
   }
 }

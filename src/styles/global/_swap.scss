@@ -13,6 +13,10 @@
   background: $second-background-color;
   z-index: 2;
 
+
+  .btn {
+    margin-bottom: 3rem;
+  }
   // .icon {
   //   position: absolute;
   //   top: ;
@@ -276,8 +280,13 @@
       height: inherit;
       color: $base-color;
     }
-  }
 
+  }
+  
+  .btn {
+    width: 50%;
+    margin-top: 3rem;
+  }
   .background__image {
     // transform: rotate(-45deg);
   }
@@ -409,6 +418,10 @@
 }
 
 .preview__transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
  width: 100%;
  height: 100vh;
  position: absolute;
@@ -447,8 +460,9 @@
  }
 
  .preview__info {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+   
+  //  align-items: center;
+  //  justify-content: space-evenly;
   li {
     display: flex;
     justify-content: space-between;

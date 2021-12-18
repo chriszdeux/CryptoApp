@@ -1,8 +1,9 @@
 import React from 'react'
+import { useShowComponent } from '../../hooks/ShowComponent';
 import image from '../../temp/kraken.png';
-export const AssetLearnCard = () => {
+export const AssetLearnCard = ({ handleShowComponent }) => {
   return (
-    <article className="learn__card mg--r--3">
+    <article className="learn__card mg--r--3" onClick={ handleShowComponent }>
       <figure className="mg--b">
         <img src={ image } alt="" />
       </figure>
