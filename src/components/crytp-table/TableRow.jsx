@@ -29,6 +29,7 @@ export const TableRow = () => {
       <td className="market--cap--7d"><span className="market--mark">{ icons.up_icon } 6.5%</span></td>
 
       <td className="volume">$3,845,965,256.2641</td>
+      <td className="supply">$1,521,625.236 </td>
 
       <hr />
     </tr>

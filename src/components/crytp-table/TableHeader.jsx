@@ -10,7 +10,7 @@ export const TableHeader = () => {
       <th className="market--cap--24h">24h%</th>
       <th className="market--cap--7d">7d%</th>
       <th className="volume">Volume(24h)</th>
-      {/* <th className="supply">Supply</th> */}
+      <th className="supply">Supply</th>
       <hr />
     </tr>
   )

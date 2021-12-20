@@ -58,3 +58,46 @@
   }
   
 }
+
+@media only screen and ( min-width: 1920px ) {
+  .pay__page {
+    width: 90%;
+    
+    .pay__main__section {
+      display: flex;
+      // grid-template-columns: repeat(2, 1fr);
+
+    }
+    .pay__main {
+      width: 100%;
+      // display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      // gap: 1rem;
+      overflow: hidden;
+      
+    }
+    .asset__swap {
+      width: 25%;
+    }
+
+    .pay__aside {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      margin-right: 1rem;
+      .asset__transactions {
+        box-shadow: none;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        .asset__transaction__list {
+          box-shadow: $box-shadow;
+        }
+      }
+
+      .only__for__you {
+        width: 100%;
+      }
+    }
+  }
+}

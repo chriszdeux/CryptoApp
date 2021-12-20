@@ -15,3 +15,52 @@
   }
   
 }
+
+@media only screen and ( min-width: 1920px ) {
+  // .gainers__losers {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   gap: 1rem;
+  // }
+  .trade__section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    // align-items: center;
+    gap: 1rem;
+    // align-items: center;
+    width: 90%;
+
+    .trade__aside {
+      margin-top: 8rem;
+      .swap {
+        width: 100%;
+        height: 80rem;
+        position: relative;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+
+        .swap__back {
+          display: none;
+        }
+      }
+      
+      .news__info__aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding-bottom: 3rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+
+        .news__content {
+          .close {
+            display: none;
+          }
+        }
+        .news__background {
+          display: none;
+        }
+      }
+    }
+  }
+}

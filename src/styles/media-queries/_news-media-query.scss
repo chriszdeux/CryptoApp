@@ -16,11 +16,26 @@
   }
 
   .news__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     .news__card {
-      width: 45%;
+      width: 95%;
+    }
+  }
+}
+
+@media only screen and ( min-width: 1920px ) {
+  .news__page {
+    width: 90%;
+
+    .news__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      .news__card {
+        width: 95%;
+      }
     }
   }
 }

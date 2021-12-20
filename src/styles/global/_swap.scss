@@ -102,6 +102,14 @@
         outline: none;
         border: none;
         color: $font-color;
+        overflow-y: hidden;
+
+        &::-webkit-outer-spin-button {
+          display: none;
+        }
+        &::-webkit-inner-spin-button {
+          display: none;
+        }
       }
 
       .amount--error {

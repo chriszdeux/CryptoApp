@@ -29,10 +29,11 @@
 
 .table__header {
   position: relative;
-  font-size: $regular-font-size;
+  font-size: $large-font-size;
   color: $active-color;
   height: 3rem;
   border-bottom: 1px solid $active-color;
+  // padding-bottom: 1rem;
 
   hr {
     width: 100%;
@@ -120,6 +121,9 @@ tr {
   border-radius: 5px;
 }
 
+.supply {
+  display: none;
+}
 .coin {
   display: flex;
   justify-content: space-evenly;

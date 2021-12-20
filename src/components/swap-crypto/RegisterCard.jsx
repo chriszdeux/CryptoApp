@@ -2,10 +2,10 @@ import React from 'react'
 import { icons } from '../../utils/icons/icons_object'
 import { BackgroundImage } from '../main/BackgroundImage'
 
-export const RegisterCard = () => {
+export const RegisterCard = ({ handleShowComponent }) => {
   return (
     <div className="register__card c100">
-      <div className="close">
+      <div className="close" onClick={ handleShowComponent }>
         { icons.back_icon }
       </div>
       <div className="card__preview c95">

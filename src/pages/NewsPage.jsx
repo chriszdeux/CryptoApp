@@ -12,6 +12,9 @@ export const NewsPage = () => {
   return (
     <>
     <section className="news__page c95">
+      <div>
+        
+      </div>
       <h2>Crypto news!</h2>
       <NewsList handleShowComponent={ handleShowComponent }/>
       {

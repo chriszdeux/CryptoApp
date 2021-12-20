@@ -45,3 +45,21 @@
   }
   
 }
+
+@media only screen and ( min-width: 1920px ){
+  .earn__page {
+    width: 90%;
+    float: right;
+  }
+
+  .quiz__layout {
+    .quiz__content {
+      width: 80%;
+      // wid
+      .quiz__video {
+        height: 60rem;
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { InterestedEarned } from '../components/cards/InterestedEarned'
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions'
+import { CryptoFeature } from '../components/feature/CryptoFeature'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { Pay } from '../components/pay/Pay'
 import { RandomCoinsToYou } from '../components/pay/RandomCoinsToYou'
@@ -37,28 +38,33 @@ export const PayPage = () => {
   }
   return (
     <section className="pay__page">
-      <div>
-        <TransactionSection values={{ handleSend, handleRecieve }}/>
-        {
-          send && <Pay handleShowComponent={ handleShowComponent }/>
-        }
-        {
-          recieve && <Recieve />
-        }
-        <RandomCoinsToYou />
-      </div>
-      
-      <aside className="pay__aside c95">
-        <div className="only__for__you">
-          <InterestedEarned />
-          <LearnAndEarnCard />
+      <div className="pay__main__section">
+        <div className="pay__main">
+          <TransactionSection values={{ handleSend, handleRecieve }}/>
+          {
+            send && <Pay handleShowComponent={ handleShowComponent }/>
+          }
+          {
+            recieve && <Recieve />
+          }
+          
         </div>
-        <AssetTransactions />
-      </aside>
+        
+        <aside className="pay__aside c95">
+          <AssetTransactions />
+          <div className="only__for__you">
+            <InterestedEarned />
+            <LearnAndEarnCard />
+          </div>
+        </aside>
+      </div>
+      <CryptoFeature />
       {
         showComponent &&
           <AssetList handleShowComponent={ handleShowComponent }/>
       }
+
+    {/* <CryptoFeature /> */}
     <BackgroundImage image={ image }/>
     </section>
   )

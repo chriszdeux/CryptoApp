@@ -1,5 +1,5 @@
 @mixin portafolio-titles {
-  padding-left: 1rem;
+  padding-left: 3rem;
   font-size: $extra-large-font-size;
   color: $font-color;
 }
@@ -36,7 +36,16 @@
     }
   }
 
-  .portaolio__aside {
+  .portafolio__aside {
     // display: ;
+    .portafolio__aside__content {
+      .swap {
+        display: none;
+      }
+
+      .news__info__aside {
+        display: none;
+      }
+    }
   }
 }

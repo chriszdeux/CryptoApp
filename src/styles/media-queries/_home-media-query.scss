@@ -15,7 +15,7 @@
   }
 
   .volume {
-    display: inline;
+    display: revert;
   }
   .rank {
     display: revert;
@@ -110,6 +110,16 @@
       width: 100%;
     }
     // float: revert;
+    
+  }
+
+}
+
+@media only screen and ( min-width: 1024px ) {
+  .feature {
+    .gainers__losers {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -157,11 +167,45 @@
     }
   }
   .table__header {
-    font-size: $large-font-size;
+    font-size: $extra-large-font-size;
   }
   
   .table__row {
     font-size: $large-font-size;
+    color: $font-color;
 
+  }
+}
+
+@media only screen and ( min-width: 1920px ) {
+
+  .home__page {
+
+    .home__main {
+      width: 90%;
+    }
+  }
+  .desk__menu {
+   width: 10%; 
+  }
+
+  .supply {
+    display: revert;
+  }
+  .feature {
+    .gainers__losers {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .for__you {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    // justify-content: start;
+    .interest__card {
+      // width: 32%;
+      width: 100%;
+      margin-right: 1rem;
+    }
   }
 }

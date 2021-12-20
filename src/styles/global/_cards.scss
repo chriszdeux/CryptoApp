@@ -50,12 +50,12 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: $regular-font-size;
+        font-size: $large-font-size;
         margin-bottom: 1rem;
 
         figure {
-          width: 3rem;
-          height: 3rem;
+          width: 5rem;
+          height: 5rem;
           border-radius: 50%;
           overflow: hidden;
 
@@ -362,10 +362,12 @@
   }
 
   .gainers__losers {
-
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     .feature__gainers {
       position: relative;
-      
+      width: 100%;
       .glass {
         top: 0;
         left: 0
@@ -377,7 +379,8 @@
     }
     .feature__losers {
       position: relative;
-  
+      width: 100%;
+
       .glass {
         top: 0;
         left: 0
@@ -388,6 +391,7 @@
     }
     .feature__assets__random {
       position: relative;
+      width: 100%;
 
       .glass {
         top: 0;

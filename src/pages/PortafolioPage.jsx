@@ -14,6 +14,7 @@ import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard';
 import { InterestedEarned } from '../components/cards/InterestedEarned';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import image from '../utils/vector/portafolio.svg'
+import { NewsInfo } from '../components/news/NewsInfo';
 export const PortafolioPage = () => {
   return (
     <section className="portafolio">
@@ -25,14 +26,19 @@ export const PortafolioPage = () => {
           <CryptoTable />
         </div>
         <div className="portafolio__wishlist">
-          <h2 className="pd--l mg--b">Wish list</h2>
+          <h2 className="pd--l ">Wish list</h2>
           <CryptoTable />
         </div>
       </div>
       <aside className="portafolio__aside c95">
-        <LearnAndEarnCard />
-        <InterestedEarned />
-        {/* <SwapCrypto /> */}
+        <div className="portafolio__aside__content">
+          <SwapCrypto />
+          <NewsInfo />
+          <LearnAndEarnCard />
+          <InterestedEarned />
+          {/* <InterestedEarned /> */}
+          {/* <SwapCrypto /> */}
+        </div>
         <BackgroundImage image={ image }/>
       </aside>
     </section>
