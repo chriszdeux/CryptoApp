@@ -25,14 +25,14 @@ export const Pay = ({ handleShowComponent }) => {
           { icons.wallet_icon }
           
           </label>
-          <input type="text"  id="to" name="to" value={ to } onChange={ handleInputChange } placeholder="Mobile, email or address"/>
+          <input type="text"  id="to" name="to" value={ to } onChange={ handleInputChange } placeholder="Mobile, email or address" autoComplete="off"/>
         </div>
         <div className="note">
           <label htmlFor="note">Note 
           
           { icons.pencil_icon }
           </label>
-          <input type="text"  id="note" name="note" value={ note } onChange={ handleInputChange } placeholder="Optional message"/>
+          <input type="text"  id="note" name="note" value={ note } onChange={ handleInputChange } placeholder="Optional message" autoComplete="off"/>
         </div>
         <div className="pay__with">
           <label htmlFor="payment">Pay with

@@ -25,8 +25,7 @@ export const TransactionSection = ({values}) => {
       <ul className="buy__recieve 100">
         <li onClick={ handleSend }>Send</li>
         <li onClick={ handleRecieve }>Recieve</li>
-      </ul>
-      
+      </ul>      
     </div>
     
   )

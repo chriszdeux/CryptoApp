@@ -1,4 +1,5 @@
 import React from 'react'
+import { SuggestedCard } from '../buttons/SuggestedCard'
 import { GainerCard } from './GainerCard'
 import { LoserCard } from './LoserCard'
 import { RandomAssetsCard } from './RandomAssetsCard'
@@ -11,6 +12,7 @@ export const GainerLoser = () => {
         <GainerCard />
         <LoserCard />
         <RandomAssetsCard />
+        <SuggestedCard />
       </div>
     </div>
   )

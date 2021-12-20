@@ -85,7 +85,9 @@
   .swap {
     width: 25%;
     overflow: hidden;
-
+    background: none;
+    border: 1px solid $border-color;
+    // border
     .asset__swap {
       height: 100%;
       .register__card {
@@ -94,5 +96,9 @@
         height: inherit;
       }
     }
+  }
+
+  .preview__transaction {
+    height: 100%;
   }
 }

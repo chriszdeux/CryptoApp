@@ -39,7 +39,7 @@ export const PayPage = () => {
   return (
     <section className="pay__page">
       <div className="pay__main__section">
-        <div className="pay__main">
+        <div className="pay__main c100">
           <TransactionSection values={{ handleSend, handleRecieve }}/>
           {
             send && <Pay handleShowComponent={ handleShowComponent }/>

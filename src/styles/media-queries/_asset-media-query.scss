@@ -1,6 +1,7 @@
 @media only screen and ( min-width: 768px ) {
   .asset__page {
     // width: 95%;
+    padding: 1rem;
     .right__side {
       .only__for__you {
         display: flex;
@@ -13,12 +14,15 @@
   }
 }
 
+
+
 @media only screen and ( min-width: 1024px ) {
 
 
   .asset__page {
     width: 79%;
     float: right;
+    // pad: 1rem;
     .right__side {
       display: flex;
       justify-content: space-between;
@@ -62,4 +66,34 @@
   }
 
   
+}
+
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
+  .asset__page {
+    width: 95%;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+@media only screen and (min-width: 1920px ) {
+  .asset__page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    width: 90%;
+    float: right;
+
+    .right__side {
+      display: block;
+      .asset__transactions {
+        width: 100%;
+      }
+
+      .only__for__you {
+        width: 100%;
+      }
+    }
+  }
 }

@@ -960,6 +960,221 @@ html {
   color: #07F1FF;
 }
 
+.feature .gainers__losers .suggested {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #00B4BF;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.feature .gainers__losers .suggested .suggested__asset {
+  z-index: 1;
+}
+
+.feature .gainers__losers .suggested .suggested__asset h2 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+
+.feature .gainers__losers .suggested .suggested__asset h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  color: #0DC96E;
+}
+
+.feature .gainers__losers .suggested .suggested__asset figure {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feature .gainers__losers .suggested .suggested__asset figure img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.feature .gainers__losers .suggested .suggested__asset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature .gainers__losers .suggested .suggested__asset div button {
+  margin-bottom: 1rem;
+  width: 10rem;
+  margin-right: 1rem;
+}
+
+.feature .gainers__losers .suggested .change__suggestion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.feature .gainers__losers .suggested .change__suggestion .asset__prev__next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.feature .gainers__losers .suggested .change__suggestion .asset__prev__next .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  height: 5rem;
+}
+
+.feature .gainers__losers .suggested .change__suggestion .asset__prev__next .back .icon {
+  font-size: 2.4rem;
+  color: #07F1FF;
+}
+
+.feature .gainers__losers .suggested .change__suggestion .asset__prev__next .forward {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  height: 5rem;
+}
+
+.feature .gainers__losers .suggested .change__suggestion .asset__prev__next .forward .icon {
+  font-size: 2.4rem;
+  color: #07F1FF;
+}
+
+.feature .gainers__losers .suggested .change__suggestion figure {
+  width: 15rem;
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  opacity: .8;
+}
+
+.feature .gainers__losers .suggested .change__suggestion figure img {
+  width: inherit;
+}
+
+.feature .gainers__losers .suggested .glass {
+  top: 0;
+  left: 0;
+}
+
+.feature .gainers__losers .suggested h2 {
+  font-size: 3rem;
+  color: #F0F0F0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.feature .gainers__losers .suggested h2 span {
+  color: #F0F0F0;
+}
+
+.feature .gainers__losers .suggested h2 span .icon {
+  font-size: 5rem;
+}
+
+.feature .gainers__losers .suggested .feature__list {
+  position: relative;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset figure {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset figure img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset h3 {
+  color: #F0F0F0;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset h3:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #07F1FF;
+}
+
 .register__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1149,6 +1364,13 @@ html {
 .btn--swap .icon {
   width: 3rem;
   height: 3rem;
+}
+
+.btn--dismiss {
+  padding: 0 1rem;
+  border: 1px solid #00B4BF;
+  color: #07F1FF;
+  background: none;
 }
 
 .menu--button {
@@ -3180,6 +3402,18 @@ tr {
   position: relative;
 }
 
+.pay__page .pay__main__section {
+  margin-top: 5rem;
+}
+
+.pay__page .pay__main__section .pay__main {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border: 1px solid #00B4BF;
+  border-radius: 1rem;
+}
+
 .pay__page .asset__swap {
   position: fixed;
   top: 0;
@@ -3196,6 +3430,10 @@ tr {
 
 .pay__page .send__section .swap__amount p {
   display: none;
+}
+
+.pay__page .send__section .form__send {
+  width: 100%;
 }
 
 .news__page {
@@ -3612,6 +3850,8 @@ tr {
   .swap {
     width: 25%;
     overflow: hidden;
+    background: none;
+    border: 1px solid #00B4BF;
   }
   .swap .asset__swap {
     height: 100%;
@@ -3622,6 +3862,9 @@ tr {
             justify-content: center;
     height: inherit;
   }
+  .preview__transaction {
+    height: 100%;
+  }
 }
 
 @media only screen and (min-height: 375px) {
@@ -3630,16 +3873,6 @@ tr {
   }
   .chart__options .chart__list__options li {
     margin-right: 1rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .portafolio__aside {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
 }
 
@@ -3663,19 +3896,17 @@ tr {
   .portafolio {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
     gap: 1rem;
     width: 90%;
   }
-  .portafolio .portafolio__aside {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
   .portafolio .portafolio__aside .interest__card {
     margin-right: 1rem;
+  }
+  .portafolio .portafolio__aside .portafolio__aside__content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .portafolio .portafolio__aside .portafolio__aside__content .swap {
     display: -webkit-box;
@@ -3688,6 +3919,7 @@ tr {
     margin-bottom: 2rem;
     background: none;
     overflow: hidden;
+    border: 1px solid #00B4BF;
   }
   .portafolio .portafolio__aside .portafolio__aside__content .swap .swap__back {
     display: none;
@@ -3697,6 +3929,7 @@ tr {
     display: -ms-flexbox;
     display: flex;
     position: relative;
+    width: 100%;
     height: auto;
     border-radius: 1rem;
     margin-bottom: 2rem;
@@ -3822,6 +4055,15 @@ tr {
         grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+  .news__page .news__aside {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .news__info__aside {
+    width: 70%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -3842,6 +4084,9 @@ tr {
   .news__grid .news__card {
     width: 95%;
   }
+  .news__info__aside {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 1920px) {
@@ -3856,6 +4101,11 @@ tr {
   .news__page .news__main .news__grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+  }
+  .news__page .news__aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .news__page .news__aside .news__info__aside {
     padding: 3rem 0;
@@ -3885,6 +4135,9 @@ tr {
 }
 
 @media only screen and (min-width: 768px) {
+  .asset__page {
+    padding: 1rem;
+  }
   .asset__page .right__side .only__for__you {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3933,6 +4186,35 @@ tr {
   }
   .asset__info .asset__stats .asset__global__stats li:last-child span {
     font-size: 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .asset__page {
+    width: 95%;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .asset__page {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    width: 90%;
+    float: right;
+  }
+  .asset__page .right__side {
+    display: block;
+  }
+  .asset__page .right__side .asset__transactions {
+    width: 100%;
+  }
+  .asset__page .right__side .only__for__you {
+    width: 100%;
   }
 }
 
@@ -4000,12 +4282,17 @@ tr {
     display: -ms-flexbox;
     display: flex;
   }
-  .pay__page .pay__main {
-    width: 100%;
+  .pay__page .pay__main__section .pay__main {
+    width: 50%;
     overflow: hidden;
+  }
+  .pay__page .pay__main__section .pay__main .send__section {
+    width: 95%;
+    margin: 0 auto;
   }
   .pay__page .asset__swap {
     width: 25%;
+    z-index: 3;
   }
   .pay__page .pay__aside {
     display: -webkit-box;
@@ -4019,14 +4306,8 @@ tr {
     margin-right: 1rem;
   }
   .pay__page .pay__aside .asset__transactions {
-    -webkit-box-shadow: none;
-            box-shadow: none;
     width: 100%;
     margin-bottom: 1rem;
-  }
-  .pay__page .pay__aside .asset__transactions .asset__transaction__list {
-    -webkit-box-shadow: 0px 0px 5px #022d33;
-            box-shadow: 0px 0px 5px #022d33;
   }
   .pay__page .pay__aside .only__for__you {
     width: 100%;

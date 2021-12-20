@@ -401,6 +401,126 @@
       @include gainers-losers($font-color);
       margin-top: 1rem;
     }
+
+    .suggested {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      // align-items: flex-start;
+      // justify-content: flex;
+      text-align: center;
+      padding: 1rem;
+      .suggested__asset {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // align-items: center;
+        z-index: 1;
+        h2 {
+          // display: flex;
+          // justify-content: flex-end;
+          align-items: center;
+          font-size: $large-font-size;
+          ;
+        }
+        h3 {
+          display: flex;
+          // justify-content: flex-end;
+          align-items: center;
+          font-size: $regular-font-size;
+          color: $gainer-color;
+        }
+        figure {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+          }
+        }
+
+        div {
+          display: flex;
+          // flex-wrap: wrap;
+          // justify-content: space-between;
+          // position: absolute;
+          // bottom: 0%;
+          // left: 0%;
+          button {
+            margin-bottom: 1rem;
+            width: 10rem;
+            
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .change__suggestion {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // position: absolute;
+        // bottom: -10%;
+        // right: -5%;
+        // z-index: -1;
+        .asset__prev__next {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          .back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+
+            .icon {
+              font-size: $extra-large-font-size;
+              color: $active-color;
+            }
+          }
+          .forward {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+
+            .icon {
+              font-size: $extra-large-font-size;
+              color: $active-color;
+            }
+          }
+
+
+        }
+        figure {
+          width: 15rem;
+          position: absolute;
+          bottom: -10%;
+          right: -5%;
+          transform: rotate(-15deg);
+          opacity: .8;
+          img {
+            width: inherit;
+          }
+        }
+      }
+      
+      .glass {
+        top: 0;
+        left: 0;
+      }
+
+      @include gainers-losers($font-color);
+      margin-top: 1rem;
+    }
   }
 
 }

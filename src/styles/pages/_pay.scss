@@ -2,6 +2,18 @@
   position: relative;
 
 
+  .pay__main__section {
+    margin-top: 5rem;
+
+    .pay__main {
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      border: 1px solid $border-color;
+      border-radius: 1rem;
+    }
+  }
+
   .asset__swap {
     position: fixed;
     top: 0;
@@ -22,6 +34,10 @@
       p {
         display: none;
       }
+    }
+
+    .form__send {
+      width: 100%;
     }
   }
   // margin-top: 5rem;

@@ -54,6 +54,13 @@
     }
 }
 
+.btn--dismiss {
+  padding: 0 1rem;
+  border: 1px solid $border-color;
+  color: $active-color;
+  background: none;
+}
+
 .menu--button {
   display: flex;
   justify-content: center;
