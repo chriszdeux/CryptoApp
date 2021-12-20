@@ -12,14 +12,18 @@ export const NewsPage = () => {
   return (
     <>
     <section className="news__page c95">
-      <div>
-        
+      <div className="news__main">
+        <h2>Crypto news!</h2>
+        <NewsList handleShowComponent={ handleShowComponent }/>
       </div>
-      <h2>Crypto news!</h2>
-      <NewsList handleShowComponent={ handleShowComponent }/>
-      {
-        showComponent && <NewsInfo handleShowComponent={ handleShowComponent }/>
-      }
+      <div className="news__aside">
+        <NewsInfo handleShowComponent={ handleShowComponent } />
+      </div>
+      <div className="news__modal">
+        {
+          showComponent && <NewsInfo handleShowComponent={ handleShowComponent }/>
+        }
+      </div>
       {/* <NewsInfo /> */}
       <Pagination />
       <BackgroundImage image={ image }/>

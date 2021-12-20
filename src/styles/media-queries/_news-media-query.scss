@@ -27,15 +27,56 @@
 
 @media only screen and ( min-width: 1920px ) {
   .news__page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
     width: 90%;
 
-    .news__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      .news__card {
-        width: 95%;
+    .news__main {
+      .news__grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    .news__aside {
+      .news__info__aside {
+        padding: 3rem 0;
+        width: 29%;
+        padding-bottom: 5rem;
+        .news__content {
+          h2 {
+            display: flex;
+            justify-content: flex-end;
+          }
+          .close {
+            display: none;
+          }
+          figure {
+            height: 50rem;
+          }
+
+          .btn {
+            // margin: 3rem;
+            // margin-bottom: 5rem;
+          }
+        }
+      }
+
+      .news__background {
+        display: none;
+      }
+    }
+
+    .news__modal{
+      display: none;
+    }
+    // .news__grid {
+    //   display: grid;
+    //   grid-template-columns: repeat(4, 1fr);
+    //   gap: 1rem;
+    //   .news__card {
+    //     width: 95%;
+    //   }
+    // }
   }
 }

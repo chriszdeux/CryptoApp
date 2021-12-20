@@ -20,7 +20,7 @@ export const NewsInfo = ({ handleShowComponent }) => {
        <NewsStats />
         <p className="mg--v">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor distinctio earum possimus. Cum reiciendis quaerat aliquid tempora minus aliquam porro, alias mollitia sequi inventore tenetur quidem voluptatum totam asperiores!
-
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores accusantium, vero accusamus ad non dicta enim mollitia eaque laboriosam et quod saepe fugiat? Cupiditate necessitatibus quod quaerat autem reiciendis! Facere!
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, similique sapiente harum et earum omnis reiciendis, eum de
         </p>
 

@@ -12,12 +12,12 @@ export const TradePage = () => {
       <div className="main__trade">
         <GainerLoser />
         <CryptoTable />
+        <Pagination />
       </div>
       <div className="trade__aside">
         <SwapCrypto />
         <NewsInfo />
       </div>
-      <Pagination />
       <BackgroundImage image={ image } />
     </section>
   )

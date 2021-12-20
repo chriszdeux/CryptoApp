@@ -84,5 +84,15 @@
 @media only screen and ( min-width: 1920px ) {
   .swap {
     width: 25%;
+    overflow: hidden;
+
+    .asset__swap {
+      height: 100%;
+      .register__card {
+        // margin-top: 3rem;
+        justify-content: center;
+        height: inherit;
+      }
+    }
   }
 }

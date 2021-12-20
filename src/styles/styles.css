@@ -2971,7 +2971,7 @@ tr {
   top: 0;
   left: 0;
   background-color: #1a2122;
-  z-index: 2;
+  z-index: 3;
   overflow-y: scroll;
 }
 
@@ -3241,6 +3241,7 @@ tr {
   position: absolute;
   top: 2%;
   right: 5%;
+  overflow-y: scroll;
 }
 
 .news__info__aside .news__content .close .icon {
@@ -3364,6 +3365,10 @@ tr {
 
 .earn__page .wrapper {
   margin: 1rem;
+}
+
+.trade__section .trade__aside {
+  display: none;
 }
 
 .crypto__coins {
@@ -3503,6 +3508,9 @@ tr {
 }
 
 @media only screen and (min-width: 1920px) {
+  .header {
+    z-index: 3;
+  }
   .home__page .home__main {
     width: 90%;
   }
@@ -3513,8 +3521,8 @@ tr {
     display: revert;
   }
   .feature .gainers__losers {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
   .for__you {
     display: -ms-grid;
@@ -3603,6 +3611,16 @@ tr {
 @media only screen and (min-width: 1920px) {
   .swap {
     width: 25%;
+    overflow: hidden;
+  }
+  .swap .asset__swap {
+    height: 100%;
+  }
+  .swap .asset__swap .register__card {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: inherit;
   }
 }
 
@@ -3711,7 +3729,40 @@ tr {
 
 @media only screen and (min-width: 1920px) {
   .trade__section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    gap: 1rem;
     width: 90%;
+  }
+  .trade__section .trade__aside {
+    display: revert;
+    margin-top: 8rem;
+  }
+  .trade__section .trade__aside .swap {
+    width: 100%;
+    height: 80rem;
+    position: relative;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  .trade__section .trade__aside .swap .swap__back {
+    display: none;
+  }
+  .trade__section .trade__aside .news__info__aside {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding-bottom: 3rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  .trade__section .trade__aside .news__info__aside .news__content .close {
+    display: none;
+  }
+  .trade__section .trade__aside .news__info__aside .news__background {
+    display: none;
   }
 }
 
@@ -3795,17 +3846,41 @@ tr {
 
 @media only screen and (min-width: 1920px) {
   .news__page {
-    width: 90%;
-  }
-  .news__page .news__grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
     gap: 1rem;
+    width: 90%;
   }
-  .news__page .news__grid .news__card {
-    width: 95%;
+  .news__page .news__main .news__grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .news__page .news__aside .news__info__aside {
+    padding: 3rem 0;
+    width: 29%;
+    padding-bottom: 5rem;
+  }
+  .news__page .news__aside .news__info__aside .news__content h2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .news__page .news__aside .news__info__aside .news__content .close {
+    display: none;
+  }
+  .news__page .news__aside .news__info__aside .news__content figure {
+    height: 50rem;
+  }
+  .news__page .news__aside .news__background {
+    display: none;
+  }
+  .news__page .news__modal {
+    display: none;
   }
 }
 

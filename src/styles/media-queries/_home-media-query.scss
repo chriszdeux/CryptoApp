@@ -178,7 +178,9 @@
 }
 
 @media only screen and ( min-width: 1920px ) {
-
+  .header {
+    z-index: 3;
+  }
   .home__page {
 
     .home__main {
@@ -194,7 +196,7 @@
   }
   .feature {
     .gainers__losers {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   .for__you {
