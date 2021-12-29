@@ -1,0 +1,99 @@
+@mixin cards-hover {
+  border: none;
+  outline: 2px solid $active-color;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+@mixin row-scale {
+  transition: .1s ease-in;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@mixin buttons-active {
+  opacity: .8;
+  transform: scale(0.95);
+  transition: .2s ease-in;
+  cursor: pointer;
+}
+
+
+.search__button:active {
+  @include buttons-active();
+}
+
+.feature__gainers:hover {
+  @include cards-hover();
+}
+
+.feature__losers:hover {
+  @include cards-hover();
+}
+
+.feature__assets__random:hover {
+  @include cards-hover();
+}
+
+.suggested:hover {
+  @include cards-hover();
+}
+
+.card:hover {
+  @include cards-hover();
+}
+
+.news__card:hover {
+  @include cards-hover();
+}
+
+.read__more__card:hover {
+  @include cards-hover();
+}
+
+.interest__card:hover {
+  @include cards-hover();
+}
+
+.learn__card:hover {
+  @include cards-hover();
+}
+
+.nft__card:hover {
+  @include cards-hover();
+}
+
+.table__row:hover {
+  @include row-scale();
+}
+
+.btn:active{
+  @include buttons-active();
+}
+
+.forward:active {
+  @include buttons-active();
+}
+
+.back:active {
+  @include buttons-active();
+}
+
+.profile__image:active {
+  @include buttons-active();
+}
+
+.navbar--item:hover {
+  @include row-scale();
+  margin-left: 1rem;
+}
+
+.menu--button:active {
+  @include buttons-active();
+}
+
+.chart__list__options {
+  li:active {
+    @include buttons-active();
+  }
+}

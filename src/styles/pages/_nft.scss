@@ -1,0 +1,22 @@
+.nft__page {
+  position: relative;
+  margin-top: 5rem;
+  // width: 50%;
+  // width: 89%;
+  // float: right;
+}
+
+.nft__about {
+  h2 {
+    font-size: $large-font-size;
+    color: $font-color;
+    text-align: end;
+  }
+
+  p {
+    font-size: $regular-font-size;
+    color: $second-font-color;
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
+}

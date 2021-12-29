@@ -14,12 +14,14 @@ import { Divider } from '../helpers/Divider'
 export const AssetInfo = () => {
   return (
     <div className="asset__info c100">
-        <div className="asset__network ">
+        <div className="asset__network mg--b">
           <AssetName />
           <AssetStat />
           <AssetSocialNetwork />
           <AssetContract />
           <AssetTags />
+
+        <div className="glass"></div>
         </div>
         <div className="asset__stats ">
           <div className="asset__stats__top">
@@ -29,9 +31,9 @@ export const AssetInfo = () => {
           </div>
           <Divider />
           <AssetGlobalInfo />
+        <div className="glass"></div>
         </div>
 
-        <div className="glass"></div>
       </div>
   )
 }

@@ -57,7 +57,7 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
         showComponent && <PreviewTransaction handleShowComponent={ handleShowComponent }/>
       }
             {/* <BackgroundImage image={ image }/> */}
-      <div className="glass"></div>
+      {/* <div className="glass"></div> */}
     </div>
   )
 }

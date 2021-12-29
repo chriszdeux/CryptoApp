@@ -21,14 +21,16 @@ export const PortafolioPage = () => {
       {/* <Line data={data} options={options}/> */}
       <div className="portafolio__main__section">
         <PortafolioChart />
-        <div className="portafolio__assets mg--v--3">
-          <h2 className="pd--l mg--b">Your Assets</h2>
+        <div className="portafolio__assets mg--v">
+          <h2 className="mg--v">Your Assets</h2>
           <CryptoTable />
         </div>
-        <div className="portafolio__wishlist">
-          <h2 className="pd--l ">Wish list</h2>
+
+        <div className="portafolio__wishlist mg--v">
+          <h2 className="mg--v">Wish list</h2>
           <CryptoTable />
         </div>
+
       </div>
       <aside className="portafolio__aside c95">
         <div className="portafolio__aside__content">

@@ -1,0 +1,5 @@
+.chart__list__options {
+  li:active {
+    @include buttons-active();
+  }
+}

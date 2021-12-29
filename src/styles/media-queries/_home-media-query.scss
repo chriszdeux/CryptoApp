@@ -1,8 +1,9 @@
 @media only screen and  ( min-width: 667px ) and ( min-height: 375px ) {
   .menu {
-    width: 70%;
+    width: 50%;
 
     .profile__image {
+      flex-shrink: 0;
       width: 5rem;
       height: 5rem;
       margin: 0;
@@ -14,6 +15,17 @@
     }
   }
 
+
+  .feature {
+    .gainers__losers {
+      grid-template-columns: repeat(2, 1fr);
+
+      .suggested {
+        display: block;
+      }
+    }
+
+  }
   .volume {
     display: revert;
   }
@@ -23,7 +35,12 @@
   .market--cap--24h {
     display: revert;
   }
-    
+  
+  .for__you {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 @media only screen and ( min-width: 768px ) {
@@ -72,6 +89,16 @@
     right: 0;
     left: unset;
   }
+
+  .menu {
+    width: 40%;
+  }
+}
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 768px ) {
+  .menu {
+    width: 30%;
+  }
 }
 
 @media only screen and ( min-width: 1024px ) {
@@ -92,6 +119,12 @@
   .desk__menu {
     display: flex;
     width: 20%;
+  }
+
+  .feature {
+    .gainers__losers {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -115,13 +148,9 @@
 
 }
 
-@media only screen and ( min-width: 1024px ) {
-  .feature {
-    .gainers__losers {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-}
+
+
+
 
 @media only screen and ( min-width: 1680px ) {
   .navbar {
@@ -189,6 +218,7 @@
   }
   .desk__menu {
    width: 10%; 
+   padding-top: 10rem;
   }
 
   .supply {

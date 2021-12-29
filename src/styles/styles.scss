@@ -20,6 +20,9 @@
 @import './global/asset-info';
 @import './global/quiz';
 @import './global/gainer-loser';
+@import './global/nft-asset';
+@import './global/masonry';
+@import './global/waves';
 
 
 @import './pages/portafolio';
@@ -28,6 +31,7 @@
 @import './pages//news';
 @import './pages//earn';
 @import './pages//trade';
+@import './pages//nft';
 
 @import './media-queries/home-media-query';
 @import './media-queries/swap-media-query';
@@ -37,6 +41,9 @@
 @import './media-queries/news-media-query';
 @import './media-queries/asset-media-query';
 @import './media-queries/pay-media-query';
+@import './media-queries/nft-media-query';
+
+@import './interactions/main-interactions';
 
 
 body {
@@ -94,7 +101,9 @@ a {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: $main-background-color;
+  background: $background-color;
+  left: 0;
+  top: 0;
   // filter: contrast(1);
   // filter: blur(10px);
   // filter: blur(73px);

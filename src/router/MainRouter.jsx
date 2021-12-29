@@ -27,11 +27,14 @@ import { QuizVideo } from '../components/quiz/QuizVideo';
 import { Search } from '../components/search/Search';
 import { RegisterCard } from '../components/swap-crypto/RegisterCard';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
+import { BackgroundWaves } from '../components/waves/BackgroundWaves';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { AssetPage } from '../pages/AssetPage';
 import { HomePage } from '../pages/HomePage';
 import { LearnAndEarnPage } from '../pages/LearnAndEarnPage';
 import { NewsPage } from '../pages/NewsPage';
+import { NftAssetPage } from '../pages/NftAssetPage';
+import { NftPage } from '../pages/NftPage';
 import { PayPage } from '../pages/PayPage';
 import { PortafolioPage } from '../pages/PortafolioPage';
 import { TradePage } from '../pages/TradePage';
@@ -68,11 +71,13 @@ export const MainRouter = () => {
           <Route exact path="/" element={ <HomePage /> }/>
           <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
           <Route exact path="/trade" element={ <TradePage /> }/>
-          <Route exact path="/asset" element={ <AssetPage /> }/>
+          <Route exact path="/trade/asset" element={ <AssetPage /> }/>
           <Route exact path="/swap" element={ <SwapCrypto /> }/>
           <Route exact path="/pay" element={ <PayPage /> }/>
           <Route exact path="/news" element={ <NewsPage /> }/>
           <Route exact path="/earn" element={ <LearnAndEarnPage /> }/>
+          <Route exact path="/nft" element={ <NftPage /> }/>
+          <Route exact path="/nft/asset" element={ <NftAssetPage /> }/>
           <Route exact path="/quiz" element={ <Quiz /> }/>
           <Route exact path="/billing" element={ <RegisterCard /> }/>
           <Route exact path="/test" element={ <NewsInfo /> }/>
@@ -89,6 +94,7 @@ export const MainRouter = () => {
           </>
         }
         {/* <GenericFooter /> */}
+        <BackgroundWaves />
       </div>
     </Router>
 

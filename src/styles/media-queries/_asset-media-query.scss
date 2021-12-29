@@ -75,6 +75,30 @@
     margin: 0 auto;
     float: none;
   }
+
+  .asset__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .asset__network {
+      border: 1px solid $border-color;
+      border-radius: 1rem;
+    }
+    .asset__stats {
+      border: 1px solid $border-color;
+      border-radius: 1rem;
+    }
+  }
+}
+
+@media only screen and ( min-width: 1366px ) {
+  .asset__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 1920px ) {

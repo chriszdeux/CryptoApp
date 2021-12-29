@@ -53,12 +53,21 @@
   }
 
   .quiz__layout {
+    padding-top: 0;
     .quiz__content {
       width: 80%;
       // wid
       .quiz__video {
-        height: 60rem;
+        height: 80rem;
         margin: 0 auto;
+
+      }
+      h2 {
+        font-size: $jumbo-font-size;
+      }
+
+      p {
+        font-size: $extra-large-font-size;
       }
     }
   }

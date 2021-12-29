@@ -6,10 +6,12 @@ export const useShowComponent = ( initialState = false) => {
   // debugger
   const handleShowComponent = () => {
     setShowComponent(!showComponent)
+    setShowComponent2(false)
   }
-
+  
   const handleShowComponent2 = () => {
     setShowComponent2(!showComponent2)
+    setShowComponent(false)
   }
 
   return {

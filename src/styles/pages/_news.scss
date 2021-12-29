@@ -8,7 +8,7 @@
   }
 };
 .news__info__aside {
-  display: flex;
+  // display: none;
   justify-content: center;
   // align-items: center;
   position: fixed;
@@ -23,6 +23,7 @@
   overflow-y: scroll;
   
   .news__content {
+    // display: none;
     .close {
       display: flex;
       justify-content: center;
@@ -32,7 +33,7 @@
       position: absolute;
       top: 2%;
       right: 5%;
-      overflow-y: scroll;
+      // overflow-y: scroll;
       .icon {
         color: $active-color;
       }
@@ -135,4 +136,8 @@
     width: 100%;
     margin: 1rem;
   }
+}
+
+.news__aside {
+  display: none;
 }

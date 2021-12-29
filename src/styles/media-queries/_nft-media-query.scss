@@ -1,0 +1,142 @@
+
+
+@media only screen and ( min-width: 667px ) and ( min-height: 375px ) {
+  .wrap__nft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .nft {
+    .global__stats {
+      .header__stats {
+        .user__banner {
+          .user__profile {
+            bottom: -10%;
+          }
+        }
+      }
+    }
+  }
+
+  .nft__related__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media only screen and ( min-width: 768px ) {
+  .nft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    // width: 70%;
+    // padding: 1rem;
+  }
+}
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 768px ) {
+  .nft__page {
+    width: 79%;
+    // margin: 0 auto;
+    padding-right: 1rem;
+    float: right;
+
+  }
+  .wrap__nft{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
+  .nft__page {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  .nft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .nft__asset {
+
+      .nft__alt {
+
+      }
+    }
+
+  }
+  .nft__related__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media only screen and ( min-width: 1366px ) and ( min-height: 1024px ) {
+  .nft__related__wrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and ( min-width: 1920px ) {
+  .nft__page {
+    width: 90%;
+    margin: 0 auto;
+    // float: ;
+    margin-top: 5rem;
+    padding: 0 1rem;
+  }
+
+  .wrap__nft {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .nft {
+    display: grid;  
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    // width: 90%;
+    .nft__asset {
+      width: 100%;
+      .asset--item {
+        height: 100%;
+
+        img {
+          width: 30rem;
+          height: 30rem;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .global__stats {
+      width: 100%;
+      margin: 0;
+    }
+
+    .news__info__aside {
+      display: revert;
+      width: 100%;
+      position: relative;
+      height: 57rem;
+      border-radius: 1rem;
+      background: none;
+      outline: 1px solid $border-color;
+
+      .close {
+        display: none;
+      }
+      .news__background {
+        display: none;
+      }
+    }
+  }
+  .nft__related__wrap {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -17,8 +17,8 @@
     font-size: $large-font-size;
     color: $font-color;
 
-    h2 {
-      font-size: $regular-font-size;
+    h3 {
+      font-size: $large-font-size;
       color: $active-color;
     }
   }
@@ -27,12 +27,21 @@
     
     h2 {
       @include portafolio-titles();
+      // margin: 1rem ;
     }
+
+    .crypto__coins {
+      margin: 0
+    }
+    
   }
 
   .portafolio__wishlist {
     h2 {
       @include portafolio-titles();
+    }
+    .crypto__coins {
+      margin: 0
     }
   }
 

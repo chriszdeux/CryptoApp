@@ -4,7 +4,7 @@ import kraken from '../../temp/kraken.png';
 import { TopAsset } from './TopAsset';
 export const GainerCard = () => {
   return (
-    <div className="feature__gainers pd">
+    <div className="feature__gainers  pd">
       <h2>Gainers <span>{ icons.trending_up_icon }</span></h2>
       <ul className="feature__list">
         <TopAsset />

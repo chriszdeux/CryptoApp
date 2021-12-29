@@ -5,7 +5,7 @@ import { TopAsset } from './TopAsset';
 
 export const LoserCard = () => {
   return (
-    <div className="feature__losers pd">
+    <div className="feature feature__losers pd">
       <h2 style={{ color: '#f56b6b' }}>Losers <span style={{ color: '#f56b6b' }}>{ icons.trending_down_icon }</span></h2>
       <ul className="feature__list">
         <TopAsset />

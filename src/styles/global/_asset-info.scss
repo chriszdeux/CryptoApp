@@ -8,6 +8,7 @@
         justify-content: $justify;
         align-items: center;
         width: $width;
+        position: relative;
         height: 3rem;
         margin: .5rem;
         padding: 1rem 2rem;
@@ -28,7 +29,7 @@
 }
 
 .asset__page {
-  padding-top: 5rem;
+  // padding-top: 5rem;
   position: relative;
   font-size: $small-font-size;
 }
@@ -64,6 +65,7 @@
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
+  margin-top: 5rem;
   padding: 1rem;
   position: relative;
   width: 100%;
@@ -77,6 +79,10 @@
     left: 0;
   }
   .asset__network {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
     .asset__name {
       display: flex;
       justify-content: space-around;
@@ -89,6 +95,51 @@
     
     .asset__social__network {
       @include bordering-list(space-between, 18rem);
+
+      
+      .with__pop {
+        // display: none;
+        position: relative;
+        // position: absolute;
+
+        // .icon {
+        //   position: absolute;
+        // }
+        .pop__up {
+          // .icon {
+          //   position: absolute;
+          //   bottom: 100%;
+          // }
+          .pop__up__icon {
+            position: absolute;
+            top: -12%;
+            .icon {
+              font-size: $extra-large-font-size;
+              color: $popup-color;
+            }
+          }
+          position: absolute;
+          top: 130%;
+          left: 50%;
+          background: lightcoral;
+          width: 25rem;
+          transform: translateX(-50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: auto;
+          padding: 1rem;
+          border: 1px solid $border-color;
+          border-radius: 1rem;
+          z-index: 1;
+          background-color: $popup-color;
+
+          li {
+            border: none;
+          }
+          // display: none
+        }
+      }
     }
     .asset__contracts {
       @include bordering-list(space-between, 100%);
@@ -100,9 +151,12 @@
   }
   
   .asset__stats {
+    padding: 1rem;
+    position: relative;
     text-align: start;
     color: $font-color;
-
+    border: 1px solid $border-color;
+      border-radius: 1rem;
     .asset__stats__top {
       display: flex;
       justify-content: space-between;
@@ -270,6 +324,10 @@
         span {
           display: flex;  
           align-items: center;
+
+          .icon {
+            margin-left: 1rem;
+          }
         }
       }
 
