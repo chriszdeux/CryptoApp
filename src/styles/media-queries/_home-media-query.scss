@@ -43,9 +43,9 @@
   }
   
   .for__you {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: 1rem;
   }
 }
 
@@ -54,6 +54,13 @@
   .main {
     // display: revert;
     display: none;
+  }
+
+  .for__you {
+    display: flex;
+    justify-content: space-between;
+  }
+  .home__main {
   }
   // .home__page {
   //   .home__main {
@@ -89,8 +96,8 @@
     display: revert;
   }
   .for__you {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
 
     .interest__card {
       width: 49%;
@@ -245,9 +252,9 @@
     }
   }
   .for__you {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 1rem;
     // justify-content: start;
     .interest__card {
       // width: 32%;

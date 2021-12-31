@@ -4,10 +4,10 @@ import { animations_object } from '../../utils/animations/animations_object';
 import { icons } from '../../utils/icons/icons_object';
 import image from '../../utils/vector/winner.svg';
 export const QuizComplete = ({ handleShowComponent }) => {
-  const { intro, intro_down } = animations_object;
+  const { intro, intro_up } = animations_object;
   return (
     <div className={`quiz__completed ${ intro }`}>
-      <div className={`well__done ${ intro_down }`} style={{ animationDelay: '1s' }}>
+      <div className={`well__done ${ intro_up }`} style={{ animationDelay: '1s' }}>
       <h1>Well done!</h1>
       <h2>You earned <span>$5</span> in crypto</h2>
       {/* <div className="close" >
