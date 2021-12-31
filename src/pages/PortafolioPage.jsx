@@ -15,29 +15,31 @@ import { InterestedEarned } from '../components/cards/InterestedEarned';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import image from '../utils/vector/portafolio.svg'
 import { NewsInfo } from '../components/news/NewsInfo';
+import { animations_object } from '../utils/animations/animations_object';
+import { ForYou } from '../components/learning/ForYou';
 export const PortafolioPage = () => {
+  const { intro } = animations_object;
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
       <div className="portafolio__main__section">
         <PortafolioChart />
-        <div className="portafolio__assets mg--v">
+        <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
           <h2 className="mg--v">Your Assets</h2>
           <CryptoTable />
         </div>
 
-        <div className="portafolio__wishlist mg--v">
+        <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>
           <h2 className="mg--v">Wish list</h2>
           <CryptoTable />
         </div>
 
       </div>
-      <aside className="portafolio__aside c95">
-        <div className="portafolio__aside__content">
+      <aside className={`portafolio__aside c100`}>
+        <div className={`portafolio__aside__content ${ intro }`}>
           <SwapCrypto />
           <NewsInfo />
-          <LearnAndEarnCard />
-          <InterestedEarned />
+          <ForYou />
           {/* <InterestedEarned /> */}
           {/* <SwapCrypto /> */}
         </div>

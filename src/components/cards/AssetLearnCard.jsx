@@ -1,9 +1,11 @@
 import React from 'react'
 import { useShowComponent } from '../../hooks/ShowComponent';
 import image from '../../temp/kraken.png';
+import { animations_object } from '../../utils/animations/animations_object';
 export const AssetLearnCard = ({ handleShowComponent }) => {
+  const { intro_right } = animations_object;
   return (
-    <article className="learn__card mg--r--3" onClick={ handleShowComponent }>
+    <article className={`learn__card mg--r--3 ${ intro_right }`} onClick={ handleShowComponent }>
       <figure className="mg--b">
         <img src={ image } alt="" />
       </figure>

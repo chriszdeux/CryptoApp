@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react/cjs/react.development'
+import { animations_object } from '../../utils/animations/animations_object';
 import { icons } from '../../utils/icons/icons_object'
 
 export const SwapButton = ({values}) => {
   const { handleShowComponent2, showComponent } = values;
   // debugger
   const [flip, setFlip] = useState(false)
-  
+  const { intro } = animations_object;
   useEffect(() => {
   const flipping = setInterval(() => {
       setFlip(!flip)
@@ -18,7 +19,7 @@ export const SwapButton = ({values}) => {
   },)
   console.log('rendered')
   return (
-    <button className="btn btn--swap " onClick={ handleShowComponent2}>
+    <button className={`btn btn--swap ${ intro }`} onClick={ handleShowComponent2}>
       {
         flip 
           ? icons.convert_icon

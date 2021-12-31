@@ -9,6 +9,7 @@ import { CryptoTable } from '../components/crytp-table/CryptoTable'
 import { CryptoFeature } from '../components/feature/CryptoFeature'
 import { GenericFooter } from '../components/footer/GenericFooter'
 import { Header } from '../components/header/Header'
+import { ForYou } from '../components/learning/ForYou'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { MainDisplay } from '../components/main/MainDisplay'
 import { DeskMenu } from '../components/menu/DeskMenu'
@@ -43,10 +44,7 @@ export const HomePage = () => {
         <CryptoFeature />
         <CryptoTable />
 
-        <div className="for__you c95">
-          <LearnAndEarnCard /> 
-          <InterestedEarned />
-        </div>
+        <ForYou />
         <GenericFooter />
       </div>
       {/* { swappComponent }

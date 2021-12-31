@@ -2,9 +2,11 @@ import React from 'react'
 import { icons } from '../../utils/icons/icons_object'
 import kraken from '../../temp/kraken.png';
 import phone from '../../utils/vector/phone.svg';
+import { animations_object } from '../../utils/animations/animations_object';
 export const SuggestedCard = () => {
+  const { intro_up } = animations_object;
   return (
-    <div className="suggested">
+    <div className={`suggested ${ intro_up }`} style={{ animationDelay: '.9s' }}>
       <div className="suggested__asset">
         <figure>
           <img src={ kraken } alt="" />

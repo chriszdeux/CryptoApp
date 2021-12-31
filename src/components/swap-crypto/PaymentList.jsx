@@ -6,10 +6,12 @@ import image from '../../utils/vector/payment.svg';
 import { AssetBank } from './AssetBank';
 import { useShowComponent } from '../../hooks/ShowComponent';
 import { RegisterCard } from './RegisterCard';
+import { animations_object } from '../../utils/animations/animations_object';
 export const PaymentList = ({ handleShowComponent2 }) => {
   const { showComponent, handleShowComponent } = useShowComponent()
+  const { intro_right } = animations_object;
   return (
-    <div className="asset__swap c100 pd">
+    <div className={`asset__swap c100 pd ${ intro_right }`}>
       <h2>Select Payment method</h2>
       <div className="close" onClick={ handleShowComponent2 }>
         { icons.close_icon }

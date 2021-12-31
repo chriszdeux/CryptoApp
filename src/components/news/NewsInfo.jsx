@@ -1,14 +1,15 @@
 import React from 'react'
 import { useShowComponent } from '../../hooks/ShowComponent';
 import kraken from '../../temp/kraken.png';
+import { animations_object } from '../../utils/animations/animations_object';
 import { icons } from '../../utils/icons/icons_object';
 import image from '../../utils/vector/news.svg';
 import { BackgroundImage } from '../main/BackgroundImage'
 import { NewsStats } from './NewsStats';
 export const NewsInfo = ({ handleShowComponent }) => {
-  
+  const { intro_right } = animations_object;
   return (
-    <div className="news__info__aside">
+    <div className={`news__info__aside ${ intro_right }`}>
       <div className="news__content c95">
         <div className="close" onClick={ handleShowComponent }>
           { icons.forward_icon } 

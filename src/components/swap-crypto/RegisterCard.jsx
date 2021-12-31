@@ -1,10 +1,12 @@
 import React from 'react'
+import { animations_object } from '../../utils/animations/animations_object'
 import { icons } from '../../utils/icons/icons_object'
 import { BackgroundImage } from '../main/BackgroundImage'
 
 export const RegisterCard = ({ handleShowComponent }) => {
+  const { intro_right } = animations_object;
   return (
-    <div className="register__card c100">
+    <div className={`register__card c100 ${ intro_right }`}>
       <div className="close" onClick={ handleShowComponent }>
         { icons.back_icon }
       </div>

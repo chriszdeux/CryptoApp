@@ -13,6 +13,7 @@ import { ListAssets } from '../components/swap-crypto/ListAssets'
 import { SwapBuy } from '../components/swap-crypto/SwapBuy'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { useShowComponent } from '../hooks/ShowComponent';
+import { animations_object } from '../utils/animations/animations_object'
 import image from '../utils/vector/send.svg'
 
 export const PayPage = () => {
@@ -22,6 +23,7 @@ export const PayPage = () => {
   })
   const { showComponent, handleShowComponent } = useShowComponent()
   const { send, recieve } = transactionSelection
+  const { intro } = animations_object;
 
   const handleSend = () => {
     setTransactionSelection({
@@ -39,7 +41,7 @@ export const PayPage = () => {
   return (
     <section className="pay__page">
       <div className="pay__main__section">
-        <div className="pay__main c100">
+        <div className={`pay__main c100 ${ intro }`}>
           <TransactionSection values={{ handleSend, handleRecieve }}/>
           {
             send && <Pay handleShowComponent={ handleShowComponent }/>

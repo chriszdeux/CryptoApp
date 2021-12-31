@@ -1598,6 +1598,10 @@ tr {
   font-size: 1.6rem;
 }
 
+.market--cap--7d {
+  display: none;
+}
+
 .market--cap--7d .market--mark {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4169,6 +4173,12 @@ tr {
   line-height: 2rem;
 }
 
+@media only screen and (min-width: 375px) {
+  .main {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 667px) and (min-height: 375px) {
   .menu {
     width: 50%;
@@ -4210,6 +4220,9 @@ tr {
 }
 
 @media only screen and (min-width: 768px) {
+  .main {
+    display: none;
+  }
   .gainers__losers {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4226,6 +4239,9 @@ tr {
   }
   .gainers__losers .feature__assets__random {
     width: 32%;
+  }
+  .market--cap--7d {
+    display: revert;
   }
   .for__you {
     display: -webkit-box;
@@ -5131,8 +5147,8 @@ tr {
 .table__row:hover {
   -webkit-transition: .1s ease-in;
   transition: .1s ease-in;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   cursor: pointer;
 }
 
@@ -5175,8 +5191,8 @@ tr {
 .navbar--item:hover {
   -webkit-transition: .1s ease-in;
   transition: .1s ease-in;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   cursor: pointer;
   margin-left: 1rem;
 }
@@ -5287,6 +5303,12 @@ a:link {
 }
 
 .main {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
   height: 100vh;
   border-bottom: 2px solid #08ACB6;
@@ -5295,11 +5317,7 @@ a:link {
 }
 
 .main .btn {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  margin-bottom: 7rem;
 }
 
 ::-webkit-scrollbar {

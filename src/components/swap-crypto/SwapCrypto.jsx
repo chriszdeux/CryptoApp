@@ -17,6 +17,7 @@ import { BackgroundImage } from '../main/BackgroundImage'
 import image from '../../utils/vector/server.svg'
 import { RecurrentTransaction } from './RecurrentTransaction'
 import { useValidateAmount } from '../../hooks/useValidateAmount'
+import { animations_object } from '../../utils/animations/animations_object'
 
 export const SwapCrypto = ({ handleShowComponent2 }) => {
 
@@ -34,9 +35,10 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
     handleWarningAmount()
     // debugger
   }, [  validateAmount])
+  const { intro_right } = animations_object;
   // debugger
   return (
-    <div className="swap c100">
+    <div className={`swap c100 ${ intro_right }`}>
       <div className="swap__back" onClick={ handleShowComponent2 }>
       { icons.back_icon }
       </div>

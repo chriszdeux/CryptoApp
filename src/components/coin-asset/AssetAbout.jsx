@@ -1,8 +1,10 @@
 import React from 'react'
+import { animations_object } from '../../utils/animations/animations_object'
 
 export const AssetAbout = () => {
+  const { intro } = animations_object;
   return (
-    <div className="asset__about mg--v pd">
+    <div className={`asset__about mg--v pd ${ intro }`}>
       <div className="about__header mg--b">
         <h2>Asset title</h2>
         <h2>Traducir</h2>

@@ -10,11 +10,13 @@ import { AssetPrice } from './AssetPrice'
 import { AssetStat } from './AssetStat'
 import { AssetTags } from './AssetTags'
 import { Divider } from '../helpers/Divider'
+import { animations_object } from '../../utils/animations/animations_object'
 
 export const AssetInfo = () => {
+  const { intro } = animations_object;
   return (
     <div className="asset__info c100">
-        <div className="asset__network mg--b">
+        <div className={`asset__network mg--b ${ intro }`}>
           <AssetName />
           <AssetStat />
           <AssetSocialNetwork />
@@ -23,7 +25,8 @@ export const AssetInfo = () => {
 
         <div className="glass"></div>
         </div>
-        <div className="asset__stats ">
+
+        <div className={`asset__stats ${ intro }`} style={{ animationDelay: '.5s' }}>
           <div className="asset__stats__top">
             <AssetPrice />
             <AssetBtcEth />

@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import shib from '../../temp/shib.png';
+import { animations_object } from '../../utils/animations/animations_object';
 import { MainButton } from '../buttons/MainButton';
 import { MenuButton } from '../buttons/MenuButton';
 
 export const Menu = ({values}) => {
   const { handleShowComponent, showComponent } = values
 // debugger
+  const { intro_left } = animations_object;
   return (
-    <section className="menu pd--t--3">
+    <section className={`menu pd--t--3 ${ intro_left }`}>
       <figure className="profile__image mg--b--3">
         <img src={ shib } alt="" />
       </figure>

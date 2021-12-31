@@ -101,7 +101,7 @@ tr {
   
 }
 .market--cap--7d {
-  // display: none;
+  display: none;
   // color: $gainer-color;
   @include market-percent();
 
