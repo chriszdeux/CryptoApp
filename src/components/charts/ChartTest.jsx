@@ -35,7 +35,17 @@ const options = {
       text: 'Chart.js Line Chart',
     },
   },
+  // options: {
+  //   scales: {
+  //     x: {
+  //       ticks: {
+  //         color: '#fff'
+  //       }
+  //     }
+  //   }
+  // }
 };
+
 
 const labels = ['January', 'February', 'March','January', 'February', 'March', 'January', 'February', 'March','January', 'February', 'March', 'January', 'February', 'March','January', 'February', 'March',];
 const myData = [1,3,2,4,6,5,8,12,5,3,12,4,3,8,5,4,14,22]
@@ -44,6 +54,19 @@ const handleData = ( data ) => {
   return data.map(item => item)
 }
 
+// const config = {
+//   type: 'line',
+//   myData,
+//   options: {
+//     scales: {
+//       y: {
+//         ticks: {
+//           color: '#fff'
+//         }
+//       }
+//     }
+//   }
+// }
 const data = {
     labels,
     datasets: [
@@ -51,17 +74,17 @@ const data = {
         id: 1,
         label: 'shiba inu',
         data: myData,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: '#00B4BF',
+        backgroundColor: '#07F1FF',
+        // color: ['$fff','$fff','$fff','$fff','$fff','$fff',]
       },
     ],
+    
   }
 
 export const ChartTest = () => {
   return <Line
-  // style={{ color: 'white' }}
-  // datasetIdKey='id'
-  data={data}
-  options={ options }
-/>
+            data={data}
+            options={ options }
+          />
 }

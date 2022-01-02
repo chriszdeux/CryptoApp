@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -10,9 +10,10 @@ import { BrowserRouter as Router,
 Routes,
 Route,
 Link,
+Navigate
 } from 'react-router-dom';
 
-import { useEffect } from 'react/cjs/react.development';
+// import { useEffect } from 'react/cjs/react.development';
 import { MenuButton } from '../components/buttons/MenuButton';
 import { SwapButton } from '../components/buttons/SwapButton';
 import { MainNewsCard } from '../components/cards/MainNewsCard';
@@ -42,19 +43,19 @@ import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
   const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, } = useShowComponent();
-  const [swappComponent, setSwappComponent] = useState(null);
+  const [swapComponent, setSwapComponent] = useState(null);
   console.log('home');
 
 
-  useEffect(() => {
-    const swapButton = setTimeout(() => {
-      setSwappComponent( <SwapButton values={{ showComponent2, handleShowComponent2 }}/> )
-    }, 2000);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setSwapComponent( <SwapButton values={{ showComponent2, handleShowComponent2 }}/> )
+  //   }, 2000);
 
-    return () => {
-      cleanup(swapButton)
-    }
-  }, [  ])
+  //   // return () => {
+  //   //   cleanup(swapButton)
+  //   // }
+  // }, [  ])
   return (
     <Router>
       <div className="router">
@@ -67,6 +68,8 @@ export const MainRouter = () => {
         {
           showComponent && <Menu values={{ showComponent, handleShowComponent }}/>
         }
+        <SwapButton values={{ showComponent2, handleShowComponent2 }}/>
+
         <Routes>
           <Route exact path="/" element={ <HomePage /> }/>
           <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
@@ -81,9 +84,14 @@ export const MainRouter = () => {
           <Route exact path="/quiz" element={ <Quiz /> }/>
           <Route exact path="/billing" element={ <RegisterCard /> }/>
           <Route exact path="/test" element={ <NewsInfo /> }/>
+          <Route 
+            path="*"
+            element={ <Navigate to="/"/> }
+          />
+
+          {/* <Redirect to='/' element={ HomePage }/> */}
           {/* <Route exact path="/video" element={ <QuizVideo /> }/> */}
         </Routes>
-        { swappComponent }
 
 
         {
