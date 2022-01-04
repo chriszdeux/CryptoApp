@@ -1673,7 +1673,6 @@ tr {
 
 .coin--name {
   font-weight: 700;
-  font-size: 1.6rem;
   text-align: start;
 }
 
@@ -1853,10 +1852,39 @@ tr {
   top: 0;
   background: linear-gradient(352deg, #03d0dd 22%, #014449 100%);
   z-index: 2;
+  overflow: hidden;
 }
 
 .swap .btn {
   margin-bottom: 3rem;
+}
+
+.swap .buy__section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swap .sell__section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .swap__back {
@@ -2349,12 +2377,13 @@ tr {
           align-items: center;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   background-image: linear-gradient(352deg, #03d0dd 22%, #014449 100%);
   text-align: center;
-  z-index: 1;
+  z-index: 2;
+  overflow-y: hidden;
 }
 
 .preview__transaction div {
@@ -2372,14 +2401,24 @@ tr {
   position: absolute;
   left: 5%;
   top: 10%;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   color: #07F1FF;
 }
 
 .preview__transaction div .icon {
   width: inherit;
   height: inherit;
+}
+
+.preview__transaction figure {
+  width: 35rem;
+}
+
+.preview__transaction figure img {
+  width: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .preview__transaction h3 {
@@ -2854,6 +2893,7 @@ tr {
 }
 
 .asset__info .asset__network {
+  height: 100%;
   position: relative;
   padding: 1rem;
   border: 1px solid #00B4BF;
@@ -3474,6 +3514,19 @@ tr {
   color: #07F1FF;
 }
 
+.quiz__completed .well__done {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .quiz__completed h1 {
   font-size: 3.5rem;
   color: #07F1FF;
@@ -3875,6 +3928,63 @@ tr {
   }
 }
 
+.processing {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: #008088;
+  z-index: 2;
+}
+
+.processing div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+}
+
+.processing div .icon {
+  font-size: 10rem;
+  color: #07F1FF;
+}
+
+.processing div .icon:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(678deg);
+          transform: translateX(-50%) translateY(-50%) rotate(678deg);
+}
+
+.processing h2 {
+  font-size: 2.4rem;
+  color: #F0F0F0;
+}
+
 .portafolio {
   margin-top: 5rem;
 }
@@ -4173,6 +4283,91 @@ tr {
   line-height: 2rem;
 }
 
+.nft__purchase {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #008088;
+  z-index: 1;
+}
+
+.nft__purchase .purchase__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  height: 80%;
+}
+
+.nft__purchase .purchase__content figure {
+  width: 35rem;
+  height: 35rem;
+  padding: 5rem;
+  overflow: hidden;
+  border: 1px solid #00B4BF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nft__purchase .purchase__content figure img:first-child {
+  position: absolute;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-filter: blur(16px);
+          filter: blur(16px);
+  width: inherit;
+}
+
+.nft__purchase .purchase__content figure img:last-child {
+  width: 30rem;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nft__purchase .purchase__content h2 {
+  font-size: 2.4rem;
+  color: #F0F0F0;
+}
+
+.nft__purchase .purchase__content h3 {
+  font-size: 2rem;
+  color: #07F1FF;
+}
+
 @media only screen and (min-width: 375px) {
   .main {
     display: none;
@@ -4210,18 +4405,19 @@ tr {
   .market--cap--24h {
     display: revert;
   }
-  .for__you {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   .main {
     display: none;
+  }
+  .for__you {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .gainers__losers {
     display: -webkit-box;
@@ -4242,14 +4438,6 @@ tr {
   }
   .market--cap--7d {
     display: revert;
-  }
-  .for__you {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .for__you .interest__card {
     width: 49%;
@@ -4348,13 +4536,6 @@ tr {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
-  .for__you {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
   .for__you .interest__card {
     width: 100%;
     margin-right: 1rem;
@@ -4362,9 +4543,6 @@ tr {
 }
 
 @media only screen and (min-height: 375px) {
-  .swap {
-    overflow-y: scroll;
-  }
   .swap .swap__options {
     margin-top: 3rem;
   }
@@ -4381,7 +4559,6 @@ tr {
 @media only screen and (min-width: 667px) and (min-height: 375px) {
   .register__card {
     position: absolute;
-    height: auto;
     padding-top: 1rem;
     overflow-y: scroll;
   }
@@ -4436,7 +4613,6 @@ tr {
   .swap {
     width: 25%;
     overflow: hidden;
-    background: none;
     border: 1px solid #00B4BF;
   }
   .swap .asset__swap {
@@ -4476,9 +4652,6 @@ tr {
 }
 
 @media only screen and (min-width: 1920px) {
-  .router .btn--swap {
-    display: none;
-  }
   .portafolio {
     display: -ms-grid;
     display: grid;

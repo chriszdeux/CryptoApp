@@ -1,11 +1,12 @@
 import React from 'react'
 
-export const SwapNavbar = () => {
+export const SwapNavbar = ({values}) => {
+  const { handleBuy, handleSell, handleConvert } = values
   return (
     <ul className="swap__options c100 mg--b">
-      <li>Buy</li>
-      <li>Sell</li>
-      <li>Convert</li>
+      <li onClick={ handleBuy }>Buy</li>
+      <li onClick={ handleSell }>Sell</li>
+      <li onClick={ handleConvert }>Convert</li>
     </ul>
   )
 }

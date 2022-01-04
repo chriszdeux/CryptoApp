@@ -19,6 +19,7 @@ import { SwapButton } from '../components/buttons/SwapButton';
 import { MainNewsCard } from '../components/cards/MainNewsCard';
 import { GenericFooter } from '../components/footer/GenericFooter';
 import { Header } from '../components/header/Header';
+import { Processing } from '../components/loading/Processing';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { DeskMenu } from '../components/menu/DeskMenu';
 import { Menu } from '../components/menu/Menu';
@@ -84,6 +85,7 @@ export const MainRouter = () => {
           <Route exact path="/quiz" element={ <Quiz /> }/>
           <Route exact path="/billing" element={ <RegisterCard /> }/>
           <Route exact path="/test" element={ <NewsInfo /> }/>
+          <Route exact path="/process" element={ <Processing /> }/>
           <Route 
             path="*"
             element={ <Navigate to="/"/> }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline, IoServerOutline, IoPencilOutline, IoShieldCheckmarkOutline, IoPeopleOutline, IoEyeOutline, IoBagCheckOutline, IoHeartOutline, IoPricetagOutline } from 'react-icons/io5';
-import { AiOutlineBank } from 'react-icons/ai';
+import { AiOutlineBank, AiOutlineLoading, AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export const icons = {
   up_icon: <IoCaretUpOutline className="icon"/>,
@@ -38,4 +38,6 @@ export const icons = {
   bag_icon: <IoBagCheckOutline  className="icon"/>,
   heart_icon: <IoHeartOutline  className="icon"/>,
   tag_icon: <IoPricetagOutline  className="icon"/>,
+  loading_icon: <AiOutlineLoading3Quarters  className="icon"/>,
+  loading_2_icon: <AiOutlineLoading  className="icon"/>,
 }

@@ -18,6 +18,9 @@ import image from '../../utils/vector/server.svg'
 import { RecurrentTransaction } from './RecurrentTransaction'
 import { useValidateAmount } from '../../hooks/useValidateAmount'
 import { animations_object } from '../../utils/animations/animations_object'
+import { SwapBuySection } from './SwapBuySection'
+import { SwapSellSection } from './SwapSellSection'
+import { SwapConvertSection } from './SwapConvertSelection'
 
 export const SwapCrypto = ({ handleShowComponent2 }) => {
 
@@ -27,6 +30,31 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
     convert: false
   })
 
+  const { buy, sell, convert } = swapOperations
+  
+  const handleBuy = () => {
+    setSwapOperations({
+      buy: true,
+      sell: false,
+      convert: false
+    })
+  }
+  
+  const handleSell = () => {
+    setSwapOperations({
+      buy: false,
+      sell: true,
+      convert: false
+    })
+  }
+
+  const handleConvert = () => {
+    setSwapOperations({
+      buy: false,
+      sell: false,
+      convert: true
+    })
+  }
   const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount()
   // debugger
   // const [warningAmount, setWarningAmount] = useState(false)
@@ -35,6 +63,12 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
     handleWarningAmount()
     // debugger
   }, [  validateAmount])
+  
+  useEffect(() => {
+    setSwapOperations({
+      ...swapOperations, buy: true
+    })
+  }, [])
   const { intro_right } = animations_object;
   // debugger
   return (
@@ -42,12 +76,18 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       <div className="swap__back" onClick={ handleShowComponent2 }>
       { icons.back_icon }
       </div>
-      <SwapNavbar />
-      <Divider />
-      <Amount setValidateAmount={ setValidateAmount }/>
-      <RecurrentTransaction />
-       
-      <BuyPay />
+      <SwapNavbar values={{ handleBuy, handleSell, handleConvert }}/>
+
+      {
+        buy && <SwapBuySection setValidateAmount={ setValidateAmount }/>
+      }
+      {
+        sell && <SwapSellSection setValidateAmount={ setValidateAmount }/>
+      }
+      {
+        convert && <SwapConvertSection setValidateAmount={ setValidateAmount }/>
+      }
+
       {
         warningAmount &&
         <button className="btn btn--primary" onClick={ handleShowComponent }>

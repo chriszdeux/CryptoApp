@@ -20,3 +20,64 @@
     line-height: 2rem;
   }
 }
+
+.nft__purchase {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background-color;
+  z-index: 1;
+
+  .purchase__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 80%;
+    figure {
+      width: 35rem;
+      height: 35rem;
+      padding: 5rem;
+      overflow: hidden;
+      border: 1px solid $border-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        &:first-child {
+          position: absolute;
+          height: inherit;
+          object-fit: cover;
+          z-index: -1;
+          transform: rotate(45deg);
+          filter: blur(16px);
+          width: inherit;
+        }
+        &:last-child {
+          width: 30rem;
+          height: 30rem;
+          object-fit: cover;
+        }
+      }
+    }
+
+    h2 {
+      font-size: $extra-large-font-size;
+      color: $font-color;
+    }
+
+    h3 {
+      font-size: $large-font-size;
+      color: $active-color;
+    }
+  }
+
+  
+}
