@@ -6,7 +6,8 @@ export const TableRow = () => {
   
 
   return (
-      <>
+    <>
+        <tbody>
     <tr className="table__row c100 ">
       {/* <td>1</td> */}
 
@@ -31,8 +32,10 @@ export const TableRow = () => {
       <td className="volume">$3,845,965,256.2641</td>
       <td className="supply">$1,521,625.236 </td>
 
-      <hr />
+      {/* <hr /> */}
     </tr>
+
+    </tbody>
       </>
   )
 }
