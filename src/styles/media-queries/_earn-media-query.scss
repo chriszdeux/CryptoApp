@@ -6,7 +6,7 @@
   .quiz__layout {
     padding-top: 20rem;
     .quiz__content {
-      
+      // height: ;
       .quiz__video {
         height: 25rem;
       }
@@ -23,9 +23,9 @@
   .quiz__layout {
     padding-top: 20rem;
     .quiz__content {
-      height: auto;
+      height: 100%;
       .quiz__video {
-        height: 45rem;
+        height: 60rem;
       }
     }
   }
@@ -57,6 +57,7 @@
     .quiz__content {
       width: 80%;
       // wid
+      // height: 60%;
       .quiz__video {
         height: 80rem;
         margin: 0 auto;

@@ -696,6 +696,7 @@ html {
 }
 
 .feature {
+  overflow: hidden;
   margin-top: 5rem;
 }
 
@@ -976,6 +977,16 @@ html {
 }
 
 .feature .gainers__losers .suggested .suggested__asset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
   z-index: 1;
 }
 
@@ -1046,7 +1057,10 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  width: 50%;
+  position: absolute;
+  top: 5%;
+  right: 0;
 }
 
 .feature .gainers__losers .suggested .change__suggestion .asset__prev__next .back {
@@ -1095,6 +1109,7 @@ html {
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   opacity: .8;
+  z-index: -1;
 }
 
 .feature .gainers__losers .suggested .change__suggestion figure img {
@@ -2020,9 +2035,7 @@ tr {
 }
 
 .time__purchase {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -2160,6 +2173,7 @@ tr {
   position: absolute;
   bottom: 1%;
   font-size: 1.6rem;
+  margin-top: 5rem;
 }
 
 .swap__balance :first-child {
@@ -2567,6 +2581,7 @@ tr {
   border-radius: .5rem;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
+  margin-bottom: 1rem;
 }
 
 .recieve__section .qr--code {
@@ -2898,6 +2913,7 @@ tr {
   padding: 1rem;
   border: 1px solid #00B4BF;
   border-radius: 1rem;
+  overflow: hidden;
 }
 
 .asset__info .asset__network .asset__name {
@@ -3080,6 +3096,7 @@ tr {
   text-align: start;
   color: #F0F0F0;
   border: 1px solid #00B4BF;
+  overflow: hidden;
   border-radius: 1rem;
 }
 
@@ -3648,7 +3665,6 @@ tr {
 }
 
 .nft .global__stats {
-  margin-top: 1rem;
   overflow: hidden;
   outline: 1px solid #00B4BF;
   border-radius: 1rem;
@@ -3818,6 +3834,16 @@ tr {
 
 .nft .global__stats .nft__contract li span {
   color: #AFFAFF;
+}
+
+.nft .global__stats .preview__transaction {
+  width: 50rem;
+  height: 70rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 1rem;
 }
 
 .nft .news__info__aside {
@@ -4270,10 +4296,15 @@ tr {
   margin-top: 5rem;
 }
 
+.nft__about {
+  outline: 1px solid #00B4BF;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
 .nft__about h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #F0F0F0;
-  text-align: end;
 }
 
 .nft__about p {
@@ -4473,8 +4504,8 @@ tr {
     width: 20%;
   }
   .feature .gainers__losers {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -4531,10 +4562,6 @@ tr {
   }
   .supply {
     display: revert;
-  }
-  .feature .gainers__losers {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
   }
   .for__you .interest__card {
     width: 100%;
@@ -4772,10 +4799,10 @@ tr {
     padding-top: 20rem;
   }
   .quiz__layout .quiz__content {
-    height: auto;
+    height: 100%;
   }
   .quiz__layout .quiz__content .quiz__video {
-    height: 45rem;
+    height: 60rem;
   }
 }
 
@@ -4832,10 +4859,6 @@ tr {
 }
 
 @media only screen and (min-width: 1024px) {
-  .news__page {
-    width: 79%;
-    float: right;
-  }
   .main__news__card {
     left: 25%;
   }
@@ -4851,6 +4874,13 @@ tr {
   }
   .news__info__aside {
     width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .news__page {
+    width: 79%;
+    float: right;
   }
 }
 
@@ -4944,7 +4974,7 @@ tr {
         flex-wrap: nowrap;
   }
   .asset__info .asset__stats .asset__global__stats li {
-    width: 20%;
+    width: 30%;
   }
   .asset__info .asset__stats .asset__global__stats li:last-child {
     font-size: 2.4rem;
@@ -4963,8 +4993,6 @@ tr {
   .asset__info {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   .asset__info .asset__network {

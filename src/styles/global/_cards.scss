@@ -354,6 +354,7 @@
 }
 
 .feature {
+  overflow: hidden;
   // display: flex;
   margin-top: 5rem;
   h2 {
@@ -365,6 +366,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+
     .feature__gainers {
       position: relative;
       width: 100%;
@@ -408,11 +410,16 @@
       position: relative;
       width: 100%;
       overflow: hidden;
+
       // align-items: flex-start;
       // justify-content: flex;
       text-align: center;
       padding: 1rem;
       .suggested__asset {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
         // display: flex;
         // flex-direction: column;
         // justify-content: space-between;
@@ -472,7 +479,10 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 100%;
+          width: 50%;
+          position: absolute;
+          top: 5%;
+          right: 0;
           .back {
             display: flex;
             justify-content: center;
@@ -507,6 +517,7 @@
           right: -10%;
           transform: rotate(-15deg);
           opacity: .8;
+          z-index: -1;
           img {
             width: inherit;
           }

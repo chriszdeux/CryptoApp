@@ -84,12 +84,13 @@
     padding: 1rem;
     border: 1px solid $border-color;
     border-radius: 1rem;
+    overflow: hidden;
     .asset__name {
       display: flex;
       justify-content: space-around;
       align-items: center;
     }
-
+    
     .asset__stat {
       @include bordering-list(center, 15rem);
     }
@@ -157,6 +158,8 @@
     text-align: start;
     color: $font-color;
     border: 1px solid $border-color;
+    overflow: hidden;
+
       border-radius: 1rem;
     .asset__stats__top {
       display: flex;

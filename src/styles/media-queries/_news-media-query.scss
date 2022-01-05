@@ -20,8 +20,7 @@
 
 @media only screen and ( min-width: 1024px ) {
   .news__page {
-    width: 79%;
-    float: right;
+    
   }
   .main__news__card {
     left: 25%;
@@ -38,6 +37,13 @@
 
   .news__info__aside {
     width: 50%;
+  }
+}
+
+@media only screen and ( min-width: 1366px ) {
+  .news__page {
+    width: 79%;
+    float: right;
   }
 }
 

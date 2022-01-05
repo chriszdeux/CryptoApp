@@ -153,7 +153,8 @@
 }
 
 .time__purchase {
-  display: flex;
+
+  display: none;
   justify-content: space-evenly;
   align-items: center;
   width: 15rem;
@@ -266,6 +267,7 @@
   position: absolute;
   bottom: 1%;
   font-size: $regular-font-size;
+  margin-top: 5rem;
   :first-child {
     color: $base-color;
   }

@@ -50,7 +50,7 @@
       }
       .asset__global__stats {
         li {
-          width: 20%;
+          width: 30%;
 
           &:last-child {
             font-size: $extra-large-font-size;
@@ -78,7 +78,7 @@
 
   .asset__info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
     .asset__network {
