@@ -23,6 +23,7 @@
 
 
   .feature {
+    padding: 1rem;
     .gainers__losers {
       grid-template-columns: repeat(2, 1fr);
 
@@ -216,6 +217,11 @@
       }
      }
     }
+  }
+
+  .wrapper__cards {
+    flex-wrap: wrap;
+    padding-left: 2rem;
   }
   .table__header {
     font-size: $extra-large-font-size;

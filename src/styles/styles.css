@@ -4420,6 +4420,9 @@ tr {
     width: 4rem;
     height: 4rem;
   }
+  .feature {
+    padding: 1rem;
+  }
   .feature .gainers__losers {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -4539,6 +4542,11 @@ tr {
   .feature .gainers__losers .feature__gainers .feature__list .top--asset figure {
     width: 5rem;
     height: 5rem;
+  }
+  .wrapper__cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-left: 2rem;
   }
   .table__header {
     font-size: 2.4rem;
