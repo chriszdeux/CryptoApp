@@ -1,12 +1,12 @@
 @mixin cards-hover {
   border: none;
   outline: 2px solid $active-color;
-  transition: .2s ease;
+  transition: 1s ease;
   cursor: pointer;
 }
 
 @mixin row-scale {
-  transition: .1s ease-in;
+  transition: .3s ease-in;
   transform: scale(1.01);
   cursor: pointer;
 }
@@ -85,7 +85,15 @@
 
 .navbar--item:hover {
   @include row-scale();
-  margin-left: 1rem;
+  a {
+
+    &:hover {
+
+      color: $active-color;
+    }
+
+  }
+  // margin-left: 1rem;
 }
 
 .menu--button:active {
