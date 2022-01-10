@@ -20,7 +20,8 @@ import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
 import image from '../utils/vector/world.svg';
 
-export const HomePage = () => {
+export const HomePage = ({values}) => {
+  const { data, error, loading } = values
   // const [swappComponent, setSwappComponent] = useState(null);
   // const { showComponent, handleShowComponent } = useShowComponent()
   // console.log('home')
@@ -33,6 +34,7 @@ export const HomePage = () => {
   //     cleanup(swapButton)
   //   }
   // }, [  ])
+  // debugger
   return (
     <>
     <section className="home__page">
@@ -42,7 +44,10 @@ export const HomePage = () => {
       <MainDisplay />
         <GainerLoser />
         <CryptoFeature />
-        <CryptoTable />
+        {
+          !loading &&
+          <CryptoTable data={ data }/>
+        }
 
         <ForYou />
         <GenericFooter />

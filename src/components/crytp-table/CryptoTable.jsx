@@ -3,7 +3,9 @@ import { animations_object } from '../../utils/animations/animations_object';
 import { Pagination } from '../pagination/Pagination';
 import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
-export const CryptoTable = () => {
+export const CryptoTable = ({data}) => {
+  // console.log(data)
+  // debugger
   const { intro } = animations_object;
   return (
     <section className="crypto__coins c100">
@@ -12,25 +14,12 @@ export const CryptoTable = () => {
       {/* <div className="glass"></div> */}
         <TableHeader />
         {/* <hr /> */}
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
+        {
+          data !== undefined &&
+          data.map(item => (
+            <TableRow item={ item }/>
+          ))
+        }
       {/* <div className="glass"></div> */}
       </table>
       {/* <Pagination /> */}

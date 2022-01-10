@@ -30,7 +30,13 @@ import { Search } from '../components/search/Search';
 import { RegisterCard } from '../components/swap-crypto/RegisterCard';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { BackgroundWaves } from '../components/waves/BackgroundWaves';
+import { fetchCoins } from '../fetch-data/fetchCoins';
+import { useFetchAsset } from '../hooks/fetchHooks/useFetchAsset';
+import { useFetchCoins } from '../hooks/fetchHooks/useFetchCoins';
+import { useFetchExchanges } from '../hooks/fetchHooks/useFetchExchanges';
+import { useFetchNews } from '../hooks/fetchHooks/useFetchNews';
 import { useShowComponent } from '../hooks/ShowComponent';
+import { useGetRandomAssets } from '../hooks/useGetRandomAssets';
 import { AssetPage } from '../pages/AssetPage';
 import { HomePage } from '../pages/HomePage';
 import { LearnAndEarnPage } from '../pages/LearnAndEarnPage';
@@ -45,9 +51,34 @@ import image from '../utils/vector/world.svg';
 export const MainRouter = () => {
   const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, } = useShowComponent();
   const [swapComponent, setSwapComponent] = useState(null);
-  console.log('home');
+  // console.log('home');
+  const { data, error, loading, top10, gainers, losers } = useFetchCoins(1)
+  const { data:data2, error:error2, loading:loading2, top10Exchange } = useFetchExchanges()
+  const asset = useFetchAsset('cardano')
+  const news = useFetchNews('crypto')
+  console.log(`this is an asset object`)
+  const { randomAssets, getRandomAssets } = useGetRandomAssets( data )
+  // debugger
+// useEffect(())
+  console.log(randomAssets)
+  // console.log(asset)
+  // console.log(news)
+  // useEffect(() => {
+  //   const myRandom = setInterval(() => {
+  //     // getRandomAssets()
+  //   }, 10000);
 
+  //   return () => {
+  //     clearInterval(myRandom)
+  //   }
+  // }, [  ])
 
+  // console.log(randomAssets)
+  // debugger
+  // debugger
+  // useEffect(() => {
+  //   // fetchCoins()
+  // }, [])
   // useEffect(() => {
   //   setTimeout(() => {
   //     setSwapComponent( <SwapButton values={{ showComponent2, handleShowComponent2 }}/> )
@@ -57,10 +88,10 @@ export const MainRouter = () => {
   //   //   cleanup(swapButton)
   //   // }
   // }, [  ])
+  // console.log(`showing array from data ${ data }`)
   return (
     <Router>
       <div className="router">
-
         <Header />
         {/* <BackgroundImage image={ image }/> */}
         <MainNewsCard />
@@ -72,27 +103,27 @@ export const MainRouter = () => {
         <SwapButton values={{ showComponent2, handleShowComponent2 }}/>
 
         <Routes>
-          <Route exact path="/" element={ <HomePage /> }/>
-          <Route exact path="/portafolio" element={ <PortafolioPage /> }/>
-          <Route exact path="/trade" element={ <TradePage /> }/>
-          <Route exact path="/trade/asset" element={ <AssetPage /> }/>
-          <Route exact path="/swap" element={ <SwapCrypto /> }/>
-          <Route exact path="/pay" element={ <PayPage /> }/>
-          <Route exact path="/news" element={ <NewsPage /> }/>
-          <Route exact path="/earn" element={ <LearnAndEarnPage /> }/>
-          <Route exact path="/nft" element={ <NftPage /> }/>
-          <Route exact path="/nft/asset" element={ <NftAssetPage /> }/>
-          <Route exact path="/quiz" element={ <Quiz /> }/>
-          <Route exact path="/billing" element={ <RegisterCard /> }/>
-          <Route exact path="/test" element={ <NewsInfo /> }/>
-          <Route exact path="/process" element={ <Processing /> }/>
+          <Route  path="/" element={ <HomePage values={{ loading, error, data }}/> }/>
+          <Route  path="/portafolio" element={ <PortafolioPage /> }/>
+          <Route  path="/trade" element={ <TradePage /> }></Route>
+          <Route  path="/crypto-asset" element={ <AssetPage /> }/>
+          <Route  path="/swap" element={ <SwapCrypto /> }/>
+          <Route  path="/pay" element={ <PayPage /> }/>
+          <Route  path="/news" element={ <NewsPage /> }/>
+          <Route  path="/earn" element={ <LearnAndEarnPage /> }/>
+          <Route  path="/nft" element={ <NftPage /> }/>
+          <Route  path="nft-asset" element={ <NftAssetPage /> }/>
+          <Route  path="/quiz" element={ <Quiz /> }/>
+          <Route  path="/billing" element={ <RegisterCard /> }/>
+          <Route  path="/test" element={ <NewsInfo /> }/>
+          <Route  path="/process" element={ <Processing /> }/>
           <Route 
             path="*"
             element={ <Navigate to="/"/> }
           />
 
           {/* <Redirect to='/' element={ HomePage }/> */}
-          {/* <Route exact path="/video" element={ <QuizVideo /> }/> */}
+          {/* <Route  path="/video" element={ <QuizVideo /> }/> */}
         </Routes>
 
 

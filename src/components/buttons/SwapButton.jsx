@@ -20,7 +20,7 @@ export const SwapButton = ({values}) => {
   }, [  ])
   console.log('rendered')
   return (
-    <button className={`btn btn--swap ${ intro }`} onClick={ handleShowComponent2} style={{ animationDelay: '1.5s' }}>
+    <button className={`btn btn--swap ${ intro }`} onClick={ handleShowComponent2} style={{ animationDelay: '1.5s', borderRadius: '1rem' }}>
       {
         flip 
           ? icons.convert_icon

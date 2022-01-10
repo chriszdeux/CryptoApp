@@ -2,9 +2,8 @@ import { cleanup } from '@testing-library/react';
 import React, { useEffect, useState } from 'react'
 import kraken from '../../temp/kraken.png';
 import {icons} from '../../utils/icons/icons_object';
-export const TableRow = () => {
-  
-
+export const TableRow = ({item}) => {
+  const { id } = item
   return (
     <>
         <tbody>
@@ -18,7 +17,7 @@ export const TableRow = () => {
         </figure>
       </td>
 
-      <td className="coin--name">Shiba Inu <br /><span className="short--name pd--h">SHIB</span></td>
+      <td className="coin--name">{ id }<br /><span className="short--name pd--h">SHIB</span></td>
       <td className="price">
         $0.000008485 <br />
         {/* <span className="supply">

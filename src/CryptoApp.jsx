@@ -5,10 +5,10 @@ import { MainDisplay } from './components/main/MainDisplay'
 import { MainRouter } from './router/MainRouter'
 
 export const CryptoApp = () => {
+  
   return (
     <>
       <MainRouter />
-      {/* <MainDisplay /> */}
     </>
   )
 }
