@@ -6,10 +6,7 @@ export const useFetchCoins = ( initialPage ) => {
   const [coinsData, setCoinsData] = useState({
     loading: true,
     data: [],
-    top10: [],
-    error: null,
-    gainers: [],
-    losers: []
+    error: true,
   })
 
   // const [top10, setTop10] = useState(initialState)
@@ -18,31 +15,31 @@ export const useFetchCoins = ( initialPage ) => {
       isMounted.current = false
     }
   }, [  ])
-
+  
   useEffect(() => {
-      fetchCoins( initialPage )
+    fetchCoins( initialPage )
       .then(item => {
-          if( item === undefined ) {
-            setCoinsData({
-              loading: false,
-              data: null,
-              error: true,
-              top10: null,
-              gainers: null,
-              losers: null
-            })
-          }
-          else if(isMounted.current) {
-            setCoinsData({
-              loading: false,
-              data: item.myData,
-              top10: item.top10Crypto,
-              gainers: item.topGainers,
-              losers: item.topLosers,
-              error: null
-            })
-          }
+      // debugger
+      // debugger
+      if(item === undefined){
+        // debugger
+         setCoinsData({
+          loading: false,
+          data: [],
+          error: true,
         })
+      } else {
+        // debugger
+        setCoinsData({
+          loading: false,
+          data: item,
+          error: false
+        })
+      }
+      // .catch((err) => {
+      //   console.log(err)
+      // })
+    })
   }, [ initialPage ])
   // debugger
   return coinsData

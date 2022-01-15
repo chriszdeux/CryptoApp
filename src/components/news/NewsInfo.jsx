@@ -25,7 +25,7 @@ export const NewsInfo = ({ handleShowComponent }) => {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, similique sapiente harum et earum omnis reiciendis, eum de
         </p>
 
-      <buton className="btn btn--primary mg--v--3">Go</buton>
+      <button className="btn btn--primary mg--v--3">Go</button>
       </div>
       <figure className="news__background">
         <img src={ image } alt="" />

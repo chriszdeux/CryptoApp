@@ -4,7 +4,7 @@ import { fetchAsset } from "../../fetch-data/fetchAsset"
 
 export const useFetchAsset = ( id ) => {
   const isMounted = useRef(true)
-  const [dataAsset, setDataAsset] = useState({
+  const [dataAssetInfo, setDataAssetInfo] = useState({
     loading: true,
     data: [],
     error: null
@@ -21,14 +21,14 @@ export const useFetchAsset = ( id ) => {
       .then(item => {
         // debugger
         if(!item) {
-          setDataAsset({
+          setDataAssetInfo({
             loading: false,
             data: [],
             error: true
           })
         }
         else if( isMounted.current ) {
-          setDataAsset({
+          setDataAssetInfo({
             loading: false,
             data: item,
             error: null
@@ -37,5 +37,5 @@ export const useFetchAsset = ( id ) => {
       })    
   }, [ id ])
 
-  return dataAsset
+  return dataAssetInfo
 }

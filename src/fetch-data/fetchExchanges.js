@@ -20,7 +20,7 @@ export const fetchExchanges = async () => {
          image: item.image,
          trust_score: item.trust_score,
          trust_score_rank: item.trust_score_rank,
-         trade_volume_24h_btc: item.trade_volume_24h_btc
+         trade_volume_24h_btc: Intl.NumberFormat().format(item.trade_volume_24h_btc.toFixed(3))
        }
      })
 

@@ -45,10 +45,11 @@
     display: flex;
     // padding-left: 1rem;
     .news--item {
-      width: 10rem;
-      // margin-right: 1rem;
-      font-size: $extra-small-font-size;
-      color: $font-color;
+      width: auto;
+      font-size: 1rem;
+      color: #F0F0F0;
+      flex-shrink: 0;
+      margin-right: 1rem;
     }
   }
 }

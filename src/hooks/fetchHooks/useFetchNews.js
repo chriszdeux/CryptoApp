@@ -33,7 +33,7 @@ export const useFetchNews = ( id ) => {
           })
         }
       })
-  }, [])
+  }, [ id ])
 
   return dataNews
 }

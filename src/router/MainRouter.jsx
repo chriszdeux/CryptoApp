@@ -50,45 +50,7 @@ import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
   const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, } = useShowComponent();
-  const [swapComponent, setSwapComponent] = useState(null);
-  // console.log('home');
-  const { data, error, loading, top10, gainers, losers } = useFetchCoins(1)
-  const { data:data2, error:error2, loading:loading2, top10Exchange } = useFetchExchanges()
-  const asset = useFetchAsset('cardano')
-  const news = useFetchNews('crypto')
-  console.log(`this is an asset object`)
-  const { randomAssets, getRandomAssets } = useGetRandomAssets( data )
-  // debugger
-// useEffect(())
-  console.log(randomAssets)
-  // console.log(asset)
-  // console.log(news)
-  // useEffect(() => {
-  //   const myRandom = setInterval(() => {
-  //     // getRandomAssets()
-  //   }, 10000);
-
-  //   return () => {
-  //     clearInterval(myRandom)
-  //   }
-  // }, [  ])
-
-  // console.log(randomAssets)
-  // debugger
-  // debugger
-  // useEffect(() => {
-  //   // fetchCoins()
-  // }, [])
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setSwapComponent( <SwapButton values={{ showComponent2, handleShowComponent2 }}/> )
-  //   }, 2000);
-
-  //   // return () => {
-  //   //   cleanup(swapButton)
-  //   // }
-  // }, [  ])
-  // console.log(`showing array from data ${ data }`)
+  
   return (
     <Router>
       <div className="router">
@@ -103,7 +65,7 @@ export const MainRouter = () => {
         <SwapButton values={{ showComponent2, handleShowComponent2 }}/>
 
         <Routes>
-          <Route  path="/" element={ <HomePage values={{ loading, error, data }}/> }/>
+          <Route  path="/" element={ <HomePage /> }/>
           <Route  path="/portafolio" element={ <PortafolioPage /> }/>
           <Route  path="/trade" element={ <TradePage /> }></Route>
           <Route  path="/crypto-asset" element={ <AssetPage /> }/>

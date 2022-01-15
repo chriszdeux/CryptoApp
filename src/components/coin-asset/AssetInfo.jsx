@@ -21,7 +21,7 @@ export const AssetInfo = () => {
           <AssetStat />
           <AssetSocialNetwork />
           <AssetContract />
-          <AssetTags />
+          {/* <AssetTags /> */}
 
         <div className="glass"></div>
         </div>

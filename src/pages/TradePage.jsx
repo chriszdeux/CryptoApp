@@ -1,6 +1,7 @@
 import React from 'react'
 import { GainerLoser } from '../components/cards/GainerLoser';
 import { CryptoTable } from '../components/crytp-table/CryptoTable'
+import { GenericFooter } from '../components/footer/GenericFooter';
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { NewsInfo } from '../components/news/NewsInfo';
 import { Pagination } from '../components/pagination/Pagination'
@@ -12,12 +13,12 @@ export const TradePage = () => {
       <div className="main__trade">
         <GainerLoser />
         <CryptoTable />
-        <Pagination />
       </div>
       <div className="trade__aside">
         <SwapCrypto />
         <NewsInfo />
       </div>
+      <GenericFooter />
       <BackgroundImage image={ image } />
     </section>
   )

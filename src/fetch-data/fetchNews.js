@@ -1,4 +1,6 @@
 const axios = require('axios')
+
+
 export const fetchNews = async ( id ) => {
   const options = {
     method: 'GET',
@@ -11,11 +13,12 @@ export const fetchNews = async ( id ) => {
   // debugger
   const data =  await axios.request(options).then(function (response) {
     const dataNews = response.data.map(item => {
+      // debugger
       return {
-        article_date: item.articleDate,
-        article_image: item.articleImage,
-        article_title: item.articleTitle,
-        article_url: item.articleUrl
+        article_date: item?.articleDate,
+        article_image: item?.articleImage,
+        article_title: item?.articleTitle,
+        article_url: item?.articleUrl
       }
     });
     return dataNews

@@ -11,6 +11,17 @@ app.use(cors());
 const URL_MARKET_COINS = 'https://coingecko.p.rapidapi.com/coins/markets';
 const URL_EXCHANGES = 'https://coingecko.p.rapidapi.com/exchanges';
 const URL_CRYPTO = 'https://coingecko.p.rapidapi.com/coins/'
+const URL_GLOBAL_STATS = 'https://coingecko.p.rapidapi.com/global'
+
+const options = {
+  method: 'GET',
+  url: '',
+  headers: {
+    'x-rapidapi-host': 'coingecko.p.rapidapi.com',
+    'x-rapidapi-key': process.env.MY_API_KEY
+  }
+};
+
 
 if(process.env.NODE_ENV === "production") {
   app.use(express.static("build"));
@@ -26,17 +37,9 @@ app.get('/coin-list', async (req, res) => {
   // console.log(req.query)
   // console.log('hi')
   // debugger
-  const options = {
-    method: 'GET',
-    url: URL_MARKET_COINS,
-    params: {vs_currency: 'usd', page: page, per_page: '100', order: 'market_cap_desc'},
-    headers: {
-      'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-      'x-rapidapi-key': process.env.MY_API_KEY
-    }
-  };
+  const coinsParams = {vs_currency: 'usd', page: page, per_page: '100'} 
   
-  await axios.request(options).then(function (response) {
+  await axios.request({ ...options, url: URL_MARKET_COINS, params: coinsParams}).then(function (response) {
     res.json(response.data);
   }).catch(function (error) {
     console.error(error);
@@ -45,16 +48,9 @@ app.get('/coin-list', async (req, res) => {
 })
 
 app.get('/exchanges', async (req, res) => {
-  const options = {
-    method: 'GET',
-    url: URL_EXCHANGES,
-    headers: {
-      'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-      'x-rapidapi-key': process.env.MY_API_KEY
-    }
-  };
+
   
-    await axios.request(options).then(function (response) {
+    await axios.request({...options, url: URL_EXCHANGES}).then(function (response) {
       // debugger
       // console.log(response.data)
     res.json(response.data);
@@ -66,24 +62,17 @@ app.get('/exchanges', async (req, res) => {
 app.get('/asset/:id', async ( req, res ) => {
   // console.log(req.query)
   const assetQuery = req.params.id;
-  const options = {
-    method: 'GET',
-    url: `${URL_CRYPTO}${ assetQuery }`,
-    params: {
-      localization: 'true',
-      tickers: 'true',
-      market_data: 'true',
-      community_data: 'true',
-      developer_data: 'true',
-      sparkline: 'false'
-    },
-    headers: {
-      'x-rapidapi-host': 'coingecko.p.rapidapi.com',
-      'x-rapidapi-key': process.env.MY_API_KEY
-    }
-  };
+  const assetParams = {
+    localization: 'true',
+    tickers: 'true',
+    market_data: 'true',
+    community_data: 'true',
+    developer_data: 'true',
+    sparkline: 'true'
+  }
+
   
-  axios.request(options).then(function (response) {
+  axios.request({ ...options, url: `${URL_CRYPTO}${assetQuery}`, params: assetParams}).then(function (response) {
     res.json(response.data);
   }).catch(function (error) {
     console.error(error);
@@ -91,12 +80,6 @@ app.get('/asset/:id', async ( req, res ) => {
 })
 
 app.get('/news/:id', async ( req, res ) => {
-  // console.log('params', req.params)
-  // console.log(req.params)
-  // console.log('query', req.query)
-  // console.log(req.query)
-  
-  // console
   const type = 'crypto'
   const options = {
     method: 'GET',
@@ -114,5 +97,15 @@ app.get('/news/:id', async ( req, res ) => {
   });
 })
 
+app.get('/global-stats', async (req, res) => {
+  console.log(req)
+  await axios.request({...options, url: URL_GLOBAL_STATS}).then(function (response) {
+    debugger
+    // console.log(response)
+    res.json(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+})
 
-app.listen(PORT, () => console.log(`server is running on port ${ PORT }`)) 
+app.listen(PORT, () => console.log(`server is running on port ${ PORT }`));

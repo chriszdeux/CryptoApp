@@ -14,7 +14,8 @@ export const NewsPage = () => {
     <section className="news__page c95">
       <div className="news__main">
         <h2>Crypto news!</h2>
-        <NewsList handleShowComponent={ handleShowComponent }/>
+        <NewsList />
+        {/* <NewsList handleShowComponent={ handleShowComponent }/> */}
       </div>
       <div className="news__aside">
         <NewsInfo handleShowComponent={ handleShowComponent } />

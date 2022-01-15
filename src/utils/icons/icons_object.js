@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline, IoServerOutline, IoPencilOutline, IoShieldCheckmarkOutline, IoPeopleOutline, IoEyeOutline, IoBagCheckOutline, IoHeartOutline, IoPricetagOutline } from 'react-icons/io5';
+import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline, IoServerOutline, IoPencilOutline, IoShieldCheckmarkOutline, IoPeopleOutline, IoEyeOutline, IoBagCheckOutline, IoHeartOutline, IoPricetagOutline, IoWarningOutline } from 'react-icons/io5';
 import { AiOutlineBank, AiOutlineLoading, AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export const icons = {
@@ -40,4 +40,5 @@ export const icons = {
   tag_icon: <IoPricetagOutline  className="icon"/>,
   loading_icon: <AiOutlineLoading3Quarters  className="icon"/>,
   loading_2_icon: <AiOutlineLoading  className="icon"/>,
+  warning_icon: <IoWarningOutline  className="icon"/>,
 }

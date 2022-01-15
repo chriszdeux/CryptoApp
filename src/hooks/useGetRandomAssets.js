@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 
 export const useGetRandomAssets = ( data ) => {
   const [randomAssets, setRandomAssets] = useState([])
+  const [singleAsset, setSingleAsset] = useState([])
   // const [temp, setTemp] = useState([])
   // let temp = []
 
-  const getRandomAssets = () => {
+  const handleRandomAssets = () => {
     setRandomAssets([]);
     if(data.length > 0) {
       for(let i = 0; i < 3; i++) {
@@ -14,11 +15,23 @@ export const useGetRandomAssets = ( data ) => {
       }
     }
   }
+  
+  const handleSingleAsset = () => {
+    // const random = Math.floor(Math.random () * data.length) + 0;
+    if(data.length > 0) {
+      for(let i = 0; i < 5; i++) {
+        const random = Math.floor(Math.random() * data.length) + 0;
+        setSingleAsset(c => [...c, data[random]])
+      }
+    }
+    // setSingleAsset(data[random])
+  }
 
   useEffect(() => {
-    getRandomAssets()
+    handleRandomAssets();
+    handleSingleAsset()
   }, [data])
   // debugger
 
-  return {randomAssets, getRandomAssets};
+  return {randomAssets, singleAsset, handleRandomAssets, handleSingleAsset };
 }

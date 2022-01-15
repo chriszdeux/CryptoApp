@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $gainer-color;
+    // color: $gainer-color;
   }
 }
 
@@ -54,6 +54,7 @@
   font-weight: $bold-font;
   // text-align: end;
   .supply {
+    display: grid;
     font-size: $small-font-size;
     font-weight: $regular-font;
     color: $base-color;
@@ -123,6 +124,14 @@ tr {
 
 .supply {
   display: none;
+}
+
+.link--asset {
+  a {
+    text-decoration: none;
+    color: $active-color;
+
+  }
 }
 .coin {
   display: flex;

@@ -50,12 +50,12 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: $large-font-size;
+        font-size: $regular-font-size;
         margin-bottom: 1rem;
 
         figure {
-          width: 5rem;
-          height: 5rem;
+          width: 3rem;
+          height: 3rem;
           border-radius: 50%;
           overflow: hidden;
 
@@ -64,10 +64,12 @@
             height: inherit;
             object-fit: cover;
           }
+
+          
         }
 
         h3 {
-          color: $color;
+          // color: $color;
           // span {
           //   .icon {
           //     font-size: $large-font-size;
@@ -75,9 +77,46 @@
           // }
           &:nth-child(2) {
             display: flex;
+            width: 50%;
             align-items: center;
             color: $active-color;
+            
 
+          }
+        }
+
+        .loser--color {
+          display: flex;
+          align-items: center;
+          span {
+            width: 3rem;
+            height: 3rem;
+            // border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+
+            .icon {
+              font-size: $regular-font-size;
+            }
+          }
+        }
+        .gainer--color {
+          display: flex;
+          align-items: center;
+          span {
+            width: 3rem;
+            height: 3rem;
+            // border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+
+            .icon {
+              font-size: $regular-font-size;
+            }
           }
         }
       }
@@ -115,7 +154,7 @@
   }
 
   .card__percent {
-    color: $gainer-color;
+    // color: $gainer-color;
     h2 {
       display: flex;
       align-items: center;
@@ -184,8 +223,26 @@
     display: flex;
     justify-content: space-between;
     // align-items: space-around;
-    font-size: $regular-font-size;
+    font-size: $small-font-size;
     color: $active-color;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 3rem;
+      text-decoration: none;
+      border: 1px solid $border-color;
+      border-radius: .5rem;
+      color: $active-color;
+    }
     // margin-bottom: 1rem;
   }
   
@@ -193,7 +250,7 @@
     // padding: 1rem;
     
     h2 {
-      @include text-mixin($large-font-size, $active-color)
+      @include text-mixin($regular-font-size, $font-color)
     }
     p {
       @include text-mixin($small-font-size, $base-color)
@@ -361,12 +418,16 @@
     font-size: $extra-large-font-size;
     color: $font-color;
   }
+  .based--100--coins {
+    font-size: $regular-font-size;
+    color: $active-color;
+  }
 
   .gainers__losers {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-
+    padding: 0 1rem;
     .feature__gainers {
       position: relative;
       width: 100%;
@@ -483,6 +544,7 @@
           position: absolute;
           top: 5%;
           right: 0;
+          z-index: 1;
           .back {
             display: flex;
             justify-content: center;

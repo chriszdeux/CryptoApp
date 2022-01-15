@@ -138,6 +138,7 @@
 
           li {
             border: none;
+            width: 100%
           }
           // display: none
         }
@@ -188,7 +189,6 @@
             color: $font-color;
             font-size: 1.4rem;
             margin-left: 1rem;
-            background-color: $gainer-color;
             border-radius: .5rem;
           }
         }

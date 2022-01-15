@@ -20,20 +20,7 @@ import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
 import image from '../utils/vector/world.svg';
 
-export const HomePage = ({values}) => {
-  const { data, error, loading } = values
-  // const [swappComponent, setSwappComponent] = useState(null);
-  // const { showComponent, handleShowComponent } = useShowComponent()
-  // console.log('home')
-  // useEffect(() => {
-  //   const swapButton = setTimeout(() => {
-  //     setSwappComponent( <SwapButton values={{ showComponent, handleShowComponent }}/> )
-  //   }, 2000);
-
-  //   return () => {
-  //     cleanup(swapButton)
-  //   }
-  // }, [  ])
+export const HomePage = () => {
   // debugger
   return (
     <>
@@ -41,14 +28,10 @@ export const HomePage = ({values}) => {
       {/* <MainNewsCard />   */}
       {/* <DeskMenu/> */}
       <div className="home__main">
-      <MainDisplay />
+        <MainDisplay />
         <GainerLoser />
         <CryptoFeature />
-        {
-          !loading &&
-          <CryptoTable data={ data }/>
-        }
-
+        <CryptoTable/>
         <ForYou />
         <GenericFooter />
       </div>

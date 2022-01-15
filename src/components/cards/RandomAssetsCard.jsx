@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { icons } from '../../utils/icons/icons_object';
 import kraken from '../../temp/kraken.png';
 import { TopAsset } from './TopAsset';
 import { animations_object } from '../../utils/animations/animations_object';
+import { DataContext } from '../../context/context';
+import { useGetRandomAssets } from '../../hooks/useGetRandomAssets';
+import { LoadingText } from '../loading/LoadingText';
+import { ErrorConnect } from '../errors/ErrorConnect';
 export const RandomAssetsCard = () => {
+  const { dataAssets:{data, loading, error} } = useContext(DataContext)
+  const { randomAssets, handleRandomAssets } = useGetRandomAssets(!!data && data)
+  // debugger
   const { intro_up } = animations_object;
   return (
     <div className={`feature feature__assets__random pd ${ intro_up }`} style={{ animationDelay: '.6s' }}>
-      <h2>Watch this <span>{ icons.convert_icon }</span></h2>
+      <h2>Watch this <span onClick={ handleRandomAssets }>{ icons.convert_icon }</span></h2>
       <ul className="feature__list">
-        <TopAsset />
-        <TopAsset />
-        <TopAsset />
+        {
+          loading
+            ? <LoadingText />
+            : error 
+              ? <ErrorConnect />
+              : randomAssets.map(item => (
+                <TopAsset key={ item.id } item={ item }/>
+              ))
+        }
       </ul>
       <div className="glass"></div>
     </div> 

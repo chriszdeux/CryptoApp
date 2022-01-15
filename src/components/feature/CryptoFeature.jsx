@@ -12,10 +12,8 @@ export const CryptoFeature = () => {
   const { intro } = animations_object;
   return (
     <section className="wrapper c100">
-
-      <h2 className="wrapper--title">Top 10 Cryptos</h2>
-      <Top10Crypto />
       <NewsCrypto />
+      <Top10Crypto />
       <Top10Exchange />
     </section>
   )

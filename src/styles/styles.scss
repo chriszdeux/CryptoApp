@@ -24,6 +24,7 @@
 @import './global/masonry';
 @import './global/waves';
 @import './global/loading';
+@import './global/errors';
 
 
 @import './pages/portafolio';
@@ -152,6 +153,21 @@ a {
     // left: 50%;
     // transform: translateX(-50%);
   }
+}
+
+.gainer--background {
+  background-color: $gainer-color;
+  color: $font-color;
+}
+.gainer--color {
+  color: $gainer-color;
+}
+.loser--background {
+  background-color: $loser-color;
+  color: $font-color;
+}
+.loser--color {
+  color: $loser-color;
 }
 
 ::-webkit-scrollbar {
