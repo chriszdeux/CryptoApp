@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { DataContext } from './context/context'
+import { earn_data } from './earn-data/earn_data'
 import { fetchGlobalStats } from './fetch-data/fetchGlobalStats'
 import { useFetchAsset } from './hooks/fetchHooks/useFetchAsset'
 import { useFetchCoins } from './hooks/fetchHooks/useFetchCoins'
@@ -23,7 +24,8 @@ export const CryptoApp = () => {
   const dataNews = useFetchNews('crypto')
   // debugger
   const { handleNftData, nft } = useHandleNftData()
-  // debugger
+  const [ dataEarning, setDataEarning ] = useState([])
+  
   const [handleAsset, setHandleAsset] = useState('bitcoin')
   return (
     <DataContext.Provider value={{
@@ -39,7 +41,9 @@ export const CryptoApp = () => {
       handleAsset,
       setHandleAsset,
       nft,
-      handleNftData
+      handleNftData,
+      dataEarning,
+      setDataEarning
       // error
     }}>
       <MainRouter />

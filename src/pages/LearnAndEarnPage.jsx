@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { LearnCardWrapper } from '../components/cards/LearnCardWrapper'
 import { BackgroundImage } from '../components/main/BackgroundImage';
 import { Quiz } from '../components/quiz/Quiz';
+import { DataContext } from '../context/context';
 import { useShowComponent } from '../hooks/ShowComponent';
 import image from '../utils/vector/earn.svg';
 
 export const LearnAndEarnPage = () => {
+
   const { handleShowComponent, showComponent } = useShowComponent()
   return (
     <>
