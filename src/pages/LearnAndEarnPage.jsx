@@ -12,9 +12,6 @@ export const LearnAndEarnPage = () => {
     <section className="earn__page">
       <h2 className="mg--l">Learn and Earn</h2>
       <LearnCardWrapper handleShowComponent={ handleShowComponent }/>
-      <LearnCardWrapper handleShowComponent={ handleShowComponent }/>
-      <LearnCardWrapper handleShowComponent={ handleShowComponent }/>
-      <LearnCardWrapper handleShowComponent={ handleShowComponent }/>
       <BackgroundImage image={ image }/>
     </section>
     {

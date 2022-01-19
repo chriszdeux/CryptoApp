@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevronBackOutline, IoCloseOutline, IoCardOutline, IoWalletOutline, IoTrendingDownOutline, IoTrendingUpOutline, IoStarSharp, IoSearchOutline, IoSwapHorizontalOutline, IoCashOutline, IoSwapVerticalOutline, IoAddOutline, IoRemoveOutline, IoSyncOutline, IoEllipsisVerticalOutline, IoLinkOutline, IoOpenOutline, IoPersonOutline, IoChatboxOutline, IoDocumentTextOutline, IoCopyOutline, IoCheckmarkOutline, IoCodeSlashOutline, IoServerOutline, IoPencilOutline, IoShieldCheckmarkOutline, IoPeopleOutline, IoEyeOutline, IoBagCheckOutline, IoHeartOutline, IoPricetagOutline, IoWarningOutline } from 'react-icons/io5';
 import { AiOutlineBank, AiOutlineLoading, AiOutlineLoading3Quarters } from 'react-icons/ai';
-
+import { SiEthereum } from 'react-icons/si'; 
 export const icons = {
   up_icon: <IoCaretUpOutline className="icon"/>,
   down_icon: <IoCaretDownOutline className="icon"/>,
@@ -41,4 +41,5 @@ export const icons = {
   loading_icon: <AiOutlineLoading3Quarters  className="icon"/>,
   loading_2_icon: <AiOutlineLoading  className="icon"/>,
   warning_icon: <IoWarningOutline  className="icon"/>,
+  eth_icon: <SiEthereum  className="icon"/>,
 }

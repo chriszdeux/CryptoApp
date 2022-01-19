@@ -1,20 +1,23 @@
 import React from 'react'
 import shib from '../../temp/shib.png';
-export const NftUserPrice = () => {
+import { icons } from '../../utils/icons/icons_object';
+export const NftUserPrice = ({ item }) => {
+  const { regular_image, tags, user, user_image, price_eth } = item
+  // debugger
   return (
     <div className="nft__data">
       <div className="nft__username">
         <figure>
-          <img src={ shib } alt="" />
+          <img src={ user_image } alt={ user } />
         </figure>
-        <h3>Usernamex481</h3>
+        <h3>{ user }</h3>
       </div>
 
       <div className="nft__price">
-        <figure>
-          <img src={ shib } alt="" />
-        </figure>
-        <h3>1.3eth</h3>
+        <div>
+          { icons.eth_icon }
+        </div>
+        <h3>{ price_eth }</h3>
       </div>
     </div>
   )

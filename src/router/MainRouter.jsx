@@ -32,6 +32,7 @@ import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { BackgroundWaves } from '../components/waves/BackgroundWaves';
 import { fetchCoins } from '../fetch-data/fetchCoins';
 import { useFetchAsset } from '../hooks/fetchHooks/useFetchAsset';
+import { useFetchAssetChart } from '../hooks/fetchHooks/useFetchAssetChart';
 import { useFetchCoins } from '../hooks/fetchHooks/useFetchCoins';
 import { useFetchExchanges } from '../hooks/fetchHooks/useFetchExchanges';
 import { useFetchNews } from '../hooks/fetchHooks/useFetchNews';

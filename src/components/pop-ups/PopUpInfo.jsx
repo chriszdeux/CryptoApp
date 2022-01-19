@@ -22,7 +22,11 @@ export const PopUpInfo = ({ values }) => {
       <ul className="pop__up__list">
         {
           links.map((item, index) => (
-            <li key={ `${item}${index}` }> { item } { icons.open_icon }</li>
+            <li key={ `${item}${index}` }> { item.slice(0,15) }... 
+              <a href={ item } target="_blank" rel="noopener noreferrer">
+                { icons.open_icon }
+              </a>
+            </li>
           ))
         }
       </ul>

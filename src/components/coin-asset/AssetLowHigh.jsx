@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { DataAssetContext } from '../../context/context';
 // import { useEffect } from 'react/cjs/react.development';
 import { icons } from '../../utils/icons/icons_object';
 
 
 export const AssetLowHigh = () => {
-  
-  const [currentPercent, setCurrentPercent] = useState({
-    low: Number,
-    high: Number,
-    currentPrice: Number
-  })
+  const { data: {
+    high_24h_usd,
+    low_24h_usd,
+    current_price_usd
+  } } = useContext(DataAssetContext)
+  const [currentPercent, setCurrentPercent] = useState(0)
 
   const { low, high, currentPrice } = currentPercent
-  const handlePercent = () => {
-    const n = Math.floor(Math.random() * ( 300 - 150)) + 150;
-    const n2 = Math.floor(Math.random() * ( 149 - 1)) + 1;
-    const current = Math.floor(Math.random() * ( n - n2)) + n2;
-    const range = (n - n2);
-    // const temp = range - current
-    // debugger
-    // const temp = range / n2
-    setCurrentPercent({
-      low: n2,
-      high: n,
-      currentPrice: ( (current - range )/100 ).toFixed(1)
-    })
-    console.log(`min: ${n2} max: ${n} range: ${range} current price: ${current}`)
+  const handlePercent = (high, low) => {
+    debugger
+    let n = (parseFloat(high) - parseFloat(low)).toFixed(4)
+    console.log(n)
+    debugger
   }
-
+  debugger
   useEffect(() => {
-    handlePercent()
-  }, [  ])
+    handlePercent(high_24h_usd, low_24h_usd)
+  }, [ current_price_usd ])
   // const n = 100, n2 = 60, current = 80;
   // const range = n - n2;
   // // const percent = (range / current * 100).toFixed(1)
@@ -38,18 +30,18 @@ export const AssetLowHigh = () => {
   // debugger
   // const n2 = Math.floor(Math.random() * ( 200 - 100)) + 100;
   // debugger
-  console.log(`current %: ${ currentPrice }`)
+  // console.log(`current %: ${ currentPrice }`)
   // const r = 
  
   return (
     <div className="asset__low__high mg--b">
-      <h3>Low <span>${ low }</span></h3>
-      <h3>High <span>${ high }</span></h3>
+      <h3>Low <span>${ low_24h_usd }</span></h3>
+      <h3>High <span>${ high_24h_usd }</span></h3>
       <div className="progress__bar">
         <div className="current__progress" style={{ width: `${currentPrice}%` }}>
           <div className="progress--pointer" >
             { icons.up_icon }
-            {/* <p>{ current }</p> */}
+            <p>{ current_price_usd }</p>
           </div>
         </div>
       </div>

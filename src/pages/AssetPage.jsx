@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContext } from 'react/cjs/react.development'
+import { AssetStats } from '../components/asset-stats/AssetStats'
 import { InterestedEarned } from '../components/cards/InterestedEarned'
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { Chart } from '../components/charts/Chart'
@@ -44,14 +45,14 @@ export const AssetPage = () => {
                   </div>
                 </div>
 
-                <aside className="right__side">
+                <AssetStats />
+                {/* <aside className="right__side">
                   <AssetTransactions />
                   <div className="only__for__you">
                     <InterestedEarned />
                     <LearnAndEarnCard />
                   </div>
-                  {/* <SwapCrypto /> */}
-                </aside>
+                </aside> */}
               </>
         }
 

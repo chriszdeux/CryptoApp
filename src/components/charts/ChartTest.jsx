@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +11,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
+import { useFetchAssetChart } from '../../hooks/fetchHooks/useFetchAssetChart';
+import { DataAssetContext } from '../../context/context';
 // import { htmlLegendPlugin } from '../../pages/portafolio/htmlLegendPlugin';
 
 ChartJS.register(
@@ -22,69 +24,96 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const labels_games = ['halo', 'mass effect', 'forza', 'starcraft', 'skyline', 'uncharted', 'spiderman',]
-
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: '',
-    },
-    title: {
-      display: false,
-      text: 'Chart.js Line Chart',
-    },
-  },
-  // options: {
-  //   scales: {
-  //     x: {
-  //       ticks: {
-  //         color: '#fff'
-  //       }
-  //     }
-  //   }
-  // }
-};
-
-
-const labels = ['January', 'February', 'March','January', 'February', 'March', 'January', 'February', 'March','January', 'February', 'March', 'January', 'February', 'March','January', 'February', 'March',];
-const myData = [1,3,2,4,6,5,8,12,5,3,12,4,3,8,5,4,14,22]
-// debugger
-const handleData = ( data ) => {
-  return data.map(item => item)
-}
-
-// const config = {
-//   type: 'line',
-//   myData,
-//   options: {
-//     scales: {
-//       y: {
-//         ticks: {
-//           color: '#fff'
-//         }
-//       }
-//     }
-//   }
-// }
-const data = {
-    labels,
-    datasets: [
-      {
-        id: 1,
-        label: 'shiba inu',
-        data: myData,
-        borderColor: '#00B4BF',
-        backgroundColor: '#07F1FF',
-        // color: ['$fff','$fff','$fff','$fff','$fff','$fff',]
-      },
-    ],
-    
-  }
 
 export const ChartTest = () => {
-  return <Line
-            data={data}
-            options={ options }
-          />
+  const { data: { id, name } } = useContext(DataAssetContext)
+  const { data:dataChart, loading, error } = useFetchAssetChart(id)
+  // debugger
+  const [data, setData] = useState({})
+
+
+
+  const options = {
+    scales: {
+      y: {
+        ticks: {
+          color: '#F0F0F0',
+          // size: 20
+        },
+        grid: {
+          // display: false
+          color: '#08ACB6'
+        }
+      },
+      x: {
+        ticks: {
+          color: '#F0F0F0',
+          // size: 20
+        },
+        grid: {
+          display: false
+        }
+      }
+    },
+    responsive: true,
+    // backgroundColor: 'red',
+    plugins: {
+      legend: {
+        position: 'left',
+        display: false,
+        labels: {
+          font: {
+            // color: 'white',
+            // size: 50
+          },
+          // color: 'red',
+          
+        }
+      },
+      title: {
+        display: true,
+        text: `Price ${ name }`,
+        color: '#F0F0F0',
+        size: 20
+      },
+    },
+    elements: {
+      point: {
+        pointBackgroundColor: 'rgba(0,0,0,0)',
+        pointBorderColor: 'rgba(0,0,0,0)',
+        pointHoverBackgroundColor: '#03D0DD'
+      }
+    }
+  };
+
+
+  // debugger
+  useEffect(() => {
+    // debugger
+      setData({
+        labels: dataChart.date,
+        datasets: [
+          {
+            id: 1,
+            label: `${ id } $`,
+            data: dataChart.price,
+            // data: dataChart.price,
+            borderColor: '#00B4BF',
+            backgroundColor: '#07F1FF',
+            // pointStyle: 'triangle',
+            // color: 'fff'
+            // color: ['$fff','$fff','$fff','$fff','$fff','$fff',]
+          },
+        ]
+      })
+      // debugger
+  }, [ dataChart ])
+  // debugger
+  return (
+    <>
+    {
+      !loading && <Line data={data} options={ options } />
+    }
+    </>
+  )
 }

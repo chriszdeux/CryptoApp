@@ -7,9 +7,7 @@ export const NftGeneralStats = () => {
   return (
     <div className="nft__global__stats">
       <NftSocial />
-
       <NftPrice />
-
       <NftContract />
     </div>
   )

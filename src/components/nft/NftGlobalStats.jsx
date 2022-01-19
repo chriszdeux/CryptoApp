@@ -10,8 +10,6 @@ export const NftGlobalStats = () => {
     <div className={`global__stats c95 mg--t ${intro}`} style={{ animationDelay: '2s' }}>
       <HeaderStats />
       <NftGeneralStats />
-      
-      
     </div>
   )
 }

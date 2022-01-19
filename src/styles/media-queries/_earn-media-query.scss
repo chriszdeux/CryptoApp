@@ -13,6 +13,16 @@
     }
   }
 
+  .learn__section {
+   
+    .wrapper__cards {
+      justify-content: space-between;
+      .learn__card {
+        width: 49%;
+
+      }
+    }
+  }
 }
 
 @media only screen and ( min-width: 768px ) {
@@ -30,6 +40,18 @@
     }
   }
 
+  .learn__section {
+  
+  
+    .wrapper__cards {
+      justify-content: flex-start;
+      .learn__card {
+        width: 30%;
+        margin: 1rem;
+        // padding: 0 1rem;
+      }
+    }
+  }
 }
 
 @media only screen and ( min-width: 1024px ) {
@@ -69,6 +91,19 @@
 
       p {
         font-size: $extra-large-font-size;
+      }
+    }
+  }
+
+  .learn__section {
+  
+  
+    .wrapper__cards {
+      justify-content: flex-start;
+      .learn__card {
+        width: 18%;
+        margin: 1rem;
+        // padding: 0 1rem;
       }
     }
   }

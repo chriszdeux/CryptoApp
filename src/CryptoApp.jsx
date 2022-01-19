@@ -6,8 +6,10 @@ import { useFetchAsset } from './hooks/fetchHooks/useFetchAsset'
 import { useFetchCoins } from './hooks/fetchHooks/useFetchCoins'
 import { useFetchExchanges } from './hooks/fetchHooks/useFetchExchanges'
 import { useFetchGlobalStats } from './hooks/fetchHooks/useFetchGlobalStats'
+import { useFetchImagesNft } from './hooks/fetchHooks/useFetchImagesNft'
 import { useFetchNews } from './hooks/fetchHooks/useFetchNews'
 import { useDataFunctions } from './hooks/useDataFunctions'
+import { useHandleNftData } from './hooks/useHandleNftData'
 import { usePagination } from './hooks/usePagination'
 import { MainRouter } from './router/MainRouter'
 
@@ -19,6 +21,8 @@ export const CryptoApp = () => {
   // const { error } = dataAssets
   const dataExchanges = useFetchExchanges()
   const dataNews = useFetchNews('crypto')
+  // debugger
+  const { handleNftData, nft } = useHandleNftData()
   // debugger
   const [handleAsset, setHandleAsset] = useState('bitcoin')
   return (
@@ -33,7 +37,9 @@ export const CryptoApp = () => {
       handleNextPage, 
       handlePrevPage,
       handleAsset,
-      setHandleAsset
+      setHandleAsset,
+      nft,
+      handleNftData
       // error
     }}>
       <MainRouter />

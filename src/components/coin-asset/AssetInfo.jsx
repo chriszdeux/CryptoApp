@@ -30,7 +30,7 @@ export const AssetInfo = () => {
           <div className="asset__stats__top">
             <AssetPrice />
             <AssetBtcEth />
-            <AssetLowHigh />
+            {/* <AssetLowHigh /> */}
           </div>
           <Divider />
           <AssetGlobalInfo />

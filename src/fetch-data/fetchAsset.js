@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { formatNumber } from '../utils/functions/formatNumber';
 // import res from 'express/lib/response';
 
 export const fetchAsset = async ( asset ) => {
@@ -16,23 +17,7 @@ export const fetchAsset = async ( asset ) => {
     },
   };
 
-  const formatNumber = ( number ) => {
-    // debugger
-    if( number != undefined || number != null ) {
-      // debugger
-      if(number > 0 && number < 1) {
-        // debugger
-        return number.toFixed(8) 
-      } else {
-        // debugger
-        return Intl.NumberFormat().format(number.toFixed(4))
-      }
-
-    }
-    
-    return null
-    // return Intl.NumberFormat().format(number.toFixed(2))
-  }
+  
   // debugger
   const data = await axios.request(options).then(function (response) {
     const { data } =  response;
@@ -82,12 +67,18 @@ export const fetchAsset = async ( asset ) => {
 
       market_cap_change_percentage_24h: formatNumber(data?.market_data.market_cap_change_percentage_24h),
 
-      price_change_percentage_24h_usd: formatNumber(data?.market_data.price_change_percentage_24h),
+      price_change_percentage_24h: formatNumber(data?.market_data.price_change_percentage_24h),
 
       price_change_currency_usd: formatNumber(data?.market_data.price_change_24h_in_currency.usd),
       price_change_currency_btc: formatNumber(data?.market_data.price_change_24h_in_currency.btc),
       price_change_currency_eth: formatNumber(data?.market_data.price_change_24h_in_currency.eth),
       price_change_currency_mxn: formatNumber(data?.market_data.price_change_24h_in_currency.mxn),
+
+      price_change_percentage_24h_in_currency_usd: formatNumber(data?.market_data.price_change_percentage_24h_in_currency.usd),
+      price_change_percentage_24h_in_currency_btc: formatNumber(data?.market_data.price_change_percentage_24h_in_currency.btc),
+      price_change_percentage_24h_in_currency_eth: formatNumber(data?.market_data.price_change_percentage_24h_in_currency.eth),
+      price_change_percentage_24h_in_currency_mxn: formatNumber(data?.market_data.price_change_percentage_24h_in_currency.mxn),
+
 
       total_supply: formatNumber(data?.market_data.total_supply),
       max_supply: formatNumber(data?.market_data.max_supply),
