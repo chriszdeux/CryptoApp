@@ -26,12 +26,13 @@ ChartJS.register(
 );
 
 export const ChartTest = () => {
-  const { data: { id, name } } = useContext(DataAssetContext)
+  const { data: { id, name, price_change_percentage_24h, current_price_usd } } = useContext(DataAssetContext)
+  // const { data:test } = useContext(DataAssetContext)
   const { data:dataChart, loading, error } = useFetchAssetChart(id)
   // debugger
   const [data, setData] = useState({})
 
-
+  const [gainer, setGainer] = useState('');
 
   const options = {
     scales: {
@@ -72,7 +73,7 @@ export const ChartTest = () => {
       },
       title: {
         display: true,
-        text: `Price ${ name }`,
+        text: `${ name } price $${ current_price_usd }`,
         color: '#F0F0F0',
         size: 20
       },
@@ -86,6 +87,11 @@ export const ChartTest = () => {
     }
   };
 
+  // useEffect(() => {
+  //   (current_price_usd > 0)
+  //     ? setGainer('#0DC96E')
+  //     : setGainer('#f56b6b')
+  // }, [ current_price_usd ])
 
   // debugger
   useEffect(() => {
@@ -98,7 +104,7 @@ export const ChartTest = () => {
             label: `${ id } $`,
             data: dataChart.price,
             // data: dataChart.price,
-            borderColor: '#00B4BF',
+            borderColor: price_change_percentage_24h > 0 ? '#0DC96E' : '#f56b6b',
             backgroundColor: '#07F1FF',
             // pointStyle: 'triangle',
             // color: 'fff'

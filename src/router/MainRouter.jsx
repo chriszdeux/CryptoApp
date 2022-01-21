@@ -1,5 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -12,6 +14,7 @@ Route,
 Link,
 Navigate
 } from 'react-router-dom';
+import { actionMainData } from '../actions/actionMainData';
 
 // import { useEffect } from 'react/cjs/react.development';
 import { MenuButton } from '../components/buttons/MenuButton';
@@ -47,10 +50,12 @@ import { NftPage } from '../pages/NftPage';
 import { PayPage } from '../pages/PayPage';
 import { PortafolioPage } from '../pages/PortafolioPage';
 import { TradePage } from '../pages/TradePage';
+import { mainDataReducer } from '../reducers/mainDataReducer';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
   const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, } = useShowComponent();
+
   
   return (
     <Router>

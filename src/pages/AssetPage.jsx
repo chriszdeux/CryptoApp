@@ -37,12 +37,12 @@ export const AssetPage = () => {
               : 
               <>
                 <div className="asset__main__info">
-                  <AssetInfo />
-                  <div className=" mg--v--3"></div>
                   <div>
+                  <AssetInfo />
                     <Chart/>
-                    <AssetAbout />     
                   </div>
+                    <AssetAbout />     
+                  <div className=" mg--v--3"></div>
                 </div>
 
                 <AssetStats />

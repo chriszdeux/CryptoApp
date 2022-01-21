@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { icons } from '../../utils/icons/icons_object'
 import kraken from '../../temp/kraken.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { DataContext } from '../../context/context';
 
 export const TopAsset = ({ item }) => {
-  const { name, image, price_change_percentage_24h } = !!item && item
-
+  const { id, name, image, price_change_percentage_24h } = !!item && item
+  const { setHandleAsset } = useContext(DataContext)
   const [color, setColor] = useState('')
 
   useEffect(() => {
@@ -17,10 +19,16 @@ export const TopAsset = ({ item }) => {
   // debugger
   return (
     <li className="top--asset">
+        <div>
       <figure>
-        <img src={ image } alt="" />
+        <img src={
+           image } alt="" />
       </figure>
-      <h3>{ name }</h3>
+      <Link to="/crypto-asset">
+        <h3 onClick={() => setHandleAsset(id)}>{ name }</h3>
+      </Link>
+
+      </div>
       <h3 className={ color }>
         <span >
           { 

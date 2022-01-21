@@ -15,7 +15,7 @@ export const SuggestedCard = () => {
   const [currentPosition, setCurrentPosition] = useState(0)
   const [displayButton, setDisplayButton] = useState(true)
   // debugger
-  const { name, image, high_24h } = singleAsset.length > 0 && singleAsset[currentPosition]
+  const { name, image, high_24h, current_price } = singleAsset.length > 0 && singleAsset[currentPosition]
   const { intro_up } = animations_object;
   
   const [color, setColor] = useState('')
@@ -64,7 +64,7 @@ export const SuggestedCard = () => {
           <img src={ image } alt="" />
         </figure>
         <h2>{ name }</h2>
-        <h3 className={ color }>{ icons.up_icon } { high_24h }%</h3>
+        <h3 className={ color }>${ current_price }</h3>
         <div>
           <button className="btn btn--primary">Learn More</button>
           <button className="btn btn--dismiss">Dismiss</button>

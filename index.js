@@ -88,7 +88,7 @@ app.get('/news/:id', async ( req, res ) => {
   const type = 'crypto'
   const options = {
     method: 'GET',
-    url: `https://latest-crypto-news.p.rapidapi.com/newsbtc/${req.params.id}/latest_`,
+    url: `https://latest-crypto-news.p.rapidapi.com/newsbtc/${req.params.id}/latest`,
     headers: {
       'x-rapidapi-host': 'latest-crypto-news.p.rapidapi.com',
       'x-rapidapi-key': process.env.MY_API_KEY,
@@ -132,7 +132,7 @@ app.get('/nft/:id', async (req, res) => {
   const options = {
     method: 'Get',
     url: `${URL_IMAGE_NFT}`,
-    params: { 'category': req.params.id, 'per_page': 100, 'editors_choice': true },
+    params: { 'q': req.params.id, 'per_page': 100, 'editors_choice': true },
     
   }
   await axios.request(options).then(response => {

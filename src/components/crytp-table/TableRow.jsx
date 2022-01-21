@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { actionWishlist } from '../../actions/actionWishlist';
 import { DataContext } from '../../context/context';
+import { wishlistReducer } from '../../reducers/wishlistReducer';
 import kraken from '../../temp/kraken.png';
 import { icons } from '../../utils/icons/icons_object';
 
@@ -25,8 +28,10 @@ export const TableRow = ({ item }) => {
     
   } = item;
   // debugger
-  const handleClick = () => {
-    console.log(`woow a click!!`)
+  const dispatch = useDispatch()
+  // debugger
+  const handleWishItem = () => {
+    dispatch( actionWishlist(item) )
   }
   return (
     <>
@@ -35,6 +40,11 @@ export const TableRow = ({ item }) => {
               {/* <td>1</td> */}
   
               <td className="rank">{ market_cap_rank }</td>
+              <td className="favorite">
+                <div onClick={ handleWishItem }>
+                  { icons.star_icon }
+                </div>
+              </td>
               <td className="coin">
                 <figure className="crypto__coin">
                   <img className="coin--image" src={ image } alt={ id } />
@@ -62,7 +72,7 @@ export const TableRow = ({ item }) => {
               </td>
               <td className="supply">$ { total_supply }
               </td>
-              <td  className="link--asset" onClick={ handleClick } onClick={() => setHandleAsset(id)}>
+              <td  className="link--asset" onClick={() => setHandleAsset(id)}>
                 <Link to="/crypto-asset">
                 { icons.forward_icon }
                 </Link>

@@ -6,18 +6,21 @@ import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
 import { LoadingText } from '../loading/LoadingText'
 import { ErrorConnect } from '../errors/ErrorConnect';
+import { useSelector } from 'react-redux';
 export const CryptoTable = () => {
   // const context = useContext(contextdata)
   // console.log(data)
   // debugger
-  const { dataAssets: {
-    data, loading, error
-  } } = useContext( DataContext );
+  // const { dataAssets: {
+  //   data, loading, error
+  // } } = useContext( DataContext );
+  const { loading, error, data } = useSelector(state => state.data_reducer)
+  
+  // debugger
   const { intro } = animations_object;
   // debugger
   return (
     <section className="crypto__coins c100">
-      
       <Pagination />
         {/* <hr /> */}
         {
@@ -39,6 +42,7 @@ export const CryptoTable = () => {
         }
       {/* <div className="glass"></div> */}
       <Pagination />
+      
 
     </section>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react/cjs/react.development';
 import { DataContext } from '../../context/context';
 import { useDataFunctions } from '../../hooks/useDataFunctions';
@@ -10,7 +11,8 @@ import { LoadingText } from '../loading/LoadingText';
 
 export const Top10Crypto = () => {
   const { intro } = animations_object;
-  const { dataAssets: { loading, error, data }} = useContext(DataContext)
+  const { loading, error, data } = useSelector(state => state.data_reducer)
+  // debugger
   const { top10, handleTop10 } = useDataFunctions(  )
 
   useEffect(() => {

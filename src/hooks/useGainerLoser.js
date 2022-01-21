@@ -6,7 +6,7 @@ export const useGainerLoser = ( data ) => {
     gainer: '',
     gainer_icon: null
   })
-  
+  const [convertNumber, setConvertNumber] = useState(0);
   const handleIsGainer = ( _data ) => {
     if(_data && _data > 0) {
       // debugger
@@ -25,8 +25,12 @@ export const useGainerLoser = ( data ) => {
   }
 
   useEffect(() => {
-    handleIsGainer(data)
+    setConvertNumber(Number(data))
   }, [ data ])
+
+  useEffect(() => {
+    handleIsGainer(convertNumber)
+  }, [ convertNumber ])
 
   // debugger
   return isGainer

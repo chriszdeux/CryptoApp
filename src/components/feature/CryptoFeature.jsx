@@ -12,7 +12,7 @@ export const CryptoFeature = () => {
   const { intro } = animations_object;
   return (
     <section className="wrapper c100">
-      <NewsCrypto />
+      {/* <NewsCrypto /> */}
       <Top10Crypto />
       <Top10Exchange />
     </section>

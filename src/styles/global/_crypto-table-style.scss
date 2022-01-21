@@ -29,7 +29,7 @@
 
 .table__header {
   position: relative;
-  font-size: $large-font-size;
+  font-size: $regular-font-size;
   color: $active-color;
   height: 3rem;
   border-bottom: 1px solid $active-color;
@@ -68,7 +68,7 @@ tr {
   position: relative;
   border-bottom: 1px solid $active-color;
   align-items: center;
-  font-size: $regular-font-size;
+  font-size: $small-font-size;
   color: $active-color;
   // padding-bottom: 10rem;
   td {
@@ -84,6 +84,14 @@ tr {
     opacity: .2;
     border: 1px solid $active-color;
     // border-radius: .5rem;
+  }
+
+  .favorite {
+    div {
+      .icon {
+        color: $base-color;
+      }
+    }
   }
   
 }

@@ -1,16 +1,31 @@
 const axios = require('axios');
 export const fetchImagesNft = async () => {
   const cat = 'science'
-  const categories = [
-    'backgrounds', 'fashion', 'nature', 'science', 'education', 'feelings', 'health', 'people', 'religion', 'places', 'animals', 'industry', 'computer', 'food', 'sports', 'transportation', 'travel', 'buildings', 'business', 'music', ''
+  const queries = [
+    'tech',
+    'fantasy',
+    'galaxy',
+    'energy',
+    'art',
+    'planets',
+    'cryptocurrency',
+    'psychedelic',
+    'hack',
+    'virtual',
+    'nft',
+    'network',
+    'power'
   ]
+  // const categories = [
+  //   'backgrounds', 'fashion', 'nature', 'science', 'education', 'feelings', 'health', 'people', 'religion', 'places', 'animals', 'industry', 'computer', 'food', 'sports', 'transportation', 'travel', 'buildings', 'business', 'music', ''
+  // ]
 
-  const randomCategory = Math.floor(Math.random () * categories.length ) + 0
+  const randomCategory = Math.floor(Math.random () * queries.length ) + 0
 
   const options = {
     method: 'Get',
-    url: `http://localhost:8000/nft/${ categories[randomCategory] }`,
-    params: { id: categories[randomCategory] }
+    url: `http://localhost:8000/nft/${ queries[randomCategory] }`,
+    params: { id: queries[randomCategory] }
   }
   // debugger
   const data = await axios.request(options).then(response => {
@@ -18,6 +33,7 @@ export const fetchImagesNft = async () => {
     const codeGenerator = () => {
       return  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     }
+    console.log( queries[randomCategory] )
      const dataImg = response.data.hits.map(item => {
 
       const randoms = {

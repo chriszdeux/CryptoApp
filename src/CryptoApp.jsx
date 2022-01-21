@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Provider } from 'react-redux'
+import { actionMainData } from './actions/actionMainData'
 
 import { DataContext } from './context/context'
 import { earn_data } from './earn-data/earn_data'
@@ -12,9 +15,12 @@ import { useFetchNews } from './hooks/fetchHooks/useFetchNews'
 import { useDataFunctions } from './hooks/useDataFunctions'
 import { useHandleNftData } from './hooks/useHandleNftData'
 import { usePagination } from './hooks/usePagination'
+import { useSearchForm } from './hooks/useSearchForm'
 import { MainRouter } from './router/MainRouter'
+import { store } from './store/store'
 
 export const CryptoApp = () => {
+  
   const globalStats = useFetchGlobalStats()
   const { currentPosition, pages, handleNextPage, handlePrevPage } = usePagination()
   const dataAssets = useFetchCoins(currentPosition)
@@ -27,27 +33,48 @@ export const CryptoApp = () => {
   const [ dataEarning, setDataEarning ] = useState([])
   
   const [handleAsset, setHandleAsset] = useState('bitcoin')
+  const { wishlist_reducer } = useSelector(state => state)
+  // debugger
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(actionMainData(dataAssets))
+  },[ dataAssets ])
+
+  // const init = () => {
+  //   return JSON.parse(localStorage.getItem('wishlist')) || []
+  // }
+ 
+  // useEffect(() => {
+  //   return JSON.parse(localStorage.getItem('wishlist') || [])
+  // }, [ wishlist_reducer ])
+
+  // useEffect(() => {
+  //   localStorage.setItem('wishlist', JSON.stringify(wishlist_reducer))
+  // }, [wishlist_reducer ])
+  useEffect(() => {
+    console.log(wishlist_reducer)
+  }, [ wishlist_reducer ])
   return (
-    <DataContext.Provider value={{
-      dataAssets,
-      dataExchanges,
-      // dataFunctions,
-      dataNews,
-      globalStats,
-      currentPosition, 
-      pages, 
-      handleNextPage, 
-      handlePrevPage,
-      handleAsset,
-      setHandleAsset,
-      nft,
-      handleNftData,
-      dataEarning,
-      setDataEarning
-      // error
-    }}>
-      <MainRouter />
-    </DataContext.Provider>
+      <DataContext.Provider value={{
+        dataAssets,
+        dataExchanges,
+        // dataFunctions,
+        dataNews,
+        globalStats,
+        currentPosition, 
+        pages, 
+        handleNextPage, 
+        handlePrevPage,
+        handleAsset,
+        setHandleAsset,
+        nft,
+        handleNftData,
+        dataEarning,
+        setDataEarning,
+        // error
+      }}>
+        <MainRouter />
+      </DataContext.Provider>
     
   )
 }

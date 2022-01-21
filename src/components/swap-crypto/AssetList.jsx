@@ -7,6 +7,7 @@ import image from '../../utils/vector/asset-background.svg';
 import { animations_object } from '../../utils/animations/animations_object'
 export const AssetList = ({ handleShowComponent }) => {
   const { intro_up, intro_right } = animations_object;
+  // debugger
   return (
     <div className={`asset__swap c100 pd ${ intro_right }`}>
       {/* <h2>Select Asset to buy</h2> */}

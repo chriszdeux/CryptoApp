@@ -57,8 +57,11 @@ export const fetchAssetChart = async (id ) => {
 
 
   const lastDate = dataCleaned.map(item => {
-    return item[0]
+    return ''
   })
+  // const lastDate = dataCleaned.map(item => {
+  //   return item[0]
+  // })
   const lastPrice = dataCleaned.map(item => {
     // debugger
     const temp = item[1].replace(',','')
