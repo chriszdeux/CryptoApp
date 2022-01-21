@@ -86,6 +86,14 @@ tr {
     // border-radius: .5rem;
   }
 
+  .favorite--color {
+    div {
+      .icon {
+        color: $active-color;
+      }
+    }
+  }
+
   .favorite {
     div {
       .icon {

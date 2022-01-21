@@ -17,21 +17,25 @@ import image from '../utils/vector/portafolio.svg'
 import { NewsInfo } from '../components/news/NewsInfo';
 import { animations_object } from '../utils/animations/animations_object';
 import { ForYou } from '../components/learning/ForYou';
+import { useSelector } from 'react-redux';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
+  const data = useSelector(state => state.wishlist_reducer)
+  // debugger
+
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
       <div className="portafolio__main__section">
-        <PortafolioChart />
+        {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
           <h2 className="mg--v">Your Assets</h2>
-          <CryptoTable />
+          {/* <CryptoTable /> */}
         </div>
 
         <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>
           <h2 className="mg--v">Wish list</h2>
-          <CryptoTable />
+          <CryptoTable data={ data }/>
         </div>
 
       </div>

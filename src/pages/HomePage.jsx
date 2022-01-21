@@ -1,15 +1,18 @@
 import { cleanup } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { SwapButton } from '../components/buttons/SwapButton'
 import { GainerLoser } from '../components/cards/GainerLoser'
 import { InterestedEarned } from '../components/cards/InterestedEarned'
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
 import { MainNewsCard } from '../components/cards/MainNewsCard'
 import { CryptoTable } from '../components/crytp-table/CryptoTable'
+import { ErrorConnect } from '../components/errors/ErrorConnect'
 import { CryptoFeature } from '../components/feature/CryptoFeature'
 import { GenericFooter } from '../components/footer/GenericFooter'
 import { Header } from '../components/header/Header'
 import { ForYou } from '../components/learning/ForYou'
+import { LoadingText } from '../components/loading/LoadingText'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { MainDisplay } from '../components/main/MainDisplay'
 import { DeskMenu } from '../components/menu/DeskMenu'
@@ -22,6 +25,8 @@ import image from '../utils/vector/world.svg';
 
 export const HomePage = () => {
   // debugger
+  const { loading, error, data } = useSelector(state => state.data_reducer)
+
   return (
     <>
     <section className="home__page">
@@ -31,7 +36,13 @@ export const HomePage = () => {
         <MainDisplay />
         <GainerLoser />
         <CryptoFeature />
-        <CryptoTable/>
+        {
+          loading
+            ? <LoadingText />
+            : error
+              ? <ErrorConnect />
+              : <CryptoTable data={ data }/>
+        }
         <ForYou />
         <GenericFooter />
       </div>

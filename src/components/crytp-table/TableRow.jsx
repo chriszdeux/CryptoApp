@@ -24,8 +24,8 @@ export const TableRow = ({ item }) => {
     market_cap_rank,
     total_volume,
     total_supply,
-    circulating_supply
-    
+    circulating_supply,
+    favorite
   } = item;
   // debugger
   const dispatch = useDispatch()
@@ -41,7 +41,7 @@ export const TableRow = ({ item }) => {
   
               <td className="rank">{ market_cap_rank }</td>
               <td className="favorite">
-                <div onClick={ handleWishItem }>
+                <div onClick={ handleWishItem } className={ `${ favorite ? 'favorite--color' : 'favorite' }` }>
                   { icons.star_icon }
                 </div>
               </td>
