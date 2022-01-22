@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { icons } from '../../utils/icons/icons_object'
 import { MainButton } from '../buttons/MainButton'
 import shib from '../../temp/shib.png'
@@ -21,6 +21,9 @@ import { animations_object } from '../../utils/animations/animations_object'
 import { SwapBuySection } from './SwapBuySection'
 import { SwapSellSection } from './SwapSellSection'
 import { SwapConvertSection } from './SwapConvertSelection'
+import { DataContext, DataTransactionContext } from '../../context/context'
+import { usePrevTransactions } from '../../hooks/usePrevTransaction'
+// import { Provider } from 'react-redux'
 
 export const SwapCrypto = ({ handleShowComponent2 }) => {
 
@@ -71,7 +74,17 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
   }, [])
   const { intro_right } = animations_object;
   // debugger
+
+  const { previewTransaction, handlePrevTransaction } = usePrevTransactions()
+  const { handleAsset: {
+    image
+  } } = useContext(DataContext)
   return (
+    <DataTransactionContext.Provider value={{
+      previewTransaction,
+      handlePrevTransaction
+    }}>
+
     <div className={`swap c100 ${ intro_right }`}>
       <div className="swap__back" onClick={ handleShowComponent2 }>
       { icons.back_icon }
@@ -90,7 +103,7 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
 
       {
         warningAmount &&
-        <button className="btn btn--primary" onClick={ handleShowComponent }>
+        <button className="btn btn--primary" onClick={ handleShowComponent } >
           Preview Transaction
         </button>
       }
@@ -100,6 +113,14 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       }
             {/* <BackgroundImage image={ image }/> */}
       {/* <div className="glass"></div> */}
+      <div className='asset__background'>
+        <figure>
+          {
+            image && <img src={ image } alt="" />
+          }
+        </figure>
+      </div>
     </div>
+    </DataTransactionContext.Provider>
   )
 }

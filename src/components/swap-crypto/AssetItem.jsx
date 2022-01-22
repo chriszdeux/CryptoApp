@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../context/context';
 import { useGainerLoser } from '../../hooks/useGainerLoser';
 import shib from '../../temp/shib.png';
 import { Divider } from '../helpers/Divider';
 
 export const AssetItem = ({ item }) => {
+  const { setHandleAsset } = useContext(DataContext)
   const { 
     id,
     name,
@@ -16,7 +18,7 @@ export const AssetItem = ({ item }) => {
   //  debugger
   return (
       <>
-    <li className="asset--item c100">
+    <li className="asset--item c100" onClick={ () => setHandleAsset(item) }>
       <div>
         <figure className="asset--logo">
           <img src={ image } alt={ name } />

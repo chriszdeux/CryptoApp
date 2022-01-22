@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const useFormatNumbers = ( initialState = 0 ) => {
+export const useFormatNumbers = ( initialState  ) => {
   const [formatNumber, setFormatNumber] = useState(initialState)
   // debugger
   const handleFormatNumber = ( ) => {

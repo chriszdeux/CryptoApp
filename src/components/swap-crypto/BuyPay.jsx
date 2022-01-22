@@ -19,10 +19,10 @@ export const BuyPay = () => {
      showComponent &&
      <AssetList handleShowComponent={ handleShowComponent }/>
    }
-   {
+   {/* {
      showComponent2 &&
      <PaymentList handleShowComponent2={ handleShowComponent2 }/>
-   }
+   } */}
     </>
   )
 }

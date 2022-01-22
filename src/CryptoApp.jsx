@@ -54,6 +54,8 @@ export const CryptoApp = () => {
   useEffect(() => {
     console.log(wishlist_reducer)
   }, [ wishlist_reducer ])
+
+  const [handleTransaction, setHandleTransaction] = useState(null);
   return (
       <DataContext.Provider value={{
         dataAssets,
@@ -71,6 +73,8 @@ export const CryptoApp = () => {
         handleNftData,
         dataEarning,
         setDataEarning,
+        handleTransaction,
+        handleTransaction
         // error
       }}>
         <MainRouter />

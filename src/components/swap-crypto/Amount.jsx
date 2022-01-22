@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { DataContext, DataTransactionContext } from '../../context/context';
 // import { useEffect } from 'react/cjs/react.development';
 import { useShowComponent } from '../../hooks/ShowComponent';
 import { useForm } from '../../hooks/useForm';
@@ -7,13 +8,24 @@ import { useWidthNumber } from '../../hooks/useWidthNumber';
 import { icons } from '../../utils/icons/icons_object'
 
 export const Amount = ({ setValidateAmount }) => {
-  
+  const { handleAsset: {
+    current_price, symbol, name
+  } } = useContext(DataContext)
+  const { handlePrevTransaction, previewTransaction } = useContext(DataTransactionContext);
+  const [cleanPrice, setCleanPrice] = useState(null);
+
+  useEffect(() => {
+    if(current_price) {
+      setCleanPrice( current_price.replace(',','') )
+    }
+  }, [current_price ])
+
   const { handleInputChange, inputValues } = useForm({
     amount: '', 
-    asset: 0.000034, 
+    // asset: 0.000034, 
     // amount_total: Number
   });
-  const { amount, asset } = inputValues
+  const { amount } = inputValues
 
   const [convertedAsset, setConvertedAsset] = useState()
   
@@ -26,10 +38,13 @@ export const Amount = ({ setValidateAmount }) => {
     handleWidth(amount)
     handleFormatNumber(amount)
     setValidateAmount(amount)
-    setConvertedAsset( new Intl.NumberFormat(4).format(amount/asset) )
-  }, [ amount ])
-
-
+    setConvertedAsset( new Intl.NumberFormat().format(amount/cleanPrice) )
+  }, [ amount, cleanPrice ])
+  // debugger
+  useEffect(()=> {
+    handlePrevTransaction(name, convertedAsset, amount)
+  }, [ convertedAsset ])
+  // debugger
   return (
     <div className="swap__amount c100">
         
@@ -51,7 +66,7 @@ export const Amount = ({ setValidateAmount }) => {
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           {
             formatNumber &&
-          <p className="mg--b--3">{ convertedAsset } asset coins</p>
+          <p className="mg--b--3">{ convertedAsset } { symbol } coins</p>
           }
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           <p className="mg--b--3">You can buy up to $35,000</p>

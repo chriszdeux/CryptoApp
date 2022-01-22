@@ -229,7 +229,7 @@
 
 .swap__trade {
   position: relative;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
   // box-shadow: $box;
 
   .swap__buy {
@@ -454,7 +454,7 @@
  background-image: $second-background-color; 
  text-align: center;
  z-index: 2;
-overflow-y: hidden;
+// overflow-y: hidden;
 
  div {
    display: flex;
@@ -505,4 +505,18 @@ overflow-y: hidden;
     margin: 3rem 0 ;
   }
  }
+}
+
+.asset__background {
+  position: absolute;
+  bottom: 10%;
+  transform: scale(2.5);
+  filter: blur(14px) contrast(0.5) opacity(0.7);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.asset__image__preview{
+  width: 50% !important;
+  border-radius: 50%;
 }

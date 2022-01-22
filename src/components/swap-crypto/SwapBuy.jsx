@@ -17,22 +17,23 @@ export const SwapBuy = ({ values }) => {
   return (
     <>
       <div className="swap__buy c90">
+        <AssetSelection handleShowComponent={ handleShowComponent }/>
       
-        {
+        {/* {
           swapBuying
           ?  <AssetSelection handleShowComponent={ handleShowComponent }/>
           : <PaymentSelection handleShowComponent2={ handleShowComponent2 }/>
             
-        }
+        } */}
 
-        {
+        {/* {
           swapBuying
           ? <PaymentSelection handleShowComponent2={ handleShowComponent2 }/>
           :  <AssetSelection handleShowComponent={ handleShowComponent }/>
-        }
-      <div className="swap--icon" onClick={ handleSwap }>
+        } */}
+      {/* <div className="swap--icon" onClick={ handleSwap }>
         { icons.convert_icon }
-      </div>
+      </div> */}
       </div>
   </>
   )

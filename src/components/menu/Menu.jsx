@@ -23,7 +23,7 @@ export const Menu = ({values}) => {
           <li className="navbar--item mg--b"> <Link to="/">Main</Link> </li>
           <li className="navbar--item mg--b"> <Link to="/portafolio">Portafolio</Link> </li>
           <li className="navbar--item mg--b"><Link to="/trade">Trade</Link></li>
-          <li className="navbar--item mg--b"><Link to="/pay">Pay</Link></li>
+          {/* <li className="navbar--item mg--b"><Link to="/pay">Pay</Link></li> */}
           {/* <li className="navbar--item mg--b">For you</li> */}
           <li className="navbar--item mg--b"><Link to="/earn">Learn and earn</Link></li>
           <li className="navbar--item mg--b"><Link to="/news">Crypto News</Link></li>
