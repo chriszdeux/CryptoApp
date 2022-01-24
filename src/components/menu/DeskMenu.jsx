@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { DataContext } from '../../context/context';
 import shib from '../../temp/shib.png';
 import { MainButton } from '../buttons/MainButton';
 import { MenuButton } from '../buttons/MenuButton';
 
 export const DeskMenu = () => {
+  const { handleBalance: {
+    portafolio_balance
+  } } = useContext(DataContext)
+  const [cleanBalance, setCleanBalance] = useState(0);
+  
+  useEffect(() => {
+    setCleanBalance( new Intl.NumberFormat().format((portafolio_balance).toFixed(2)) )
+  }, [ portafolio_balance ])
   
   return (
     <section className="desk__menu menu pd--t--3">
@@ -13,7 +22,7 @@ export const DeskMenu = () => {
       </figure>
       <div className="menu__stats">
         <h2 className="username">User name</h2>
-        <h2 className="balance">Balance: <span>$6,158.65</span></h2>
+        <h2 className="balance">Balance: <span>${ portafolio_balance }</span></h2>
       </div>
       <nav className="navbar c95 ">
         <ul className="navbar__list mg--t--3">

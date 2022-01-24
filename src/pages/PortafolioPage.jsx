@@ -19,9 +19,12 @@ import { animations_object } from '../utils/animations/animations_object';
 import { ForYou } from '../components/learning/ForYou';
 import { useSelector } from 'react-redux';
 import { PortafolioTable } from '../components/crytp-table/PortafolioTable';
+import { EmptyComponent } from '../components/emptyComponent/EmptyComponent';
+import { AssetTransactions } from '../components/coin-asset/AssetTransactions';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)
+  const dataAssets = useSelector(state => state.buy_asset_reducer)
   // debugger
 
   return (
@@ -31,19 +34,28 @@ export const PortafolioPage = () => {
         {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
           <h2 className="mg--v">Your Assets</h2>
-          <PortafolioTable />
+          {
+            dataAssets.length > 0
+            ? <PortafolioTable />
+            : <EmptyComponent message="You haven't bought any assets yet"/>
+          }
         </div>
 
         <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>
           <h2 className="mg--v">Wish list</h2>
-          <CryptoTable data={ data }/>
+          {
+            data.length > 0
+            ? <CryptoTable data={ data }/>
+            : <EmptyComponent message="You haven't added anything to your wishlist yet"/>
+          
+          }
         </div>
 
       </div>
       <aside className={`portafolio__aside c100`}>
         <div className={`portafolio__aside__content ${ intro }`}>
-          <SwapCrypto />
-          <NewsInfo />
+          {/* <SwapCrypto /> */}
+          <AssetTransactions id=""/>
           <ForYou />
           {/* <InterestedEarned /> */}
           {/* <SwapCrypto /> */}

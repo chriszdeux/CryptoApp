@@ -9,4 +9,8 @@ export const types = {
 
   portafolio_buy: '[Portafolio] Buy',
   portafolio_sell: '[Portafolio] Sell',
+
+  total_balance: '[Total] Balance',
+
+  transaction_buy: '[Transaction] Buy',
 }

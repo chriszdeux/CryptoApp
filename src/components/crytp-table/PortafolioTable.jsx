@@ -24,7 +24,7 @@ export const PortafolioTable = () => {
   // }, [  ])
   // debugger
   return (
-    <section className="crypto__coins c100">
+    <div className="crypto__coins c100">
         <table className={`crypto__table c95  ${ intro }`}>
         {/* <div className="glass"></div> */}
           <PortafolioTableHeader />
@@ -37,6 +37,6 @@ export const PortafolioTable = () => {
         </table>
         
 
-      </section>
+      </div>
   )
 };

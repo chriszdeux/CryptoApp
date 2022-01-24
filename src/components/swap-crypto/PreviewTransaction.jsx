@@ -6,6 +6,7 @@ import { DataContext, DataTransactionContext } from '../../context/context'
 import { icons } from '../../utils/icons/icons_object'
 import { MainButton } from '../buttons/MainButton'
 import { animations_object } from '../../utils/animations/animations_object'
+import { actionTransaction } from '../../actions/actionTransaction'
 
 export const PreviewTransaction = ({ handleShowComponent }) => {
   const { intro_up } = animations_object
@@ -18,13 +19,14 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
     image
   } = handleAsset
   const dispatch = useDispatch()
-  const { previewTransaction: {
+  const { previewTransaction } = useContext(DataTransactionContext)
+  const {
     asset,
     amount_crypto,
     amount_dollar,
     fee,
-  }} = useContext(DataTransactionContext)
-
+  } = previewTransaction
+  
   // debugger
   
   const [total, setTotal] = useState(0);
@@ -39,6 +41,7 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   const submitTransaction = (e) => {
     e.preventDefault()
     dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
+    dispatch(actionTransaction({ handleAsset,  previewTransaction}))
   }
   return (
     <div className="preview__transaction">

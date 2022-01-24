@@ -6,6 +6,8 @@ import persistStore from "redux-persist/es/persistStore";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import { portafolioReducer } from "../reducers/portafolioReducer";
+import { balanceReducer } from "../reducers/balanceReducer";
+import { transactionReducer } from "../reducers/transactionReducer";
 
 
 const persistConfig = {
@@ -18,7 +20,9 @@ const persistConfig = {
 const reducers = combineReducers({
   wishlist_reducer: wishlistReducer,
   data_reducer: mainDataReducer,
-  buy_asset_reducer: portafolioReducer
+  buy_asset_reducer: portafolioReducer,
+  balance_reducer: balanceReducer,
+  transaction_reducer: transactionReducer,
 });
 const persistedReducer = persistReducer(persistConfig, reducers)
 

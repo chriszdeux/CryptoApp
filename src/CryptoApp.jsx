@@ -40,6 +40,8 @@ export const CryptoApp = () => {
     dispatch(actionMainData(dataAssets))
   },[ dataAssets ])
 
+  const balance = useSelector(state => state.balance_reducer)
+  // debugger
   // const init = () => {
   //   return JSON.parse(localStorage.getItem('wishlist')) || []
   // }
@@ -56,6 +58,13 @@ export const CryptoApp = () => {
   }, [ wishlist_reducer ])
 
   const [handleTransaction, setHandleTransaction] = useState(null);
+
+  const [handleBalance, setHandleBalance] = useState({
+    portafolio_balance: 0,
+    total_amount_invested: 0,
+    
+  });
+  
   return (
       <DataContext.Provider value={{
         dataAssets,
@@ -74,7 +83,9 @@ export const CryptoApp = () => {
         dataEarning,
         setDataEarning,
         handleTransaction,
-        handleTransaction
+        handleTransaction,
+        handleBalance,
+        setHandleBalance
         // error
       }}>
         <MainRouter />

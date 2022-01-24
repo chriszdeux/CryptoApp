@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { GainerLoser } from '../components/cards/GainerLoser';
+import { AssetTransactions } from '../components/coin-asset/AssetTransactions';
 import { CryptoTable } from '../components/crytp-table/CryptoTable'
 import { GenericFooter } from '../components/footer/GenericFooter';
 import { BackgroundImage } from '../components/main/BackgroundImage';
@@ -17,8 +18,8 @@ export const TradePage = () => {
         <CryptoTable data={ data }/>
       </div>
       <div className="trade__aside">
-        <SwapCrypto />
-        <NewsInfo />
+        {/* <SwapCrypto /> */}
+        <AssetTransactions id=""/>
       </div>
       <GenericFooter />
       <BackgroundImage image={ image } />
