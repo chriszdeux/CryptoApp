@@ -5,5 +5,8 @@ export const types = {
   favorite_add: '[Favorite] Add',
   favorite_remove: '[Favorite] Remove',
 
-  main_data: '[Main Data] Main Data'
+  main_data: '[Main Data] Main Data',
+
+  portafolio_buy: '[Portafolio] Buy',
+  portafolio_sell: '[Portafolio] Sell',
 }

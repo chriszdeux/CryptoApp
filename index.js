@@ -118,7 +118,7 @@ app.get('/chart/:id', async (req, res) => {
   // const vs_currency = req.params.vs_currency;
   // const days = req.params.days
   // const  params = {vs_currency: `${vs_currency}`, days: `${days}`, id: ''}
-  const  params = {vs_currency: 'usd', days: '1', id: req.params.id}
+  const  params = {vs_currency: 'usd', days: '7', id: req.params.id}
   await axios.request({...options, url: `https://coingecko.p.rapidapi.com/coins/${req.params.id}/market_chart`, params:params} ).then(function (response) {
     res.json(response.data);
   }).catch(function (error) {

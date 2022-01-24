@@ -59,6 +59,16 @@
     font-weight: $regular-font;
     color: $base-color;
   }
+
+  .market--mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      font-size: $regular-font-size;
+    }
+  }
 }
 
 tr {

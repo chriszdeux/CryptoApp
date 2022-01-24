@@ -18,6 +18,7 @@ import { NewsInfo } from '../components/news/NewsInfo';
 import { animations_object } from '../utils/animations/animations_object';
 import { ForYou } from '../components/learning/ForYou';
 import { useSelector } from 'react-redux';
+import { PortafolioTable } from '../components/crytp-table/PortafolioTable';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)
@@ -30,7 +31,7 @@ export const PortafolioPage = () => {
         {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
           <h2 className="mg--v">Your Assets</h2>
-          {/* <CryptoTable /> */}
+          <PortafolioTable />
         </div>
 
         <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>

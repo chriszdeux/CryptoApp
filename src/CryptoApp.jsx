@@ -27,7 +27,7 @@ export const CryptoApp = () => {
   // const dataFunctions = useDataFunctions( dataAssets.data )
   // const { error } = dataAssets
   const dataExchanges = useFetchExchanges()
-  const dataNews = useFetchNews('crypto')
+  // const dataNews = useFetchNews('crypto')
   // debugger
   const { handleNftData, nft } = useHandleNftData()
   const [ dataEarning, setDataEarning ] = useState([])
@@ -61,7 +61,7 @@ export const CryptoApp = () => {
         dataAssets,
         dataExchanges,
         // dataFunctions,
-        dataNews,
+        // dataNews,
         globalStats,
         currentPosition, 
         pages, 

@@ -20,7 +20,7 @@ export const CryptoTable = ({ data }) => {
   // debugger
   return (
     <section className="crypto__coins c100">
-      <Pagination />
+      {/* <Pagination /> */}
         
       <table className={`crypto__table c95 pd ${ intro }`}>
       {/* <div className="glass"></div> */}
@@ -33,7 +33,7 @@ export const CryptoTable = ({ data }) => {
               }
       </table>
         
-      <Pagination />
+      {/* <Pagination /> */}
       
 
     </section>

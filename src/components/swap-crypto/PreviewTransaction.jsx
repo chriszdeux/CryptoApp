@@ -1,16 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { actionBuy } from '../../actions/actionBuy'
 // import { useEffect, useState } from 'react/cjs/react.development'
 import { DataContext, DataTransactionContext } from '../../context/context'
 import { icons } from '../../utils/icons/icons_object'
 import { MainButton } from '../buttons/MainButton'
+import { animations_object } from '../../utils/animations/animations_object'
 
 export const PreviewTransaction = ({ handleShowComponent }) => {
-  const { handleAsset: {
+  const { intro_up } = animations_object
+
+  const { handleAsset } = useContext(DataContext)
+  const {
     current_price,
     symbol,
     name, 
     image
-  } } = useContext(DataContext)
+  } = handleAsset
+  const dispatch = useDispatch()
   const { previewTransaction: {
     asset,
     amount_crypto,
@@ -19,6 +26,7 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   }} = useContext(DataTransactionContext)
 
   // debugger
+  
   const [total, setTotal] = useState(0);
   
   // debugger
@@ -28,6 +36,10 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   }, [ amount_dollar ])
   // debugger
 //  debugger
+  const submitTransaction = (e) => {
+    e.preventDefault()
+    dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
+  }
   return (
     <div className="preview__transaction">
       <div onClick={ handleShowComponent }>
@@ -47,7 +59,9 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
         <li>Total <span>${ total }</span></li>
       </ul>
 
-      <MainButton message={'Buy Now'}/>
+      <button className={`btn btn--primary ${ intro_up }`} onClick={ submitTransaction }>
+      Buy now
+    </button>
       <figure className='asset__background'>
         {
           image && <img src={ image } alt="" />

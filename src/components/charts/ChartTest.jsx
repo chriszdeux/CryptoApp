@@ -5,6 +5,7 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -13,6 +14,7 @@ import { Line } from 'react-chartjs-2';
 import faker from 'faker';
 import { useFetchAssetChart } from '../../hooks/fetchHooks/useFetchAssetChart';
 import { DataAssetContext } from '../../context/context';
+import { useAnimationData } from '../../hooks/useAnimationData';
 // import { htmlLegendPlugin } from '../../pages/portafolio/htmlLegendPlugin';
 
 ChartJS.register(
@@ -20,6 +22,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -33,8 +36,10 @@ export const ChartTest = () => {
   const [data, setData] = useState({})
 
   const [gainer, setGainer] = useState('');
-
+  const animation = useAnimationData( dataChart )
   const options = {
+    // type: 'bar',
+    animation,
     scales: {
       y: {
         ticks: {
@@ -47,6 +52,7 @@ export const ChartTest = () => {
         }
       },
       x: {
+        // type: '',
         ticks: {
           color: '#F0F0F0',
           // size: 20
@@ -99,17 +105,28 @@ export const ChartTest = () => {
       setData({
         labels: dataChart.date,
         datasets: [
+          // {
+          //   id: 1,
+          //   label: `${ id } $`,
+          //   data: dataChart.price,
+          //   // data: dataChart.price,
+          //   borderColor: price_change_percentage_24h > 0 ? '#0DC96E' : '#f56b6b',
+          //   backgroundColor: '#00808850',
+          //   order: 1,
+          //   type: 'bar'
+          //   // pointStyle: 'triangle',
+          //   // color: 'fff'
+          //   // color: ['$fff','$fff','$fff','$fff','$fff','$fff',]
+          // },
           {
-            id: 1,
+            id: 2,
             label: `${ id } $`,
             data: dataChart.price,
-            // data: dataChart.price,
             borderColor: price_change_percentage_24h > 0 ? '#0DC96E' : '#f56b6b',
             backgroundColor: '#07F1FF',
-            // pointStyle: 'triangle',
-            // color: 'fff'
-            // color: ['$fff','$fff','$fff','$fff','$fff','$fff',]
-          },
+            type: 'line',
+            order: 0
+          }
         ]
       })
       // debugger

@@ -4,6 +4,8 @@ export const wishlistReducer = ( state=[  ],  action ) => {
   switch (action.type) {
     case types.favorite_add:
       if(state.find(item => item.id === action.payload.id)) {
+        
+        // debugger
         return state
       } 
       return [{...action.payload, favorite: true}, ...state] 
