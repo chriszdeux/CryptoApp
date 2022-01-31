@@ -185,7 +185,7 @@ tr {
   font-weight: $bold-font;
   // font-size: $regular-font-size;
   // letter-spacing: 2px;
-  text-align: start;
+  text-align: center;
   // width: auto;
   // display: block;
   .short--name {
@@ -197,4 +197,12 @@ tr {
     // padding: 0 1rem;
     border-radius: 5px;
   }
+}
+
+.total--invested {
+  display: none;
+  font-weight: $bold-font;
+  // font-size: $regular-font-size;
+  // letter-spacing: 2px;
+  text-align: center;
 }

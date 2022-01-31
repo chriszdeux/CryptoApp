@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { DataContext } from '../../context/context';
 import shib from '../../temp/shib.png';
 import { icons } from '../../utils/icons/icons_object';
 export const SmallCardCoins = ({ item }) => {
   // debugger
-  const { name, image, current_price, price_change_percentage_24h, market_cap_rank } = item
+  const { setHandleAsset } = useContext(DataContext)
+  const { name, image, current_price, price_change_percentage_24h, market_cap_rank, id } = item
   const [color, setColor] = useState('')
 
   useEffect(() => {
@@ -14,7 +17,8 @@ export const SmallCardCoins = ({ item }) => {
   }, [item])
   // debugger
   return (
-    <div className="card mg">
+    <Link to="/crypto-asset">
+    <div className="card mg" onClick={ () => setHandleAsset(id) }>
       
       <figure className="card__image">
         <img className="card--image" src={ image } alt="" />
@@ -28,5 +32,6 @@ export const SmallCardCoins = ({ item }) => {
       </div>
       <h3 className="rank">{ market_cap_rank }</h3>
     </div>
+    </Link>
   )
 }

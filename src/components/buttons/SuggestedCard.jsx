@@ -9,13 +9,14 @@ import { useGetRandomAssets } from '../../hooks/useGetRandomAssets';
 import { useEffect } from 'react';
 import { LoadingText } from '../loading/LoadingText';
 import { ErrorConnect } from '../errors/ErrorConnect';
+import { Link } from 'react-router-dom';
 export const SuggestedCard = () => {
-  const { dataAssets:{data, loading, error} } = useContext(DataContext)
+  const { dataAssets:{data, loading, error}, setHandleAsset } = useContext(DataContext)
   const { singleAsset, handleSingleAsset } = useGetRandomAssets(!!data && data)
   const [currentPosition, setCurrentPosition] = useState(0)
   const [displayButton, setDisplayButton] = useState(true)
   // debugger
-  const { name, image, high_24h, current_price } = singleAsset.length > 0 && singleAsset[currentPosition]
+  const { name, image, high_24h, current_price, id } = singleAsset.length > 0 && singleAsset[currentPosition]
   const { intro_up } = animations_object;
   
   const [color, setColor] = useState('')
@@ -66,8 +67,10 @@ export const SuggestedCard = () => {
         <h2>{ name }</h2>
         <h3 className={ color }>${ current_price }</h3>
         <div>
-          <button className="btn btn--primary">Learn More</button>
-          <button className="btn btn--dismiss">Dismiss</button>
+          <Link to="/crypto-asset">
+            <button className="btn btn--primary" onClick={ () => setHandleAsset(id) }>Learn More</button>
+          </Link>
+          {/* <button className="btn btn--dismiss">Dismiss</button> */}
         </div>
       </div>
 

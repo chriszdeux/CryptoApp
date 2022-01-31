@@ -68,7 +68,9 @@ export const PortafolioTableRow = ({ item }) => {
 
 
               <td className="coin--name">$ { new Intl.NumberFormat().format(balance) }<br /><span className="short--name pd--h">{ new Intl.NumberFormat().format(amount_crypto) } { symbol }</span></td>
-
+              <td className='total--invested'>
+                ${ amount_dollar }
+              </td>
               <td className="price">
                 ${ data.current_price_usd } <br />
                 {/* <span className="supply">

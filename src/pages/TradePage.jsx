@@ -21,7 +21,7 @@ export const TradePage = () => {
         {/* <SwapCrypto /> */}
         <AssetTransactions id=""/>
       </div>
-      <GenericFooter />
+      {/* <GenericFooter /> */}
       <BackgroundImage image={ image } />
     </section>
   )

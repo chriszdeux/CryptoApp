@@ -43,7 +43,7 @@ export const HomePage = () => {
               : <CryptoTable data={ data }/>
         }
         <ForYou />
-        <GenericFooter />
+        {/* <GenericFooter /> */}
       </div>
       {/* { swappComponent }
     {

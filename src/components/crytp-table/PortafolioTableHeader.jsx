@@ -9,6 +9,7 @@ export const PortafolioTableHeader = () => {
         <th className="coin--image">Asset</th>
         <th className="coin--name">Name</th>
         <th className="coin--name">Balance</th>
+        <th className="total--invested">Invested</th>
         <th className="coin--price">Price</th>
         <th className="coin--price">{ icons.dots_vertical_icon }</th>
         {/* <th className="market--cap--24h">24h%</th> */}

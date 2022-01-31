@@ -20,6 +20,10 @@
       // display: ;
     }
   }
+
+  .total--invested {
+    display: revert;
+  }
 }
 
 @media only screen and ( min-width: 1024px ) {
@@ -60,6 +64,7 @@
   
         .portafolio__aside__content {
           grid-template-columns: 1fr;
+          margin-top: 5rem;
           .swap {
             display: flex;
             width: 100%;
