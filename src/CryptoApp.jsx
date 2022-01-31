@@ -64,7 +64,7 @@ export const CryptoApp = () => {
     total_amount_invested: 0,
     
   });
-  
+  const [handleChartDates, setHandleChartDates] = useState(7);
   return (
       <DataContext.Provider value={{
         dataAssets,
@@ -85,7 +85,9 @@ export const CryptoApp = () => {
         handleTransaction,
         handleTransaction,
         handleBalance,
-        setHandleBalance
+        setHandleBalance,
+        handleChartDates, 
+        setHandleChartDates
         // error
       }}>
         <MainRouter />

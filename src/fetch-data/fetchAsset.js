@@ -32,7 +32,7 @@ export const fetchAsset = async ( asset ) => {
       categories: data?.categories,
       start_date: data?.genesis_date,
       contract_address: data?.contract_address,
-
+      ath: formatNumber(data?.market_data.ath.usd),
       current_price_usd: formatNumber(data?.market_data.current_price.usd),
       current_price_btc: formatNumber(data?.market_data.current_price.btc),
       current_price_eth: formatNumber(data?.market_data.current_price.eth),

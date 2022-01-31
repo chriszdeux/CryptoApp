@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { DataContext } from '../../context/context'
 import { useShowComponent } from '../../hooks/ShowComponent'
+import { useValidateAmount } from '../../hooks/useValidateAmount'
 import { Divider } from '../helpers/Divider'
 import { Amount } from './Amount'
 import { AssetList } from './AssetList'
@@ -12,9 +14,20 @@ import { PaymentSelection } from './PaymentSelection'
 import { PaymentSelectionSell } from './PaymentSelectionSell'
 import { SellAmount } from './SellAmount'
 
-export const SwapSellSection = ({ setValidateAmount }) => {
+export const SwapSellSection = () => {
   const { handleShowComponent, showComponent, handleShowComponent2, showComponent2, } = useShowComponent();
+  const { handleAsset } = useContext(DataContext)
+  // debugger
+  const {
+    amount_dollar, realPrice
+  } = handleAsset
 
+  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount(realPrice);
+  
+  useEffect(() => {
+    handleWarningAmount()
+    // debugger
+  }, [  validateAmount])
   return (
     <>
     <div className="sell__section">
@@ -31,6 +44,12 @@ export const SwapSellSection = ({ setValidateAmount }) => {
       </div> */}
       </div>
     </div>
+    {
+        warningAmount &&
+        <button className="btn btn--primary" onClick={ handleShowComponent } >
+          Preview Transaction
+        </button>
+      }
     {
      showComponent &&
      <MyAssetList handleShowComponent={ handleShowComponent }/>

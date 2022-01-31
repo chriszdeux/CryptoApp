@@ -22,7 +22,7 @@ export const DeskMenu = () => {
       </figure>
       <div className="menu__stats">
         <h2 className="username">User name</h2>
-        <h2 className="balance">Balance: <span>${ portafolio_balance }</span></h2>
+        <h2 className="balance">Balance: <span>${ cleanBalance }</span></h2>
       </div>
       <nav className="navbar c95 ">
         <ul className="navbar__list mg--t--3">

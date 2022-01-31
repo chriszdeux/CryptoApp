@@ -58,7 +58,7 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       convert: true
     })
   }
-  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount()
+  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount(100)
   // debugger
   // const [warningAmount, setWarningAmount] = useState(false)
   const { showComponent, handleShowComponent } = useShowComponent()
@@ -94,12 +94,12 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       {
         buy && <SwapBuySection setValidateAmount={ setValidateAmount }/>
       }
-      {
-        sell && <SwapSellSection setValidateAmount={ setValidateAmount }/>
+      {/* {
+        sell && <SwapSellSection/>
       }
       {
         convert && <SwapConvertSection setValidateAmount={ setValidateAmount }/>
-      }
+      } */}
 
       {
         warningAmount &&

@@ -5,14 +5,15 @@ export const useAnimationData = (  data  ) => {
   const [duration, setDuration] = useState(1000);
   const [delaytBetweenPoints, setDelayBetweenPoints] = useState( 20);
   const [animation, setMyAnimation] = useState({});
+
   // debugger
-  // useEffect(() => {
-  //   if(data.price) {
-  //     // debugger
-  //     setDelayBetweenPoints(duration/data.price.length)
-  //   }
-  // }, [ data.price ])
-  // const totalDuration = 10000;
+  useEffect(() => {
+    if(data.length > 0) {
+      // debugger
+      setDelayBetweenPoints(duration/data.length)
+    }
+  }, [ data ])
+//   const totalDuration = 10000;
 // const delayBetweenPoints = totalDuration / data.length;
 // debugger
 const previousY = (ctx) => {
@@ -24,7 +25,7 @@ const previousY = (ctx) => {
 }
 
 useEffect(() => {
-  if(data.price) {
+  if(data.length > 0) {
     setMyAnimation({
       x: {
         type: 'number',

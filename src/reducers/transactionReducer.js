@@ -36,7 +36,7 @@ export const transactionReducer = ( state = [], action ) => {
       }, previewTransaction: {
         amount_dollar, amount_crypto, fee, asset
       } } = action.payload
-      debugger
+      // debugger
       const date = new Date()
       return [
         

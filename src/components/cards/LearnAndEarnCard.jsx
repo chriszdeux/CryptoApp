@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { icons } from '../../utils/icons/icons_object';
 import study from '../../utils/vector/study.svg';
 
 export const LearnAndEarnCard = () => {
   return (
+    <Link to="/earn">
     <div className="interest__card pd mg--b">
       
       <div className="learn__earn">
@@ -20,5 +22,6 @@ export const LearnAndEarnCard = () => {
         icons.foward_icon
       }
     </div>
+    </Link>
   )
 }

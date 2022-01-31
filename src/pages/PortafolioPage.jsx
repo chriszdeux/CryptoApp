@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 // import Chart from 'chart.js/auto';
 // import chart from 'rea'
@@ -21,12 +21,19 @@ import { useSelector } from 'react-redux';
 import { PortafolioTable } from '../components/crytp-table/PortafolioTable';
 import { EmptyComponent } from '../components/emptyComponent/EmptyComponent';
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions';
+import { DataContext } from '../context/context';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)
   const dataAssets = useSelector(state => state.buy_asset_reducer)
   // debugger
-
+  const { setHandleBalance } = useContext(DataContext)
+  useEffect(() => {
+    setHandleBalance({
+      portafolio_balance: 0,
+      total_amount_invested: 0,
+    })
+  }, [  ])
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}

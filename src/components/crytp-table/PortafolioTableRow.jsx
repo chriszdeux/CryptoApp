@@ -24,7 +24,7 @@ export const PortafolioTableRow = ({ item }) => {
     setBalance(0)
     // debugger
     setBalance( data.current_price_usd?.replace(/\,/g, '') * amount_crypto )
-  }, [ data ])
+  }, [ data, portafolio_balance ])
   
   useEffect(() => {
     if(balance > 0) {

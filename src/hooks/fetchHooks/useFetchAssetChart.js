@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { fetchAssetChart } from "../../fetch-data/fetchAssetChart"
 
-export const useFetchAssetChart = ( id ) => {
+export const useFetchAssetChart = ( id, ath, days ) => {
   const isMounted = useRef(true)
   const [assetChart, setAssetChart] = useState({
     loading: true,
@@ -16,7 +16,7 @@ export const useFetchAssetChart = ( id ) => {
   }, [  ])
 
   useEffect(() => {
-    fetchAssetChart(id)
+    fetchAssetChart(id, ath, days)
       .then(item => {
         // debugger
         if(item === undefined || null) {
@@ -35,7 +35,7 @@ export const useFetchAssetChart = ( id ) => {
           }
         }
       })
-  }, [ id ])
+  }, [ id, days ])
 
   return assetChart
 }

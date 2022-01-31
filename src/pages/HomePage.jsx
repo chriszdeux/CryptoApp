@@ -26,7 +26,6 @@ import image from '../utils/vector/world.svg';
 export const HomePage = () => {
   // debugger
   const { loading, error, data } = useSelector(state => state.data_reducer)
-
   return (
     <>
     <section className="home__page">

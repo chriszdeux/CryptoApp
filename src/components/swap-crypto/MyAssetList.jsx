@@ -5,8 +5,10 @@ import { BackgroundImage } from '../main/BackgroundImage'
 import { ListAssets } from './ListAssets'
 import image from '../../utils/vector/asset-background.svg';
 import { animations_object } from '../../utils/animations/animations_object'
+import { useSelector } from 'react-redux'
 export const MyAssetList = ({ handleShowComponent }) => {
   const { intro_up, intro_right } = animations_object;
+  const data = useSelector(state => state.buy_asset_reducer)
   return (
     <div className={`asset__swap c100 pd ${ intro_right }`}>
       <h2>Select Asset to Sell</h2>
@@ -18,7 +20,7 @@ export const MyAssetList = ({ handleShowComponent }) => {
         <input type="text" className=""/>
       </form>
       <Divider />
-      <ListAssets />
+      <ListAssets data={ data }/>
       {/* <BackgroundImage image={ image }/> */}
     </div>
   )

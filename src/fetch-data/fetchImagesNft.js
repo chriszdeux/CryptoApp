@@ -1,20 +1,30 @@
 const axios = require('axios');
 export const fetchImagesNft = async () => {
   const cat = 'science'
+  // const queries = [
+  //   'tech',
+  //   'fantasy',
+  //   'galaxy',
+  //   'energy',
+  //   'art',
+  //   'planets',
+  //   'cryptocurrency',
+  //   'psychedelic',
+  //   'hack',
+  //   'virtual',
+  //   'nft',
+  //   'network',
+  //   'power'
+  // ]
   const queries = [
-    'tech',
-    'fantasy',
-    'galaxy',
-    'energy',
-    'art',
-    'planets',
+    'abstract',
+    'cyberpunk',
+    'neon',
+    'futuristic',
+    'aliens',
+    'technology',
     'cryptocurrency',
-    'psychedelic',
-    'hack',
-    'virtual',
-    'nft',
-    'network',
-    'power'
+    'galaxy',
   ]
   // const categories = [
   //   'backgrounds', 'fashion', 'nature', 'science', 'education', 'feelings', 'health', 'people', 'religion', 'places', 'animals', 'industry', 'computer', 'food', 'sports', 'transportation', 'travel', 'buildings', 'business', 'music', ''
@@ -39,7 +49,7 @@ export const fetchImagesNft = async () => {
       const randoms = {
         token:  codeGenerator(),
         contract: `0x${codeGenerator()}`,
-        price_eth: ((Math.random() * 3) + 0).toFixed(6),
+        price_eth: ((Math.random() * 1.5) + 0).toFixed(6),
         code_nft: `nft_code_${codeGenerator()}`
       }
 

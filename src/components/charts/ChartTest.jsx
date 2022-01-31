@@ -13,7 +13,7 @@ import {
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
 import { useFetchAssetChart } from '../../hooks/fetchHooks/useFetchAssetChart';
-import { DataAssetContext } from '../../context/context';
+import { DataAssetContext, DataContext } from '../../context/context';
 import { useAnimationData } from '../../hooks/useAnimationData';
 // import { htmlLegendPlugin } from '../../pages/portafolio/htmlLegendPlugin';
 
@@ -29,17 +29,51 @@ ChartJS.register(
 );
 
 export const ChartTest = () => {
-  const { data: { id, name, price_change_percentage_24h, current_price_usd } } = useContext(DataAssetContext)
-  // const { data:test } = useContext(DataAssetContext)
-  const { data:dataChart, loading, error } = useFetchAssetChart(id)
+  const { data: { id, name, price_change_percentage_24h, current_price_usd, ath },  } = useContext(DataAssetContext)
+  const { handleChartDates, setHandleChartDates } = useContext(DataContext)
   // debugger
+  const [tempChartDates, setTempChartDates] = useState(0);
+  useEffect(() => {
+    // setTimeout(() => {
+      //   setHandleChartDates()
+      // }, 200);
+      setHandleChartDates(1)
+    }, [ id ])
+    
+    
+    // const { data:test } = useContext(DataAssetContext)
+    const { data:dataChart, loading, error } = useFetchAssetChart(id, ath, handleChartDates)
+
+    // const {  }
+  // debugger
+  // const { price } = !!dataChart && dataChart
+  // debugger
+  // useEffect(() => {
+  //   setTempChartDates(handleChartDates)
+  //   setHandleChartDates(0)
+  //   setHandleChartDates(tempChartDates)
+  //   // setTimeout(() => {
+  //   // }, 200);
+  //   // setTimeout(() => {
+  //   // }, 200);
+  // }, [ price ])
   const [data, setData] = useState({})
 
+  const [filterPrice, setFilterPrice] = useState(0);
+
+  // useEffect(() => {
+  //   // if( price !== undefined){
+  //   //   setFilterPrice( dataChart.price.filter( item => item <= Number(ath.replace(/\,/g, ''))) )
+  //   //   // debugger
+  //   // } 
+  // }, [ price ])
+  // debugger
+  // debugger
   const [gainer, setGainer] = useState('');
   const animation = useAnimationData( dataChart )
   const options = {
     // type: 'bar',
-    animation,
+    // animation,
     scales: {
       y: {
         ticks: {
@@ -49,7 +83,9 @@ export const ChartTest = () => {
         grid: {
           // display: false
           color: '#08ACB6'
-        }
+        },
+        // suggestedMax: 0.0000001,
+        // suggestedMin: 0.000000000001,
       },
       x: {
         // type: '',
@@ -103,7 +139,7 @@ export const ChartTest = () => {
   useEffect(() => {
     // debugger
       setData({
-        labels: dataChart.date,
+        labels: dataChart.map(item => item.date),
         datasets: [
           // {
           //   id: 1,
@@ -121,7 +157,7 @@ export const ChartTest = () => {
           {
             id: 2,
             label: `${ id } $`,
-            data: dataChart.price,
+            data: dataChart.map(item => item.price),
             borderColor: price_change_percentage_24h > 0 ? '#0DC96E' : '#f56b6b',
             backgroundColor: '#07F1FF',
             type: 'line',
@@ -131,7 +167,6 @@ export const ChartTest = () => {
       })
       // debugger
   }, [ dataChart ])
-  // debugger
   return (
     <>
     {

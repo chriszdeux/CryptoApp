@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { DataContext, DataTransactionContext } from '../../context/context';
 // import { useEffect } from 'react/cjs/react.development';
 import { useShowComponent } from '../../hooks/ShowComponent';
 import { useForm } from '../../hooks/useForm';
@@ -8,27 +9,44 @@ import { icons } from '../../utils/icons/icons_object'
 
 export const SellAmount = ({ setValidateAmount }) => {
   
+  const { handleAsset: {
+    current_price, symbol, name, amount_dollar, amount_crypto, realPrice
+  } } = useContext(DataContext)
+  const { handlePrevTransaction, previewTransaction } = useContext(DataTransactionContext);
+
   const { handleInputChange, inputValues } = useForm({
     amount: '', 
-    asset: 0.000034, 
+    // asset: 0.000034, 
     // amount_total: Number
   });
-  const { amount, asset } = inputValues
+  const { amount } = inputValues
 
   const [convertedAsset, setConvertedAsset] = useState()
   
   const { inputWidth, handleWidth } =useWidthNumber( amount )
   const { width, font } = inputWidth
-  // debugger
+  const [cleanPrice, setCleanPrice] = useState(null);
+
   const { formatNumber, handleFormatNumber } = useFormatNumbers( amount )
   useEffect(() => {
     
     handleWidth(amount)
     handleFormatNumber(amount)
     setValidateAmount(amount)
-    setConvertedAsset( new Intl.NumberFormat(4).format(amount/asset) )
-  }, [ amount ])
+    // setConvertedAsset( new Intl.NumberFormat().format(amount/cleanPrice) )
+  }, [ amount, cleanPrice ])
 
+  useEffect(()=> {
+    handlePrevTransaction(name, convertedAsset, amount)
+  }, [ convertedAsset ])
+
+  const [handleAmountError, setHandleAmountError] = useState('');
+  useEffect(() => {
+    if(amount > amount_dollar && amount < 10 || amount > realPrice && amount < 10) {
+      // debugger
+      setHandleAmountError('amount--error')
+    }
+  }, [ amount, realPrice ])
 
   return (
     <div className="swap__amount c100">
@@ -38,7 +56,7 @@ export const SellAmount = ({ setValidateAmount }) => {
             <label htmlFor="amount">$</label>
             <input 
             // style={{ backgroundColor: 'red' } }
-              className={ `amount--input ${ amount > 35000 || amount < 10 && 'amount--error' }` } 
+              className={ `amount--input ${ handleAmountError} ` } 
               type="number" 
               name="amount" 
               placeholder="0"
@@ -51,7 +69,7 @@ export const SellAmount = ({ setValidateAmount }) => {
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           {
             formatNumber &&
-          <p className="mg--b--3">{ convertedAsset } asset coins</p>
+          <p className="mg--b--3">{ amount_crypto } { symbol } coins</p>
           }
           {/* <h2><span className="mg--t--3">$</span>0</h2> */}
           <p className="mg--b--3">You can sell up to $35,000</p>
