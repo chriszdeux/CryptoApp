@@ -43,6 +43,8 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
     dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
     dispatch(actionTransaction({ handleAsset,  previewTransaction}))
   }
+
+  debugger
   return (
     <div className="preview__transaction">
       <div onClick={ handleShowComponent }>

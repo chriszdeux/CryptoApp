@@ -31,7 +31,7 @@ export const DeskMenu = () => {
           <li className="navbar--item mg--b"><Link to="/trade">Trade</Link></li>
           {/* <li className="navbar--item mg--b"><Link to="/pay">Pay</Link></li> */}
           {/* <li className="navbar--item mg--b">For you</li> */}
-          <li className="navbar--item mg--b"><Link to="/earn">Learn and earn</Link></li>
+          {/* <li className="navbar--item mg--b"><Link to="/earn">Learn and earn</Link></li> */}
           {/* <li className="navbar--item mg--b"><Link to="/news">Crypto News</Link></li> */}
           <li className="navbar--item mg--b"><Link to="/nft">NFT's</Link></li>
           {/* <li className="navbar--item mg--b"><Link>Notifications</Link></li> */}

@@ -31,15 +31,15 @@ export const transactionReducer = ( state = [], action ) => {
   
   switch ( action.type ) {
     case types.transaction_buy:
+
       const { handleAsset: {
         id, current_price, symbol, 
       }, previewTransaction: {
         amount_dollar, amount_crypto, fee, asset
       } } = action.payload
       // debugger
-      const date = new Date()
+      const date = new Date();
       return [
-        
         {
           // ...action.payload,
           id_asset: id,
@@ -61,6 +61,34 @@ export const transactionReducer = ( state = [], action ) => {
         },
         ...state, 
       ]
+
+    case types.transaction_earn:
+      const { data } = action.payload
+      debugger
+      // const date = new Date();
+      // return [
+      //   {
+      //     // ...action.payload,
+      //     id_asset: id,
+      //     name: asset,
+      //     price: current_price,  
+      //     id: randomId(),
+      //     date: {
+      //       day: weekDays[date.getDay()],
+      //       month: months[date.getMonth()],
+      //       hour: date.getHours(),
+      //       min: date.getMinutes(),
+      //       full_date: date
+      //     },
+      //     amount_bought: amount_dollar, 
+      //     amount_asset: amount_crypto,
+      //     transaction_type: 'Bought', 
+      //     status: 'Complete',
+      //     symbol
+      //   },
+      //   ...state, 
+      // ]
+
     default:
       return state
   }

@@ -1,4 +1,7 @@
 import React, { useContext } from 'react'
+import { useDispatch } from 'react-redux';
+import { actionBuy } from '../../actions/actionBuy';
+import { actionTransaction, actionTransactionEarn } from '../../actions/actionTransaction';
 import { DataContext } from '../../context/context';
 import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset';
 import kraken from '../../temp/kraken.png';
@@ -12,8 +15,17 @@ export const QuizComplete = ({ handleShowComponent }) => {
   const { dataEarning: {
     cryptocurrency, earn_dollars, 
   } } = useContext(DataContext)
-  const { data, loading, error } = useFetchAsset(cryptocurrency);
+  // const { data, loading, error } = useFetchAsset(cryptocurrency);
+  const { loading, error, data } = useFetchAsset( earn_dollars && cryptocurrency)
 
+  const dispatch = useDispatch()
+
+  const handleQuizCompleted = () => {
+    dispatch( actionBuy({...data, amount_dollar: earn_dollars}) )
+    dispatch( actionTransactionEarn ({ ...data }) );
+    handleShowComponent()
+  }
+  // debugger
   return (
     <div className={`quiz__completed ${ intro }`}>
       {
@@ -33,7 +45,7 @@ export const QuizComplete = ({ handleShowComponent }) => {
                   <img src={ data.image.small } alt={ data.name } />
                   <img src={ data.image.small } alt={ data.name } />
                 </figure>
-                <button className="btn btn--primary" onClick={ handleShowComponent }>Continue</button>
+                <button className="btn btn--primary" onClick={ handleQuizCompleted }>Continue</button>
                 </div>
             </>
       }

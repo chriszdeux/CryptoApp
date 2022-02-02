@@ -93,7 +93,8 @@
     padding: 1rem;
     border: 1px solid $border-color;
     border-radius: 1rem;
-    overflow: hidden;
+    // overflow: hidden;
+    z-index: 1;
     .asset__name {
       display: flex;
       justify-content: space-around;
@@ -107,11 +108,11 @@
     }
     
     .asset__stat {
-      @include bordering-list(center, 15rem);
+      @include bordering-list(center, auto);
     }
     
     .asset__social__network {
-      @include bordering-list(space-between, 18rem);
+      @include bordering-list(space-between, auto);
 
       
       .with__pop {

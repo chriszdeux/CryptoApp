@@ -10,7 +10,6 @@ export const AssetLearnCard = ({ values }) => {
   const { setDataEarning } = useContext(DataContext);
   const handleDataEarning = () => {
     setDataEarning(item)
-    // debugger
     handleShowComponent()
   }
   return (

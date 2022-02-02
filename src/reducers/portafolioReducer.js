@@ -7,6 +7,7 @@ export const portafolioReducer = ( state = [  ], action ) => {
   // debugger
   switch (action.type) {
     case types.portafolio_buy:
+      // debugger
       const newState = [...state];
       const filterState = newState.filter(item =>  item.id !== action.payload.id)
       const filterAsset = newState.filter(item => item.id === action.payload.id)
@@ -37,9 +38,9 @@ export const portafolioReducer = ( state = [  ], action ) => {
       }
     // debugger
 
-      return [{  ...action.payload, amount_crypto: action.payload.amount_crypto.replace(/\,/g, '') },  ...state, ]
+      return [{  ...action.payload, amount_crypto: action.payload.amount_crypto?.replace(/\,/g, '') },  ...state, ]
 
-        
+    case types.portafolio_earn:
       // debugger
 
     default:

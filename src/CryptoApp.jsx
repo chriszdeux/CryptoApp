@@ -22,7 +22,7 @@ import { store } from './store/store'
 export const CryptoApp = () => {
   
   const globalStats = useFetchGlobalStats()
-  const { currentPosition, pages, handleNextPage, handlePrevPage } = usePagination()
+  const { currentPosition, pages, handleNextPage, handlePrevPage, animation, handleCurrent, handleStartPosition } = usePagination()
   const dataAssets = useFetchCoins(currentPosition)
   // const dataFunctions = useDataFunctions( dataAssets.data )
   // const { error } = dataAssets
@@ -72,10 +72,13 @@ export const CryptoApp = () => {
         // dataFunctions,
         // dataNews,
         globalStats,
-        currentPosition, 
+        currentPosition,
+        animation, 
         pages, 
         handleNextPage, 
         handlePrevPage,
+        handleCurrent,
+        handleStartPosition,
         handleAsset,
         setHandleAsset,
         nft,

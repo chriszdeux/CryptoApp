@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { animations_object } from "../utils/animations/animations_object"
 
 export const usePagination = () => {
   const [currentPosition, setCurrentPosition] = useState(1)
@@ -9,19 +10,57 @@ export const usePagination = () => {
     next: currentPosition + 1,
     next_2: currentPosition + 2
   })
+  const { intro, exit } = animations_object
+  const [animation, setAnimation] = useState(intro);
   const handleNextPage = () => {
-    setCurrentPosition(currentPosition + 1)
+    setAnimation(exit)
     setTimeout(() => {
       
-    }, 500);
+      setCurrentPosition(currentPosition + 1)
+    }, 300);
+    setTimeout(() => {
+      setAnimation(intro)
+    }, 1500);
+  }
+  
+  const handlePrevPage = (  ) => {
+    setAnimation(exit)
+    setTimeout(() => {
+      
+      setCurrentPosition(currentPosition - 1)
+    }, 300);
+    setTimeout(() => {
+      setAnimation(intro)
+      
+    }, 1500);
+  }
+  
+  const handleCurrent = ( value ) => {
+    
+    setAnimation(exit)
+    setTimeout(() => {
+      
+      setCurrentPosition( value )
+    }, 300);
+    setTimeout(() => {
+      setAnimation(intro)
+      
+    }, 1500);
   }
 
-  const handlePrevPage = () => {
-    setCurrentPosition(currentPosition - 1)
+  const handleStartPosition = (  ) => {
+    
+    setAnimation(exit)
     setTimeout(() => {
       
-    }, 500);
+      setCurrentPosition( 1 )
+    }, 300);
+    setTimeout(() => {
+      setAnimation(intro)
+      
+    }, 1500);
   }
+
 
   useEffect(() => {
     setPages({
@@ -34,5 +73,5 @@ export const usePagination = () => {
   }, [ currentPosition ])
 
 
-  return { pages, currentPosition, handleNextPage, handlePrevPage }
+  return { pages, currentPosition, handleNextPage, handlePrevPage, animation, handleCurrent, handleStartPosition }
 }

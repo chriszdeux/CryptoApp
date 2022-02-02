@@ -7,3 +7,12 @@ export const actionBuy = ( data ) => {
     payload: data
   }
 }
+
+
+export const actionEarn = ( data ) => {
+  // debugger
+  return {
+    type: types.portafolio_earn,
+    payload: data
+  }
+}

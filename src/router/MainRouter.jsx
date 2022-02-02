@@ -54,7 +54,7 @@ import { mainDataReducer } from '../reducers/mainDataReducer';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
-  const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, } = useShowComponent();
+  const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, animation, animation2 } = useShowComponent();
 
   
   return (
@@ -64,11 +64,11 @@ export const MainRouter = () => {
         {/* <BackgroundImage image={ image }/> */}
         <MainNewsCard />
         <DeskMenu/>
-        <MenuButton values={{ showComponent, handleShowComponent }}/>
+        <MenuButton values={{ showComponent, handleShowComponent, animation }}/>
         {
-          showComponent && <Menu values={{ showComponent, handleShowComponent }}/>
+          showComponent && <Menu values={{ showComponent, handleShowComponent, animation }}/>
         }
-        <SwapButton values={{ showComponent2, handleShowComponent2 }}/>
+        <SwapButton values={{ showComponent2, handleShowComponent2,  }}/>
 
         <Routes>
           <Route  path="/" element={ <HomePage /> }/>
@@ -99,7 +99,7 @@ export const MainRouter = () => {
           showComponent2 &&
           <>
           { console.log(`${ showComponent2 ? 'opened' : 'closed' }`) }
-          <SwapCrypto handleShowComponent2={ handleShowComponent2 }/>
+          <SwapCrypto values={ {handleShowComponent2, animation2} }/>
           </>
         }
         {/* <GenericFooter /> */}

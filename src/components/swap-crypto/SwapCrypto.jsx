@@ -25,8 +25,8 @@ import { DataContext, DataTransactionContext } from '../../context/context'
 import { usePrevTransactions } from '../../hooks/usePrevTransaction'
 // import { Provider } from 'react-redux'
 
-export const SwapCrypto = ({ handleShowComponent2 }) => {
-
+export const SwapCrypto = ({ values }) => {
+  const { animation2, handleShowComponent2 } = values
   const [swapOperations, setSwapOperations] = useState({
     buy: false,
     sell: false,
@@ -85,9 +85,9 @@ export const SwapCrypto = ({ handleShowComponent2 }) => {
       handlePrevTransaction
     }}>
 
-    <div className={`swap c100 ${ intro_right }`}>
+    <div className={`swap c100 ${ animation2 }`}>
       <div className="swap__back" onClick={ handleShowComponent2 }>
-      { icons.back_icon }
+      { icons.forward_icon }
       </div>
       <SwapNavbar values={{ handleBuy, handleSell, handleConvert }}/>
 

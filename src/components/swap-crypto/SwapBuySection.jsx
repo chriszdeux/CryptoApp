@@ -10,7 +10,7 @@ export const SwapBuySection = ({ setValidateAmount }) => {
     <div className="buy__section">
       <Divider />
       <Amount setValidateAmount={ setValidateAmount }/>
-      <RecurrentTransaction />
+      {/* <RecurrentTransaction /> */}
       <BuyPay />
     </div>
   )

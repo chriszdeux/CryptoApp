@@ -7,6 +7,21 @@
       margin-top: 1rem;
     }
   }
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // display: flex;
+
+    h2 {
+      text-align: start;
+      margin-bottom: 0;
+    }
+    .pagination__list {
+      width: 60%;
+    }
+
+  }
 }
 
 @media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
@@ -22,6 +37,12 @@
   //   grid-template-columns: repeat(4, 1fr);
   //   gap: 1rem;
   // }
+    .pagination {
+      .pagination__list {
+        width: 30%;
+      }
+    }
+
   .trade__section {
     display: grid;
     grid-template-columns: 3fr 1fr;

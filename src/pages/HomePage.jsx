@@ -18,6 +18,7 @@ import { MainDisplay } from '../components/main/MainDisplay'
 import { DeskMenu } from '../components/menu/DeskMenu'
 import { Menu } from '../components/menu/Menu'
 import { Navbar } from '../components/navbar/Navbar'
+import { Pagination } from '../components/pagination/Pagination'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
@@ -35,6 +36,7 @@ export const HomePage = () => {
         <MainDisplay />
         <GainerLoser />
         <CryptoFeature />
+        <Pagination />
         {
           loading
             ? <LoadingText />

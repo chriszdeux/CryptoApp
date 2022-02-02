@@ -14,6 +14,17 @@
 .pagination {
   // text-align: center;
   margin-top: 2rem;
+
+  h2 {
+    font-size: $large-font-size;
+    color: $font-color;
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      font-size: $large-font-size;
+      color: $active-color;
+    }
+  }
   .pagination__list {
     display: flex;
     justify-content: space-evenly;
@@ -33,6 +44,21 @@
       border-radius: 1rem;
       border: 1px solid $active-color;
       background-color: $second-base-color;
+      transition: .2s ease;
+      cursor: pointer;
+      &:active {
+        box-shadow: $box-shadow;
+        transform: scale(.95);
+        opacity: .8;
+        background-color: $base-color;
+      }
+      &:hover {
+        box-shadow: $box-shadow;
+      }
+    }
+
+    .current {
+      border: 2px solid $active-color;
     }
 
     .prev--page {

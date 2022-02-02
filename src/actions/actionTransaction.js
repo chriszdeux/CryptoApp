@@ -6,3 +6,10 @@ export const actionTransaction = ( data ) => {
     payload: data
   }
 }
+
+export const actionTransactionEarn = ( data ) => {
+  return {
+    type: types.transaction_earn,
+    payload: data
+  }
+}

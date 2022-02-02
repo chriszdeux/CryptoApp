@@ -14,7 +14,7 @@ export const CryptoTable = ({ data }) => {
   // const { dataAssets: {
   //   data, loading, error
   // } } = useContext( DataContext );
-  
+  const { animation } = useContext(DataContext)
   // debugger
   const { intro } = animations_object;
   // debugger
@@ -22,7 +22,7 @@ export const CryptoTable = ({ data }) => {
     <section className="crypto__coins c100">
       {/* <Pagination /> */}
         
-      <table className={`crypto__table c95 pd ${ intro }`}>
+      <table className={`crypto__table c95 pd ${ animation }`} style={{ animationDelay: '.3s' }}>
       {/* <div className="glass"></div> */}
         <TableHeader />
               {

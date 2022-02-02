@@ -670,6 +670,22 @@ html {
   border-radius: 1rem;
 }
 
+.learn__section .wrapper__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.learn__section .wrapper__cards .learn__card {
+  width: 100%;
+  margin: 1rem 0;
+}
+
 .learn__card {
   display: inline;
   -webkit-box-pack: space-evenly;
@@ -794,8 +810,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -803,29 +820,25 @@ html {
   margin-bottom: 1rem;
 }
 
-.feature .gainers__losers .feature__gainers .feature__list .top--asset figure {
+.feature .gainers__losers .feature__gainers .feature__list .top--asset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature .gainers__losers .feature__gainers .feature__list .top--asset div figure {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
-.feature .gainers__losers .feature__gainers .feature__list .top--asset figure img {
+.feature .gainers__losers .feature__gainers .feature__list .top--asset div figure img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.feature .gainers__losers .feature__gainers .feature__list .top--asset h3:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #07F1FF;
 }
 
 .feature .gainers__losers .feature__gainers .feature__list .top--asset .loser--color {
@@ -930,8 +943,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -939,29 +953,25 @@ html {
   margin-bottom: 1rem;
 }
 
-.feature .gainers__losers .feature__losers .feature__list .top--asset figure {
+.feature .gainers__losers .feature__losers .feature__list .top--asset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature .gainers__losers .feature__losers .feature__list .top--asset div figure {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
-.feature .gainers__losers .feature__losers .feature__list .top--asset figure img {
+.feature .gainers__losers .feature__losers .feature__list .top--asset div figure img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.feature .gainers__losers .feature__losers .feature__list .top--asset h3:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #07F1FF;
 }
 
 .feature .gainers__losers .feature__losers .feature__list .top--asset .loser--color {
@@ -1065,8 +1075,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1074,29 +1085,25 @@ html {
   margin-bottom: 1rem;
 }
 
-.feature .gainers__losers .feature__assets__random .feature__list .top--asset figure {
+.feature .gainers__losers .feature__assets__random .feature__list .top--asset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature .gainers__losers .feature__assets__random .feature__list .top--asset div figure {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
-.feature .gainers__losers .feature__assets__random .feature__list .top--asset figure img {
+.feature .gainers__losers .feature__assets__random .feature__list .top--asset div figure img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.feature .gainers__losers .feature__assets__random .feature__list .top--asset h3:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #07F1FF;
 }
 
 .feature .gainers__losers .feature__assets__random .feature__list .top--asset .loser--color {
@@ -1348,8 +1355,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1357,29 +1365,25 @@ html {
   margin-bottom: 1rem;
 }
 
-.feature .gainers__losers .suggested .feature__list .top--asset figure {
+.feature .gainers__losers .suggested .feature__list .top--asset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feature .gainers__losers .suggested .feature__list .top--asset div figure {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
-.feature .gainers__losers .suggested .feature__list .top--asset figure img {
+.feature .gainers__losers .suggested .feature__list .top--asset div figure img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.feature .gainers__losers .suggested .feature__list .top--asset h3:nth-child(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #07F1FF;
 }
 
 .feature .gainers__losers .suggested .feature__list .top--asset .loser--color {
@@ -1778,7 +1782,7 @@ html {
 
 .table__header {
   position: relative;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #07F1FF;
   height: 3rem;
   border-bottom: 1px solid #07F1FF;
@@ -1808,6 +1812,22 @@ html {
   color: #08ACB6;
 }
 
+.price .market--mark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.price .market--mark .icon {
+  font-size: 1.6rem;
+}
+
 tr {
   border-bottom: 1px solid #07F1FF;
 }
@@ -1818,7 +1838,7 @@ tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #07F1FF;
 }
 
@@ -1836,6 +1856,14 @@ tr {
           transform: translateX(-50%);
   opacity: .2;
   border: 1px solid #07F1FF;
+}
+
+.table__row .favorite--color div .icon {
+  color: #07F1FF;
+}
+
+.table__row .favorite div .icon {
+  color: #08ACB6;
 }
 
 .rank {
@@ -1941,7 +1969,7 @@ tr {
 
 .coin--name {
   font-weight: 700;
-  text-align: start;
+  text-align: center;
 }
 
 .coin--name .short--name {
@@ -1950,6 +1978,12 @@ tr {
   background-color: #04767d;
   color: #F0F0F0;
   border-radius: 5px;
+}
+
+.total--invested {
+  display: none;
+  font-weight: 700;
+  text-align: center;
 }
 
 .icon {
@@ -2090,11 +2124,11 @@ tr {
 }
 
 .username {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .balance {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .balance span {
@@ -2381,7 +2415,7 @@ tr {
 
 .swap__trade {
   position: relative;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
 .swap__trade .swap__buy {
@@ -2650,7 +2684,6 @@ tr {
   background-image: linear-gradient(352deg, #03d0dd 22%, #014449 100%);
   text-align: center;
   z-index: 2;
-  overflow-y: hidden;
 }
 
 .preview__transaction div {
@@ -2710,10 +2743,27 @@ tr {
   margin: 3rem 0;
 }
 
+.asset__background {
+  position: absolute;
+  bottom: 10%;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+  -webkit-filter: blur(14px) contrast(0.5) opacity(0.7);
+          filter: blur(14px) contrast(0.5) opacity(0.7);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.asset__image__preview {
+  width: 50% !important;
+  border-radius: 50%;
+}
+
 .chart {
   width: 100%;
   position: relative;
   height: auto;
+  border: 1px solid #00B4BF;
   border-radius: 1rem;
   color: #07F1FF;
   background: linear-gradient(228deg, #04747c 22%, #252525 100%);
@@ -2781,6 +2831,18 @@ tr {
   margin-top: 2rem;
 }
 
+.pagination h2 {
+  font-size: 2rem;
+  color: #F0F0F0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pagination h2 span {
+  font-size: 2rem;
+  color: #07F1FF;
+}
+
 .pagination .pagination__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2812,6 +2874,27 @@ tr {
   border-radius: 1rem;
   border: 1px solid #07F1FF;
   background-color: #04767d;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.pagination .pagination__list li:active {
+  -webkit-box-shadow: 0px 0px 5px #022d33;
+          box-shadow: 0px 0px 5px #022d33;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  opacity: .8;
+  background-color: #08ACB6;
+}
+
+.pagination .pagination__list li:hover {
+  -webkit-box-shadow: 0px 0px 5px #022d33;
+          box-shadow: 0px 0px 5px #022d33;
+}
+
+.pagination .pagination__list .current {
+  border: 2px solid #07F1FF;
 }
 
 .pagination .pagination__list .prev--page {
@@ -3182,6 +3265,7 @@ tr {
 }
 
 .asset__page {
+  margin-top: 5rem;
   position: relative;
   font-size: 1.2rem;
 }
@@ -3220,7 +3304,6 @@ tr {
 }
 
 .asset__info {
-  margin-top: 5rem;
   padding: 1rem;
   position: relative;
   width: 100%;
@@ -3653,7 +3736,6 @@ tr {
 }
 
 .asset__transactions {
-  width: 100%;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
 }
@@ -3833,6 +3915,10 @@ tr {
       justify-content: space-around;
   width: 90%;
   height: 50rem;
+}
+
+.quiz__layout .quiz__content iframe {
+  width: 100%;
 }
 
 .quiz__layout .quiz__content .quiz__video {
@@ -4085,6 +4171,12 @@ tr {
 }
 
 .nft .global__stats .header__stats .user__banner .user__profile figcaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   margin-top: 1rem;
   font-size: 2rem;
@@ -4396,6 +4488,25 @@ tr {
 
 .error--warning {
   color: #f56b6b;
+}
+
+.empty__component {
+  /* width: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 10rem;
+  border: 1px solid #00B4BF;
+  border-radius: .5rem;
+  font-size: 1.6rem;
+  color: #07F1FF;
 }
 
 .portafolio {
@@ -4958,6 +5069,9 @@ tr {
   .supply {
     display: revert;
   }
+  .for__you {
+    display: revert;
+  }
   .for__you .interest__card {
     width: 100%;
     margin-right: 1rem;
@@ -5060,6 +5174,12 @@ tr {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .total--invested {
+    display: revert;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .portafolio {
     width: 79%;
@@ -5088,6 +5208,7 @@ tr {
   .portafolio .portafolio__aside .portafolio__aside__content {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    margin-top: 5rem;
   }
   .portafolio .portafolio__aside .portafolio__aside__content .swap {
     display: -webkit-box;
@@ -5133,6 +5254,24 @@ tr {
   .trade__section .crypto__coins {
     margin-top: 1rem;
   }
+  .pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .pagination h2 {
+    text-align: start;
+    margin-bottom: 0;
+  }
+  .pagination .pagination__list {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1024px) and (min-height: 1366px) {
@@ -5142,6 +5281,9 @@ tr {
 }
 
 @media only screen and (min-width: 1920px) {
+  .pagination .pagination__list {
+    width: 30%;
+  }
   .trade__section {
     display: -ms-grid;
     display: grid;
@@ -5187,6 +5329,14 @@ tr {
   .quiz__layout .quiz__content .quiz__video {
     height: 25rem;
   }
+  .learn__section .wrapper__cards {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .learn__section .wrapper__cards .learn__card {
+    width: 49%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -5198,6 +5348,16 @@ tr {
   }
   .quiz__layout .quiz__content .quiz__video {
     height: 60rem;
+  }
+  .learn__section .wrapper__cards {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .learn__section .wrapper__cards .learn__card {
+    width: 30%;
+    margin: 1rem;
+    min-height: 25rem;
   }
 }
 
@@ -5234,6 +5394,15 @@ tr {
   }
   .quiz__layout .quiz__content p {
     font-size: 2.4rem;
+  }
+  .learn__section .wrapper__cards {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .learn__section .wrapper__cards .learn__card {
+    width: 18%;
+    margin: 1rem;
   }
 }
 
@@ -5595,7 +5764,7 @@ tr {
   }
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1910px) {
   .nft__page {
     width: 90%;
     margin: 0 auto;
@@ -5889,6 +6058,8 @@ a:link {
   top: 0;
   left: 0;
   z-index: -1;
+  -webkit-filter: blur(1rem);
+          filter: blur(1rem);
 }
 
 .background__image .background--image {
