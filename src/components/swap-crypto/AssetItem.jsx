@@ -19,7 +19,8 @@ export const AssetItem = ({ values }) => {
     amount_crypto
    } = item
 
-   const { loading, error, data } = useFetchAsset( amount_dollar && id)
+   const { loading, error, data } = useFetchAsset( id )
+  //  const { loading, error, data } = useFetchAsset( amount_dollar && id)
   //  debugger
    const  { gainer }  = useGainerLoser(price_change_percentage_24h)
   //  debugger
@@ -28,7 +29,7 @@ export const AssetItem = ({ values }) => {
   useEffect(() => {
     setRealPrice(0)
     // debugger
-    if(!loading) {
+    if(data || data.length > 0 || data !== undefined) {
       setRealPrice( (data.current_price_usd?.replace(/\,/g, '') * amount_crypto).toFixed(2) )
     }
   }, [ data ])

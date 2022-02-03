@@ -13,10 +13,10 @@ export const AssetListConvert = ({ handleShowComponent }) => {
       <div className="close" onClick={ handleShowComponent }>
         { icons.close_icon }
       </div>
-      <form action="" className="asset__search c100">
+      {/* <form action="" className="asset__search c100">
         { icons.search_icon }
         <input type="text" className=""/>
-      </form>
+      </form> */}
       <Divider />
       <ListAssets />
       {/* <BackgroundImage image={ image }/> */}

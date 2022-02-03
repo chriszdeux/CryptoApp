@@ -94,7 +94,9 @@ export const fetchAsset = async ( asset ) => {
   }).catch(function (error) {
     console.error(error);
   });
-  // debugger
 
   return [{...data}]
+  if(asset.length > 2 || asset !== undefined) {
+  }
+
 }

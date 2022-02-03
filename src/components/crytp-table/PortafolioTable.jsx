@@ -23,10 +23,10 @@ export const PortafolioTable = () => {
   //   debugger
   // }, [  ])
   // debugger
+  {/* <div className="glass"></div> */}
   return (
     <div className="crypto__coins c100">
         <table className={`crypto__table c95  ${ intro }`}>
-        {/* <div className="glass"></div> */}
           <PortafolioTableHeader />
                 {
                   asset_state.map((item, index) => (

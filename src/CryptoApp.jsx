@@ -36,9 +36,10 @@ export const CryptoApp = () => {
   const { wishlist_reducer } = useSelector(state => state)
   // debugger
   const dispatch = useDispatch()
+  // debugger
   useEffect(() => {
     dispatch(actionMainData(dataAssets))
-  },[ dataAssets ])
+  },[ dataAssets.data ])
 
   const balance = useSelector(state => state.balance_reducer)
   // debugger
@@ -53,9 +54,9 @@ export const CryptoApp = () => {
   // useEffect(() => {
   //   localStorage.setItem('wishlist', JSON.stringify(wishlist_reducer))
   // }, [wishlist_reducer ])
-  useEffect(() => {
-    console.log(wishlist_reducer)
-  }, [ wishlist_reducer ])
+  // useEffect(() => {
+  //   console.log(wishlist_reducer)
+  // }, [ wishlist_reducer ])
 
   const [handleTransaction, setHandleTransaction] = useState(null);
 

@@ -2564,31 +2564,28 @@ tr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.6rem;
 }
 
 .asset__list .asset--item div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  width: 50%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .asset__list .asset--item .asset--logo {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   overflow: hidden;
+  margin-right: 1rem;
 }
 
 .asset__list .asset--item .asset--logo img {
@@ -2612,6 +2609,7 @@ tr {
   display: -ms-inline-grid;
   display: inline-grid;
   text-align: end;
+  width: 50%;
   color: #07F1FF;
 }
 
@@ -5161,7 +5159,7 @@ tr {
 
 @media only screen and (min-width: 1024px) {
   .swap {
-    width: 50%;
+    width: 25%;
     left: revert;
     right: 0;
     margin: 0;
@@ -5173,7 +5171,6 @@ tr {
 
 @media only screen and (min-width: 1920px) {
   .swap {
-    width: 25%;
     overflow: hidden;
     border: 1px solid #00B4BF;
   }

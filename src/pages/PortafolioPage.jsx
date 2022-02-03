@@ -28,12 +28,13 @@ export const PortafolioPage = () => {
   const dataAssets = useSelector(state => state.buy_asset_reducer)
   // debugger
   const { setHandleBalance } = useContext(DataContext)
-  useEffect(() => {
-    setHandleBalance({
-      portafolio_balance: 0,
-      total_amount_invested: 0,
-    })
-  }, [  ])
+  // useEffect(() => {
+  //   setHandleBalance({
+  //     portafolio_balance: 0,
+  //     total_amount_invested: 0,
+  //   })
+  // }, [  ])
+  // debugger
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}

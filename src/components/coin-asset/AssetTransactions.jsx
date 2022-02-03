@@ -27,11 +27,11 @@ export const AssetTransactions = ({id}) => {
           filterTransaction.length > 0
             ? 
               filterTransaction.map(item => (
-                <TransactionItem item={ item }/>
+                <TransactionItem key={ new Date().toString() } item={ item }/>
               ))
             :  
               dataTransaction.map(item => (
-                <TransactionItem item={ item }/>
+                <TransactionItem key={ new Date().toString() } item={ item }/>
               ))
             
         }

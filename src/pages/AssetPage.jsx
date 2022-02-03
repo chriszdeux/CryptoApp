@@ -27,7 +27,7 @@ export const AssetPage = () => {
   const [data, setData] = useState({});
   useEffect(() => {
     setData({...dataAsset[0]})
-  }, [  dataAsset ])
+  }, [  dataAsset[0] ])
   useEffect(() => {
     scrollTop()
   }, [  ])

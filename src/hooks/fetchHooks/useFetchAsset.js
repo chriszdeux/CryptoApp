@@ -17,7 +17,9 @@ export const useFetchAsset = ( id ) => {
   }, [])
 
   useEffect(() => {
-    fetchAsset(id)
+    setTimeout(() => {
+      
+      fetchAsset(id)
       .then(item => {
         // debugger
         if(!item) {
@@ -34,8 +36,10 @@ export const useFetchAsset = ( id ) => {
             error: null
           })
         }
-      })    
-  }, [ id ])
-
-  return dataAssetInfo
+      })
+      
+    }, [ id ])
+    
+  }, 300);
+    return dataAssetInfo
 }
