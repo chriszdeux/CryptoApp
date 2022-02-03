@@ -445,7 +445,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 0 1rem;
+    margin: 0 1rem;
+    // padding: 0 1rem;
     .feature__gainers {
       position: relative;
       width: 100%;

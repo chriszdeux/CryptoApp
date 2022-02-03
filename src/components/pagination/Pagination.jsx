@@ -10,7 +10,7 @@ export const Pagination = () => {
   const { prev_2, prev, current, next, next_2 } = pages
   const { intro } = animations_object
   return (
-    <div className="pagination c95">
+    <div className={ `pagination c95 ${ intro }` } style={{ animationDelay: '2s' }}>
       <h2>Current page: <span>{ currentPosition }</span></h2>
       <ul className="pagination__list">
         {

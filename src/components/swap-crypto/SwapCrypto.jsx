@@ -24,7 +24,7 @@ import { SwapConvertSection } from './SwapConvertSelection'
 import { DataContext, DataTransactionContext } from '../../context/context'
 import { usePrevTransactions } from '../../hooks/usePrevTransaction'
 // import { Provider } from 'react-redux'
-
+import background from '../../utils/vector/payment.svg'
 export const SwapCrypto = ({ values }) => {
   const { animation2, handleShowComponent2 } = values
   const [swapOperations, setSwapOperations] = useState({
@@ -120,6 +120,7 @@ export const SwapCrypto = ({ values }) => {
           }
         </figure>
       </div>
+    <BackgroundImage image={ background }/>
     </div>
     </DataTransactionContext.Provider>
   )

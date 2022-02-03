@@ -1,9 +1,11 @@
 import React from 'react'
+import { animations_object } from '../../utils/animations/animations_object'
 import { Divider } from '../helpers/Divider'
 
 export const AssetStats = () => {
+  const { intro } = animations_object
   return (
-    <aside className='tickers'>
+    <aside className={`tickers ${ intro }`} style={{ animationDelay: '1.5s' }}>
       <div className="tickers__header">
         <h3>time</h3>
         <h3>Price</h3>

@@ -11,7 +11,7 @@ import { Top10Exchange } from './Top10Exchange'
 export const CryptoFeature = () => {
   const { intro } = animations_object;
   return (
-    <section className="wrapper c100">
+    <section className={`wrapper c100 ${ intro }`} style={{ animationDelay: '1.5s' }}>
       {/* <NewsCrypto /> */}
       <Top10Crypto />
       <Top10Exchange />

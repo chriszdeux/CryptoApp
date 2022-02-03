@@ -96,5 +96,5 @@ export const fetchAsset = async ( asset ) => {
   });
   // debugger
 
-  return data
+  return [{...data}]
 }

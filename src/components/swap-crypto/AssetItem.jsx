@@ -5,7 +5,8 @@ import { useGainerLoser } from '../../hooks/useGainerLoser';
 import shib from '../../temp/shib.png';
 import { Divider } from '../helpers/Divider';
 
-export const AssetItem = ({ item }) => {
+export const AssetItem = ({ values }) => {
+  const { item, handleShowComponent2 } = values
   const { setHandleAsset } = useContext(DataContext)
   const { 
     id,
@@ -32,10 +33,17 @@ export const AssetItem = ({ item }) => {
     }
   }, [ data ])
   // debugger
+
+  const handleAssetClose = () => {
+    handleShowComponent2()
+    setTimeout(() => {
+      setHandleAsset({...item, realPrice})
+    }, 200);
+  }
   // debugger
   return (
       <>
-    <li className="asset--item c100" onClick={ () => setHandleAsset({...item, realPrice}) }>
+    <li className="asset--item c100" onClick={ handleAssetClose  }>
       <div>
         <figure className="asset--logo">
           <img src={ image } alt={ name } />

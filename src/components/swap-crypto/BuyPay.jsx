@@ -5,7 +5,7 @@ import { AssetList } from './AssetList'
 import { SwapBuy } from './SwapBuy'
 import { PaymentList } from './PaymentList'
 export const BuyPay = () => {
-  const { handleShowComponent, showComponent, handleShowComponent2, showComponent2, } = useShowComponent();
+  const { handleShowComponent, showComponent, handleShowComponent2, showComponent2, animation2} = useShowComponent();
   // const [showPaymentMethods, setShowPaymentMethods] = useState(false)
   const { convert_icon } = icons
   // debugger
@@ -16,8 +16,8 @@ export const BuyPay = () => {
       
    </div>
    {
-     showComponent &&
-     <AssetList handleShowComponent={ handleShowComponent }/>
+     showComponent2 &&
+     <AssetList values={ {handleShowComponent2, animation2} }/>
    }
    {/* {
      showComponent2 &&

@@ -5,8 +5,8 @@ export const TableHeader = () => {
   return (
     <thead>
       <tr className="table__header">
-        <th className="rank"># Rank</th>
         <th className="favorite"> </th>
+        <th className="rank"># Rank</th>
         <th className="coin--image">Coin</th>
         <th className="coin--name">Name</th>
         <th className="price">Price</th>

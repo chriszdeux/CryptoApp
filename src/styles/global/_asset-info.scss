@@ -75,7 +75,7 @@
   // justify-content: space-between;
   // align-items: center;
   
-  padding: 1rem;
+  // padding: 1rem;
   position: relative;
   width: 100%;
   color: $second-font-color;
@@ -86,6 +86,7 @@
   .glass {
     top: 0;
     left: 0;
+    border-radius: .5rem;
   }
   .asset__network {
     height: 100%;

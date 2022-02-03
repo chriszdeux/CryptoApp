@@ -13,7 +13,7 @@ export const RandomAssetsCard = () => {
   // debugger
   const { intro_up } = animations_object;
   return (
-    <div className={`feature feature__assets__random pd ${ intro_up }`} style={{ animationDelay: '.6s' }}>
+    <div className={`feature feature__assets__random pd `} >
       <h2>Watch this <span onClick={ handleRandomAssets }>{ icons.convert_icon }</span></h2>
       <ul className="feature__list">
         {

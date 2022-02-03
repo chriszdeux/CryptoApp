@@ -9,7 +9,7 @@ import { animations_object } from '../../utils/animations/animations_object'
 import { actionTransaction } from '../../actions/actionTransaction'
 
 export const PreviewTransaction = ({ handleShowComponent }) => {
-  const { intro_up } = animations_object
+  const { intro_up, intro, exit } = animations_object
 
   const { handleAsset } = useContext(DataContext)
   const {
@@ -38,15 +38,20 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   }, [ amount_dollar ])
   // debugger
 //  debugger
+const [animationTransaction, setAnimationTransaction] = useState(intro);
   const submitTransaction = (e) => {
+    setAnimationTransaction(exit)
     e.preventDefault()
     dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
     dispatch(actionTransaction({ handleAsset,  previewTransaction}))
+    setTimeout(() => {
+      handleShowComponent()
+    }, 300);
   }
 
-  debugger
+  // debugger
   return (
-    <div className="preview__transaction">
+    <div className={`preview__transaction `}>
       <div onClick={ handleShowComponent }>
       { icons.back_icon }
 

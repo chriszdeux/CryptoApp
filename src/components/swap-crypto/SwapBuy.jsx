@@ -17,7 +17,7 @@ export const SwapBuy = ({ values }) => {
   return (
     <>
       <div className="swap__buy c90">
-        <AssetSelection handleShowComponent={ handleShowComponent }/>
+        <AssetSelection handleShowComponent={ handleShowComponent2 }/>
       
         {/* {
           swapBuying

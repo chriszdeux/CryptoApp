@@ -39,12 +39,12 @@ export const TableRow = ({ item }) => {
             <tr className="table__row c100 animation_animated animation_fadeIn">
               {/* <td>1</td> */}
   
-              <td className="rank">{ market_cap_rank }</td>
               <td className="favorite">
                 <div onClick={ handleWishItem } className={ `${ favorite ? 'favorite--color' : 'favorite' }` }>
                   { icons.star_icon }
                 </div>
               </td>
+              <td className="rank">{ market_cap_rank }</td>
               <td className="coin">
                 <figure className="crypto__coin">
                   <img className="coin--image" src={ image } alt={ id } />

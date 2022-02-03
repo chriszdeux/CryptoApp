@@ -18,7 +18,7 @@ export const GainerCard = ( { data } ) => {
   }, [data])
   // debugger
   return (
-    <div className={`feature feature__gainers  pd ${ intro_up }`}>
+    <div className={`feature feature__gainers  pd `}>
       <h2>Gainers <span>{ icons.trending_up_icon }</span></h2>
       <ul className="feature__list">
         {

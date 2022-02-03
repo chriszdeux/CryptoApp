@@ -19,10 +19,10 @@ export const CryptoTable = ({ data }) => {
   const { intro } = animations_object;
   // debugger
   return (
-    <section className="crypto__coins c100">
+    <section className={`crypto__coins c100 ${ intro }`} >
       {/* <Pagination /> */}
         
-      <table className={`crypto__table c95 pd ${ animation }`} style={{ animationDelay: '.3s' }}>
+      <table className={`crypto__table c95 pd${ animation }`} style={{ animationDelay: '.3s' }}>
       {/* <div className="glass"></div> */}
         <TableHeader />
               {

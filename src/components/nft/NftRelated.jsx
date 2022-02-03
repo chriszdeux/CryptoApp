@@ -8,6 +8,7 @@ import { LoadingText } from '../loading/LoadingText';
 export const NftRelated = () => {
   const { intro } = animations_object;
   const { data, loading, error } = useFetchImagesNft()
+  
   return (
     <div className={`nft__related c95 ${ intro }`} style={{ animationDelay: '2s' }}>
       <h2>Nft related</h2>

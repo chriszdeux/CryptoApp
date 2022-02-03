@@ -15,7 +15,7 @@ export const Top10Exchange = () => {
     handleTop10Exchange(data)
   }, [ data ])
   return (
-    <div className={`wrapper c100 ${ intro }`} style={{ animationDelay: '1.9s' }}>
+    <div className={`wrapper c100 `} >
         <h2 className="wrapper--title">Exchanges</h2>
         <div className="wrapper__cards c100">
         {

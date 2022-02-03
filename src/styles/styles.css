@@ -761,7 +761,7 @@ html {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 1rem;
-  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 .feature .gainers__losers .feature__gainers {
@@ -1770,10 +1770,15 @@ html {
 .crypto__coins {
   position: relative;
   margin-bottom: 3rem;
+  padding: 1rem;
 }
 
 .crypto__table {
+  width: 99%;
+  margin: 0 1rem;
   position: relative;
+  margin: 0 auto;
+  padding: 1rem;
   border: 1px solid #07F1FF;
   border-radius: 5px;
   text-align: center;
@@ -2187,6 +2192,10 @@ tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.swap .background__image {
+  z-index: -1;
 }
 
 .swap__back {
@@ -3304,7 +3313,6 @@ tr {
 }
 
 .asset__info {
-  padding: 1rem;
   position: relative;
   width: 100%;
   color: #AFFAFF;
@@ -3317,6 +3325,7 @@ tr {
 .asset__info .glass {
   top: 0;
   left: 0;
+  border-radius: .5rem;
 }
 
 .asset__info .asset__network {
@@ -3325,7 +3334,7 @@ tr {
   padding: 1rem;
   border: 1px solid #00B4BF;
   border-radius: 1rem;
-  overflow: hidden;
+  z-index: 1;
 }
 
 .asset__info .asset__network .asset__name {
@@ -3364,7 +3373,7 @@ tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 15rem;
+  width: auto;
   position: relative;
   height: 3rem;
   margin: .5rem;
@@ -3394,7 +3403,7 @@ tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 18rem;
+  width: auto;
   position: relative;
   height: 3rem;
   margin: .5rem;
@@ -4049,6 +4058,12 @@ tr {
   width: 100%;
   opacity: 0.5;
   overflow: hidden;
+}
+
+.nft {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
 }
 
 .nft .nft__asset {
@@ -5005,8 +5020,8 @@ tr {
     width: 20%;
   }
   .feature .gainers__losers {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -5022,20 +5037,31 @@ tr {
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .feature .gainers__losers {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media only screen and (min-width: 1680px) {
   .navbar .navbar__list .navbar--item {
     font-size: 2.4rem;
     margin-bottom: 2rem;
   }
+  .feature .gainers__losers {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
   .feature .gainers__losers .feature__losers .feature__list .top--asset h3 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   .feature .gainers__losers .feature__losers .feature__list .top--asset figure {
     width: 5rem;
     height: 5rem;
   }
   .feature .gainers__losers .feature__gainers .feature__list .top--asset h3 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   .feature .gainers__losers .feature__gainers .feature__list .top--asset figure {
     width: 5rem;
@@ -5047,10 +5073,10 @@ tr {
     padding-left: 2rem;
   }
   .table__header {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   .table__row {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #F0F0F0;
   }
 }

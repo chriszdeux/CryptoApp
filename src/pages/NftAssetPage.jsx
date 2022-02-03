@@ -7,8 +7,11 @@ import { NftGlobalStats } from '../components/nft/NftGlobalStats'
 import { NftRelated } from '../components/nft/NftRelated'
 import image from '../utils/vector/asset-background.svg'
 import { DataContext } from '../context/context'
+import { scrollTop } from '../utils/functions/scrollTop'
 export const NftAssetPage = () => {
-  
+  useEffect(() => {
+    scrollTop()
+  }, [  ])
   return (
     <section className="nft__page c100">
       <div className="nft c100">

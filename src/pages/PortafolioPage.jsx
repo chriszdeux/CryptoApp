@@ -37,7 +37,7 @@ export const PortafolioPage = () => {
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
-      <div className="portafolio__main__section">
+      <div className="portafolio__main__section" >
         {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
           <h2 className="mg--v">Your Assets</h2>
@@ -59,16 +59,16 @@ export const PortafolioPage = () => {
         </div>
 
       </div>
-      <aside className={`portafolio__aside c100`}>
-        <div className={`portafolio__aside__content ${ intro }`}>
+      <aside className={`portafolio__aside c100 ${ intro }`} style={{ animationDelay: '1.5s' }}>
+        <div className={`portafolio__aside__content `}>
           {/* <SwapCrypto /> */}
           <AssetTransactions id=""/>
-          <ForYou />
+          {/* <ForYou /> */}
           {/* <InterestedEarned /> */}
           {/* <SwapCrypto /> */}
         </div>
-        <BackgroundImage image={ image }/>
       </aside>
+      <BackgroundImage image={ image }/>
     </section>
   )
 }

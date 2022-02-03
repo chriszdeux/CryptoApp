@@ -14,10 +14,15 @@
 .crypto__coins {
   position: relative;
   margin-bottom: 3rem;
+  padding: 1rem;
 }
 
 .crypto__table {
+  width: 99%;
+  margin: 0 1rem;
   position: relative;
+  margin: 0 auto;
+  padding: 1rem;
   // padding: 1rem;
   // position: relative;
   border: 1px solid $active-color;

@@ -20,8 +20,8 @@ export const Top10Crypto = () => {
   }, [ data ])
   // debugger
   return (
-    <div className={`wrapper c100 ${ intro }`}>
-      <h2 className="wrapper--title" style={{ animationDelay: '1.6s' }}>Top 10 Cryptos</h2>
+    <div className={`wrapper c100 `} >
+      <h2 className="wrapper--title" >Top 10 Cryptos</h2>
     <div className="wrapper__cards" >
       {
         loading

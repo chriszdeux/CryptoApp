@@ -144,7 +144,7 @@
 
   .feature {
     .gainers__losers {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
@@ -168,11 +168,16 @@
   }
 
 
-
 }
 
 
-
+@media only screen and ( min-width: 1440px ) {
+  .feature {
+    .gainers__losers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
 
 
 @media only screen and ( min-width: 1680px ) {
@@ -188,11 +193,12 @@
 
   .feature {
     .gainers__losers {
+      grid-template-columns: repeat(3, 1fr);
      .feature__losers {
       .feature__list {
         .top--asset {
           h3 {
-            font-size: $extra-large-font-size;
+            font-size: $large-font-size;
           }
     
           figure {
@@ -206,7 +212,7 @@
       .feature__list {
         .top--asset {
           h3 {
-            font-size: $extra-large-font-size;
+            font-size: $large-font-size;
           }
     
           figure {
@@ -224,11 +230,11 @@
     padding-left: 2rem;
   }
   .table__header {
-    font-size: $extra-large-font-size;
+    font-size: $large-font-size;
   }
   
   .table__row {
-    font-size: $large-font-size;
+    font-size: $regular-font-size;
     color: $font-color;
 
   }

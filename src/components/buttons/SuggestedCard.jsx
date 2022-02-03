@@ -52,7 +52,7 @@ export const SuggestedCard = () => {
   }
   console.log(currentPosition)
   return (
-    <div className={`suggested ${ intro_up }`} style={{ animationDelay: '.9s' }}>
+    <div className={`suggested`}>
       {
         loading
           ? <LoadingText />

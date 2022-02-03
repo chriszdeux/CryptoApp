@@ -22,14 +22,21 @@ import { Pagination } from '../components/pagination/Pagination'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoTest, videotest } from '../components/VideoTest'
 import { useShowComponent } from '../hooks/ShowComponent'
+import { useScrollTop } from '../hooks/useScrollTop'
+import { animations_object } from '../utils/animations/animations_object'
+import { scrollTop } from '../utils/functions/scrollTop'
 import image from '../utils/vector/world.svg';
 
 export const HomePage = () => {
   // debugger
   const { loading, error, data } = useSelector(state => state.data_reducer)
+  const { intro } = animations_object
+  useEffect(() => {
+    scrollTop()
+  }, [  ])
   return (
     <>
-    <section className="home__page">
+    <section className={` home__page `}>
       {/* <MainNewsCard />   */}
       {/* <DeskMenu/> */}
       <div className="home__main">
@@ -44,7 +51,7 @@ export const HomePage = () => {
               ? <ErrorConnect />
               : <CryptoTable data={ data }/>
         }
-        <ForYou />
+        {/* <ForYou /> */}
         {/* <GenericFooter /> */}
       </div>
       {/* { swappComponent }

@@ -10,7 +10,7 @@ export const NftPrice = () => {
   const { nft:{ data: {
    price_eth,
   } }, dataAssets: {data} } = useContext(DataContext)
-  const { current_price } = !!data && data[1]
+  const { current_price } = data.length > 0 && data[1]
   const [price, setPrice] = useState({
     price: Number,
     eth: Number,
@@ -19,15 +19,20 @@ export const NftPrice = () => {
 
   const { dollar, eth } = price
   useEffect(() => {
-    setPrice({
-      dollar: Number(current_price.replace(',','')),
-      eth: Number(price_eth),
-      // total: price.price * price.eth
-    })
-  }, [  ])
+    if(data.length > 0) {
+      setPrice({
+        dollar: Number(current_price.replace(',','')),
+        eth: Number(price_eth),
+        // total: price.price * price.eth
+      })
+
+    }
+  }, [ data ])
   // debugger
   return (
     <>
+    {
+      data.length > 0 &&
       <div className="nft__price c95 pd">
         <h2>Current price</h2>
         <div className="nft__current__price">
@@ -38,12 +43,13 @@ export const NftPrice = () => {
             <h2>{ price_eth } ETH <span>( ${ dollar * eth })</span></h2>
           </div>
           <div className="nft__buy__offer">
-            <button className="btn btn--primary" onClick={ handleShowComponent }>{ icons.wallet_icon } Buy now</button>
+            <button className="btn btn--primary"  >{ icons.wallet_icon } Buy now</button>
             <button className="btn btn--outline">{ icons.wallet_icon } Make Offer</button>
           </div>
         </div>
         <div className="glass"></div>
       </div>
+    }
       {
         showComponent && <PreviewTransactionNft handleShowComponent={ handleShowComponent }/>
       }

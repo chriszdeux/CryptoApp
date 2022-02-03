@@ -8,14 +8,15 @@ import { animations_object } from '../../utils/animations/animations_object'
 import { useSelector } from 'react-redux'
 import { ErrorConnect } from '../errors/ErrorConnect'
 import { LoadingText } from '../loading/LoadingText'
-export const AssetList = ({ handleShowComponent }) => {
+export const AssetList = ({ values }) => {
+  const { handleShowComponent2, animation2 } = values
   const { intro_up, intro_right } = animations_object;
   // debugger
   const { loading, error, data } = useSelector(state => state.data_reducer)
   return (
-    <div className={`asset__swap c100 pd ${ intro_right }`}>
+    <div className={`asset__swap c100 pd ${ animation2 }`}>
       {/* <h2>Select Asset to buy</h2> */}
-      <div className="close" onClick={ handleShowComponent }>
+      <div className="close" onClick={ handleShowComponent2 }>
         { icons.close_icon }
       </div>
       <form action="" className="asset__search c100">
@@ -29,7 +30,7 @@ export const AssetList = ({ handleShowComponent }) => {
           : error
             ? <ErrorConnect />
             :
-              <ListAssets data={ data }/>
+              <ListAssets values={ {data, handleShowComponent2} }/>
 
       }  
       {/* <BackgroundImage image={ image }/> */}

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { scrollTop } from "../utils/functions/scrollTop"
 
 export const useHandleNftData = () => {
   const [nft, setNft] = useState({
@@ -13,6 +14,9 @@ export const useHandleNftData = () => {
     })
   }
 
+  useEffect(() => {
+    scrollTop()
+  }, [ nft.position ])
   return {
     nft, handleNftData
   }

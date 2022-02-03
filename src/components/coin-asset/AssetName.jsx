@@ -3,7 +3,9 @@ import { icons } from '../../utils/icons/icons_object'
 import kraken from '../../temp/kraken.png';
 import { DataAssetContext } from '../../context/context';
 export const AssetName = () => {
-  const { data: { name, image, symbol } } = useContext(DataAssetContext)
+  const { data  } = useContext(DataAssetContext)
+  const { name, image, symbol } = data
+  // debugger
   return (
     <div className="asset__name mg--b">
       <figure className="crypto__coin">

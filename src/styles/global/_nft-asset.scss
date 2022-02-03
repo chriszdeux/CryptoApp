@@ -5,7 +5,8 @@
 }
 
 .nft {
-
+  display: grid;
+  gap: 1rem;
   .nft__asset {
     position: relative;
     overflow: hidden;
