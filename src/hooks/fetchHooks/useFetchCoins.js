@@ -28,7 +28,7 @@ export const useFetchCoins = ( initialPage ) => {
           data: [],
           error: true,
         })
-      } else {
+      } else if(isMounted.current){
         // debugger
         setCoinsData({
           loading: false,

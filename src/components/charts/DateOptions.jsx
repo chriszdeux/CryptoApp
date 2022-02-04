@@ -16,13 +16,13 @@ export const DateOptions = () => {
   return (
     <div className="chart__options ">
       <ul className="chart__list__options c100">
-        <li onClick={ () => setHandleChartDates(day_1) }>1d</li>
-        <li onClick={ () => setHandleChartDates(day_7) }>7d</li>
-        <li onClick={ () => setHandleChartDates(day_14) }>14d</li>
-        <li onClick={ () => setHandleChartDates(day_30) }>1M</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_1) }>1d</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_7) }>7d</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_14) }>14d</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_30) }>1M</li>
         {/* <li onClick={ () => setHandleChartDates(day_60) }>2M</li> */}
-        <li onClick={ () => setHandleChartDates(day_90) }>3M</li>
-        <li onClick={ () => setHandleChartDates(day_180) }>6M</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_90) }>3M</li>
+        <li className='btn' onClick={ () => setHandleChartDates(day_180) }>6M</li>
         {/* <li onClick={ () => setHandleChartDates(day_30) }>30d</li> */}
       </ul>
     </div>

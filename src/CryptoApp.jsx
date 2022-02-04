@@ -39,7 +39,7 @@ export const CryptoApp = () => {
   // debugger
   useEffect(() => {
     dispatch(actionMainData(dataAssets))
-  },[ dataAssets.data ])
+  },[ dataAssets ])
 
   const balance = useSelector(state => state.balance_reducer)
   // debugger

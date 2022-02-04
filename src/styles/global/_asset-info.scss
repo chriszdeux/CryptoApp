@@ -19,7 +19,7 @@
 
 @mixin transaction--items($display, $text) {
   display: $display;
-  font-size: $regular-font-size;
+  font-size: $small-font-size;
   text-align: $text;
 
   span {
@@ -381,34 +381,41 @@
 
 .asset__transactions {
   // width: 100%;
-  box-shadow: $box-shadow;
+  // box-shadow: $box-shadow;
+  border: 1px solid $border-color;
+  border-radius: .5rem;
   h2 {
     // border: 2px solid $border-color;
     border-bottom: none;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
-    background-color: $second-base-color;
+    // background-color: $second-base-color;
     color: $active-color;
     padding: 1rem;
+    border-bottom: 2px solid $border-color;
     // padding-bottom: none;
     // padding-bottom: none;
   }
-
+  
   .asset__transaction__list {
     // border: 2px solid $border-color;
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;
-    background-color: $background-color;
+    // background-color: $background-color;
     li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      // display: flex;
+      // justify-content: space-between;
+      // align-items: center;
       height: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
       font-size: $extra-small-font-size;
+      // border-bottom: 2px solid $border-color;
       color: $second-font-color;
       // border-bottom: 1px solid $border-color;
       .transaction--date {
-        @include transaction--items(inline-grid, center);
+        @include transaction--items(inline-grid, start);
         
       }
       .transaction--completed {

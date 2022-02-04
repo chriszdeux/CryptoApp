@@ -19,10 +19,10 @@ export const AssetList = ({ values }) => {
       <div className="close" onClick={ handleShowComponent2 }>
         { icons.close_icon }
       </div>
-      <form action="" className="asset__search c100">
+      {/* <form action="" className="asset__search c100">
         { icons.search_icon }
         <input type="text" className=""/>
-      </form>
+      </form> */}
       <Divider />
       {
         loading 

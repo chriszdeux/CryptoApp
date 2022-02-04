@@ -30,7 +30,7 @@ export const AssetPage = () => {
   }, [  dataAsset[0] ])
   useEffect(() => {
     scrollTop()
-  }, [  ])
+  }, [ dataAsset ])
   // debugger
   return (
     <DataAssetContext.Provider value={{

@@ -1,0 +1,15 @@
+@mixin active-state() {
+  transform: scale(.98);
+  transition: .2s ease-in;
+  opacity: .8;
+}
+
+@mixin hover-state() {
+  border:1px solid $active-color;
+  transition: .2s ease-in;
+}
+
+@mixin hover-state-opacity() {
+  transition: .2s ease-in;
+  opacity: .8;
+}

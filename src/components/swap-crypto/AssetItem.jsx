@@ -19,27 +19,27 @@ export const AssetItem = ({ values }) => {
     amount_crypto
    } = item
 
-   const { loading, error, data } = useFetchAsset( id )
+  //  const { loading, error, data } = useFetchAsset( id )
   //  const { loading, error, data } = useFetchAsset( amount_dollar && id)
   //  debugger
    const  { gainer }  = useGainerLoser(price_change_percentage_24h)
   //  debugger
   const [realPrice, setRealPrice] = useState(0);
   // const [countBalance, setCountBalance] = useState(balance);
-  useEffect(() => {
-    setRealPrice(0)
-    // debugger
-    if(data || data.length > 0 || data !== undefined) {
-      setRealPrice( (data.current_price_usd?.replace(/\,/g, '') * amount_crypto).toFixed(2) )
-    }
-  }, [ data ])
+  // useEffect(() => {
+  //   setRealPrice(0)
+  //   // debugger
+  //   if(data || data.length > 0 || data !== undefined) {
+  //     setRealPrice( (data.current_price_usd?.replace(/\,/g, '') * amount_crypto).toFixed(2) )
+  //   }
+  // }, [ data ])
   // debugger
 
   const handleAssetClose = () => {
+    setHandleAsset({...item, realPrice})
     handleShowComponent2()
-    setTimeout(() => {
-      setHandleAsset({...item, realPrice})
-    }, 200);
+    // setTimeout(() => {
+    // }, 200);
   }
   // debugger
   return (

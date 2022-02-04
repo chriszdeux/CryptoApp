@@ -86,6 +86,13 @@ tr {
   font-size: $small-font-size;
   color: $active-color;
   // padding-bottom: 10rem;
+  cursor: pointer;
+  &:hover {
+    @include hover-state-opacity();
+  }
+  &:active {
+    @include active-state();
+  }
   td {
     padding-bottom: 1rem;
   }

@@ -65,11 +65,13 @@
       height: 4rem;
       font-size: $regular-font-size;
       opacity: .7;
+      
     }
     .next--page {
       height: 4rem;
       font-size: $regular-font-size;
       opacity: .7;
+      
     }
 
     .prev--page--2 {
@@ -87,10 +89,24 @@
     .prev {
       border: none;
       background-color: none;
+      cursor: pointer;
+      &:active {
+        @include active-state();
+      }
+      &:hover {
+        @include hover-state-opacity();
+      }
     }
     .next {
       border: none;
       background-color: none ;
+      cursor: pointer;
+      &:active {
+        @include active-state();
+      }
+      &:hover {
+        @include hover-state-opacity();
+      }
     }
 
   }

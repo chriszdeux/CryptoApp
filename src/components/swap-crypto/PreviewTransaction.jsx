@@ -51,7 +51,7 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
 
   // debugger
   return (
-    <div className={`preview__transaction `}>
+    <div className={`preview__transaction ${intro_up}`}>
       <div onClick={ handleShowComponent }>
       { icons.back_icon }
 

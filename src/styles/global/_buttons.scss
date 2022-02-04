@@ -7,13 +7,20 @@
   outline: none;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  &:active {
+    @include active-state();
+  }
 }
 
 .btn--primary {
-  background: $third-background-color;
-  // border: 1px solid $base-color;
+  background: none;
+  border: 1px solid $active-color;
   font-size: $regular-font-size;
   color: $active-color;
+  min-width: 15rem;
+  height: auto;
+  padding: 1rem;
   // font-weight: $bold-font;
 }
 
@@ -74,10 +81,14 @@
   border-left: 3px solid $active-color;
   // clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   z-index: 1;
-
+  
   .icon {
     width: 2.5rem;
     height: 2.5rem;
     color: $active-color;
+  }
+
+  &:active {
+    @include active-state();
   }
 }

@@ -46,13 +46,14 @@ export const HomePage = () => {
         <Pagination />
         {
           loading
-            ? <LoadingText />
-            : error
-              ? <ErrorConnect />
-              : <CryptoTable data={ data }/>
+          ? <LoadingText />
+          : error
+          ? <ErrorConnect />
+          : <CryptoTable data={ data }/>
         }
         {/* <ForYou /> */}
         {/* <GenericFooter /> */}
+        <Pagination />
       </div>
       {/* { swappComponent }
     {

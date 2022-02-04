@@ -13,6 +13,7 @@ export const GainerLoser = () => {
   const { currentPosition } = useContext(DataContext)
   const { loading, data, error } = useFetchCoins(currentPosition)
   const { intro } = animations_object
+  // debugger
   return (
     <div className={`feature c100 ${ intro } `} style={{ animationDelay: '.5s' }}>
       <h2>Top 3 Gainers and Losers</h2>

@@ -62,6 +62,9 @@
   .navbar__list {
 
     .navbar--item {
+      &:active {
+        @include active-state();
+      }
       a {
         
         font-size: $large-font-size;

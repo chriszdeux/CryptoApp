@@ -57,6 +57,9 @@
           display: flex;
           // justify-content: space-between;
           // width: 50%;
+          &:hover {
+            @include hover-state-opacity();
+          }
           figure {
             width: 3rem;
             height: 3rem;
@@ -70,6 +73,9 @@
             }
   
             
+          }
+          &:active {
+            @include active-state();
           }
         }
 
@@ -129,8 +135,11 @@
 }
 .card {
   @include cards-mixin(flex, 7.5rem);
+  cursor: pointer;
   // border: 1px solid red;
-
+  &:active {
+    @include active-state();
+  }
   .card__info {
     h2 {
       font-size: $regular-font-size;
@@ -432,6 +441,9 @@
   overflow: hidden;
   // display: flex;
   margin-top: 5rem;
+
+  
+  cursor: pointer;
   h2 {
     font-size: $extra-large-font-size;
     color: $font-color;
@@ -446,9 +458,13 @@
     grid-template-columns: 1fr;
     gap: 1rem;
     margin: 0 1rem;
+    
     // padding: 0 1rem;
     .feature__gainers {
       position: relative;
+      &:hover {
+        @include hover-state();
+      }
       width: 100%;
       .glass {
         top: 0;
@@ -462,7 +478,9 @@
     .feature__losers {
       position: relative;
       width: 100%;
-
+      &:hover {
+        @include hover-state();
+      }
       .glass {
         top: 0;
         left: 0
@@ -474,7 +492,9 @@
     .feature__assets__random {
       position: relative;
       width: 100%;
-
+      &:hover {
+        @include hover-state();
+      }
       .glass {
         top: 0;
         left: 0;
@@ -490,7 +510,9 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-
+      &:hover {
+        @include hover-state();
+      }
       // align-items: flex-start;
       // justify-content: flex;
       text-align: center;
@@ -598,7 +620,8 @@
           right: -10%;
           transform: rotate(-15deg);
           opacity: .8;
-          z-index: -1;
+          // z-index: -1;
+          user-select: none;
           img {
             width: inherit;
           }

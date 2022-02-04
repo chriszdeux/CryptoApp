@@ -17,7 +17,6 @@ export const useFetchAsset = ( id ) => {
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
       
       fetchAsset(id)
       .then(item => {
@@ -39,7 +38,5 @@ export const useFetchAsset = ( id ) => {
       })
       
     }, [ id ])
-    
-  }, 300);
     return dataAssetInfo
 }

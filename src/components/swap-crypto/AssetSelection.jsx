@@ -12,7 +12,7 @@ export const AssetSelection = ({ handleShowComponent }) => {
   const { data, loading, error } = useSelector(state => state.data_reducer)
   // debugger
   return (
-    <div className="swap__transaction pd--v">
+    <div className="swap__transaction pd--v" onClick={ handleShowComponent }>
       <h3>Buy</h3>
       {
         id !== undefined
@@ -34,7 +34,7 @@ export const AssetSelection = ({ handleShowComponent }) => {
                 <h3>Select asset</h3>
               </div>
       }
-      <div onClick={ handleShowComponent }>
+      <div >
       { icons.forward_icon }
       </div>
     </div>

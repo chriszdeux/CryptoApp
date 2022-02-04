@@ -16,7 +16,6 @@ export const PortafolioTableRow = ({ item }) => {
   const { id, name, symbol, image, amount_crypto, amount_dollar } = item
   const { loading, error, data } = useFetchAsset(id)
   // const { current_price_usd, price_change_24h,  } = data.length > 0 && data
-  // debugger
   const dispatch = useDispatch()
   const [balance, setBalance] = useState(0);
   // const [countBalance, setCountBalance] = useState(balance);
@@ -24,7 +23,8 @@ export const PortafolioTableRow = ({ item }) => {
     setBalance(0)
     // debugger
     if(data.length > 0) {
-      setBalance( data.current_price_usd?.replace(/\,/g, '') * amount_crypto )
+      setBalance( data[0].current_price_usd?.replace(/\,/g, '') * amount_crypto )
+      // debugger
     }
   }, [ data, portafolio_balance ])
   
@@ -49,7 +49,7 @@ export const PortafolioTableRow = ({ item }) => {
   //   }
     
   // }, [ data ])
-  debugger
+  // debugger
   return (
    <>
       {
@@ -74,12 +74,12 @@ export const PortafolioTableRow = ({ item }) => {
                 ${ amount_dollar }
               </td>
               <td className="price">
-                ${ data.current_price_usd } <br />
+                ${ data[0].current_price_usd } <br />
                 {/* <span className="supply">
                 Supply $1,521,625.236  
                 </span> */}
-                <span className={`market--mark ${ data.price_change_percentage_24h > 0 ? 'gainer--color' : 'loser--color' }`  }>
-                  { data.price_change_percentage_24h > 0 ? icons.up_icon : icons.down_icon} { data.price_change_percentage_24h }%
+                <span className={`market--mark ${ data[0].price_change_percentage_24h > 0 ? 'gainer--color' : 'loser--color' }`  }>
+                  { data[0].price_change_percentage_24h > 0 ? icons.up_icon : icons.down_icon} { data[0].price_change_percentage_24h }%
                   </span>
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>

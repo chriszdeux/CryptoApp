@@ -23,10 +23,9 @@ export const TradePage = () => {
         <GainerLoser />
         <CryptoTable data={ data }/>
       </div>
-      <div className={`trade__aside ${ intro }` } style={{ animationDelay: '1.5s' }}>
-        {/* <SwapCrypto /> */}
+      {/* <div className={`trade__aside ${ intro }` } style={{ animationDelay: '1.5s' }}>
         <AssetTransactions id=""/>
-      </div>
+      </div> */}
       {/* <GenericFooter /> */}
       <BackgroundImage image={ image } />
     </section>
