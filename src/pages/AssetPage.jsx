@@ -27,10 +27,10 @@ export const AssetPage = () => {
   const [data, setData] = useState({});
   useEffect(() => {
     setData({...dataAsset[0]})
-  }, [  dataAsset[0] ])
-  useEffect(() => {
     scrollTop()
-  }, [ dataAsset ])
+  }, [  dataAsset[0] ])
+  // useEffect(() => {
+  // }, [ dataAsset[0] ])
   // debugger
   return (
     <DataAssetContext.Provider value={{

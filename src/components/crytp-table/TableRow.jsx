@@ -10,6 +10,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 // useEffect
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useShowComponent } from '../../hooks/ShowComponent';
+import { scrollTop } from '../../utils/functions/scrollTop';
 
 export const TableRow = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
@@ -48,6 +49,11 @@ export const TableRow = ({ item }) => {
   const handleWish = () => {
     handleWishItem()
     handleShowComponent(!showComponent)
+  }
+
+  const handleTop = (id) => {
+    setHandleAsset(id)
+    scrollTop()
   }
   return (
     <>
@@ -88,7 +94,7 @@ export const TableRow = ({ item }) => {
               </td>
               <td className="supply">$ { total_supply }
               </td>
-              <td  className="link--asset" onClick={() => setHandleAsset(id)}>
+              <td  className="link--asset" onClick={() => handleTop(id)}>
                 <Link to={`/crypto-asset/${id}`}>
                 { icons.forward_icon }
                 </Link>
