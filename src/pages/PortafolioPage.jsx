@@ -22,6 +22,9 @@ import { PortafolioTable } from '../components/crytp-table/PortafolioTable';
 import { EmptyComponent } from '../components/emptyComponent/EmptyComponent';
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions';
 import { DataContext } from '../context/context';
+import { WishlistTable } from '../components/crytp-table/WishlistTable';
+import { SuggestedCard } from '../components/buttons/SuggestedCard';
+import { GainerLoser } from '../components/cards/GainerLoser';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)
@@ -50,10 +53,10 @@ export const PortafolioPage = () => {
         </div>
 
         <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>
-          <h2 className="mg--v">Wish list</h2>
+          <h2 className="mg--v">Wishlist</h2>
           {
             data.length > 0
-            ? <CryptoTable data={ data }/>
+            ? <WishlistTable data={ data }/>
             : <EmptyComponent message="You haven't added anything to your wishlist yet"/>
           
           }
@@ -63,7 +66,9 @@ export const PortafolioPage = () => {
       <aside className={`portafolio__aside c100 ${ intro }`} style={{ animationDelay: '1.5s' }}>
         <div className={`portafolio__aside__content `}>
           {/* <SwapCrypto /> */}
+          <GainerLoser />
           <AssetTransactions id=""/>
+
           {/* <ForYou /> */}
           {/* <InterestedEarned /> */}
           {/* <SwapCrypto /> */}

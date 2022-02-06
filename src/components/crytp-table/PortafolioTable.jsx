@@ -24,6 +24,7 @@ export const PortafolioTable = () => {
   // }, [  ])
   // debugger
   {/* <div className="glass"></div> */}
+  const [delay, setDelay] = useState(0);
   return (
     <div className="crypto__coins c100">
         <table className={`crypto__table c95  ${ intro }`}>
@@ -31,7 +32,7 @@ export const PortafolioTable = () => {
                 {
                   asset_state.map((item, index) => (
                     // debugger
-                    <PortafolioTableRow key={ `${ item.ath_date+index }` } item={ item }/>
+                    <PortafolioTableRow key={ `${ item.ath_date+index }` } values={{ item, setDelay, delay }}/>
                   ))
                 }
         </table>

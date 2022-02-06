@@ -94,11 +94,17 @@ export const SwapCrypto = ({ values }) => {
       {
         buy && <SwapBuySection setValidateAmount={ setValidateAmount }/>
       }
-      {/* {
+      {
         sell && <SwapSellSection/>
+
       }
       {
-        convert && <SwapConvertSection setValidateAmount={ setValidateAmount }/>
+        convert && <SwapSellSection/>
+
+      }
+      {/* {
+      }
+      {
       } */}
 
       {

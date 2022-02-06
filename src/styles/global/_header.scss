@@ -41,8 +41,15 @@
   background-color: $background-color;
   overflow-x: hidden;
   border-bottom-left-radius: 1rem;
+  padding: 0 1rem;
   .list__news{
     display: flex;
+    animation-name: list-news;
+    animation-duration: 120s;
+    animation-iteration-count: 5;
+    // animation-delay: 10s;
+    transition:linear;
+    // will-change: contents;
     // padding-left: 1rem;
     .news--item {
       width: auto;
@@ -51,6 +58,17 @@
       flex-shrink: 0;
       margin-right: 1rem;
     }
+  }
+}
+
+
+@keyframes list-news {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-190%);
   }
 }
 

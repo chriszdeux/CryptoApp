@@ -10,6 +10,10 @@ import { useEffect } from 'react';
 import { LoadingText } from '../loading/LoadingText';
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
+
+
 export const SuggestedCard = () => {
   const { dataAssets:{data, loading, error}, setHandleAsset } = useContext(DataContext)
   const { singleAsset, handleSingleAsset } = useGetRandomAssets(!!data && data)
@@ -62,12 +66,12 @@ export const SuggestedCard = () => {
             <>
             <div className="suggested__asset">
         <figure>
-          <img src={ image } alt="" />
+          <LazyLoadImage src={ image } alt={ name } />
         </figure>
         <h2>{ name }</h2>
         <h3 className={ color }>${ current_price }</h3>
         <div>
-          <Link to="/crypto-asset">
+          <Link to={`/crypto-asset/${id}`}>
             <button className="btn btn--primary" onClick={ () => setHandleAsset(id) }>Learn More</button>
           </Link>
           {/* <button className="btn btn--dismiss">Dismiss</button> */}
@@ -88,7 +92,7 @@ export const SuggestedCard = () => {
           </div>
         </div>
         <figure>
-          <img src={ phone } alt="" />
+          <LazyLoadImage src={ phone } effect='blur' alt="" />
         </figure>
       </div>
       <div className="glass"></div>

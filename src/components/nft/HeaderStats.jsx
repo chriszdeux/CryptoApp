@@ -15,7 +15,10 @@ export const HeaderStats = () => {
       <figure className="user__banner">
         <img src={ regular_image } alt={ tags } />
         <figure className="user__profile">
-          <img src={ user_image } alt={ user } />
+          {
+            user_image &&
+            <img src={ user_image } alt={ user } />
+          }
           <figcaption>{ user }<span>{ icons.check_icon }</span></figcaption>
         </figure>
       </figure>

@@ -8,8 +8,12 @@ import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset';
 import { icons } from '../../utils/icons/icons_object';
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { LoadingText } from '../loading/LoadingText';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-export const PortafolioTableRow = ({ item }) => {
+
+export const PortafolioTableRow = ({ values }) => {
+  const { item, setDelay, delay } = values
+  // debugger
   const { setHandleAsset, setHandleBalance, handleBalance: {
     portafolio_balance, total_amount_invested
   } } = useContext(DataContext) 
@@ -20,20 +24,21 @@ export const PortafolioTableRow = ({ item }) => {
   const [balance, setBalance] = useState(0);
   // const [countBalance, setCountBalance] = useState(balance);
   useEffect(() => {
-    setBalance(0)
+    // setBalance(0)
     // debugger
     if(data.length > 0) {
       setBalance( data[0].current_price_usd?.replace(/\,/g, '') * amount_crypto )
+      setDelay(delay + 3)
       // debugger
     }
   }, [ data, portafolio_balance ])
-  
+  // debugger
   useEffect(() => {
+    setHandleBalance({
+      portafolio_balance: portafolio_balance + balance,
+      total_amount_invested: total_amount_invested + Number(amount_dollar)
+    })
     if(balance > 0) {
-      setHandleBalance({
-        portafolio_balance: portafolio_balance + balance,
-        total_amount_invested: total_amount_invested + Number(amount_dollar)
-      })
       // dispatch( actionTotalBalance({ amount_dollar, balance }) )
     }
   }, [ balance ])
@@ -58,11 +63,11 @@ export const PortafolioTableRow = ({ item }) => {
           : error 
             ? <ErrorConnect />
             :
-            <tbody>
-            <tr className="table__row c100 animation_animated animation_fadeIn">
+            <tbody style={{ animationDelay: `${delay}s` }}>
+            <tr className="table__row c100 animation_animated animation_fadeIn" >
               <td className="coin">
                 <figure className="crypto__coin">
-                  <img className="coin--image" src={ image } alt={ id } />
+                  <LazyLoadImage className="coin--image" src={ image } alt={ id } />
                 </figure>
               </td>
 
@@ -83,7 +88,7 @@ export const PortafolioTableRow = ({ item }) => {
                   </span>
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>
-                <Link to="/crypto-asset">
+                <Link to={`/crypto-asse/${id}`}>
                 { icons.forward_icon }
                 </Link>
               </td>

@@ -23,7 +23,7 @@ export const Search = () => {
       // await submitForm(e.target);
       setHandleAsset( inputValue.toLowerCase().replace(replaceSimbols, '-') )
       setInputValue('')
-      navigate(`/crypto-asset`, { replace: true })
+      navigate(`/crypto-asset/${inputValue}`, { replace: true })
       handleShowComponent(!showComponent)
       // debugger
       // navigate('../asset/', { replace: true })

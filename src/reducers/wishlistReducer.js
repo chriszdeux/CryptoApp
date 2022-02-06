@@ -11,6 +11,7 @@ export const wishlistReducer = ( state=[  ],  action ) => {
       return [{...action.payload, favorite: true}, ...state] 
   
     case types.favorite_remove:
+      debugger
       return state.filter(item => {
         return item.id !== action.payload
       })

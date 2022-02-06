@@ -16,10 +16,10 @@ export const AssetSocialNetwork = () => {
   // debugger
   const { showComponent, showComponent2, handleShowComponent, handleShowComponent2 } = useShowComponent()
 
-  
+  // debugger
   return (
     <ul className="asset__social__network mg--b">
-      <li>{ icons.link_icon } { homepage[0] } { icons.open_icon }</li>
+      <li>{ icons.link_icon } { homepage[0] } <a href={ homepage[0] } target="_blank"> { icons.open_icon } </a></li>
 
       <li className="with__pop" onClick={ handleShowComponent }>
           { icons.search_icon } Explorers { icons.down_icon }

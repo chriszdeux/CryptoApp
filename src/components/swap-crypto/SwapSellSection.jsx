@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/context'
 import { useShowComponent } from '../../hooks/ShowComponent'
 import { useValidateAmount } from '../../hooks/useValidateAmount'
+import { NotAvailable } from '../available/NotAvailable'
 import { Divider } from '../helpers/Divider'
 import { Amount } from './Amount'
 import { AssetList } from './AssetList'
@@ -32,16 +33,13 @@ export const SwapSellSection = () => {
     <>
     <div className="sell__section">
       <Divider />
-      <SellAmount setValidateAmount={ setValidateAmount }/>
-      {/* <RecurrentTransaction /> */}
-      <div className="swap__buy c90">
+      {/* <SellAmount setValidateAmount={ setValidateAmount }/> */}
+     <div className="swap__buy c90">
+    <NotAvailable />
       
-      <AssetSelectionSell handleShowComponent={ handleShowComponent }/>
-      <PaymentSelectionSell handleShowComponent2={ handleShowComponent2 }/>
-        
-      {/* <div className="swap--icon" onClick={ handleSwap }>
-        { icons.convert_icon }
-      </div> */}
+      {/* <AssetSelectionSell handleShowComponent={ handleShowComponent }/>
+      <PaymentSelectionSell handleShowComponent2={ handleShowComponent2 }/> */}
+
       </div>
     </div>
     {

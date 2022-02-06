@@ -13,6 +13,7 @@ const URL_EXCHANGES = 'https://coingecko.p.rapidapi.com/exchanges';
 const URL_CRYPTO = 'https://coingecko.p.rapidapi.com/coins/'
 const URL_GLOBAL_STATS = 'https://coingecko.p.rapidapi.com/global'
 const URL_IMAGE_NFT = `https://pixabay.com/api/?key=${process.env.IMAGE_API_KEY}`
+const URL_COIN_LIST = `https://coingecko.p.rapidapi.com/coins/list`
 
   console.log(process.env)
   console.log(URL_IMAGE_NFT)
@@ -28,13 +29,20 @@ const options = {
 
 
 if(process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-  app.get('*', (req, resp) => {
+  app.use(path.resolve(__dirname, 'build', 'index.html'));
+  app.get('/', (req, resp) => {
     req.sendFile(path.resolve(__dirname, 'build', 'index.html'))
   })
 }
 
-
+app.get('/all-coins', async ( req, res ) => {
+  await axios.request({...options, url: URL_COIN_LIST}).then(response => {
+    res.json(response.data)
+     
+  }).catch((err) => {
+    console.log(err)
+  })
+})
 
 app.get('/coin-list', async (req, res) => {
   const page = req.query.page

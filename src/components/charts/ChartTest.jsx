@@ -37,7 +37,7 @@ export const ChartTest = () => {
     // setTimeout(() => {
       //   setHandleChartDates()
       // }, 200);
-      setHandleChartDates(1)
+      // setHandleChartDates(1)
     }, [ id ])
     
     

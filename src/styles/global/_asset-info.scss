@@ -113,7 +113,7 @@
     }
     
     .asset__social__network {
-      @include bordering-list(space-between, auto);
+      @include bordering-list(space-between, 25rem);
 
       
       .with__pop {
@@ -381,10 +381,11 @@
 
 .asset__transactions {
   // width: 100%;
+  margin-top: 1rem;
   // box-shadow: $box-shadow;
-  border: 1px solid $border-color;
   border-radius: .5rem;
   h2 {
+    border: 1px solid $border-color;
     // border: 2px solid $border-color;
     border-bottom: none;
     border-top-left-radius: .5rem;
@@ -398,6 +399,8 @@
   }
   
   .asset__transaction__list {
+    border: 1px solid $border-color;
+    border-top: none;
     // border: 2px solid $border-color;
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;

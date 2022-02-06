@@ -28,7 +28,7 @@ export const fetchAsset = async ( asset ) => {
       name: data?.name,
       description: data?.description.en,
       links: data?.links,
-      image: data?.image,
+      logo: data?.image,
       categories: data?.categories,
       start_date: data?.genesis_date,
       contract_address: data?.contract_address,
@@ -96,7 +96,5 @@ export const fetchAsset = async ( asset ) => {
   });
 
   return [{...data}]
-  if(asset.length > 2 || asset !== undefined) {
-  }
 
 }

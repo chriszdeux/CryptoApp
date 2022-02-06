@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useShowComponent } from '../../hooks/ShowComponent'
 import { icons } from '../../utils/icons/icons_object'
+import { NotAvailable } from '../available/NotAvailable'
 import { Divider } from '../helpers/Divider'
 import { Amount } from './Amount'
 import { AssetList } from './AssetList'
@@ -33,12 +34,12 @@ export const SwapConvertSection = ({ setValidateAmount }) => {
     <>
     <div className="sell__section">
       <Divider />
-      <ConvertAmount setValidateAmount={ setValidateAmount }/>
+      {/* <ConvertAmount setValidateAmount={ setValidateAmount }/> */}
       {/* <RecurrentTransaction /> */}
       <div className="swap__buy c90">
-      
-      <AssetSelectionConvert handleShowComponent={ handleShowComponent }/>
-      <AssetSelectionConvertTo handleShowComponent2={ handleShowComponent2 }/>
+      <NotAvailable />
+      {/* <AssetSelectionConvert handleShowComponent={ handleShowComponent }/>
+      <AssetSelectionConvertTo handleShowComponent2={ handleShowComponent2 }/> */}
       {/* <PaymentSelectionSell handleShowComponent2={ handleShowComponent2 }/> */}
         
       {/* <div className="swap--icon" onClick={ handleSwap }>

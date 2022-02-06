@@ -4,7 +4,7 @@ import kraken from '../../temp/kraken.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../context/context';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 export const TopAsset = ({ item }) => {
   const { id, name, image, price_change_percentage_24h } = !!item && item
   const { setHandleAsset } = useContext(DataContext)
@@ -21,10 +21,10 @@ export const TopAsset = ({ item }) => {
     <li className="top--asset">
         <div>
       <figure>
-        <img src={
-           image } alt="" />
+        <LazyLoadImage src={
+           image } alt={ name } />
       </figure>
-      <Link to="/crypto-asset">
+      <Link to={`/crypto-asset/${id}`}>
         <h3 onClick={() => setHandleAsset(id)}>{ name }</h3>
       </Link>
 

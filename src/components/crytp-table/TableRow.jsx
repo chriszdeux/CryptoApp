@@ -6,6 +6,10 @@ import { DataContext } from '../../context/context';
 import { wishlistReducer } from '../../reducers/wishlistReducer';
 import kraken from '../../temp/kraken.png';
 import { icons } from '../../utils/icons/icons_object';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+// useEffect
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { useShowComponent } from '../../hooks/ShowComponent';
 
 export const TableRow = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
@@ -33,6 +37,18 @@ export const TableRow = ({ item }) => {
   const handleWishItem = () => {
     dispatch( actionWishlist(item) )
   }
+  const [cleanNumber, setCleanNumber] = useState(0);
+  // debugger
+  useEffect(() => {
+      setCleanNumber( price_change_24h?.replace(/\,/g, '') )
+
+  },[ item ])
+  // debugger
+  const { showComponent, handleShowComponent } = useShowComponent(false)
+  const handleWish = () => {
+    handleWishItem()
+    handleShowComponent(!showComponent)
+  }
   return (
     <>
         <tbody>
@@ -40,14 +56,14 @@ export const TableRow = ({ item }) => {
               {/* <td>1</td> */}
   
               <td className="favorite">
-                <div onClick={ handleWishItem } className={ `${ favorite ? 'favorite--color' : 'favorite' }` }>
+                <div onClick={ handleWish } className={ showComponent ? 'active--2' : ''}>
                   { icons.star_icon }
                 </div>
               </td>
               <td className="rank">{ market_cap_rank }</td>
               <td className="coin">
                 <figure className="crypto__coin">
-                  <img className="coin--image" src={ image } alt={ id } />
+                  <LazyLoadImage className="coin--image" src={ image } alt={ id } />
                 </figure>
               </td>
   
@@ -59,7 +75,7 @@ export const TableRow = ({ item }) => {
                 </span> */}
               </td>
 
-              <td className={`market--cap--7d ${ price_change_24h > 0 ? 'gainer--color' : 'loser--color' }`}>$ { price_change_24h }</td>
+              <td className={`market--cap--7d ${ cleanNumber > 0 ? 'gainer--color' : 'loser--color' }`}>$ { price_change_24h }</td>
   
               <td className="market--cap--24h">
                 <span className={`market--mark ${ market_cap_change_percentage_24h > 0 ? 'gainer--color' : 'loser--color' }`  }>
@@ -73,7 +89,7 @@ export const TableRow = ({ item }) => {
               <td className="supply">$ { total_supply }
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>
-                <Link to="/crypto-asset">
+                <Link to={`/crypto-asset/${id}`}>
                 { icons.forward_icon }
                 </Link>
               </td>

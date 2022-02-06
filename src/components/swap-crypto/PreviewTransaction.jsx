@@ -7,6 +7,8 @@ import { icons } from '../../utils/icons/icons_object'
 import { MainButton } from '../buttons/MainButton'
 import { animations_object } from '../../utils/animations/animations_object'
 import { actionTransaction } from '../../actions/actionTransaction'
+import { useShowComponent } from '../../hooks/ShowComponent'
+import { Processing } from '../loading/Processing'
 
 export const PreviewTransaction = ({ handleShowComponent }) => {
   const { intro_up, intro, exit } = animations_object
@@ -38,8 +40,11 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   }, [ amount_dollar ])
   // debugger
 //  debugger
+const { showComponent2, handleShowComponent2 } = useShowComponent()
 const [animationTransaction, setAnimationTransaction] = useState(intro);
   const submitTransaction = (e) => {
+    handleShowComponent2()
+   setTimeout(() => {
     setAnimationTransaction(exit)
     e.preventDefault()
     dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
@@ -47,10 +52,12 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
     setTimeout(() => {
       handleShowComponent()
     }, 300);
+   }, 8000);
   }
 
   // debugger
   return (
+    <>
     <div className={`preview__transaction ${intro_up}`}>
       <div onClick={ handleShowComponent }>
       { icons.back_icon }
@@ -78,5 +85,9 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
         }
       </figure>
     </div>
+    {
+      showComponent2 && <Processing image={ image }/>
+    }
+    </>
   )
 }

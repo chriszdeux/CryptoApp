@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   text-align: center;
-  background-color: $background-color;
+  background: $main-background-color;
   z-index: 2;
   div {
     display: flex;
@@ -21,13 +21,28 @@
     .icon {
       font-size: $extra-jumbo-font-size;
       color: $active-color;
+      animation-name: loading;
+      animation-iteration-count: 10;
+      transition: ease-in-out;
+      animation-duration: 10;
+      &:first-child {
+        animation-duration: 3s;
 
-      &:last-child {
         position: absolute;
         // transform: rotate(65deg);
         top: 50%;
+        // transform: translateX(-50%) translateY(-50%) rotate(0deg);
         left: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(678deg);
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      }
+      &:last-child {
+        animation-duration: 6s;
+        position: absolute;
+        // transform: rotate(65deg);
+        top: 50%;
+        // transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
       }
     }
 
@@ -42,4 +57,14 @@
 .loading--text {
   color: $active-color;
   text-align: center;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0)
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(678deg)
+  }
 }

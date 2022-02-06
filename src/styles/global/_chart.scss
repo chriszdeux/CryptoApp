@@ -21,7 +21,11 @@
 }
 
 .chart__options {
-  width: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 30%;
   right: 0;
   top: -4rem;
   // float: right;
@@ -30,7 +34,10 @@
   // position: absolute;
   // top: 15%;
   // right: 5%;
-  
+  h2 {
+    font-size: $regular-font-size;
+    color: $active-color;
+  }
   .chart__list__options {
     display: flex;
     justify-content: space-between;

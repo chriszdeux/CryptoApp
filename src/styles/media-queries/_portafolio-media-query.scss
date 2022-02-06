@@ -1,10 +1,21 @@
 @media only screen and ( min-height: 375px ) {
   .chart__options {
-    width: auto;
+    // width: auto;
     .chart__list__options {
       
       li {
         margin-right: 1rem;
+      }
+    }
+  }
+
+  .portafolio__aside__content {
+    .feature {
+      h2 {
+        margin-left: 1rem;
+      }
+      h3 {
+        margin-left: 1rem;
       }
     }
   }
@@ -14,8 +25,26 @@
   .portafolio__aside {
     
     .portafolio__aside__content {
-      // display: grid;
-      // grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .feature {
+        margin: 0;
+        padding-top: 0;
+
+        h2 {
+          width: auto;
+        }
+        .gainers__losers {
+          grid-template-columns: 1fr;
+          margin-top: 1rem;
+        }
+        
+      }
+
+      .asset__transactions {
+        margin-top: 5.5rem;
+      }
       // gap: 1rem;
       // display: ;
     }
@@ -31,6 +60,8 @@
     width: 79%;
     float: right;
   }
+
+ 
 }
 
 
@@ -64,7 +95,15 @@
   
         .portafolio__aside__content {
           grid-template-columns: 1fr;
-          margin-top: 5rem;
+          // margin-top: 5rem;
+
+          .feature {
+            .gainers__losers {
+              margin: 0;
+            margin-top: 1rem;
+            }
+
+          }
           .swap {
             display: flex;
             width: 100%;

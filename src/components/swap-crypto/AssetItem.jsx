@@ -4,6 +4,7 @@ import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset';
 import { useGainerLoser } from '../../hooks/useGainerLoser';
 import shib from '../../temp/shib.png';
 import { Divider } from '../helpers/Divider';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export const AssetItem = ({ values }) => {
   const { item, handleShowComponent2 } = values
@@ -47,7 +48,7 @@ export const AssetItem = ({ values }) => {
     <li className="asset--item c100" onClick={ handleAssetClose  }>
       <div>
         <figure className="asset--logo">
-          <img src={ image } alt={ name } />
+          <LazyLoadImage src={ image } alt={ name } />
         </figure>
           <h3 className="asset--name"><strong>{ name }</strong> { symbol }</h3>
         </div>

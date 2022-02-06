@@ -10,6 +10,12 @@
 }
 
 @mixin hover-state-opacity() {
+  transform: scale(.99);
   transition: .2s ease-in;
   opacity: .8;
+}
+
+@mixin hover-state-active() {
+  transition: .1s ease-in;
+  color: $active-color;
 }

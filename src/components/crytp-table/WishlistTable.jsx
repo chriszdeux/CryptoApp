@@ -7,10 +7,8 @@ import { TableRow } from './TableRow';
 import { LoadingText } from '../loading/LoadingText'
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { useSelector } from 'react-redux';
-
-import { LazyLoadComponent } from 'react-lazy-load-image-component'
-
-export const CryptoTable = ({ data }) => {
+import { WishlistRow } from './WishlistRow';
+export const WishlistTable = ({ data }) => {
   // const context = useContext(contextdata)
   // console.log(data)
   // debugger
@@ -22,17 +20,16 @@ export const CryptoTable = ({ data }) => {
   const { intro } = animations_object;
   // debugger
   return (
-    <LazyLoadComponent className={`crypto__coins c100 ${ intro }`} >
+    <section className={`crypto__coins c100 ${ intro }`} >
       {/* <Pagination /> */}
         
-      <table className={`crypto__table c95 pd${ animation }`} >
+      <table className={`crypto__table c95 pd${ animation }`} style={{ animationDelay: '.3s' }}>
       {/* <div className="glass"></div> */}
         <TableHeader />
               {
                 data.map((item, index) => (
                   // debugger
-                  <TableRow key={ `${ item.id }` }item={ item }/>
-                  
+                  <WishlistRow   key={ `${ item.ath_date+index }` }item={ item }/>
                 ))
               }
       </table>
@@ -40,6 +37,6 @@ export const CryptoTable = ({ data }) => {
       {/* <Pagination /> */}
       
 
-    </LazyLoadComponent>
+    </section>
   )
 }

@@ -62,7 +62,7 @@ export const MainRouter = () => {
       <div className="router">
         <Header />
         {/* <BackgroundImage image={ image }/> */}
-        <MainNewsCard />
+        {/* <MainNewsCard /> */}
         <DeskMenu/>
         <MenuButton values={{ showComponent, handleShowComponent, animation }}/>
         {
@@ -71,23 +71,24 @@ export const MainRouter = () => {
         <SwapButton values={{ showComponent2, handleShowComponent2,  }}/>
 
         <Routes>
-          <Route  path="/" element={ <HomePage /> }/>
-          <Route  path="/portafolio" element={ <PortafolioPage /> }/>
-          <Route  path="/trade" element={ <TradePage /> }></Route>
-          <Route  path="/crypto-asset" element={ <AssetPage /> }/>
+          <Route  exact path="/" element={ <HomePage /> }/>
+          <Route  exact path="/home" element={ <HomePage /> }/>
+          <Route  exact path="/portafolio" element={ <PortafolioPage /> }/>
+          <Route  exact path="/trade" element={ <TradePage /> }></Route>
+          <Route  path="/crypto-asset/:id" element={ <AssetPage /> }/>
           <Route  path="/swap" element={ <SwapCrypto /> }/>
           <Route  path="/pay" element={ <PayPage /> }/>
           <Route  path="/news" element={ <NewsPage /> }/>
           <Route  path="/earn" element={ <LearnAndEarnPage /> }/>
-          <Route  path="/nft" element={ <NftPage /> }/>
-          <Route  path="nft-asset" element={ <NftAssetPage /> }/>
+          <Route  exact path="/nft" element={ <NftPage /> }/>
+          <Route  exact path="nft-asset" element={ <NftAssetPage /> }/>
           <Route  path="/quiz" element={ <Quiz /> }/>
           <Route  path="/billing" element={ <RegisterCard /> }/>
           <Route  path="/test" element={ <NewsInfo /> }/>
           <Route  path="/process" element={ <Processing /> }/>
           <Route 
             path="*"
-            element={ <Navigate to="/"/> }
+            element={ <Navigate to="/home"/> }
           />
 
           {/* <Redirect to='/' element={ HomePage }/> */}

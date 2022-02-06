@@ -25,8 +25,8 @@
   padding: 1rem;
   // padding: 1rem;
   // position: relative;
-  border: 1px solid $active-color;
-  border-radius: 5px;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
   text-align: center;
   overflow: hidden;
   // background-color: red;
@@ -89,10 +89,11 @@ tr {
   cursor: pointer;
   &:hover {
     @include hover-state-opacity();
+    transform: scale(1);
   }
-  &:active {
-    @include active-state();
-  }
+  // &:active {
+  //   @include active-state();
+  // }
   td {
     padding-bottom: 1rem;
   }
@@ -120,8 +121,12 @@ tr {
     div {
       .icon {
         color: $base-color;
+        &:hover {
+          @include hover-state-active();
+        }
       }
     }
+
   }
   
 }

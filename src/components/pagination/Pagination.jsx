@@ -23,11 +23,11 @@ export const Pagination = () => {
           { icons.back_icon }
         </div>
         
-          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 1 )} >{ currentPosition  }</li>
-          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 2 )} >{ currentPosition + 1}</li>
-          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 3 )} >{ currentPosition + 2}</li>
-          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 4 )} >{ currentPosition + 3}</li>
-          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 5 )}>{ currentPosition + 4}</li>
+          <li className="item--pagination" onClick={() => handleCurrent( currentPosition )} >{ currentPosition  }</li>
+          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 1 )} >{ currentPosition + 1}</li>
+          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 2 )} >{ currentPosition + 2}</li>
+          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 3 )} >{ currentPosition + 3}</li>
+          <li className="item--pagination" onClick={() => handleCurrent( currentPosition + 4 )}>{ currentPosition + 4}</li>
           {/* <li className="item--pagination" >{ currentPosition }</li> */}
         {/* <li className="prev--page--2">{ prev_2 > 0 && prev_2 }</li>
     

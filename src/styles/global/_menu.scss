@@ -8,10 +8,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-image: $second-background-color;
-  border-right: 3px solid $active-color;
-  z-index: 2;
-
+  background: $main-background-color;
+  // border-right: 3px solid $active-color;
+  z-index: 3;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
   .btn {
     position: absolute;
     right: 5%;
@@ -23,12 +24,28 @@
     left: 100%;
     // border: 3px solid $active-color;
   }
+
+  .wave__container {
+        /* position: absolute; */
+        transform: rotate(90deg);
+        left: -80%;
+        opacity: .4;
+  }
   // text-align: center;
 }
 
 .desk__menu {
   width: 15%;
   display: none;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  .wave__container {
+    position: absolute;
+    transform: rotate(90deg);
+    left: -80%;
+    opacity: .4;
+    // z-index: 0;
+}
 }
 
 .profile__image {
@@ -58,17 +75,20 @@
 
 .navbar {
   text-align: start;
+  margin-top: 5rem;
 
   .navbar__list {
-
+    height: 40rem;
     .navbar--item {
+      margin-bottom: 4rem;
       &:active {
         @include active-state();
       }
       a {
         
-        font-size: $large-font-size;
-        color: $font-color;
+        font-size: $extra-large-font-size;
+        // color: $font-color;
+        transition: .2s ease-in;
       }
     }
   }
@@ -78,7 +98,9 @@
   font-size: $regular-font-size;
 }
 .balance {
-  font-size: $regular-font-size;
+  font-size: $extra-large-font-size;
+  text-align: start;
+  margin-left: 1rem;
   span {
     color: $active-color;
   }

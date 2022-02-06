@@ -6,3 +6,10 @@ export const actionWishlist = ( data ) => {
     payload: data
   }
 }
+
+export const actionRemoveFromWishlist = ( data ) => {
+  return {
+    type: types.favorite_remove,
+    payload: data
+  }
+}
