@@ -1,10 +1,16 @@
+import { API_KEY } from '../store/api_key';
+import { access } from '../store/headers';
+
 const axios = require('axios');
 
 export const fetchCoins = async ( initialPage ) => {
+  const URL_MARKET_COINS = 'https://coingecko.p.rapidapi.com/coins/markets';
+
   const options = {
     method: 'GET',
-    url: 'http://localhost:8000/coin-list',
+    url: URL_MARKET_COINS,
     params: {vs_currency: 'usd', page: initialPage, per_page: '100', order: 'market_cap_desc'},
+    headers: access
   };
   const formatNumber = ( number ) => {
     if(number.current_price > 0 && number?.current_price < 1) {
@@ -15,8 +21,8 @@ export const fetchCoins = async ( initialPage ) => {
     }
     // return Intl.NumberFormat().format(number.toFixed(2))
   }
-  // debugger
   const data = await axios.request(options).then(function (response) {
+    // debugger
     // debugger
     const myData = response.data.map(item => {
       // debugger

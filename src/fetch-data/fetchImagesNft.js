@@ -1,5 +1,9 @@
+import { NFT_API_KEY } from '../store/api_key';
+
 const axios = require('axios');
 export const fetchImagesNft = async () => {
+  const URL_IMAGE_NFT = `https://pixabay.com/api/?key=${ NFT_API_KEY }`
+
   const cat = 'science'
   // const queries = [
   //   'tech',
@@ -34,8 +38,8 @@ export const fetchImagesNft = async () => {
 
   const options = {
     method: 'Get',
-    url: `http://localhost:8000/nft/${ queries[randomCategory] }`,
-    params: { id: queries[randomCategory] }
+    url: `${URL_IMAGE_NFT}&q=${ queries[randomCategory] }`,
+    // params: { id: queries[randomCategory] }
   }
   // debugger
   const data = await axios.request(options).then(response => {

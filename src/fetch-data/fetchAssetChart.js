@@ -1,3 +1,4 @@
+import { access } from '../store/headers';
 import { formatNumber } from '../utils/functions/formatNumber';
 import { friendlyDate } from '../utils/functions/friendlyDate';
 
@@ -5,10 +6,12 @@ const axios = require('axios');
 
 export const fetchAssetChart = async (id, ath, days) => {
   // debugger
+  const URL_ASSET_CHART = `https://coingecko.p.rapidapi.com/coins/${id}/market_chart`
   const options = {
     method: 'GET',
-    url: `http://localhost:8000/chart/${id}/${days}`,
+    url: URL_ASSET_CHART,
     params: {vs_currency: 'usd', days: days, id: id},
+    headers: access
   };
   // debugger
   const cleanAth = Number(ath.replace(/\,/g, ''))

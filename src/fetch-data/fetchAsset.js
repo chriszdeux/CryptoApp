@@ -1,11 +1,14 @@
 import axios from 'axios';
+import { access } from '../store/headers';
 import { formatNumber } from '../utils/functions/formatNumber';
 // import res from 'express/lib/response';
 
 export const fetchAsset = async ( asset ) => {
+  const URL_CRYPTO = 'https://coingecko.p.rapidapi.com/coins/'
+
   const options = {
     method: 'GET',
-    url: `http://localhost:8000/asset/${asset}`,
+    url: `${ URL_CRYPTO }${asset}`,
     params: {
       localization: 'true',
       tickers: 'true',
@@ -15,6 +18,7 @@ export const fetchAsset = async ( asset ) => {
       sparkline: 'false',
       id: asset
     },
+    headers: access
   };
 
   
@@ -96,5 +100,7 @@ export const fetchAsset = async ( asset ) => {
   });
 
   return [{...data}]
+  if(asset.length > 2 || asset !== undefined) {
+  }
 
 }

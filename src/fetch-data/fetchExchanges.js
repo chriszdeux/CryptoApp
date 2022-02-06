@@ -1,10 +1,14 @@
+import { API_KEY } from '../store/api_key';
+import { access } from '../store/headers';
+
 const axios = require('axios');
 
 export const fetchExchanges = async () => {
+  const URL_EXCHANGES = 'https://coingecko.p.rapidapi.com/exchanges';
   const options = {
     method: 'GET',
-    url: 'http://localhost:8000/exchanges',
-    
+    url: URL_EXCHANGES,
+    headers: access
   };
   // debugger
   const data = await axios.request(options).then(function (response) {

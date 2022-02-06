@@ -1,11 +1,14 @@
 import axios from "axios";
+import { access } from "../store/headers";
 
 
 export const fetchGlobalStats = async () => {
+  const URL_GLOBAL_STATS = 'https://coingecko.p.rapidapi.com/global'
 
 const options = {
   method: 'GET',
-  url: 'http://localhost:8000/global-stats',
+  url: URL_GLOBAL_STATS,
+  headers: access
 };
 
 // const dateFriendly = (data) => {
