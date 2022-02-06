@@ -24,7 +24,7 @@ export const TopAsset = ({ item }) => {
         <LazyLoadImage src={
            image } alt={ name } />
       </figure>
-      <Link to={`/crypto-asset/${id}`}>
+      <Link to={`/crypto/crypto-asset/${id}`}>
         <h3 onClick={() => setHandleAsset(id)}>{ name }</h3>
       </Link>
 

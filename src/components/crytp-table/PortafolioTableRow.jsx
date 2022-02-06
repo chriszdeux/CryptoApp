@@ -22,7 +22,9 @@ export const PortafolioTableRow = ({ values }) => {
   // const { current_price_usd, price_change_24h,  } = data.length > 0 && data
   const dispatch = useDispatch()
   const [balance, setBalance] = useState(0);
+  const [checkBalance, setCheckBalance] = useState([]);
   // const [countBalance, setCountBalance] = useState(balance);
+  
   useEffect(() => {
     // setBalance(0)
     // debugger
@@ -88,7 +90,7 @@ export const PortafolioTableRow = ({ values }) => {
                   </span>
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>
-                <Link to={`/crypto-asse/${id}`}>
+                <Link to={`/crypto/crypto-asset/${id}`}>
                 { icons.forward_icon }
                 </Link>
               </td>

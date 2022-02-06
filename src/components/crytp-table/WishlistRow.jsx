@@ -109,7 +109,7 @@ export const WishlistRow = ({ item }) => {
               <td className="supply">$ { total_supply }
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>
-                <Link to={`/crypto-asset/${id}`}>
+                <Link to={`/crypto/crypto-asset/${id}`}>
                 { icons.forward_icon }
                 </Link>
               </td>

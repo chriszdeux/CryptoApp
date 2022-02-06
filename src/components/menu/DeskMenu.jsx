@@ -27,14 +27,14 @@ export const DeskMenu = () => {
       </div>
       <nav className="navbar c95 ">
         <ul className="navbar__list mg--t--3">
-        <li className="navbar--item mg--b"> <NavLink to="/" className={ (nav) => nav.isActive ? 'active' : '' } >Main</NavLink> </li>
-          <li className="navbar--item mg--b"> <NavLink to="/portafolio"  className={ (nav) => nav.isActive ? 'active' : '' }>Portafolio</NavLink> </li>
-          <li className="navbar--item mg--b"><NavLink to="/trade" className={ (nav) => nav.isActive ? 'active' : '' }>Trade</NavLink></li>
+        <li className="navbar--item mg--b"> <NavLink to="/crypto/" className={ (nav) => nav.isActive ? 'active' : '' } >Main</NavLink> </li>
+          <li className="navbar--item mg--b"> <NavLink to="/crypto/portafolio"  className={ (nav) => nav.isActive ? 'active' : '' }>Portafolio</NavLink> </li>
+          <li className="navbar--item mg--b"><NavLink to="/crypto/trade" className={ (nav) => nav.isActive ? 'active' : '' }>Trade</NavLink></li>
           {/* <li className="navbar--item mg--b"><Link to="/pay">Pay</Link></li> */}
           {/* <li className="navbar--item mg--b">For you</li> */}
           {/* <li className="navbar--item mg--b"><Link to="/earn">Learn and earn</Link></li> */}
           {/* <li className="navbar--item mg--b"><Link to="/news">Crypto News</Link></li> */}
-          <li className="navbar--item mg--b"><NavLink to="/nft" className={ (nav) => nav.isActive ? 'active' : '' }>NFT's</NavLink></li>
+          <li className="navbar--item mg--b"><NavLink to="/crypto/nft" className={ (nav) => nav.isActive ? 'active' : '' }>NFT's</NavLink></li>
           {/* <li className="navbar--item mg--b"><Link>Notifications</Link></li> */}
         </ul>
       </nav>

@@ -71,7 +71,7 @@ export const SuggestedCard = () => {
         <h2>{ name }</h2>
         <h3 className={ color }>${ current_price }</h3>
         <div>
-          <Link to={`/crypto-asset/${id}`}>
+          <Link to={`/crypto/crypto-asset/${id}`}>
             <button className="btn btn--primary" onClick={ () => setHandleAsset(id) }>Learn More</button>
           </Link>
           {/* <button className="btn btn--dismiss">Dismiss</button> */}
