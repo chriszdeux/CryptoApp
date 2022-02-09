@@ -17,6 +17,7 @@ export const SwapBalance = () => {
   }, [ handleAsset, data ])
   // debugger
   useEffect(() => {
+    // debugger
     setBalance( (current_price?.replace(/\,/g, '') * amount_crypto).toFixed(4) )
 
   }, [ swapAssetBalance ])

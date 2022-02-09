@@ -13,13 +13,11 @@ export const fetchCoins = async ( initialPage ) => {
     headers: access
   };
   const formatNumber = ( number ) => {
-    if(number.current_price > 0 && number?.current_price < 1) {
-      return number?.current_price.toFixed(5) 
-    } else {
-      return Intl.NumberFormat().format(number?.current_price)
-
+    if(number?.current_price > 1) {
+      return (number?.current_price)
     }
-    // return Intl.NumberFormat().format(number.toFixed(2))
+    return number.current_price 
+    // return (number.toFixed(2))
   }
   const data = await axios.request(options).then(function (response) {
     // debugger
@@ -33,29 +31,29 @@ export const fetchCoins = async ( initialPage ) => {
         symbol: item?.symbol,
         ath_date: item?.ath_date,
         current_price: formatNumber(item),
-        // current_price: Intl.NumberFormat().format(item?.current_price.toFixed(5)),
-        market_cap: item.market_cap && Intl.NumberFormat().format(item.market_cap),
+        // current_price: (item?.current_price.toFixed(5)),
+        market_cap: item.market_cap,
 
         market_cap_rank: item?.market_cap_rank,
 
-        total_volume: Intl.NumberFormat().format(item.total_volume.toFixed(2))
+        total_volume: item.total_volume
         ,
 
 
         high_24h: item?.high_24h,
         low_24h: item?.low_24h,
         price_change_percentage_24h: 
-          item?.price_change_percentage_24h &&  Intl.NumberFormat().format(item?.price_change_percentage_24h.toFixed(2)),
+          item?.price_change_percentage_24h,
         market_cap_change_percentage_24h: item?.market_cap_change_percentage_24h,
 
         total_supply: 
-        item?.total_supply &&  Intl.NumberFormat().format(item?.total_supply),
+        item?.total_supply,
         circulating_supply: 
-          item?.circulating_supply &&  Intl.NumberFormat().format(item?.circulating_supply.toFixed(4)),
+          item?.circulating_supply,
         ath: 
-          item?.ath && Intl.NumberFormat().format(item?.ath),
+          item?.ath,
         price_change_24h: 
-        item?.price_change_24h &&  Intl.NumberFormat().format(item?.price_change_24h.toFixed(2))
+        item?.price_change_24h 
       }
     })
     // debugger
@@ -77,7 +75,7 @@ export const fetchCoins = async ( initialPage ) => {
     //   }
     // }
     // debugger
-
+    // debugger
     return myData
   }).catch(function (error) {
     return console.log(error)

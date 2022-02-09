@@ -72,15 +72,15 @@ export const MainRouter = () => {
 
         <Routes>
           <Route  path="/crypto" element={ <HomePage /> }/>
-          <Route  path="/crypto/:section" element={ <HomePage /> }/>
+          {/* <Route  path="/crypto/:section" element={ <HomePage /> }/> */}
           <Route  path="/crypto/portafolio" element={ <PortafolioPage /> }/>
-          <Route  path="/trade" element={ <TradePage /> }></Route>
-          <Route  path="/crypto-asset/:id" element={ <AssetPage /> }/>
+          <Route  path="/crypto/trade" element={ <TradePage /> }></Route>
+          <Route  path="/crypto/crypto-asset/:id" element={ <AssetPage /> }/>
           <Route  path="/pay" element={ <PayPage /> }/>
           <Route  path="/news" element={ <NewsPage /> }/>
           <Route  path="/earn" element={ <LearnAndEarnPage /> }/>
-          <Route  path="/nft" element={ <NftPage /> }/>
-          <Route  path="/nft-asset" element={ <NftAssetPage /> }/>
+          <Route  path="/crypto/nft" element={ <NftPage /> }/>
+          <Route  path="/crypto/nft-asset" element={ <NftAssetPage /> }/>
           <Route  path="/" element={ <HomePage /> }/>
           <Route 
             path="*"

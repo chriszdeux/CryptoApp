@@ -11,7 +11,7 @@ export const Amount = ({ setValidateAmount }) => {
   const { handleAsset: {
     current_price, symbol, name
   }, handleTransactions: { handlePrevTransaction } } = useContext(DataContext)
-  const [cleanPrice, setCleanPrice] = useState(null);
+  const [cleanPrice, setCleanPrice] = useState(0);
 
   useEffect(() => {
     if(current_price) {

@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react"
 
 export const useFormatNumbers = ( initialState  ) => {
-  const [formatNumber, setFormatNumber] = useState(initialState)
+  const [formatNumber, setFormatNumber] = useState(0)
   // debugger
-  const handleFormatNumber = ( ) => {
-    // debugger
-    // const myNumber = new Intl.NumberFormat().format(formatNumber)
-    // setFormatNumber( myNumber )
-    setFormatNumber(new Intl.NumberFormat().format(initialState))
-  }
+
 
   useEffect(() => {
-    handleFormatNumber(initialState)
+    setFormatNumber( new Intl.NumberFormat().format(initialState) )
   }, [ initialState ])
   
-  return { formatNumber, handleFormatNumber } 
+
+  // debugger
+  return formatNumber
 
 }

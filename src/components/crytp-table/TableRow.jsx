@@ -11,6 +11,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useShowComponent } from '../../hooks/ShowComponent';
 import { scrollTop } from '../../utils/functions/scrollTop';
+import { formatNumber } from '../../utils/functions/formatNumber';
+import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 
 export const TableRow = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
@@ -39,12 +41,10 @@ export const TableRow = ({ item }) => {
   const handleWishItem = () => {
     dispatch( actionWishlist(item) )
   }
-  const [cleanNumber, setCleanNumber] = useState(0);
-  // debugger
-  useEffect(() => {
-      setCleanNumber( price_change_24h?.replace(/\,/g, '') )
-
-  },[ item ])
+  // const [cleanNumber, setCleanNumber] = useState(0);
+  // // debugger
+  const  formatNumber  = useFormatNumbers( current_price )
+  
   // debugger
   const { showComponent, handleShowComponent } = useShowComponent(false)
   const handleWish = () => {
@@ -57,6 +57,8 @@ export const TableRow = ({ item }) => {
     scrollTop()
     navigate(`/crypto/crypto-asset/${id}`)
   }
+
+  // debugger
   return (
     <>
         <tbody>
@@ -77,13 +79,13 @@ export const TableRow = ({ item }) => {
   
               <td className="coin--name">{ name }<br /><span className="short--name pd--h">{ symbol }</span></td>
               <td className="price">
-                ${ current_price } <br />
+                ${ formatNumber } <br />
                 {/* <span className="supply">
                 Supply $1,521,625.236  
                 </span> */}
               </td>
 
-              <td className={`market--cap--7d ${ cleanNumber > 0 ? 'gainer--color' : 'loser--color' }`}>$ { price_change_24h }</td>
+              <td className={`market--cap--7d ${ price_change_24h > 0 ? 'gainer--color' : 'loser--color' }`}>$ { price_change_24h }</td>
   
               <td className="market--cap--24h">
                 <span className={`market--mark ${ market_cap_change_percentage_24h > 0 ? 'gainer--color' : 'loser--color' }`  }>

@@ -29,17 +29,16 @@ export const PortafolioTableRow = ({ values }) => {
     // debugger
     if(data.length > 0) {
       setBalance( data[0].current_price_usd?.replace(/\,/g, '') * amount_crypto )
-      setDelay(delay + 3)
       // debugger
     }
   }, [ data, portafolio_balance ])
   // debugger
   useEffect(() => {
-    setHandleBalance({
-      portafolio_balance: portafolio_balance + balance,
-      total_amount_invested: total_amount_invested + Number(amount_dollar)
-    })
     if(balance > 0) {
+      setHandleBalance({
+        portafolio_balance: portafolio_balance + balance,
+        total_amount_invested: total_amount_invested + Number(amount_dollar)
+      })
       // dispatch( actionTotalBalance({ amount_dollar, balance }) )
     }
   }, [ balance ])
@@ -64,7 +63,7 @@ export const PortafolioTableRow = ({ values }) => {
           : error 
             ? <ErrorConnect />
             :
-            <tbody style={{ animationDelay: `${delay}s` }}>
+            <tbody >
             <tr className="table__row c100 animation_animated animation_fadeIn" >
               <td className="coin">
                 <figure className="crypto__coin">

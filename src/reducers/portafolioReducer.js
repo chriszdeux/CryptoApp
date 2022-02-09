@@ -11,6 +11,8 @@ export const portafolioReducer = ( state = [  ], action ) => {
       const newState = [...state];
       const filterState = newState.filter(item =>  item.id !== action.payload.id)
       const filterAsset = newState.filter(item => item.id === action.payload.id)
+
+      // debugger
       if(filterAsset.length > 0) {
         // debugger
         if(typeof(filterAsset[0].amount_crypto) === 'string' && typeof(filterAsset[0].amount_dollar) === 'string' ) {
