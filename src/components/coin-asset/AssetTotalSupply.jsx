@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { DataAssetContext } from '../../context/context'
+import { useFormatNumbers } from '../../hooks/useFormatNumbers'
 import { icons } from '../../utils/icons/icons_object'
 
 export const AssetTotalSupply = () => {
@@ -8,10 +9,12 @@ export const AssetTotalSupply = () => {
     total_supply,
     symbol
   }} = useContext(DataAssetContext)
+  const totalSupplyFormat = useFormatNumbers(total_supply)
+
   return (
     <li className="total__supply">
       Total Supply 
-      <span> ${ total_supply } { symbol } { icons.server_icon }</span>      
+      <span> ${ totalSupplyFormat } { symbol } { icons.server_icon }</span>      
     </li>
   )
 }

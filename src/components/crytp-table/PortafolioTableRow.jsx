@@ -8,6 +8,7 @@ import { icons } from '../../utils/icons/icons_object';
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { LoadingText } from '../loading/LoadingText';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 
 
 export const PortafolioTableRow = ({ values }) => {
@@ -21,6 +22,8 @@ export const PortafolioTableRow = ({ values }) => {
   // const { current_price_usd, price_change_24h,  } = data.length > 0 && data
   const dispatch = useDispatch()
   const [balance, setBalance] = useState(0);
+  const formatBalance = useFormatNumbers(balance)
+
   const [checkBalance, setCheckBalance] = useState([]);
   // const [countBalance, setCountBalance] = useState(balance);
   
@@ -28,7 +31,7 @@ export const PortafolioTableRow = ({ values }) => {
     // setBalance(0)
     // debugger
     if(data.length > 0) {
-      setBalance( data[0].current_price_usd?.replace(/\,/g, '') * amount_crypto )
+      setBalance( data[0].current_price_usd * amount_crypto )
       // debugger
     }
   }, [ data, portafolio_balance ])
@@ -37,7 +40,7 @@ export const PortafolioTableRow = ({ values }) => {
     if(balance > 0) {
       setHandleBalance({
         portafolio_balance: portafolio_balance + balance,
-        total_amount_invested: total_amount_invested + Number(amount_dollar)
+        total_amount_invested: total_amount_invested + amount_dollar
       })
       // dispatch( actionTotalBalance({ amount_dollar, balance }) )
     }
@@ -74,7 +77,7 @@ export const PortafolioTableRow = ({ values }) => {
               <td className="coin--name">{ name }<br /><span className="short--name pd--h">{ symbol }</span></td>
 
 
-              <td className="coin--name">$ { new Intl.NumberFormat().format(balance) }<br /><span className="short--name pd--h">{ new Intl.NumberFormat().format(amount_crypto) } { symbol }</span></td>
+              <td className="coin--name">$ { formatBalance }<br /><span className="short--name pd--h">{ new Intl.NumberFormat().format(amount_crypto) } { symbol }</span></td>
               <td className='total--invested'>
                 ${ amount_dollar }
               </td>

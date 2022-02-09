@@ -9,8 +9,11 @@ import { animations_object } from '../../utils/animations/animations_object'
 import { actionTransaction } from '../../actions/actionTransaction'
 import { useShowComponent } from '../../hooks/ShowComponent'
 import { Processing } from '../loading/Processing'
+import { useFormatNumbers } from '../../hooks/useFormatNumbers'
+import { useNavigate } from 'react-router-dom'
 
-export const PreviewTransaction = ({ handleShowComponent }) => {
+export const PreviewTransaction = ({ values }) => {
+  const { handleShowComponent2:closingComponent, handleShowComponent } = values
   const { intro_up, intro, exit } = animations_object
 
   const { handleAsset, handleTransactions:{
@@ -32,7 +35,7 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
   } = previewTransaction
   
   // debugger
-  
+  const navigate = useNavigate()
   const [total, setTotal] = useState(0);
   
   // debugger
@@ -52,11 +55,15 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
       e.preventDefault()
       dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
       dispatch(actionTransaction({ handleAsset,  previewTransaction}))
-      handleShowComponent()
+      handleShowComponent();
+      navigate('/crypto/portafolio', { replace: true })
     }, 1000);
    }, 8000);
   }
 
+  const priceFormat = useFormatNumbers(current_price);
+  const amontDollarFormat = useFormatNumbers(amount_dollar);
+  const totalFormat = useFormatNumbers(total);
   // debugger
   return (
     <>
@@ -71,11 +78,11 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
       </figure>
       <h2 className="mg--v">{ amount_crypto } <span>{ symbol } coins</span></h2>
       <ul className="preview__info c80 ">
-        <li>{ symbol } price <span>${ current_price }</span></li>
+        <li>{ symbol } price <span>${ priceFormat }</span></li>
         {/* <li>Payment method <span>Chase</span></li> */}
-        <li>Purchase <span>${ amount_dollar }</span></li>
+        <li>Purchase <span>${ amontDollarFormat }</span></li>
         <li>Crypto Ant Fee <span>${ fee }</span></li>
-        <li>Total <span>${ total }</span></li>
+        <li>Total <span>${ totalFormat }</span></li>
       </ul>
 
       <div className={`${intro}`}>
@@ -94,7 +101,7 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
       </figure>
     </div>
     {
-      showComponent2 && <Processing image={ image }/>
+      showComponent2 && <Processing values={{ image, handleShowComponent2, closingComponent }}/>
     }
     </>
   )

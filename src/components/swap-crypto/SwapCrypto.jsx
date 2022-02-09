@@ -58,7 +58,7 @@ export const SwapCrypto = ({ values }) => {
       convert: true
     })
   }
-  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount(100)
+  const { warningAmount, validateAmount, setValidateAmount, handleWarningAmount } = useValidateAmount(1000)
   // debugger
   // const [warningAmount, setWarningAmount] = useState(false)
   const { showComponent, handleShowComponent } = useShowComponent()
@@ -110,7 +110,7 @@ export const SwapCrypto = ({ values }) => {
       }
       <SwapBalance />
       {
-        showComponent && <PreviewTransaction handleShowComponent={ handleShowComponent }/>
+        showComponent && <PreviewTransaction values={{ handleShowComponent, handleShowComponent2 }}/>
       }
             {/* <BackgroundImage image={ image }/> */}
       {/* <div className="glass"></div> */}

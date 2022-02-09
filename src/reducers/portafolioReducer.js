@@ -15,32 +15,28 @@ export const portafolioReducer = ( state = [  ], action ) => {
       // debugger
       if(filterAsset.length > 0) {
         // debugger
-        if(typeof(filterAsset[0].amount_crypto) === 'string' && typeof(filterAsset[0].amount_dollar) === 'string' ) {
-          // debugger
-          return [ 
-            { ...action.payload, 
-              amount_dollar: 
-              Number( filterAsset[0].amount_dollar?.replace(/\,/g, '') ) + Number( action.payload.amount_dollar?.replace(/\,/g, '') ), 
-              amount_crypto: 
-              Number( filterAsset[0].amount_crypto?.replace(/\,/g, '') ) + Number( action.payload.amount_crypto?.replace(/\,/g, '') ) 
-            }, ...filterState
-          ]
-        } else {
-          
-          // debugger
-          return [ 
+        return [ 
           { ...action.payload, 
-                amount_dollar: 
-                  Number( filterAsset[0].amount_dollar ) + Number( action.payload.amount_dollar ), 
-                amount_crypto: 
-                  Number( filterAsset[0].amount_crypto ) + Number( action.payload.amount_crypto ) 
+            amount_dollar: Number(filterAsset[0].amount_dollar) +  Number(action.payload.amount_dollar), 
+            amount_crypto:  Number(filterAsset[0].amount_crypto) +  Number(action.payload.amount_crypto) 
           }, ...filterState
-      ]
-        }
-      }
+        ]
+          // debugger
+        } 
+        // else {
+          
+        //   debugger
+        //   return [ 
+        //     { ...action.payload, 
+        //           amount_dollar: 
+        //             (filterAsset[0].amount_dollar) +  action.payload.amount_dollar, 
+        //           amount_crypto: 
+        //             filterAsset[0].amount_crypto +  action.payload.amount_crypto 
+        //     }, ...filterState
+        //   ]
+        // }
     // debugger
-
-      return [{  ...action.payload, amount_crypto: action.payload.amount_crypto?.replace(/\,/g, '') },  ...state, ]
+    return [{  ...action.payload, amount_crypto: action.payload.amount_crypto, amount_dollar: Number(action.payload.amount_dollar)} ,  ...state, ]
 
     case types.portafolio_earn:
       // debugger

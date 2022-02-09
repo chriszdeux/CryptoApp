@@ -76,6 +76,16 @@
   .portafolio {
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    .portafolio__main__section {
+      .feature{
+        .gainers__losers {
+          .suggested {
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
 
   .portafolio__aside {

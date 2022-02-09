@@ -14,7 +14,7 @@ export const fetchAssetChart = async (id, ath, days) => {
     headers: access
   };
   // debugger
-  const cleanAth = Number(ath.replace(/\,/g, ''))
+  // const cleanAth = Number(ath.replace(/\,/g, ''))
  const data = await axios.request(options).then(function (response) {
   // const dataChart = response.data.price.filter( item => {
   //   debugger
@@ -22,7 +22,7 @@ export const fetchAssetChart = async (id, ath, days) => {
   // // } )
   const filterWeirdPrice = response.data.prices.filter(item => {
     // debugger
-    return item[1] <= cleanAth
+    return item[1] <= ath
   })
 
   // debugger

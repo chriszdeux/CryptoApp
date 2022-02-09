@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { animations_object } from '../../utils/animations/animations_object'
 import { icons } from '../../utils/icons/icons_object'
 
-export const Processing = ({ image }) => {
+export const Processing = ({ values }) => {
+  const { image, closingComponent } = values
   // const navigate = useNavigate()
   // useEffect(() => {
   //   const process = setTimeout(() => {
@@ -17,6 +18,8 @@ export const Processing = ({ image }) => {
   const [done, setDone] = useState(false);
   const { intro, exit } = animations_object
   const [animation, setAnimation] = useState(intro);
+
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true)
@@ -25,9 +28,14 @@ export const Processing = ({ image }) => {
     const timer2 = setTimeout(() => {
       setAnimation(exit)
     }, 8000);
+
+    const timer3 = setTimeout(() => {
+      closingComponent(false)
+    }, 9000);
     return () => {
       clearTimeout(timer)  
       clearTimeout(timer2)  
+      clearTimeout(timer3)  
     }
   }, [ ])
   // debugger
