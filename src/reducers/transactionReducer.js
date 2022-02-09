@@ -39,6 +39,7 @@ export const transactionReducer = ( state = [], action ) => {
       } } = action.payload
       // debugger
       const date = new Date();
+      // debugger
       return [
         {
           // ...action.payload,
@@ -48,6 +49,7 @@ export const transactionReducer = ( state = [], action ) => {
           id: randomId(),
           date: {
             day: weekDays[date.getDay()],
+            day_number: date.getDate(),
             month: months[date.getMonth()],
             hour: date.getHours(),
             min: date.getMinutes(),

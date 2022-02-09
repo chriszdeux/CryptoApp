@@ -14,7 +14,7 @@ export const SwapBalance = () => {
   useEffect(() => {
     setSwapAssetBalance( data.filter( item => item.id === handleAsset.id ) )
     
-  }, [ handleAsset ])
+  }, [ handleAsset, data ])
   // debugger
   useEffect(() => {
     setBalance( (current_price?.replace(/\,/g, '') * amount_crypto).toFixed(4) )

@@ -15,6 +15,7 @@ import { useFetchNews } from './hooks/fetchHooks/useFetchNews'
 import { useDataFunctions } from './hooks/useDataFunctions'
 import { useHandleNftData } from './hooks/useHandleNftData'
 import { usePagination } from './hooks/usePagination'
+import { usePrevTransactions } from './hooks/usePrevTransaction'
 import { useSearchForm } from './hooks/useSearchForm'
 import { MainRouter } from './router/MainRouter'
 import { store } from './store/store'
@@ -40,7 +41,8 @@ export const CryptoApp = () => {
   useEffect(() => {
     dispatch(actionMainData(dataAssets))
   },[ dataAssets ])
-
+  const handleTransactions = usePrevTransactions()
+  // debugger
   const balance = useSelector(state => state.balance_reducer)
   // debugger
   // const init = () => {
@@ -58,7 +60,7 @@ export const CryptoApp = () => {
   //   console.log(wishlist_reducer)
   // }, [ wishlist_reducer ])
 
-  const [handleTransaction, setHandleTransaction] = useState(null);
+  // const [handleTransaction, setHandleTransaction] = useState(null);
 
   const [handleBalance, setHandleBalance] = useState({
     portafolio_balance: 0,
@@ -86,8 +88,7 @@ export const CryptoApp = () => {
         handleNftData,
         dataEarning,
         setDataEarning,
-        handleTransaction,
-        handleTransaction,
+        handleTransactions,
         handleBalance,
         setHandleBalance,
         handleChartDates, 

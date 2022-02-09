@@ -21,7 +21,7 @@ export const AssetTransactions = ({id}) => {
   // debugger
   return (
     <div className={`asset__transactions ${ intro } c95`}>
-      <h2 className="pd">Transaction history  <span>{ id.length > 1 ? `Total balance: ${ handleBalance }` : `${ id }` }</span></h2>
+      {/* <h2 className="pd">Transaction history  <span>{ id.length > 1 ? `Total balance: ${ handleBalance }` : `${ id }` }</span></h2> */}
       <ul className="asset__transaction__list">
         {
           filterTransaction.length > 0

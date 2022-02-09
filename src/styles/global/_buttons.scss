@@ -21,6 +21,23 @@
   min-width: 15rem;
   height: auto;
   padding: 1rem;
+  &:active {
+    @include active-state();
+  }
+  // font-weight: $bold-font;
+}
+.btn--cancel {
+  background: none;
+  border: 1px solid $loser-color;
+  font-size: $regular-font-size;
+  background-color: none;
+  color: $font-color;
+  min-width: 15rem;
+  height: auto;
+  padding: 1rem;
+  &:active {
+    @include active-state();
+  }
   // font-weight: $bold-font;
 }
 

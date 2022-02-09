@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 // import Chart from 'chart.js/auto';
 // import chart from 'rea'
@@ -30,7 +30,11 @@ export const PortafolioPage = () => {
   const data = useSelector(state => state.wishlist_reducer)
   const dataAssets = useSelector(state => state.buy_asset_reducer)
   // debugger
-  const { setHandleBalance, handleBalance  } = useContext(DataContext)
+  const dataTransaction = useSelector(state => state.transaction_reducer)
+
+  const { setHandleBalance, handleBalance:{
+    portafolio_balance, 
+  }  } = useContext(DataContext)
   // useEffect(() => {
   //   setHandleBalance({
   //     portafolio_balance: 0,
@@ -38,24 +42,31 @@ export const PortafolioPage = () => {
   //   })
   // }, [  ])
   // debugger
+  const [cleanBalance, setCleanBalance] = useState(0);
   useEffect(() => {
     setHandleBalance({
       portafolio_balance: 0, total_amount_invested: 0 })
   }, [  ])
+
+// const { animation, handleAnimation } = useHandleToggleAnimation()
+
+useEffect(() => {
+  setCleanBalance( new Intl.NumberFormat().format((portafolio_balance).toFixed(2)) )
+}, [ portafolio_balance ])
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
       <div className="portafolio__main__section" >
         {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
-          <h2 className="mg--v">Your Assets</h2>
+          <h2 className="mg--v">Your Assets <span>Balance: ${ cleanBalance }</span></h2>
           {
             dataAssets.length > 0
             ? <PortafolioTable />
             : <EmptyComponent message="You haven't bought any assets yet"/>
           }
         </div>
-
+          <GainerLoser />
         <div className={`portafolio__wishlist mg--v ${ intro }`} style={{ animationDelay: '.9s' }}>
           <h2 className="mg--v">Wishlist</h2>
           {
@@ -68,15 +79,19 @@ export const PortafolioPage = () => {
 
       </div>
       <aside className={`portafolio__aside c100 ${ intro }`} style={{ animationDelay: '1.5s' }}>
-        <div className={`portafolio__aside__content `}>
-          {/* <SwapCrypto /> */}
-          <GainerLoser />
-          <AssetTransactions id=""/>
-
-          {/* <ForYou /> */}
-          {/* <InterestedEarned /> */}
-          {/* <SwapCrypto /> */}
-        </div>
+       {
+         dataTransaction.length > 0 &&
+         <div className={`portafolio__aside__content `}>
+         <h2>Transaction history</h2>
+           {/* <SwapCrypto /> */}
+           
+           <AssetTransactions id=""/>
+ 
+           {/* <ForYou /> */}
+           {/* <InterestedEarned /> */}
+           {/* <SwapCrypto /> */}
+         </div>
+       }
       </aside>
       <BackgroundImage image={ image }/>
     </section>

@@ -10,8 +10,7 @@ import { icons } from '../../utils/icons/icons_object'
 export const Amount = ({ setValidateAmount }) => {
   const { handleAsset: {
     current_price, symbol, name
-  } } = useContext(DataContext)
-  const { handlePrevTransaction, previewTransaction } = useContext(DataTransactionContext);
+  }, handleTransactions: { handlePrevTransaction } } = useContext(DataContext)
   const [cleanPrice, setCleanPrice] = useState(null);
 
   useEffect(() => {

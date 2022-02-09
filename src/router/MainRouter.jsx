@@ -71,24 +71,20 @@ export const MainRouter = () => {
         <SwapButton values={{ showComponent2, handleShowComponent2,  }}/>
 
         <Routes>
-          <Route  exact path="/" element={ <HomePage /> }/>
-          <Route  exact path="/crypto" element={ <HomePage /> }/>
-          <Route  exact path="/crypto/portafolio" element={ <PortafolioPage /> }/>
-          <Route  exact path="/crypto/trade" element={ <TradePage /> }></Route>
-          <Route  path="/crypto/crypto-asset/:id" element={ <AssetPage /> }/>
-          <Route  path="/swap" element={ <SwapCrypto /> }/>
+          <Route  path="/crypto" element={ <HomePage /> }/>
+          <Route  path="/crypto/:section" element={ <HomePage /> }/>
+          <Route  path="/crypto/portafolio" element={ <PortafolioPage /> }/>
+          <Route  path="/trade" element={ <TradePage /> }></Route>
+          <Route  path="/crypto-asset/:id" element={ <AssetPage /> }/>
           <Route  path="/pay" element={ <PayPage /> }/>
           <Route  path="/news" element={ <NewsPage /> }/>
           <Route  path="/earn" element={ <LearnAndEarnPage /> }/>
-          <Route  exact path="/crypto/nft" element={ <NftPage /> }/>
-          <Route  exact path="/crypto/nft-asset" element={ <NftAssetPage /> }/>
-          <Route  path="/quiz" element={ <Quiz /> }/>
-          <Route  path="/billing" element={ <RegisterCard /> }/>
-          <Route  path="/test" element={ <NewsInfo /> }/>
-          <Route  path="/process" element={ <Processing /> }/>
+          <Route  path="/nft" element={ <NftPage /> }/>
+          <Route  path="/nft-asset" element={ <NftAssetPage /> }/>
+          <Route  path="/" element={ <HomePage /> }/>
           <Route 
             path="*"
-            element={ <Navigate to="/home"/> }
+            element={ <Navigate to="/crypto"/> }
           />
 
           {/* <Redirect to='/' element={ HomePage }/> */}

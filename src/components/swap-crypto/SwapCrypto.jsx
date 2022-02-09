@@ -75,15 +75,10 @@ export const SwapCrypto = ({ values }) => {
   const { intro_right } = animations_object;
   // debugger
 
-  const { previewTransaction, handlePrevTransaction } = usePrevTransactions()
   const { handleAsset: {
     image
   } } = useContext(DataContext)
   return (
-    <DataTransactionContext.Provider value={{
-      previewTransaction,
-      handlePrevTransaction
-    }}>
 
     <div className={`swap c100 ${ animation2 }`}>
       <div className="swap__back" onClick={ handleShowComponent2 }>
@@ -128,6 +123,5 @@ export const SwapCrypto = ({ values }) => {
       </div>
     <BackgroundImage image={ background }/>
     </div>
-    </DataTransactionContext.Provider>
   )
 }

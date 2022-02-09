@@ -1,5 +1,5 @@
 @mixin active-state() {
-  transform: scale(.98);
+  transform: scale(.9);
   transition: .2s ease-in;
   opacity: .8;
 }

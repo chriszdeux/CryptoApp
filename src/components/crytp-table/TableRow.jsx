@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { actionWishlist } from '../../actions/actionWishlist';
 import { DataContext } from '../../context/context';
 import { wishlistReducer } from '../../reducers/wishlistReducer';
@@ -35,6 +35,7 @@ export const TableRow = ({ item }) => {
   // debugger
   const dispatch = useDispatch()
   // debugger
+  const navigate = useNavigate()
   const handleWishItem = () => {
     dispatch( actionWishlist(item) )
   }
@@ -54,6 +55,7 @@ export const TableRow = ({ item }) => {
   const handleTop = (id) => {
     setHandleAsset(id)
     scrollTop()
+    navigate(`/crypto/crypto-asset/${id}`)
   }
   return (
     <>
@@ -95,9 +97,9 @@ export const TableRow = ({ item }) => {
               <td className="supply">$ { total_supply }
               </td>
               <td  className="link--asset" onClick={() => handleTop(id)}>
-                <Link to={`/crypto-asset/${id}`}>
                 { icons.forward_icon }
-                </Link>
+                {/* <div to={`/crypto-asset/${id}`}>
+                </div> */}
               </td>
               {/* <hr /> */}
             </tr>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { DataContext } from '../../context/context'
 import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset'
 import { useShowComponent } from '../../hooks/ShowComponent'
@@ -14,7 +14,10 @@ export const Search = () => {
   const { intro_right } = animations_object;
   const [inputValue, setInputValue] = useState('')
 
-
+  // const location = useLocation()
+  // const params = useParams()
+  // // console.log(params)
+  // debugger
   const handleSubmit =  ( e ) => {
     // debugger
     e.preventDefault();
@@ -23,7 +26,7 @@ export const Search = () => {
       // await submitForm(e.target);
       setHandleAsset( inputValue.toLowerCase().replace(replaceSimbols, '-') )
       setInputValue('')
-      navigate(`/crypto-asset/${inputValue}`, { replace: true })
+      navigate(`/crypto/crypto-asset/${inputValue}`, { replace: true })
       handleShowComponent(!showComponent)
       // debugger
       // navigate('../asset/', { replace: true })

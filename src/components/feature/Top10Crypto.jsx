@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react/cjs/react.development';
+// import { useEffect } from 'react/cjs/react.development';
 import { DataContext } from '../../context/context';
 import { useDataFunctions } from '../../hooks/useDataFunctions';
 import { animations_object } from '../../utils/animations/animations_object'

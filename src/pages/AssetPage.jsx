@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useContext } from 'react/cjs/react.development'
+import React, { useContext, useEffect, useState } from 'react'
+import { Navigate, useParams } from 'react-router-dom'
+// import { useContext } from 'react/cjs/react.development'
 import { AssetStats } from '../components/asset-stats/AssetStats'
 import { InterestedEarned } from '../components/cards/InterestedEarned'
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard'
@@ -21,17 +22,30 @@ import { scrollTop } from '../utils/functions/scrollTop'
 import image from '../utils/vector/asset-background.svg'
 export const AssetPage = () => {
   const { handleAsset } = useContext(DataContext)
-  const { loading, error, data:dataAsset } = useFetchAsset(handleAsset)
+  const { id } = useParams();
+  const { loading, error, data:dataAsset } = useFetchAsset(id || handleAsset)
+  // debugger
   // const { dataAssets } = useContext(DataContext)
+  // console.log(params.id)
   const { intro } = animations_object
   const [data, setData] = useState({});
   useEffect(() => {
-    setData({...dataAsset[0]})
+    // if(!error) {
+      setData({...dataAsset[0]})
+    // }
     scrollTop()
-  }, [  dataAsset[0] ])
+  }, [  dataAsset ])
+  // debugger
+  if( error && dataAsset.length === 0) {
+    // debugger
+    return <Navigate to="/"/>
+  }
+  // useEffect(() => {
+
+  // }, [ error ])
   // useEffect(() => {
   // }, [ dataAsset[0] ])
-  // debugger
+  // debugger  
   return (
     <DataAssetContext.Provider value={{
       data
@@ -43,11 +57,11 @@ export const AssetPage = () => {
             ? <LoadingText />
             : error 
               ? <ErrorConnect />
-              : Object.keys(data).length > 0 &&
+              :  Object.keys(data).length > 0 &&
               <>
                 <div className={`asset__main__info ${ intro }`} style={{ animationDelay: '1s' }}>
                   <div>
-                  <AssetInfo />
+                    <AssetInfo />
                     <Chart/>
                   </div>
                     <AssetAbout />     

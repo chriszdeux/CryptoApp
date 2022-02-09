@@ -25,8 +25,8 @@
   .portafolio__aside {
     
     .portafolio__aside__content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      // display: grid;
+      // grid-template-columns: repeat(2, 1fr);
 
       .feature {
         margin: 0;
@@ -68,6 +68,32 @@
 @media only screen and ( min-width: 1024px ) and ( min-height: 1366px ) {
   .portafolio {
     width: 100%;
+  }
+  
+}
+
+@media only screen and ( min-width: 1600px ) {
+  .portafolio {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .portafolio__aside {
+    height: 90vh;
+    overflow: hidden;
+
+    .portafolio__aside__content {
+      // overflow-y: scroll;
+      position: fixed;
+      height: 90%;
+      
+      .asset__transactions {
+        overflow-y: scroll;
+        height: 90vh;
+        padding-bottom: 5rem;
+        margin-top: 0;
+      }
+    }
   }
   
 }

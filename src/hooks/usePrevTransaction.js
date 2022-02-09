@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react/cjs/react.development"
+import { useState } from "react";
+
 
 export const usePrevTransactions = (  ) => {
-  const [previewTransaction, setPreviewTransaction] = useState({  });
+  const [previewTransaction, setPreviewTransaction] = useState({});
   const handlePrevTransaction = ( asset, amount_crypto, amount_dollar ) => {
     // debugger
     // const fees = [0.03, 0.05, 0.06, 0.09, 0.10 ]

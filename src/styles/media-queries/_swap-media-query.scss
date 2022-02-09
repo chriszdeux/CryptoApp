@@ -71,7 +71,7 @@
 
 @media only screen and ( min-width: 1024px ) {
   .swap {
-    width: 25%;
+    width: 50%;
     left: revert;
     right: 0;
     margin: 0;
@@ -83,7 +83,7 @@
 
 @media only screen and ( min-width: 1920px ) {
   .swap {
-    // width: 25%;
+    width: 25%;
     overflow: hidden;
     // background: none;
     border: 1px solid $border-color;

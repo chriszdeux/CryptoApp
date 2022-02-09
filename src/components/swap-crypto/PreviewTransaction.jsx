@@ -13,7 +13,9 @@ import { Processing } from '../loading/Processing'
 export const PreviewTransaction = ({ handleShowComponent }) => {
   const { intro_up, intro, exit } = animations_object
 
-  const { handleAsset } = useContext(DataContext)
+  const { handleAsset, handleTransactions:{
+    previewTransaction
+  } } = useContext(DataContext)
   const {
     current_price,
     symbol,
@@ -21,7 +23,7 @@ export const PreviewTransaction = ({ handleShowComponent }) => {
     image
   } = handleAsset
   const dispatch = useDispatch()
-  const { previewTransaction } = useContext(DataTransactionContext)
+  // const { previewTransaction } = useContext(DataTransactionContext)
   const {
     asset,
     amount_crypto,
@@ -46,28 +48,28 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
     handleShowComponent2()
    setTimeout(() => {
     setAnimationTransaction(exit)
-    e.preventDefault()
-    dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
-    dispatch(actionTransaction({ handleAsset,  previewTransaction}))
     setTimeout(() => {
+      e.preventDefault()
+      dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
+      dispatch(actionTransaction({ handleAsset,  previewTransaction}))
       handleShowComponent()
-    }, 300);
+    }, 1000);
    }, 8000);
   }
 
   // debugger
   return (
     <>
-    <div className={`preview__transaction ${intro_up}`}>
-      <div onClick={ handleShowComponent }>
+    <div className={`preview__transaction ${intro}`}>
+      {/* <div onClick={ handleShowComponent }>
       { icons.back_icon }
 
-      </div>
-      <h3 className="mg--v--3">Order Preview</h3>
+      </div> */}
+      <h3 className="mg--v">Order Preview</h3>
       <figure className='asset__image__preview'>
         <img src={ image } alt="" />
       </figure>
-      <h2 className="mg--v--3">{ amount_crypto } <span>{ symbol } coins</span></h2>
+      <h2 className="mg--v">{ amount_crypto } <span>{ symbol } coins</span></h2>
       <ul className="preview__info c80 ">
         <li>{ symbol } price <span>${ current_price }</span></li>
         {/* <li>Payment method <span>Chase</span></li> */}
@@ -76,9 +78,15 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
         <li>Total <span>${ total }</span></li>
       </ul>
 
-      <button className={`btn btn--primary ${ intro_up }`} onClick={ submitTransaction }>
-      Buy now
-    </button>
+      <div className={`${intro}`}>
+      <button className={`btn btn--primary `} onClick={ submitTransaction }>
+        Buy now
+      </button>
+        <button className={`btn btn--cancel `} onClick={ handleShowComponent }>
+        Cancel
+      </button>
+
+      </div>
       <figure className='asset__background'>
         {
           image && <img src={ image } alt="" />

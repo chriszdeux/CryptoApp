@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.development';
 import { actionTotalBalance } from '../../actions/actionTotalBalance';
 import { DataAssetContext, DataContext } from '../../context/context';
 import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset';

@@ -487,22 +487,38 @@
  position: fixed;
  left: 0;
  top: 0;
- background-image: $second-background-color; 
+ background: $main-background-color; 
  text-align: center;
  z-index: 2;
 // overflow-y: hidden;
 
  div {
    display: flex;
-   justify-content: center;
    align-items: center;
-   width: 4rem;
-   height: 4rem;
-   position: absolute ;
-   left: 5%;
-   top: 10%;
-   width: 5rem;
-   height: 5rem;
+   justify-content: space-between;
+   width: 90%;
+   margin-bottom: 5rem;
+
+   .btn--primary {
+     transition: .2s ease;
+     &:hover {
+       box-shadow: 0 0 10px -3px $active-color;
+     }
+   }
+   .btn--cancel {
+     color: $loser-color;
+     transition: .2s ease;
+     &:hover {
+       box-shadow: 0 0 10px -3px $loser-color;
+     }
+   }
+  //  width: 4rem;
+  //  height: 4rem;
+  // //  position: absolute ;
+  // //  left: 5%;
+  // //  top: 10%;
+  //  width: 5rem;
+  //  height: 5rem;
    color: $active-color;
 
    .icon {
@@ -538,7 +554,7 @@
     justify-content: space-between;
     font-size: $regular-font-size;
     color: $second-font-color;
-    margin: 3rem 0 ;
+    margin: 1rem 0 ;
   }
  }
 }

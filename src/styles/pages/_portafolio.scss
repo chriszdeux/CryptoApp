@@ -23,10 +23,30 @@
     }
   }
   
+.portafolio__main__section {
+  .feature {
+    margin-top: 0;
+
+    h2 {
+      margin-left: 1rem;
+    }
+    h3 {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
   .portafolio__assets {
     
     h2 {
-      @include portafolio-titles();
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      font-size: $extra-large-font-size;
+      color: $font-color;
+      // color: ;
+      // @include portafolio-titles();
       // margin: 1rem ;
     }
 
@@ -51,7 +71,12 @@
       .swap {
         display: none;
       }
-
+      h2 {
+        font-size: 2.4rem;
+        margin: 1rem;
+        margin-bottom: 2rem;
+        color: white;
+      }
       .news__info__aside {
         display: none;
       }

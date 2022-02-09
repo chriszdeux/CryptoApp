@@ -11,7 +11,7 @@ export const NftCard = ({ values }) => {
   // debugger
   return (
     <article className="nft__card" onClick={() => handleNftData(item, index)}>
-      <Link to="/nft-asset">
+      <Link to="/crypto/nft-asset">
       <figure>
         <LazyLoadImage src={ item.regular_image } alt={ item.tags } />
       </figure>

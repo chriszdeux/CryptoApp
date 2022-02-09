@@ -400,10 +400,7 @@
   
   .asset__transaction__list {
     border: 1px solid $border-color;
-    border-top: none;
-    // border: 2px solid $border-color;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+    border-radius: .5rem;
     // background-color: $background-color;
     li {
       // display: flex;
@@ -412,6 +409,7 @@
       height: auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      align-items: center;
       gap: 1rem;
       font-size: $extra-small-font-size;
       // border-bottom: 2px solid $border-color;

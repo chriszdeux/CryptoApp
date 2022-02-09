@@ -1,5 +1,5 @@
-import { useRef, useState } from "react"
-import { useEffect } from "react/cjs/react.development"
+import { useRef, useState, useEffect } from "react"
+// import { useEffect } from "react/cjs/react.development"
 import { fetchAsset } from "../../fetch-data/fetchAsset"
 
 export const useFetchAsset = ( id ) => {
@@ -9,7 +9,7 @@ export const useFetchAsset = ( id ) => {
     data: [],
     error: null
   })
-
+  // debugger
   useEffect(() => {
     return () => {
       isMounted.current = false
@@ -21,7 +21,8 @@ export const useFetchAsset = ( id ) => {
       fetchAsset(id)
       .then(item => {
         // debugger
-        if(!item) {
+        if(item.isAxiosError) {
+          // debugger
           setDataAssetInfo({
             loading: false,
             data: [],
@@ -29,6 +30,7 @@ export const useFetchAsset = ( id ) => {
           })
         }
         else if( isMounted.current ) {
+          // debugger
           setDataAssetInfo({
             loading: false,
             data: item,
@@ -38,5 +40,7 @@ export const useFetchAsset = ( id ) => {
       })
       
     }, [ id ])
+
+    // debugger
     return dataAssetInfo
 }
