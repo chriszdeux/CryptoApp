@@ -12,6 +12,7 @@ import { useFetchExchanges } from './hooks/fetchHooks/useFetchExchanges'
 import { useFetchGlobalStats } from './hooks/fetchHooks/useFetchGlobalStats'
 import { useFetchImagesNft } from './hooks/fetchHooks/useFetchImagesNft'
 import { useFetchNews } from './hooks/fetchHooks/useFetchNews'
+import { useShowComponent } from './hooks/ShowComponent'
 import { useDataFunctions } from './hooks/useDataFunctions'
 import { useHandleNftData } from './hooks/useHandleNftData'
 import { usePagination } from './hooks/usePagination'
@@ -32,7 +33,10 @@ export const CryptoApp = () => {
   // debugger
   const { handleNftData, nft } = useHandleNftData()
   const [ dataEarning, setDataEarning ] = useState([])
-  
+  const showComponentHook = useShowComponent();
+  // const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, animation, animation2 } = useShowComponent();
+  // debugger
+
   const [handleAsset, setHandleAsset] = useState('bitcoin')
   const { wishlist_reducer } = useSelector(state => state)
   // debugger
@@ -92,8 +96,9 @@ export const CryptoApp = () => {
         handleBalance,
         setHandleBalance,
         handleChartDates, 
-        setHandleChartDates
+        setHandleChartDates,
         // error
+        showComponentHook
       }}>
         <MainRouter />
       </DataContext.Provider>

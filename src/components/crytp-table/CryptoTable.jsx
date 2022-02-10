@@ -25,7 +25,7 @@ export const CryptoTable = ({ data }) => {
     <LazyLoadComponent className={`crypto__coins c100 ${ intro }`} >
       {/* <Pagination /> */}
         
-      <table className={`crypto__table c95 pd${ animation }`} >
+      <table className={`crypto__table c95 pd ${ animation }`} >
       {/* <div className="glass"></div> */}
         <TableHeader />
               {

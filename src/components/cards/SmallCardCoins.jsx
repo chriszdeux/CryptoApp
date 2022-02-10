@@ -17,7 +17,7 @@ export const SmallCardCoins = ({ item }) => {
   }, [item])
   // debugger
   return (
-    <Link to={ `/crypto-asset/${id}` }>
+    <Link to={ `/crypto/crypto-asset/${id}` }>
     <div className="card mg" onClick={ () => setHandleAsset(id) }>
       
       <figure className="card__image">

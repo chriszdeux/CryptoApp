@@ -10,6 +10,7 @@ import { icons } from '../../utils/icons/icons_object';
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { LoadingText } from '../loading/LoadingText';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 
 
 export const WishlistRow = ({ item }) => {
@@ -48,6 +49,9 @@ export const WishlistRow = ({ item }) => {
     total_volume_usd,
 
    } = data.length > 0 && data[0]
+   const  volumeFormat = useFormatNumbers(total_volume_usd)
+  const  circulatingFormat = useFormatNumbers(circulating_supply)
+  const  supplyFormat = useFormatNumbers(total_supply)
   // debugger
   const handleWishItem = () => {
     dispatch( actionWishlist(item) )
@@ -75,7 +79,7 @@ export const WishlistRow = ({ item }) => {
                 <div onClick={ favorite ? handleRemoveWishlist : handleWishItem } className={  'favorite--color' }>
                   {
                     favorite 
-                    ? icons.remove_icon
+                    ? icons.trash_icon
                     : icons.star_icon
                   }
                 </div>
@@ -103,10 +107,10 @@ export const WishlistRow = ({ item }) => {
                   </span>
               </td>
   
-              <td className="volume">${ total_volume_usd }</td>
-              <td className="supply">$ { circulating_supply }
+              <td className="volume">${ volumeFormat }</td>
+              <td className="supply">$ { circulatingFormat }
               </td>
-              <td className="supply">$ { total_supply }
+              <td className="supply">$ { supplyFormat }
               </td>
               <td  className="link--asset" onClick={() => setHandleAsset(id)}>
                 <Link to={`/crypto/crypto-asset/${id}`}>

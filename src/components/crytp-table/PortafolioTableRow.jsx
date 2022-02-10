@@ -17,12 +17,14 @@ export const PortafolioTableRow = ({ values }) => {
   const { setHandleAsset, setHandleBalance, handleBalance: {
     portafolio_balance, total_amount_invested
   } } = useContext(DataContext) 
-  const { id, name, symbol, image, amount_crypto, amount_dollar } = item
+  const { id, name, symbol, image, amount_crypto, amount_dollar, market_cap_rank } = item
+  // debugger
   const { loading, error, data } = useFetchAsset(id)
   // const { current_price_usd, price_change_24h,  } = data.length > 0 && data
   const dispatch = useDispatch()
   const [balance, setBalance] = useState(0);
   const formatBalance = useFormatNumbers(balance)
+  const formatAmountDollar = useFormatNumbers(amount_dollar)
 
   const [checkBalance, setCheckBalance] = useState([]);
   // const [countBalance, setCountBalance] = useState(balance);
@@ -68,6 +70,7 @@ export const PortafolioTableRow = ({ values }) => {
             :
             <tbody >
             <tr className="table__row c100 animation_animated animation_fadeIn" >
+              <td className="coin--name">{ market_cap_rank }</td>
               <td className="coin">
                 <figure className="crypto__coin">
                   <LazyLoadImage className="coin--image" src={ image } alt={ id } />
@@ -79,7 +82,7 @@ export const PortafolioTableRow = ({ values }) => {
 
               <td className="coin--name">$ { formatBalance }<br /><span className="short--name pd--h">{ new Intl.NumberFormat().format(amount_crypto) } { symbol }</span></td>
               <td className='total--invested'>
-                ${ amount_dollar }
+                ${ formatAmountDollar }
               </td>
               <td className="price">
                 ${ data[0].current_price_usd } <br />

@@ -1,5 +1,6 @@
 import { cleanup } from '@testing-library/react';
 import React, { useState, useEffect } from 'react'
+import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 // import {
@@ -33,6 +34,7 @@ import { Search } from '../components/search/Search';
 import { RegisterCard } from '../components/swap-crypto/RegisterCard';
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { BackgroundWaves } from '../components/waves/BackgroundWaves';
+import { DataContext } from '../context/context';
 import { fetchCoins } from '../fetch-data/fetchCoins';
 import { useFetchAsset } from '../hooks/fetchHooks/useFetchAsset';
 import { useFetchAssetChart } from '../hooks/fetchHooks/useFetchAssetChart';
@@ -54,9 +56,9 @@ import { mainDataReducer } from '../reducers/mainDataReducer';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
-  const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, animation, animation2 } = useShowComponent();
 
-  
+  const { showComponentHook: {showComponent2, handleShowComponent2, animation2} } = useContext(DataContext)
+  const { handleShowComponent, showComponent, animation } = useShowComponent()
   return (
     <Router>
       <div className="router">

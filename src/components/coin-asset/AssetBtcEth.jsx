@@ -18,9 +18,14 @@ export const AssetBtcEth = () => {
       {/* {
         current_price_btc === 0 &&
       } */}
+      {
+        price_change_percentage_24h_in_currency_btc > 0 &&
       <li>{ current_price_btc } BTC <span className={`${ price_change_percentage_24h_in_currency_btc > 0 ? 'gainer--color' : 'loser--color' }`}>{ price_change_percentage_24h_in_currency_btc > 0 ? icons.up_icon : icons.down_icon } { price_change_percentage_24h_in_currency_btc }%</span></li>
-
+      }
+      {
+        price_change_percentage_24h_in_currency_eth > 0 &&
       <li>{ current_price_eth } ETH <span className={`${ price_change_percentage_24h_in_currency_eth > 0 ? 'gainer--color' : 'loser--color' }`}>{ price_change_percentage_24h_in_currency_eth > 0 ? icons.up_icon : icons.down_icon } { price_change_percentage_24h_in_currency_eth }%</span></li>
+      }
     </ul>
   )
 }

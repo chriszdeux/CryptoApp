@@ -21,7 +21,7 @@ import { animations_object } from '../utils/animations/animations_object'
 import { scrollTop } from '../utils/functions/scrollTop'
 import image from '../utils/vector/asset-background.svg'
 export const AssetPage = () => {
-  const { handleAsset } = useContext(DataContext)
+  const { handleAsset,  } = useContext(DataContext)
   const { id } = useParams();
   const { loading, error, data:dataAsset } = useFetchAsset(id || handleAsset)
   // debugger

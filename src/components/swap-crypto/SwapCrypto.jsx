@@ -82,7 +82,7 @@ export const SwapCrypto = ({ values }) => {
 
     <div className={`swap c100 ${ animation2 }`}>
       <div className="swap__back" onClick={ handleShowComponent2 }>
-      { icons.forward_icon }
+      { icons.close_icon }
       </div>
       <SwapNavbar values={{ handleBuy, handleSell, handleConvert }}/>
 

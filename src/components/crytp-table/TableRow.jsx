@@ -34,6 +34,9 @@ export const TableRow = ({ item }) => {
     circulating_supply,
     favorite
   } = item;
+  const  volumeFormat = useFormatNumbers(total_volume)
+  const  circulatingFormat = useFormatNumbers(circulating_supply)
+  const  supplyFormat = useFormatNumbers(total_supply)
   // debugger
   const dispatch = useDispatch()
   // debugger
@@ -93,10 +96,10 @@ export const TableRow = ({ item }) => {
                   </span>
               </td>
   
-              <td className="volume">${ total_volume }</td>
-              <td className="supply">$ { circulating_supply }
+              <td className="volume">${ volumeFormat }</td>
+              <td className="supply">$ { circulatingFormat }
               </td>
-              <td className="supply">$ { total_supply }
+              <td className="supply">$ { supplyFormat }
               </td>
               <td  className="link--asset" onClick={() => handleTop(id)}>
                 { icons.forward_icon }

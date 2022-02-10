@@ -3,12 +3,14 @@ import { IoCaretUpOutline, IoCaretDownOutline , IoChevronForwardOutline,IoChevro
 import { AiOutlineBank, AiOutlineLoading, AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { SiEthereum } from 'react-icons/si';
 import { BiArrowToLeft } from 'react-icons/bi';
+import { HiOutlineTrash } from 'react-icons/hi'
 export const icons = {
   up_icon: <IoCaretUpOutline className="icon"/>,
   down_icon: <IoCaretDownOutline className="icon"/>,
   forward_icon: <IoChevronForwardOutline className="icon"/>,
   back_icon: <IoChevronBackOutline className="icon"/>,
   close_icon: <IoCloseOutline className="icon"/>,
+  trash_icon: <HiOutlineTrash className="icon"/>,
   credit_card_icon: <IoCardOutline className="icon"/>,
   wallet_icon: <IoWalletOutline className="icon"/>,
   trending_down_icon: <IoTrendingDownOutline className="icon"/>,
