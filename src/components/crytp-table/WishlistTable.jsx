@@ -29,7 +29,7 @@ export const WishlistTable = ({ data }) => {
               {
                 data.map((item, index) => (
                   // debugger
-                  <WishlistRow   key={ `${ item.ath_date+index }` }item={ item }/>
+                  <WishlistRow   key={ `${ item.id}${index}` }item={ item }/>
                 ))
               }
       </table>

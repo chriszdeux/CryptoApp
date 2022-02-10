@@ -1,0 +1,32 @@
+@media only screen and ( min-width: 1024px ) and ( min-height: 768px ) {
+  .exchange__page {
+    width: 80%;
+    float: right;
+  }
+
+  .country {
+    display: revert;
+  }
+}
+
+
+@media only screen and ( min-width: 1024px ) and ( min-height: 1336px ){
+  .exchange__page {
+    width: 100%;
+    // float: right;
+  }
+}
+
+@media only screen and ( min-width: 1336px ) {
+  .exchange__page {
+    width: 80%;
+    float: right;
+  }
+}
+
+@media only screen and ( min-width: 1600px ) {
+  .exchange__page {
+    width: 90%;
+    float: right;
+  }
+}

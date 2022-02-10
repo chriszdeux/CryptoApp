@@ -44,6 +44,7 @@ import { useFetchNews } from '../hooks/fetchHooks/useFetchNews';
 import { useShowComponent } from '../hooks/ShowComponent';
 import { useGetRandomAssets } from '../hooks/useGetRandomAssets';
 import { AssetPage } from '../pages/AssetPage';
+import { ExchangePage } from '../pages/ExchangePage';
 import { HomePage } from '../pages/HomePage';
 import { LearnAndEarnPage } from '../pages/LearnAndEarnPage';
 import { NewsPage } from '../pages/NewsPage';
@@ -78,6 +79,7 @@ export const MainRouter = () => {
           <Route  path="/crypto/portafolio" element={ <PortafolioPage /> }/>
           <Route  path="/crypto/trade" element={ <TradePage /> }></Route>
           <Route  path="/crypto/crypto-asset/:id" element={ <AssetPage /> }/>
+          <Route  path="/crypto/exchange" element={ <ExchangePage /> }/>
           <Route  path="/pay" element={ <PayPage /> }/>
           <Route  path="/news" element={ <NewsPage /> }/>
           <Route  path="/earn" element={ <LearnAndEarnPage /> }/>
@@ -103,6 +105,7 @@ export const MainRouter = () => {
         }
         {/* <GenericFooter /> */}
         <BackgroundWaves />
+        
       </div>
     </Router>
 

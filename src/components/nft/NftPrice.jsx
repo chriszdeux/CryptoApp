@@ -21,8 +21,8 @@ export const NftPrice = () => {
   useEffect(() => {
     if(data.length > 0) {
       setPrice({
-        dollar: Number(current_price.replace(',','')),
-        eth: Number(price_eth),
+        dollar: current_price,
+        eth: price_eth,
         // total: price.price * price.eth
       })
 

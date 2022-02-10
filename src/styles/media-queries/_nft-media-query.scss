@@ -82,7 +82,7 @@
   }
 }
 
-@media only screen and ( min-width: 1910px ) {
+@media only screen and ( min-width: 1920px ) {
   .nft__page {
     width: 90%;
     margin: 0 auto;
@@ -138,5 +138,9 @@
   .nft__related__wrap {
     width: 100%;
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .nft--2 {
+    display: revert;
   }
 }

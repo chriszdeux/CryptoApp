@@ -95,7 +95,7 @@ tr {
   //   @include active-state();
   // }
   td {
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   hr {
     width: 100%;
@@ -222,4 +222,15 @@ tr {
   // font-size: $regular-font-size;
   // letter-spacing: 2px;
   text-align: center;
+}
+
+.trust--score {
+  span {
+    // width: 5rem;
+    // border: 1px solid red;
+  }
+}
+
+.country {
+  display: none;
 }

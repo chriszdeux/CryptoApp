@@ -32,7 +32,7 @@ export const PortafolioTable = () => {
                 {
                   asset_state.map((item, index) => (
                     // debugger
-                    <PortafolioTableRow key={ `${ item.ath_date+index }` } values={{ item, setDelay, delay }}/>
+                    <PortafolioTableRow key={ `${ item.id }` } values={{ item, setDelay, delay }}/>
                   ))
                 }
         </table>

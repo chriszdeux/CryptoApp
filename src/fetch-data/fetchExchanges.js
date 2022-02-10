@@ -17,14 +17,14 @@ export const fetchExchanges = async () => {
        return {
          id: item.id,
          name: item.name,
-         year_stablished: item.year_stablished,
+         year_established: item.year_established,
          country: item.country,
          description: item.description,
          url: item.url,
          image: item.image,
          trust_score: item.trust_score,
          trust_score_rank: item.trust_score_rank,
-         trade_volume_24h_btc: Intl.NumberFormat().format(item.trade_volume_24h_btc.toFixed(3))
+         trade_volume_24h_btc: item.trade_volume_24h_btc
        }
      })
 

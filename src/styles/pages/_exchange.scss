@@ -1,0 +1,31 @@
+@mixin score($color) {
+  // font-size: $regular-font-size;
+  background-color: $color;
+  color: $font-color;
+  border-radius: .5rem;
+}
+
+.exchange__page {
+  padding-top: 5rem;
+  h2 {
+    margin: 1rem;
+    font-size: $large-font-size;
+    color: $font-color;
+  }
+}
+
+.excelent--score {
+  @include score($good-score-color);
+}
+
+.regular--score {
+  @include score($regular-score-color);
+}
+
+.bad--score {
+  @include score($bad-score-color);
+}
+
+.trust--score {
+  width: 5rem;
+}
