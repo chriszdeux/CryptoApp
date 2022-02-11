@@ -26,14 +26,27 @@ export const fetchAssetChart = async (id, ath, days) => {
   })
 
   // debugger
-  const chartData = filterWeirdPrice.map(item => {
-    // debugg
-    // const date = new Date(item[0]);
+  const chartData = filterWeirdPrice.map((item, index) => {
+    // debugger
     return {
       date: '',
       price: item[1]
     }
+    // const date = new Date(item[0]);
   })
+  const chartDataDates = filterWeirdPrice.map((item, index) => {
+    const date = new Date(item[0]);
+    const shortDate = date.toLocaleDateString()
+    // debugger
+    return {
+      date: `Date: ${ shortDate } \n | Time: ${ date.getHours() }:${ date.getMinutes() } hrs`,
+      price: item[1]
+    }
+    // const date = new Date(item[0]);
+  }).reverse()
+
+  return {chartData, chartDataDates};
+
   
   // debugger
   // const dataFiltered = chartData.filter(item => {
@@ -85,7 +98,6 @@ export const fetchAssetChart = async (id, ath, days) => {
   // let finalArray = [['date', 'price'], ...dataFiltered]
 
   // debugger
-  return chartData;
   // return dataChart
 }).catch(function (error) {
   console.error(error);

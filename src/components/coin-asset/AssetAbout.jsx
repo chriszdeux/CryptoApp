@@ -8,6 +8,7 @@ export const AssetAbout = () => {
     description, name
   } } = useContext(DataAssetContext)
   const { intro } = animations_object;
+  // debugger
   return (
     <div className={`asset__about mg--v pd ${ intro }`}>
       <div className="about__header mg--b">
@@ -15,8 +16,13 @@ export const AssetAbout = () => {
         <h2>Traducir</h2>
       </div>
       <div className='about--asset'>
-        <p>{ description } 
-        </p>
+        {
+          description.map(item => (
+            <p key={item.slice(0,10)}>{ item }</p>
+          ))
+        }
+        {/* <p>{ description } 
+        </p> */}
       </div>
     </div> 
   )

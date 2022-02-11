@@ -29,7 +29,7 @@ ChartJS.register(
 );
 
 export const ChartTest = () => {
-  const { data: { id, name, price_change_percentage_24h, current_price_usd, ath },  } = useContext(DataAssetContext)
+  const { data: { id, name, price_change_percentage_24h, current_price_usd, ath }, setHandleDataFromChart} = useContext(DataAssetContext)
   const { handleChartDates, setHandleChartDates } = useContext(DataContext)
   // debugger
   const [tempChartDates, setTempChartDates] = useState(0);
@@ -43,7 +43,14 @@ export const ChartTest = () => {
     
     // const { data:test } = useContext(DataAssetContext)
     const { data:dataChart, loading, error } = useFetchAssetChart(id, ath, handleChartDates)
+    const { chartData, chartDataDates } = dataChart
 
+    useEffect(() => {
+      if(chartDataDates !== undefined) {
+        setHandleDataFromChart(chartDataDates)
+      }
+    }, [ dataChart ])
+    // debugger
     // const {  }
   // debugger
   // const { price } = !!dataChart && dataChart
@@ -70,7 +77,7 @@ export const ChartTest = () => {
   // debugger
   // debugger
   const [gainer, setGainer] = useState('');
-  const animation = useAnimationData( dataChart )
+  // const animation = useAnimationData( chartData )
   const options = {
     // type: 'bar',
     // animation,
@@ -137,9 +144,9 @@ export const ChartTest = () => {
 
   // debugger
   useEffect(() => {
-    // debugger
-      setData({
-        labels: dataChart.map(item => item.date),
+
+    setData({
+        labels: chartData?.map(item => item.date),
         datasets: [
           // {
           //   id: 1,
@@ -157,7 +164,7 @@ export const ChartTest = () => {
           {
             id: 2,
             label: `${ id } $`,
-            data: dataChart.map(item => item.price),
+            data: chartData?.map(item => item.price),
             borderColor: price_change_percentage_24h > 0 ? '#0DC96E' : '#f56b6b',
             backgroundColor: '#07F1FF',
             type: 'line',
@@ -165,6 +172,7 @@ export const ChartTest = () => {
           }
         ]
       })
+
       // debugger
   }, [ dataChart ])
   return (

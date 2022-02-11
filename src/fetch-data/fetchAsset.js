@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { access } from '../store/headers';
+import { removeHtml } from '../utils/functions/removeHtml';
 // import res from 'express/lib/response';
 
 export const fetchAsset = async ( asset ) => {
@@ -25,12 +26,18 @@ export const fetchAsset = async ( asset ) => {
   const data = await axios.request(options).then(function (response) {
     const { data } =  response;
     // debugger
+    const desc = data.description.en.split('. ');
+    const descriptionCleaned = desc.map(item => {
+      return removeHtml(item)
+    })
+
+    // debugger
     return [
       {
         id: data?.id,
         symbol: data?.symbol,
         name: data?.name,
-        description: data?.description.en,
+        description: descriptionCleaned,
         links: data?.links,
         logo: data?.image,
         categories: data?.categories,

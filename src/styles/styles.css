@@ -348,9 +348,6 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -359,11 +356,13 @@ html {
       flex-shrink: 0;
   width: 24rem;
   height: 7.5rem;
-  background-color: #008088;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
   border-radius: 1rem;
   overflow: hidden;
+  padding: 1rem;
   cursor: pointer;
 }
 
@@ -376,6 +375,7 @@ html {
 }
 
 .card .card__info h2 {
+  margin-right: 1rem;
   font-size: 1.6rem;
   color: #07F1FF;
 }
@@ -427,12 +427,13 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
   overflow: hidden;
+  margin-right: 1rem;
 }
 
 .card .card__image .card--image {
@@ -475,9 +476,6 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -486,7 +484,8 @@ html {
       flex-shrink: 0;
   width: 24rem;
   height: 25rem;
-  background-color: #008088;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
   border-radius: 1rem;
@@ -570,9 +569,6 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -581,7 +577,8 @@ html {
       flex-shrink: 0;
   width: 24rem;
   height: 25rem;
-  background-color: #008088;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
   border-radius: 1rem;
@@ -728,9 +725,6 @@ html {
 
 .learn__card {
   display: inline;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -739,7 +733,8 @@ html {
       flex-shrink: 0;
   width: 24rem;
   height: 20rem;
-  background-color: #008088;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
   border-radius: 1rem;
@@ -2000,6 +1995,10 @@ html {
   font-weight: 700;
 }
 
+.price span {
+  margin-left: 1rem;
+}
+
 .price .supply {
   display: -ms-grid;
   display: grid;
@@ -2050,7 +2049,7 @@ tr {
 }
 
 .table__row td {
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .table__row hr {
@@ -2186,17 +2185,24 @@ tr {
 }
 
 .coin--name .short--name {
+  font-size: 1rem;
   width: 5rem;
+  padding: .5rem;
   text-align: start;
+  opacity: .7;
   background-color: #04767d;
   color: #F0F0F0;
-  border-radius: 5px;
+  border-radius: .5rem;
 }
 
 .total--invested {
   display: none;
   font-weight: 700;
   text-align: center;
+}
+
+.country {
+  display: none;
 }
 
 .icon {
@@ -2750,7 +2756,7 @@ tr {
           justify-content: space-between;
   position: absolute;
   bottom: 1%;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin-top: 5rem;
 }
 
@@ -2760,6 +2766,7 @@ tr {
 
 .swap__balance :nth-child(2) {
   color: #F0F0F0;
+  text-align: end;
 }
 
 .asset__swap {
@@ -3656,7 +3663,7 @@ tr {
 }
 
 .asset__main__info .asset__about {
-  background-color: #008088;
+  background-color: #00808852;
   border-radius: .5rem;
   -webkit-box-shadow: 0px 0px 5px #022d33;
           box-shadow: 0px 0px 5px #022d33;
@@ -3673,7 +3680,7 @@ tr {
   font-size: 1.6rem;
 }
 
-.asset__main__info .asset__about .about--asset p {
+.asset__main__info .asset__about .about--asset {
   font-size: 1.6rem;
   text-align: justify;
   letter-spacing: 1px;
@@ -3682,6 +3689,10 @@ tr {
   padding: 1rem;
   border: 1px solid #00B4BF;
   border-radius: .5rem;
+}
+
+.asset__main__info .asset__about .about--asset p {
+  margin-bottom: 1rem;
 }
 
 .asset__info {
@@ -4195,11 +4206,15 @@ tr {
 }
 
 .tickers {
-  background-color: #008088;
+  /* position: fixed; */
+  padding-bottom: 15rem;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
   border-radius: .5rem;
 }
 
 .tickers .tickers__header {
+  position: fi;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4218,7 +4233,8 @@ tr {
 }
 
 .tickers .tickers__list {
-  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -4229,16 +4245,23 @@ tr {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;
+  border-bottom: 1px solid #00B4BF;
+}
+
+.tickers .tickers__list .tickers--item h3 {
+  margin: 1rem 0;
 }
 
 .tickers .tickers__list .tickers--item h3:first-child {
   color: #07F1FF;
-  width: 50%;
+  width: 60%;
+  text-align: start;
 }
 
 .tickers .tickers__list .tickers--item h3:last-child {
   color: #0DC96E;
-  width: 50%;
+  width: 40%;
+  text-align: end;
 }
 
 .quiz__layout {
@@ -4987,6 +5010,18 @@ tr {
   margin-bottom: 1rem;
 }
 
+.portafolio .portafolio__main__section .feature .feature__gainers h2 {
+  margin: 0;
+}
+
+.portafolio .portafolio__main__section .feature .feature__losers h2 {
+  margin: 0;
+}
+
+.portafolio .portafolio__main__section .feature .feature__assets__random h2 {
+  margin: 0;
+}
+
 .portafolio .portafolio__assets h2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5244,9 +5279,45 @@ tr {
   top: 0;
 }
 
+.exchange__page {
+  padding-top: 5rem;
+}
+
+.exchange__page h2 {
+  margin: 1rem;
+  font-size: 2rem;
+  color: #F0F0F0;
+}
+
+.excelent--score {
+  background-color: #0dc96e85;
+  color: #F0F0F0;
+  border-radius: .5rem;
+}
+
+.regular--score {
+  background-color: #d4d63985;
+  color: #F0F0F0;
+  border-radius: .5rem;
+}
+
+.bad--score {
+  background-color: #f56b6b85;
+  color: #F0F0F0;
+  border-radius: .5rem;
+}
+
+.trust--score {
+  width: 5rem;
+}
+
 .nft__page {
   position: relative;
   margin-top: 5rem;
+}
+
+.nft--2 {
+  display: none;
 }
 
 .nft__about {
@@ -5507,11 +5578,28 @@ tr {
     height: 5rem;
   }
   .feature .gainers__losers .feature__gainers .feature__list .top--asset h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .feature .gainers__losers .feature__gainers .feature__list .top--asset figure {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .feature .gainers__losers .feature__losers .feature__list .top--asset h3 {
+    font-size: 1.6rem;
+  }
+  .feature .gainers__losers .feature__losers .feature__list .top--asset figure {
+    width: 3rem;
+    height: 3rem;
+  }
+  .feature .gainers__losers .feature__assets__random .feature__list .top--asset h3 {
+    font-size: 1.6rem;
+  }
+  .feature .gainers__losers .feature__assets__random .feature__list .top--asset figure {
+    width: 3rem;
+    height: 3rem;
+  }
+  .feature .gainers__losers .suggested {
+    margin-top: none;
   }
   .wrapper__cards {
     -ms-flex-wrap: wrap;
@@ -5689,6 +5777,9 @@ tr {
     display: grid;
     -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
+  }
+  .portafolio .portafolio__main__section .feature .gainers__losers .suggested {
+    margin-top: 0;
   }
   .portafolio__aside {
     height: 90vh;
@@ -6007,6 +6098,36 @@ tr {
   }
 }
 
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+  .exchange__page {
+    width: 80%;
+    float: right;
+  }
+  .country {
+    display: revert;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1336px) {
+  .exchange__page {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1336px) {
+  .exchange__page {
+    width: 80%;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .exchange__page {
+    width: 90%;
+    float: right;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .asset__page {
     padding: 1rem;
@@ -6084,23 +6205,28 @@ tr {
 }
 
 @media only screen and (min-width: 1366px) {
-  .asset__info {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 0;
+  .asset__page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .asset__main__info {
+    width: 70%;
+  }
+  .aside__content {
+    width: 29%;
+  }
+  .tickers {
+    overflow-y: scroll;
+    height: 100vh;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .asset__page {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 3fr 1fr;
-        grid-template-columns: 3fr 1fr;
-    gap: 1rem;
     width: 90%;
     float: right;
   }
@@ -6278,7 +6404,7 @@ tr {
   }
 }
 
-@media only screen and (min-width: 1910px) {
+@media only screen and (min-width: 1920px) {
   .nft__page {
     width: 90%;
     margin: 0 auto;
@@ -6331,6 +6457,9 @@ tr {
     width: 100%;
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
+  }
+  .nft--2 {
+    display: revert;
   }
 }
 

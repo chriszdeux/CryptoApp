@@ -21,8 +21,8 @@ export const RandomAssetsCard = () => {
             ? <LoadingText />
             : error 
               ? <ErrorConnect />
-              : randomAssets.map(item => (
-                <TopAsset key={ item.id } item={ item }/>
+              : randomAssets.map((item, index) => (
+                <TopAsset key={ `${item}${index}` } item={ item }/>
               ))
         }
       </ul>

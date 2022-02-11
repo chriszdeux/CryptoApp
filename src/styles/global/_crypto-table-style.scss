@@ -56,8 +56,13 @@
 
 .price {
   // display: block;
+  // display: flex;
   font-weight: $bold-font;
+  // justify-content: center;
   // text-align: end;
+  span {
+    margin-left: 1rem;
+  }
   .supply {
     display: grid;
     font-size: $small-font-size;
@@ -206,13 +211,16 @@ tr {
   // width: auto;
   // display: block;
   .short--name {
+    font-size: $extra-small-font-size;
     width: 5rem;
+    padding: .5rem;
+    // height: 6rem;
     text-align: start;
-    
+    opacity: .7;
     background-color: $second-base-color;
     color: $font-color;
     // padding: 0 1rem;
-    border-radius: 5px;
+    border-radius: .5rem;
   }
 }
 

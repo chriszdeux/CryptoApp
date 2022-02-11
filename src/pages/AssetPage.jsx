@@ -25,6 +25,7 @@ export const AssetPage = () => {
   const { id } = useParams();
   const { loading, error, data:dataAsset } = useFetchAsset(id || handleAsset)
   // debugger
+  const [handleDataFromChart, setHandleDataFromChart] = useState([])
   // const { dataAssets } = useContext(DataContext)
   // console.log(params.id)
   const { intro } = animations_object
@@ -48,7 +49,9 @@ export const AssetPage = () => {
   // debugger  
   return (
     <DataAssetContext.Provider value={{
-      data
+      data,
+      setHandleDataFromChart,
+      handleDataFromChart
     }}>
       <section className="asset__page c95">
         
