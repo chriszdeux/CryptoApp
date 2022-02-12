@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bf37c91c.chunk.css",
+    "main.js": "/static/js/main.47806024.chunk.js",
+    "main.js.map": "/static/js/main.47806024.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ea39fafa.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ea39fafa.js.map",
+    "static/css/2.1c3129d7.chunk.css": "/static/css/2.1c3129d7.chunk.css",
+    "static/js/2.70bd2d9b.chunk.js": "/static/js/2.70bd2d9b.chunk.js",
+    "static/js/2.70bd2d9b.chunk.js.map": "/static/js/2.70bd2d9b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5442dbb61c547030ee558079afbfaac2.js": "/precache-manifest.5442dbb61c547030ee558079afbfaac2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.1c3129d7.chunk.css.map": "/static/css/2.1c3129d7.chunk.css.map",
+    "static/css/main.bf37c91c.chunk.css.map": "/static/css/main.bf37c91c.chunk.css.map",
+    "static/js/2.70bd2d9b.chunk.js.LICENSE.txt": "/static/js/2.70bd2d9b.chunk.js.LICENSE.txt",
+    "static/media/asset-background.svg": "/static/media/asset-background.f7546da9.svg",
+    "static/media/chain.jpg": "/static/media/chain.ce552caa.jpg",
+    "static/media/earn.svg": "/static/media/earn.9e85bd99.svg",
+    "static/media/financial.svg": "/static/media/financial.3dc8cd1c.svg",
+    "static/media/grow.svg": "/static/media/grow.a3855be1.svg",
+    "static/media/kraken.png": "/static/media/kraken.bcd75de7.png",
+    "static/media/learn.svg": "/static/media/learn.e1bcd62f.svg",
+    "static/media/news.svg": "/static/media/news.7abbe19a.svg",
+    "static/media/news2.svg": "/static/media/news2.a6c5887d.svg",
+    "static/media/nft.jpeg": "/static/media/nft.ebab17dc.jpeg",
+    "static/media/payment.svg": "/static/media/payment.90428c22.svg",
+    "static/media/phone.svg": "/static/media/phone.d565e349.svg",
+    "static/media/portafolio.svg": "/static/media/portafolio.7b64903e.svg",
+    "static/media/send.svg": "/static/media/send.9a6866e0.svg",
+    "static/media/server.svg": "/static/media/server.0b612938.svg",
+    "static/media/study.svg": "/static/media/study.8a546902.svg",
+    "static/media/winner.svg": "/static/media/winner.543bb5b5.svg",
+    "static/media/world.svg": "/static/media/world.fb7142cf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea39fafa.js",
+    "static/css/2.1c3129d7.chunk.css",
+    "static/js/2.70bd2d9b.chunk.js",
+    "static/css/main.bf37c91c.chunk.css",
+    "static/js/main.47806024.chunk.js"
+  ]
+}
