@@ -91,6 +91,8 @@ export const transactionReducer = ( state = [], action ) => {
       //   ...state, 
       // ]
 
+      case types.transaction_remove:
+        return state.filter(item => item.id_asset !== action.payload)
     default:
       return state
   }

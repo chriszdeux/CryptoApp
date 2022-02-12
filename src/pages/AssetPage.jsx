@@ -18,23 +18,30 @@ import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoComponent } from '../components/videos-components/VideoComponent'
 import { DataAssetContext, DataContext } from '../context/context'
 import { useFetchAsset } from '../hooks/fetchHooks/useFetchAsset'
+import { useShowComponent } from '../hooks/ShowComponent'
 import { useRandomAsset } from '../hooks/useRandomAssets'
+import { WishlistPopup } from '../pop-ups/WishlistPopup'
 import { animations_object } from '../utils/animations/animations_object'
 import { scrollTop } from '../utils/functions/scrollTop'
 import image from '../utils/vector/asset-background.svg'
 export const AssetPage = () => {
-  const { handleAsset, dataAssets:{ data:assets } } = useContext(DataContext)
+  const { handleAsset, dataAssets:{ data:assets }, setHandleParam } = useContext(DataContext)
   const { id } = useParams();
-  const { loading, error, data:dataAsset } = useFetchAsset(id || handleAsset)
+  // debugger
+  useEffect(() => {
+    setHandleParam(id)
+  }, [ id ])
+  const { loading, error, data:dataAsset } = useFetchAsset(handleAsset)
   // debugger
   const top10 = useRandomAsset( assets )
   // debugger
   const [handleDataFromChart, setHandleDataFromChart] = useState([])
   const [message, setMessage] = useState('Random Assets')
-
+  const { showComponent, handleShowComponent } = useShowComponent()
+  const { intro, exit } = animations_object
+  const [animation, setAnimation] = useState(intro)
   // const { dataAssets } = useContext(DataContext)
   // console.log(params.id)
-  const { intro } = animations_object
   const [data, setData] = useState({});
   useEffect(() => {
     // if(!error) {
@@ -91,6 +98,7 @@ export const AssetPage = () => {
 
         <BackgroundImage image={ image }/>
       </section>
+      
 
     </DataAssetContext.Provider>
   )

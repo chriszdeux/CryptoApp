@@ -13,3 +13,10 @@ export const actionTransactionEarn = ( data ) => {
     payload: data
   }
 }
+
+export const actionTransactionRemove = ( data ) => {
+  return {
+    type: types.transaction_remove,
+    payload: data
+  }
+}

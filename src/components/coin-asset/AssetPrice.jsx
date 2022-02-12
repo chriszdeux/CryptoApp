@@ -16,7 +16,7 @@ export const AssetPrice = () => {
   return (
     <div className="asset__price c100 mg--b">
       <h3>{ name } price <span>( { symbol } )</span></h3>
-      <h2>${priceFormat} <span className={`${ market_cap_change_percentage_24h > 0 ? 'gainer--background' : 'loser--background' }`}>{ market_cap_change_percentage_24h > 0 ? icons.up_icon : icons.down_icon} { market_cap_change_percentage_24h }%</span></h2>
+      <h2>${ current_price_usd > 1 ? priceFormat : current_price_usd } <span className={`${ market_cap_change_percentage_24h > 0 ? 'gainer--background' : 'loser--background' }`}>{ market_cap_change_percentage_24h > 0 ? icons.up_icon : icons.down_icon} { market_cap_change_percentage_24h }%</span></h2>
     </div>
   )
 }

@@ -25,3 +25,11 @@ export const actionRemoveBuy = (  ) => {
   }
 }
 
+export const actionRemoveAsset = ( data ) => {
+  // debugger
+  return {
+    type: types.portafolio_remove_asset,
+    payload: data
+  }
+}
+

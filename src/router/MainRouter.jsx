@@ -53,6 +53,7 @@ import { NftPage } from '../pages/NftPage';
 import { PayPage } from '../pages/PayPage';
 import { PortafolioPage } from '../pages/PortafolioPage';
 import { TradePage } from '../pages/TradePage';
+import { WishlistPopup } from '../pop-ups/WishlistPopup';
 import { mainDataReducer } from '../reducers/mainDataReducer';
 import image from '../utils/vector/world.svg';
 

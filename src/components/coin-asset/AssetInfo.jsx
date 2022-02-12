@@ -66,7 +66,7 @@ useEffect(() => {
   return (
     <div className="asset__info c100">
         <div className={`asset__network mg--b ${ intro }`}>
-          <AssetName />
+          <AssetName   />
           <AssetStat />
           <AssetSocialNetwork /> 
           <AssetContract />

@@ -15,6 +15,7 @@ import faker from 'faker';
 import { useFetchAssetChart } from '../../hooks/fetchHooks/useFetchAssetChart';
 import { DataAssetContext, DataContext } from '../../context/context';
 import { useAnimationData } from '../../hooks/useAnimationData';
+import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 // import { htmlLegendPlugin } from '../../pages/portafolio/htmlLegendPlugin';
 
 ChartJS.register(
@@ -43,8 +44,12 @@ export const ChartTest = () => {
     
     // const { data:test } = useContext(DataAssetContext)
     const { data:dataChart, loading, error } = useFetchAssetChart(id, ath, handleChartDates)
-    const { chartData, chartDataDates } = dataChart
+    const { chartData, chartDataDates, high_low} = dataChart
 
+    const priceFormat = useFormatNumbers(current_price_usd)
+    const highFormat = useFormatNumbers(high_low?.high)
+    const lowFormat = useFormatNumbers(high_low?.low)
+    // debugger
     useEffect(() => {
       if(chartDataDates !== undefined) {
         setHandleDataFromChart(chartDataDates)
@@ -122,9 +127,10 @@ export const ChartTest = () => {
       },
       title: {
         display: true,
-        text: `${ name } price $${ current_price_usd }`,
+        text: `${ name } price $${ current_price_usd > 1 ? priceFormat : current_price_usd } High: $${ high_low?.high > 1 ? highFormat : high_low?.high.toFixed(5)} / Low: $${ high_low?.low > 1 ? lowFormat : high_low?.low.toFixed(5) }`,
+        // text: 'hello',
         color: '#F0F0F0',
-        size: 20
+        size: 12
       },
     },
     elements: {

@@ -9,6 +9,8 @@ import { ErrorConnect } from '../errors/ErrorConnect';
 import { LoadingText } from '../loading/LoadingText';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
+import { actionRemoveAsset } from '../../actions/actionBuy';
+import { actionTransactionRemove } from '../../actions/actionTransaction';
 
 
 export const PortafolioTableRow = ({ values }) => {
@@ -20,11 +22,13 @@ export const PortafolioTableRow = ({ values }) => {
   const { id, name, symbol, image, amount_crypto, amount_dollar, market_cap_rank } = item
   // debugger
   const { loading, error, data } = useFetchAsset(id)
+  const { current_price_usd } = data.length > 0 && data[0]
   // const { current_price_usd, price_change_24h,  } = data.length > 0 && data
   const dispatch = useDispatch()
   const [balance, setBalance] = useState(0);
   const formatBalance = useFormatNumbers(balance)
   const formatAmountDollar = useFormatNumbers(amount_dollar)
+  const formatCurrentPrice = useFormatNumbers(current_price_usd)
 
   const [checkBalance, setCheckBalance] = useState([]);
   // const [countBalance, setCountBalance] = useState(balance);
@@ -57,7 +61,10 @@ export const PortafolioTableRow = ({ values }) => {
       
   //     console.log( countBalance )
   //   }
-    
+    const handleRemoveAsset = (  ) => {
+      dispatch(actionRemoveAsset(id))
+      dispatch(actionTransactionRemove(id))
+    }
   // }, [ data ])
   // debugger
   return (
@@ -70,7 +77,8 @@ export const PortafolioTableRow = ({ values }) => {
             :
             <tbody >
             <tr className="table__row c100 animation_animated animation_fadeIn" >
-              <td className="coin--name">{ market_cap_rank }</td>
+              <td className="coin--name" onClick={ handleRemoveAsset }>{ icons.trash_icon }</td>
+              <td className="rank">{ market_cap_rank }</td>
               <td className="coin">
                 <figure className="crypto__coin">
                   <LazyLoadImage className="coin--image" src={ image } alt={ id } />
@@ -85,7 +93,7 @@ export const PortafolioTableRow = ({ values }) => {
                 ${ formatAmountDollar }
               </td>
               <td className="price">
-                ${ data[0].current_price_usd } <br />
+                ${ current_price_usd > 1 ? formatCurrentPrice : current_price_usd } <br />
                 {/* <span className="supply">
                 Supply $1,521,625.236  
                 </span> */}

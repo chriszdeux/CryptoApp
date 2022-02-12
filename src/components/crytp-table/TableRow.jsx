@@ -13,9 +13,12 @@ import { useShowComponent } from '../../hooks/ShowComponent';
 import { scrollTop } from '../../utils/functions/scrollTop';
 import { formatNumber } from '../../utils/functions/formatNumber';
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
+import { WishlistPopup } from '../../pop-ups/WishlistPopup';
+import { animations_object } from '../../utils/animations/animations_object';
 
 export const TableRow = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
+  const [show, setShow] = useState(false)
   const { 
     id, 
     name,
@@ -50,9 +53,17 @@ export const TableRow = ({ item }) => {
   
   // debugger
   const { showComponent, handleShowComponent } = useShowComponent(false)
+  const { intro, exit } = animations_object
+  const [animation, setAnimation] = useState(intro)
   const handleWish = () => {
     handleWishItem()
     handleShowComponent(!showComponent)
+    setTimeout(() => {
+      setAnimation(exit)
+      setTimeout(() => {
+        handleShowComponent(!showComponent)
+      }, 1000);
+    }, 2000);
   }
 
   const handleTop = (id) => {
@@ -74,15 +85,15 @@ export const TableRow = ({ item }) => {
                 </div>
               </td>
               <td className="rank">{ market_cap_rank }</td>
-              <td className="coin">
+              <td className="coin" onClick={() => handleTop(id)}>
                 <figure className="crypto__coin">
                   <LazyLoadImage className="coin--image" src={ image } alt={ id } />
                 </figure>
               </td>
   
-              <td className="coin--name">{ name }<br /><span className="short--name pd--h">{ symbol }</span></td>
+              <td className="coin--name" onClick={() => handleTop(id)}>{ name }<br /><span className="short--name pd--h">{ symbol }</span></td>
               <td className="price">
-                ${ formatNumber } <br />
+                ${ current_price > 1 ? formatNumber : current_price } <br />
                 {/* <span className="supply">
                 Supply $1,521,625.236  
                 </span> */}
@@ -109,6 +120,11 @@ export const TableRow = ({ item }) => {
               {/* <hr /> */}
             </tr>
       </tbody>
+      {
+        showComponent &&
+        <WishlistPopup values={{ animation, name }}/>
+      }
+
       </>
   )
 }

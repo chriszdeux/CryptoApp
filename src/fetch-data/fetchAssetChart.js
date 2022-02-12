@@ -17,7 +17,7 @@ export const fetchAssetChart = async (id, ath, days) => {
   // const cleanAth = Number(ath.replace(/\,/g, ''))
  const data = await axios.request(options).then(function (response) {
   // const dataChart = response.data.price.filter( item => {
-  //   debugger
+    // debugger
   //   return item
   // // } )
   const filterWeirdPrice = response.data.prices.filter(item => {
@@ -36,6 +36,12 @@ export const fetchAssetChart = async (id, ath, days) => {
     }
     // const date = new Date(item[0]);
   })
+  const orderByPrice = chartData.sort((a,b) => { return b[0] - a[0] })
+  const high_low = {
+    high: orderByPrice[0].price,
+    low: orderByPrice[ orderByPrice.length - 1 ].price
+  }
+
   const chartDataDates = filterWeirdPrice.map((item, index) => {
     const date = new Date(item[0]);
     const shortDate = date.toLocaleDateString()
@@ -47,7 +53,7 @@ export const fetchAssetChart = async (id, ath, days) => {
     // const date = new Date(item[0]);
   }).reverse()
 
-  return {chartData, chartDataDates};
+  return {chartData, chartDataDates, high_low};
 
   
   // debugger

@@ -45,7 +45,7 @@ export const HomePage = () => {
       {/* <MainNewsCard />   */}
       {/* <DeskMenu/> */}
       <div className="home__main">
-        <MainDisplay />
+        {/* <MainDisplay /> */}
         <GainerLoser />
         <CryptoFeature />
         <Pagination />

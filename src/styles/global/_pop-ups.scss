@@ -1,0 +1,35 @@
+.wishlist__popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 25rem;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-radius: .5rem;
+  background: $glass2-color;
+  z-index: 2;
+
+  h2 {
+    font-size: $extra-large-font-size;
+    color: $active-color;
+    text-align: center;
+  }
+  h3 {
+    font-size: $large-font-size;
+    color: $font-color;
+    text-align: center;
+  }
+
+  .done {
+    .icon {
+      font-size: $jumbo-font-size;
+      color: $active-color
+    }
+  }
+}

@@ -6,7 +6,8 @@ export const PortafolioTableHeader = () => {
 
     <thead>
       <tr className="table__header">
-        <th className="coin--image">Rank #</th>
+        <th className="coin--name"></th>
+        <th className="rank">Rank #</th>
         <th className="coin--image">Asset</th>
         <th className="coin--name">Name</th>
         <th className="coin--name">Balance</th>

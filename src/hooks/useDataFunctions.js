@@ -13,23 +13,31 @@ export const useDataFunctions = (  ) => {
 
   const handleTop10Exchange = ( data ) => {
     // debugger
-    setTop10Exchanges( data.slice(0,10))
+    if(data.length > 0) {
+      setTop10Exchanges( data.slice(0,10))
+     }
   }
   
   const handleGainers = (data) => {
     // debugger
-    setGainers( data.sort((a,b) => {
-      return b.price_change_percentage_24h - a.price_change_percentage_24h
-    }).slice(0,3) )
-  }
+    if(data.length > 0) {
+      setGainers( data.sort((a,b) => {
+        return b.price_change_percentage_24h - a.price_change_percentage_24h
+      }).slice(0,3) )
+    }
+
+    }
   
   const handleLosers = (data) => {
     // debugger
-    setLosers(
-      data.sort((a,b) => {
-        return a.price_change_percentage_24h - b.price_change_percentage_24h
-      }).slice(0,3)
-    )
+    if(data.length > 0) {
+      setLosers(
+        data.sort((a,b) => {
+          return a.price_change_percentage_24h - b.price_change_percentage_24h
+        }).slice(0,3)
+
+        )
+    }
   }
   // useEffect(() => {
   //   handleTop10(data);

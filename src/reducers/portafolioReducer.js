@@ -41,7 +41,9 @@ export const portafolioReducer = ( state = [  ], action ) => {
     case types.portafolio_buy_remove:
       return []
       // debugger
-
+    
+    case types.portafolio_remove_asset:
+      return state.filter(item => item.id !== action.payload)
     default:
       return state
   }

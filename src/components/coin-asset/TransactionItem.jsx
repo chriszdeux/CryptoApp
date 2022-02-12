@@ -12,7 +12,7 @@ export const TransactionItem = ({ item }) => {
       <h3 className="transaction--date">{ month } { day_number }<span>{ day }</span></h3>
       { icons.change_horizontal_icon }
       <h3 className="transaction--completed">{ transaction_type } { name } <span>Completed</span></h3>
-      <h3 className="asset--amount">+{ formatAmountAsset }{ symbol } <span>+${ formatAmountBought }</span></h3>
+      <h3 className="asset--amount">+{ formatAmountAsset } <br />{ symbol } <span>+${ formatAmountBought }</span></h3>
     </li>
   )
 }

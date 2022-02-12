@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Provider } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { actionMainData } from './actions/actionMainData'
 
 import { DataContext } from './context/context'
@@ -38,8 +39,10 @@ export const CryptoApp = () => {
   const showComponentHook = useShowComponent();
   // const { showComponent, handleShowComponent, showComponent2, handleShowComponent2, animation, animation2 } = useShowComponent();
   // debugger
-
+  const [handleParam, setHandleParam] = useState('')
   const [handleAsset, setHandleAsset] = useState('bitcoin')
+  // debugger
+  // debugger
   const { wishlist_reducer } = useSelector(state => state)
   const buyAssetReducer = useSelector(state => state.buy_asset_reducer)
   const [filterAmountDollar, setFilterAmountDollar] = useState(0)
@@ -121,7 +124,8 @@ export const CryptoApp = () => {
         showComponentHook,
         reduceAmountDollar,
         profit, setProfit,
-        handleProfitColor, setHandleProfitColor
+        handleProfitColor, setHandleProfitColor,
+        setHandleParam
 
       }}>
         <MainRouter />

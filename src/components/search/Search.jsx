@@ -12,8 +12,10 @@ export const Search = () => {
   const navigate = useNavigate()
   const { setSearchAsset, setHandleAsset } = useContext(DataContext)
   const { intro_right } = animations_object;
-  const [inputValue, setInputValue] = useState('')
-
+  const [inputValue, setInputValue] = useState({
+    search: ''
+  })
+  const { search } = inputValue
   // const location = useLocation()
   // const params = useParams()
   // // console.log(params)
@@ -21,12 +23,13 @@ export const Search = () => {
   const handleSubmit =  ( e ) => {
     // debugger
     e.preventDefault();
-    if(inputValue.length > 3) {
+    if(search.length > 3) {
       const replaceSimbols = /\s/gi
       // await submitForm(e.target);
-      setHandleAsset( inputValue.toLowerCase().replace(replaceSimbols, '-') )
+      setHandleAsset( search.toLowerCase().replace(replaceSimbols, '-') )
+      // debugger
       setInputValue('')
-      navigate(`/crypto/crypto-asset/${inputValue}`, { replace: true })
+      navigate(`/crypto/crypto-asset/${search}`, { replace: true })
       handleShowComponent(!showComponent)
       // debugger
       // navigate('../asset/', { replace: true })
@@ -34,8 +37,11 @@ export const Search = () => {
   }
 
   const handleOnChange = ( e ) => {
-    setInputValue(e.target.value)
-    console.log(e.target.value)
+    // debugger
+    setInputValue({
+      [e.target.name]:e.target.value
+    })
+    // console.log(e.target.value)
   }
   // 
   // debugger
@@ -46,9 +52,11 @@ export const Search = () => {
           <form onSubmit={ handleSubmit } className={`search__form ${ intro_right }`}>
             <input 
               type="text" 
+              name="search"
               className="search--input"
-              value={ inputValue }
+              value={ search }
               onChange={ handleOnChange }
+              autoFocus
             />
           </form>    
       }
