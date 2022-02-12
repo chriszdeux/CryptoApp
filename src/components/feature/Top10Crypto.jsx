@@ -9,30 +9,22 @@ import { SmallCardCoins } from '../cards/SmallCardCoins'
 import { ErrorConnect } from '../errors/ErrorConnect';
 import { LoadingText } from '../loading/LoadingText';
 
-export const Top10Crypto = () => {
+export const Top10Crypto = ({ values }) => {
+  const { top10, message } = values
   const { intro } = animations_object;
-  const { loading, error, data } = useSelector(state => state.data_reducer)
   // debugger
-  const { top10, handleTop10 } = useDataFunctions(  )
 
-  useEffect(() => {
-    handleTop10(data)
-  }, [ data ])
+ 
   // debugger
   return (
     <div className={`wrapper c100 `} >
-      <h2 className="wrapper--title" >Top 10 Cryptos</h2>
+      <h2 className="wrapper--title" >{ message }</h2>
     <div className="wrapper__cards" >
       {
-        loading
-        ? <LoadingText />
-        : error
-        ? <ErrorConnect />
-        : top10.map(item => (
+        top10.map(item => (
           <SmallCardCoins key={ item.id } item={ item }/>     
-          ))
-          
-        }     
+        ))
+      }   
     </div>
         </div>
   )

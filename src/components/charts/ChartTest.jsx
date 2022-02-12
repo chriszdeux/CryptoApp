@@ -88,7 +88,7 @@ export const ChartTest = () => {
           // size: 20
         },
         grid: {
-          // display: false
+          display: false,
           color: '#08ACB6'
         },
         // suggestedMax: 0.0000001,

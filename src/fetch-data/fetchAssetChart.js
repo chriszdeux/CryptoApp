@@ -27,9 +27,11 @@ export const fetchAssetChart = async (id, ath, days) => {
 
   // debugger
   const chartData = filterWeirdPrice.map((item, index) => {
+    const date = new Date(item[0]);
+    const shortDate = date.toLocaleDateString()
     // debugger
     return {
-      date: '',
+      date: index%5 === 0 ? shortDate : '',
       price: item[1]
     }
     // const date = new Date(item[0]);

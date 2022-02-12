@@ -131,6 +131,14 @@
 //   }
 // }
 
+@media only screen and ( min-width: 1600px ) {
+  .asset__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+ 
 @media only screen and (min-width: 1920px ) {
   .asset__page {
     // display: grid;

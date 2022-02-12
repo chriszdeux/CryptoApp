@@ -11,21 +11,27 @@ import { AssetAbout } from '../components/coin-asset/AssetAbout'
 import { AssetInfo,  } from '../components/coin-asset/AssetInfo'
 import { AssetTransactions } from '../components/coin-asset/AssetTransactions'
 import { ErrorConnect } from '../components/errors/ErrorConnect'
+import { Top10Crypto } from '../components/feature/Top10Crypto'
 import { LoadingText } from '../components/loading/LoadingText'
 import { BackgroundImage } from '../components/main/BackgroundImage'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { VideoComponent } from '../components/videos-components/VideoComponent'
 import { DataAssetContext, DataContext } from '../context/context'
 import { useFetchAsset } from '../hooks/fetchHooks/useFetchAsset'
+import { useRandomAsset } from '../hooks/useRandomAssets'
 import { animations_object } from '../utils/animations/animations_object'
 import { scrollTop } from '../utils/functions/scrollTop'
 import image from '../utils/vector/asset-background.svg'
 export const AssetPage = () => {
-  const { handleAsset,  } = useContext(DataContext)
+  const { handleAsset, dataAssets:{ data:assets } } = useContext(DataContext)
   const { id } = useParams();
   const { loading, error, data:dataAsset } = useFetchAsset(id || handleAsset)
   // debugger
+  const top10 = useRandomAsset( assets )
+  // debugger
   const [handleDataFromChart, setHandleDataFromChart] = useState([])
+  const [message, setMessage] = useState('Random Assets')
+
   // const { dataAssets } = useContext(DataContext)
   // console.log(params.id)
   const { intro } = animations_object
@@ -69,6 +75,7 @@ export const AssetPage = () => {
                   </div>
                     <AssetAbout />     
                   <div className=" mg--v--3"></div>
+                  <Top10Crypto values={{ top10, message}} />
                 </div>
 
                 <AssetStats />
