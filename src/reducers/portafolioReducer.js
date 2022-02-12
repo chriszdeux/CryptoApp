@@ -38,7 +38,8 @@ export const portafolioReducer = ( state = [  ], action ) => {
     // debugger
     return [{  ...action.payload, amount_crypto: action.payload.amount_crypto, amount_dollar: Number(action.payload.amount_dollar)} ,  ...state, ]
 
-    case types.portafolio_earn:
+    case types.portafolio_buy_remove:
+      return []
       // debugger
 
     default:

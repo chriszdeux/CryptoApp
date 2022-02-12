@@ -25,16 +25,36 @@ import { DataContext } from '../context/context';
 import { WishlistTable } from '../components/crytp-table/WishlistTable';
 import { SuggestedCard } from '../components/buttons/SuggestedCard';
 import { GainerLoser } from '../components/cards/GainerLoser';
+import { reducerMyInvested } from '../utils/functions/reducerFunction';
+import { useFormatNumbers } from '../hooks/useFormatNumbers';
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)
   const dataAssets = useSelector(state => state.buy_asset_reducer)
+  // const myBalance = 
   // debugger
   const dataTransaction = useSelector(state => state.transaction_reducer)
 
   const { setHandleBalance, handleBalance:{
-    portafolio_balance, 
-  }  } = useContext(DataContext)
+    portafolio_balance, total_amount_invested
+  }, reduceAmountDollar, profit, setProfit, handleProfitColor, setHandleProfitColor  } = useContext(DataContext)
+  const myBalanceInvested = useFormatNumbers(reduceAmountDollar)
+  const portafolioBalanceFormat = useFormatNumbers(portafolio_balance)
+
+  // const [profit, setProfit] = useState(0)
+  const profitFormat = useFormatNumbers(profit)
+  // const [handleProfitColor, setHandleProfitColor] = useState(true)
+
+  useEffect(() => {
+    if(profit > 0) {
+      setProfit(portafolio_balance - reduceAmountDollar)
+      setHandleProfitColor(true)
+    } else {
+      setProfit(portafolio_balance - reduceAmountDollar)
+      setHandleProfitColor(false)
+      
+    }
+  }, [ portafolio_balance, profit ])
   // useEffect(() => {
   //   setHandleBalance({
   //     portafolio_balance: 0,
@@ -50,16 +70,28 @@ export const PortafolioPage = () => {
 
 // const { animation, handleAnimation } = useHandleToggleAnimation()
 
-useEffect(() => {
-  setCleanBalance( new Intl.NumberFormat().format((portafolio_balance).toFixed(2)) )
-}, [ portafolio_balance ])
+// useEffect(() => {
+//   setCleanBalance( new Intl.NumberFormat().format((portafolio_balance).toFixed(2)) )
+// }, [ portafolio_balance ])
+
+// debugger
   return (
     <section className="portafolio">
       {/* <Line data={data} options={options}/> */}
       <div className="portafolio__main__section" >
         {/* <PortafolioChart /> */}
         <div className={`portafolio__assets mg--v ${ intro }`} style={{ animationDelay: '.6s' }}>
-          <h2 className="mg--v">Your Assets <span>Balance: ${ cleanBalance }</span></h2>
+          <div className={`${intro}`} >
+            <h2 className="mg--v">Your Assets </h2>
+            {
+              total_amount_invested > 0 &&
+              <div className='balances'>
+                <h2>Balance: <span className="balance--color">$ { portafolioBalanceFormat }</span></h2>
+                <h2>Total Invested: <span className="balance--color">$ { myBalanceInvested }</span></h2>
+                <h2 >Profit: <span className={ handleProfitColor ? 'gainer--color' : 'loser--color' }>$ { profitFormat } { handleProfitColor ? icons.trending_up_icon : icons.trending_down_icon }</span></h2>
+              </div>
+            }
+          </div>
           {
             dataAssets.length > 0
             ? <PortafolioTable />

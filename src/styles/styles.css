@@ -5022,15 +5022,27 @@ tr {
   margin: 0;
 }
 
-.portafolio .portafolio__assets h2 {
+.portafolio .portafolio__assets .balances {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portafolio .portafolio__assets h2 {
+  color: #07F1FF;
   padding: 0 1rem;
   font-size: 2.4rem;
+}
+
+.portafolio .portafolio__assets h2 .balance--color {
   color: #F0F0F0;
 }
 
@@ -6634,6 +6646,82 @@ a:link {
   background-color: #04767d;
   -webkit-filter: blur(1rem);
           filter: blur(1rem);
+}
+
+.confirmation__screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.confirmation__screen .confirmation__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50rem;
+  height: 23rem;
+  background-color: #00808852;
+  border: 1px solid #00B4BF;
+  border-radius: .5rem;
+}
+
+.confirmation__screen .confirmation__content h2 {
+  font-size: 2.4rem;
+  color: #07F1FF;
+}
+
+.confirmation__screen .confirmation__content h3 {
+  font-size: 2rem;
+  color: #F0F0F0;
+}
+
+.confirmation__screen .confirmation__content .confirmation__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.confirmation__screen .confirmation__content .confirmation__buttons .btn {
+  position: revert;
+  bottom: none;
+  right: none;
+}
+
+.confirmation__screen .confirmation--layout {
+  width: 100%;
+  height: 100vh;
+  background-color: #1a2122;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .7;
+  z-index: -1;
 }
 
 ::-webkit-scrollbar {

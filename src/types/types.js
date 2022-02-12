@@ -8,6 +8,7 @@ export const types = {
   main_data: '[Main Data] Main Data',
 
   portafolio_buy: '[Portafolio] Buy',
+  portafolio_buy_remove: '[Portafolio] Buy Remove',
   portafolio_sell: '[Portafolio] Sell',
   portafolio_earn: '[Portafolio] Earn',
 

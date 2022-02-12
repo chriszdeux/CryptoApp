@@ -26,8 +26,8 @@ export const PortafolioTable = () => {
   {/* <div className="glass"></div> */}
   const [delay, setDelay] = useState(0);
   return (
-    <div className="crypto__coins c100">
-        <table className={`crypto__table c95  ${ intro }`}>
+    <div className="crypto__coins c100" >
+        <table className={`crypto__table c95  ${ intro }`} style={{ animationDelay: '2s' }}>
           <PortafolioTableHeader />
                 {
                   asset_state.map((item, index) => (

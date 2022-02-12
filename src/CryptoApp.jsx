@@ -14,12 +14,14 @@ import { useFetchImagesNft } from './hooks/fetchHooks/useFetchImagesNft'
 import { useFetchNews } from './hooks/fetchHooks/useFetchNews'
 import { useShowComponent } from './hooks/ShowComponent'
 import { useDataFunctions } from './hooks/useDataFunctions'
+import { useFormatNumbers } from './hooks/useFormatNumbers'
 import { useHandleNftData } from './hooks/useHandleNftData'
 import { usePagination } from './hooks/usePagination'
 import { usePrevTransactions } from './hooks/usePrevTransaction'
 import { useSearchForm } from './hooks/useSearchForm'
 import { MainRouter } from './router/MainRouter'
 import { store } from './store/store'
+import { reducerMyInvested } from './utils/functions/reducerFunction'
 
 export const CryptoApp = () => {
   
@@ -39,6 +41,23 @@ export const CryptoApp = () => {
 
   const [handleAsset, setHandleAsset] = useState('bitcoin')
   const { wishlist_reducer } = useSelector(state => state)
+  const buyAssetReducer = useSelector(state => state.buy_asset_reducer)
+  const [filterAmountDollar, setFilterAmountDollar] = useState(0)
+  const [reduceAmountDollar, setReduceAmountDollar] = useState(0)
+
+  const [profit, setProfit] = useState(0)
+  const [handleProfitColor, setHandleProfitColor] = useState(true)
+
+  useEffect(() => {
+    setFilterAmountDollar( buyAssetReducer.map(item => item.amount_dollar) )
+  }, [ buyAssetReducer ])
+  useEffect(() => {
+    if(filterAmountDollar.length > 0) {
+      setReduceAmountDollar( filterAmountDollar.reduce( reducerMyInvested ) )
+    }
+  }, [ filterAmountDollar ])
+
+
   // debugger
   const dispatch = useDispatch()
   // debugger
@@ -72,6 +91,7 @@ export const CryptoApp = () => {
     
   });
   const [handleChartDates, setHandleChartDates] = useState(7);
+  // debugger
   return (
       <DataContext.Provider value={{
         dataAssets,
@@ -98,7 +118,11 @@ export const CryptoApp = () => {
         handleChartDates, 
         setHandleChartDates,
         // error
-        showComponentHook
+        showComponentHook,
+        reduceAmountDollar,
+        profit, setProfit,
+        handleProfitColor, setHandleProfitColor
+
       }}>
         <MainRouter />
       </DataContext.Provider>

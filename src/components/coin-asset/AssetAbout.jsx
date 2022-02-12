@@ -17,8 +17,9 @@ export const AssetAbout = () => {
       </div>
       <div className='about--asset'>
         {
-          description.map(item => (
-            <p key={item.slice(0,10)}>{ item }</p>
+          description.length > 0 &&
+          description.map((item, index) => (
+            <p key={index}>{ item }</p>
           ))
         }
         {/* <p>{ description } 

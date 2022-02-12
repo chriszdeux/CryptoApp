@@ -55,15 +55,25 @@
 
   .portafolio__assets {
     
-    h2 {
+    .balances {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
+    }
+    h2 {
+      // display: flex;
+      // justify-content: space-between;
+      color: $active-color;
       padding: 0 1rem;
       font-size: $extra-large-font-size;
-      color: $font-color;
+      // color: $font-color;
       // color: ;
       // @include portafolio-titles();
       // margin: 1rem ;
+      .balance--color {
+        color: $font-color;
+      }
     }
 
     .crypto__coins {

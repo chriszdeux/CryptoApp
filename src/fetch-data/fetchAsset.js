@@ -5,7 +5,7 @@ import { removeHtml } from '../utils/functions/removeHtml';
 
 export const fetchAsset = async ( asset ) => {
   const URL_CRYPTO = 'https://coingecko.p.rapidapi.com/coins/'
-
+  
   const options = {
     method: 'GET',
     url: `${ URL_CRYPTO }${asset}`,
@@ -104,11 +104,11 @@ export const fetchAsset = async ( asset ) => {
     //   name
     // }
   }).catch(function (error) {
-    console.error(error);
+    // console.error(error);
     // debugger
     return error
   });
 
-  return data
+  return [data]
 
 }

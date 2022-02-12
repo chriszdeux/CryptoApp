@@ -22,16 +22,21 @@ export const useFetchGlobalStats = () => {
     try {
       fetchGlobalStats()
       .then(item => {
-        if(item) {
+        if(item.isAxiosError) {
           // debugger
-          if(isMounted.current) {
-            // debugger
-            setStatsData({
-              loading: false,
-              data: item,
-              error: false
-            })
-          }
+          setStatsData({
+            loading: false,
+            data: [],
+            error: true
+          })
+        }
+        else if(isMounted.current) {
+          // debugger
+          setStatsData({
+            loading: false,
+            data: item[0],
+            error: false
+          })
         }
       })
     } catch (error) {

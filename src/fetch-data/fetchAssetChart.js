@@ -100,8 +100,8 @@ export const fetchAssetChart = async (id, ath, days) => {
   // debugger
   // return dataChart
 }).catch(function (error) {
-  console.error(error);
+  return error;
 });
 // debugger
-  return data
+  return [data]
 }

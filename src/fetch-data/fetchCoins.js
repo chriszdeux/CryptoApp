@@ -78,9 +78,9 @@ export const fetchCoins = async ( initialPage ) => {
     // debugger
     return myData
   }).catch(function (error) {
-    return console.log(error)
+    return error
     // console.error(error);
   });
   // debugger
-  return data;
+  return [data];
 }

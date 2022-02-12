@@ -83,7 +83,9 @@ export const fetchImagesNft = async () => {
      })
 
      return dataImg
+  }).catch((error) => {
+    return error
   })
   // debugger
-  return data
+  return [data]
 }

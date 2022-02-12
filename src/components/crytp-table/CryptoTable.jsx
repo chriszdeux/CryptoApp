@@ -17,7 +17,9 @@ export const CryptoTable = ({ data }) => {
   // const { dataAssets: {
   //   data, loading, error
   // } } = useContext( DataContext );
-  const { animation } = useContext(DataContext)
+  const { animation, dataAssets: {
+    loading, error
+  } } = useContext(DataContext)
   // debugger
   const { intro } = animations_object;
   // debugger
@@ -29,11 +31,18 @@ export const CryptoTable = ({ data }) => {
       {/* <div className="glass"></div> */}
         <TableHeader />
               {
-                data.map((item, index) => (
-                  // debugger
-                  <TableRow key={ `${ item.id }` }item={ item }/>
+                loading 
+                ? <LoadingText />
+                : error
+                  ? <ErrorConnect />
+                  :
                   
-                ))
+                    data.map((item, index) => (
+                      // debugger
+                      <TableRow key={ `${ item.id }` }item={ item }/>
+                      
+                    ))
+                  
               }
       </table>
         

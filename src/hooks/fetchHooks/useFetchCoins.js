@@ -21,7 +21,7 @@ export const useFetchCoins = ( initialPage ) => {
       .then(item => {
       // debugger
       // debugger
-      if(item === undefined){
+      if(item.isAxiosError){
         // debugger
          setCoinsData({
           loading: false,
@@ -32,7 +32,7 @@ export const useFetchCoins = ( initialPage ) => {
         // debugger
         setCoinsData({
           loading: false,
-          data: item,
+          data: item[0],
           error: false
         })
       }

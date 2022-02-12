@@ -70,7 +70,7 @@ const globalStats = await axios.request(options).then(function (response) {
 });
 
 // debugger
-return globalStats
+return [globalStats]
 
 }
 

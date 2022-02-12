@@ -20,7 +20,7 @@ export const useFetchExchanges = () => {
       fetchExchanges()
         .then(item => {
           // debugger
-          if(!item) {
+          if(item.isAxiosError) {
             setExchangeData({
               ...exchangeData,
               loading: false,
@@ -30,9 +30,9 @@ export const useFetchExchanges = () => {
           else if(isMounted.current) {
             setExchangeData({
               loading: false,
-              data: item.exchangeData,
-              top10Exchange: item.top10Exchanges,
-              error: null
+              data: item[0].exchangeData,
+              top10Exchange: item[0].top10Exchanges,
+              error: false
             })
           }
         })

@@ -33,8 +33,8 @@ export const useFetchAsset = ( id ) => {
           // debugger
           setDataAssetInfo({
             loading: false,
-            data: item,
-            error: null
+            data: item[0],
+            error: false
           })
         }
       })

@@ -56,7 +56,7 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
       dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
       dispatch(actionTransaction({ handleAsset,  previewTransaction}))
       handleShowComponent();
-      navigate('/crypto/portafolio', { replace: true })
+      // navigate('/crypto', { replace: true })
     }, 1000);
    }, 8000);
   }

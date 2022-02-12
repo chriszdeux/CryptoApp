@@ -16,3 +16,12 @@ export const actionEarn = ( data ) => {
     payload: data
   }
 }
+
+export const actionRemoveBuy = (  ) => {
+  // debugger
+  return {
+    type: types.portafolio_buy_remove,
+    payload: []
+  }
+}
+

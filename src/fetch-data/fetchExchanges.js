@@ -39,8 +39,8 @@ export const fetchExchanges = async () => {
     //  debugger
      return { exchangeData, top10Exchanges }
   }).catch(function (error) {
-    console.error(error);
+    return error
   });
   // debugger
-  return data
+  return [data]
 }

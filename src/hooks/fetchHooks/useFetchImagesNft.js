@@ -19,7 +19,7 @@ export const useFetchImagesNft = () => {
   useEffect(() => {
     fetchImagesNft()
     .then(item => {
-      if(item === undefined) {
+      if(item.isAxiosError) {
         setDataNft({
           loading: false, 
           error: true,
@@ -29,7 +29,7 @@ export const useFetchImagesNft = () => {
         setDataNft({
           loading: false, 
           error: false,
-          data: item
+          data: item[0]
         })
       }
     })

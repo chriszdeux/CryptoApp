@@ -14,12 +14,12 @@ export const useFetchAssetChart = ( id, ath, days ) => {
       isMounted.current = false
     }
   }, [  ])
-
+  // debugger
   useEffect(() => {
     fetchAssetChart(id, ath, days)
       .then(item => {
         // debugger
-        if(item === undefined || null) {
+        if(item.isAxiosError) {
           setAssetChart({
             loading: false, 
             data: [],
@@ -29,7 +29,7 @@ export const useFetchAssetChart = ( id, ath, days ) => {
           if ( isMounted.current ) {
             setAssetChart({
               loading: false, 
-              data: item,
+              data: item[0],
               error: false
             })
           }
