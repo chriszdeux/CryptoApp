@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../../context/context'
 import { animations_object } from '../../utils/animations/animations_object'
 import { MainNewsCard } from '../cards/MainNewsCard'
@@ -24,9 +25,13 @@ export const Header = () => {
   } = data != null && data
   // debugger
   const { intro_left, intro_right } = animations_object;
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate('/crypto', { replace: false })
+  }
   return (
     <header className={`header c100`}>
-      <h2 className={`title pd-left  ${intro_left}`}>Crypto Ant</h2>
+      <h2 className={`title pd--l  ${intro_left}`} onClick={ handleNavigate }>Crypto Ant</h2>
         <Search />
       {/* <div className="header__info c95">
       </div> */}

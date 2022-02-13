@@ -50,6 +50,7 @@ export const CryptoApp = () => {
 
   const [profit, setProfit] = useState(0)
   const [handleProfitColor, setHandleProfitColor] = useState(true)
+  const [handleBuyAsset, setHandleBuyAsset] = useState({})
 
   useEffect(() => {
     setFilterAmountDollar( buyAssetReducer.map(item => item.amount_dollar) )
@@ -125,7 +126,9 @@ export const CryptoApp = () => {
         reduceAmountDollar,
         profit, setProfit,
         handleProfitColor, setHandleProfitColor,
-        setHandleParam
+        setHandleParam,
+        handleBuyAsset, setHandleBuyAsset,
+
 
       }}>
         <MainRouter />

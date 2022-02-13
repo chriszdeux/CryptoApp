@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../context/context';
+import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 import shib from '../../temp/shib.png';
 import { icons } from '../../utils/icons/icons_object';
 export const SmallCardCoins = ({ item }) => {
@@ -8,7 +9,7 @@ export const SmallCardCoins = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
   const { name, image, current_price, price_change_percentage_24h, market_cap_rank, id } = item
   const [color, setColor] = useState('')
-
+  const priceFormat = useFormatNumbers(current_price)
   useEffect(() => {
     (price_change_percentage_24h > 0)
     ? setColor('gainer--color')
@@ -25,7 +26,7 @@ export const SmallCardCoins = ({ item }) => {
       </figure>
       <div className="card__info">
         <h2>{ name }</h2>
-        <h3>${ current_price }</h3>
+        <h3>${ current_price > 1 ? priceFormat : current_price}</h3>
       </div>
       <div className={`card__percent ${ color }`}>   
         <h2> { price_change_percentage_24h > 0 ?icons.up_icon : icons.down_icon} { price_change_percentage_24h }%</h2>
