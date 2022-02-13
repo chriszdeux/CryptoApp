@@ -16,7 +16,7 @@ import { DataAssetContext, DataContext } from '../../context/context'
 
 export const AssetInfo = () => {
   const { intro } = animations_object;
-  const { setHandleAsset, showComponentHook:{ handleShowComponent2 }, dataAssets, handleAsset  } = useContext(DataContext)
+  const { setHandleAsset, showComponentHook:{ handleShowComponent2 }, dataAssets, handleAsset, setHandleBuyAsset  } = useContext(DataContext)
 // debugger
 const { data } = useContext(DataAssetContext) 
 // debugger
@@ -29,7 +29,7 @@ useEffect(() => {
 }, [ dataAssets ])
   const handleSubmitAsset = () => {
     // debugger
-    setHandleAsset({
+    setHandleBuyAsset({
         id: data?.id,
         name: data?.name,
         image: data?.logo.small,

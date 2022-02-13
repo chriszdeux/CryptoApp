@@ -9,7 +9,7 @@ import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 
 export const AssetItem = ({ values }) => {
   const { item, handleShowComponent2 } = values
-  const { setHandleAsset } = useContext(DataContext)
+  const { setHandleBuyAsset } = useContext(DataContext)
   const { 
     id,
     name,
@@ -40,7 +40,7 @@ export const AssetItem = ({ values }) => {
   // debugger
 
   const handleAssetClose = () => {
-    setHandleAsset({...item, realPrice})
+    setHandleBuyAsset({...item, realPrice})
     handleShowComponent2()
     // setTimeout(() => {
     // }, 200);

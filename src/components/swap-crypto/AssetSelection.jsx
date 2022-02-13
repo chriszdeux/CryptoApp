@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { LoadingText } from '../loading/LoadingText'
 import { ErrorConnect } from '../errors/ErrorConnect'
 export const AssetSelection = ({ handleShowComponent }) => {
-  const { handleAsset:{
+  const { handleBuyAsset:{
     image, name, id
   } } = useContext(DataContext)
   const { data, loading, error } = useSelector(state => state.data_reducer)

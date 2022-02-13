@@ -75,7 +75,7 @@ export const SwapCrypto = ({ values }) => {
   const { intro_right } = animations_object;
   // debugger
 
-  const { handleAsset: {
+  const { handleBuyAsset: {
     image
   } } = useContext(DataContext)
   return (

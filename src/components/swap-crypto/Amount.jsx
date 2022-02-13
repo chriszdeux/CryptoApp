@@ -10,11 +10,11 @@ import { icons } from '../../utils/icons/icons_object'
 
 export const Amount = ({ setValidateAmount }) => {
   const { intro_up } = animations_object
-  const { handleAsset: {
+  const { handleBuyAsset: {
     current_price, symbol, name
-  }, handleTransactions: { handlePrevTransaction } } = useContext(DataContext)
+  }, handleTransactions: { handlePrevTransaction }, handleBuyAsset } = useContext(DataContext)
   // const [cleanPrice, setCleanPrice] = useState(0);
-
+  // debugger
   // useEffect(() => {
   //   if(current_price) {
   //     setCleanPrice( current_price.replace(',','') )

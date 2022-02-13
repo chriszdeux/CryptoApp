@@ -32,7 +32,7 @@ export const transactionReducer = ( state = [], action ) => {
   switch ( action.type ) {
     case types.transaction_buy:
 
-      const { handleAsset: {
+      const { handleBuyAsset: {
         id, current_price, symbol, 
       }, previewTransaction: {
         amount_dollar, amount_crypto, fee, asset

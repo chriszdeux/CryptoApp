@@ -16,7 +16,7 @@ export const PreviewTransaction = ({ values }) => {
   const { handleShowComponent2:closingComponent, handleShowComponent } = values
   const { intro_up, intro, exit } = animations_object
 
-  const { handleAsset, handleTransactions:{
+  const { handleBuyAsset, handleTransactions:{
     previewTransaction
   } } = useContext(DataContext)
   const {
@@ -24,7 +24,7 @@ export const PreviewTransaction = ({ values }) => {
     symbol,
     name, 
     image
-  } = handleAsset
+  } = handleBuyAsset
   const dispatch = useDispatch()
   // const { previewTransaction } = useContext(DataTransactionContext)
   const {
@@ -53,8 +53,8 @@ const [animationTransaction, setAnimationTransaction] = useState(intro);
     setAnimationTransaction(exit)
     setTimeout(() => {
       e.preventDefault()
-      dispatch(actionBuy({...handleAsset, amount_crypto, amount_dollar}))
-      dispatch(actionTransaction({ handleAsset,  previewTransaction}))
+      dispatch(actionBuy({...handleBuyAsset, amount_crypto, amount_dollar}))
+      dispatch(actionTransaction({ handleBuyAsset,  previewTransaction}))
       handleShowComponent();
       // navigate('/crypto', { replace: true })
     }, 1000);
