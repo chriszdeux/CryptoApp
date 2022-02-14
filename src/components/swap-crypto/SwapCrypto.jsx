@@ -24,7 +24,7 @@ import { SwapConvertSection } from './SwapConvertSelection'
 import { DataContext, DataTransactionContext } from '../../context/context'
 import { usePrevTransactions } from '../../hooks/usePrevTransaction'
 // import { Provider } from 'react-redux'
-import background from '../../utils/vector/payment.svg'
+const background = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/payment.svg?alt=media&token=8ab2233f-d2f8-4cca-92ae-b1b1ffea890d'
 export const SwapCrypto = ({ values }) => {
   const { animation2, handleShowComponent2 } = values
   const [swapOperations, setSwapOperations] = useState({

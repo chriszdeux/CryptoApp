@@ -7,7 +7,6 @@ export const useSearchForm = (  ) => {
   // debugger
   const handleOnChange = ( e ) => {
     setInputValue(e.target.value)
-    console.log(e.target.value)
   }
   // debugger
 

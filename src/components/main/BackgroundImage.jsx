@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const BackgroundImage = ({image}) => {
+  // debugger
   return (
     <>
     <figure className="background__image">

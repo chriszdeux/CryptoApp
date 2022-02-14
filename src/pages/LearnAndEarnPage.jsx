@@ -4,7 +4,7 @@ import { BackgroundImage } from '../components/main/BackgroundImage';
 import { Quiz } from '../components/quiz/Quiz';
 import { DataContext } from '../context/context';
 import { useShowComponent } from '../hooks/ShowComponent';
-import image from '../utils/vector/earn.svg';
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/earn.svg?alt=media&token=fb89fbf3-0ab5-4981-b290-2ccf3c705830';
 
 export const LearnAndEarnPage = () => {
 

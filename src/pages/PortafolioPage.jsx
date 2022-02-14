@@ -13,7 +13,6 @@ import { PortafolioChart } from '../components/charts/PortafolioChart';
 import { LearnAndEarnCard } from '../components/cards/LearnAndEarnCard';
 import { InterestedEarned } from '../components/cards/InterestedEarned';
 import { BackgroundImage } from '../components/main/BackgroundImage';
-import image from '../utils/vector/portafolio.svg'
 import { NewsInfo } from '../components/news/NewsInfo';
 import { animations_object } from '../utils/animations/animations_object';
 import { ForYou } from '../components/learning/ForYou';
@@ -27,6 +26,9 @@ import { SuggestedCard } from '../components/buttons/SuggestedCard';
 import { GainerLoser } from '../components/cards/GainerLoser';
 import { reducerMyInvested } from '../utils/functions/reducerFunction';
 import { useFormatNumbers } from '../hooks/useFormatNumbers';
+
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/portafolio.svg?alt=media&token=fe1aa908-cc61-45ae-a9a4-1c05baacf609'
+
 export const PortafolioPage = () => {
   const { intro } = animations_object;
   const data = useSelector(state => state.wishlist_reducer)

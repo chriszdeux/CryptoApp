@@ -10,7 +10,8 @@ import { Pagination } from '../components/pagination/Pagination'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto';
 import { animations_object } from '../utils/animations/animations_object';
 import { scrollTop } from '../utils/functions/scrollTop';
-import image from '../utils/vector/grow.svg';
+
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/grow.svg?alt=media&token=ed418573-4d75-46b6-be93-ebbf4d2f529f';
 export const TradePage = () => {
 
   const { data } = useSelector(state => state.data_reducer)

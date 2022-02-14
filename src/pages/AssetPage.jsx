@@ -23,7 +23,7 @@ import { useRandomAsset } from '../hooks/useRandomAssets'
 import { WishlistPopup } from '../pop-ups/WishlistPopup'
 import { animations_object } from '../utils/animations/animations_object'
 import { scrollTop } from '../utils/functions/scrollTop'
-import image from '../utils/vector/asset-background.svg'
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/asset-background.svg?alt=media&token=df02a647-8b25-43d5-828f-1c3a7adc3436'
 export const AssetPage = () => {
   const { handleAsset, dataAssets:{ data:assets }, setHandleParam } = useContext(DataContext)
   const { id } = useParams();

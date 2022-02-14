@@ -100,7 +100,6 @@ export const MainRouter = () => {
         {
           showComponent2 &&
           <>
-          { console.log(`${ showComponent2 ? 'opened' : 'closed' }`) }
           <SwapCrypto values={ {handleShowComponent2, animation2} }/>
           </>
         }

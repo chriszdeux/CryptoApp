@@ -7,9 +7,8 @@ import { PaymentSelection } from './PaymentSelection'
 export const SwapBuy = ({ values }) => {
   const { handleShowComponent, handleShowComponent2 } = values
   const [swapBuying, setSwapBuying] = useState(true)
-  useEffect(() => {
-    console.log(swapBuying)
-  }, [swapBuying])
+  // useEffect(() => {
+  // }, [swapBuying])
 
   const handleSwap = () => {
     setSwapBuying(!swapBuying)

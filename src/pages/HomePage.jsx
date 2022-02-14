@@ -26,7 +26,7 @@ import { useScrollTop } from '../hooks/useScrollTop'
 import { animations_object } from '../utils/animations/animations_object'
 import { reducerMyInvested } from '../utils/functions/reducerFunction'
 import { scrollTop } from '../utils/functions/scrollTop'
-import image from '../utils/vector/world.svg';
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/undraw_connected_world_wuay.svg?alt=media&token=2252ae86-6c98-43dd-8d52-53b876547148'
 
 export const HomePage = () => {
   // debugger

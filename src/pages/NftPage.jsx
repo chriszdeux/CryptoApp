@@ -7,7 +7,7 @@ import { BackgroundImage } from '../components/main/BackgroundImage';
 import { NftAbout } from '../components/nft/NftAbout';
 import { useFetchImagesNft } from '../hooks/fetchHooks/useFetchImagesNft';
 import { animations_object } from '../utils/animations/animations_object';
-import image from '../utils/vector/server.svg'
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/server.svg?alt=media&token=d5a28cc3-b2ba-4137-9e49-afdf3d2e1319'
 export const NftPage = () => {
   const breakpointColumnsObj = {
     default: 4,

@@ -5,7 +5,7 @@ export const VideoComponent = () => {
 
   const b = a.replace('youtu.be/', 'youtube.com/embed/')
   const c = b.replace('"', '');
-  console.log(c)
+  // console.log(c)
   return (
     <div>
       <iframe className="video__frame"

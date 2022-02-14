@@ -14,12 +14,12 @@ export const AssetLowHigh = () => {
 
   const { low, high, currentPrice } = currentPercent
   const handlePercent = (high, low) => {
-    debugger
+    // debugger
     let n = (parseFloat(high) - parseFloat(low)).toFixed(4)
-    console.log(n)
-    debugger
+    
+    // debugger
   }
-  debugger
+  // debuggerS
   useEffect(() => {
     handlePercent(high_24h_usd, low_24h_usd)
   }, [ current_price_usd ])

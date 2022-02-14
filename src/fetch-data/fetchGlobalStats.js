@@ -66,7 +66,7 @@ const globalStats = await axios.request(options).then(function (response) {
 
 }).catch(function (error) {
   // debugger
-  console.log(`new error ${error}`);
+  return error
 });
 
 // debugger

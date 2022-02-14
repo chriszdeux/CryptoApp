@@ -5,7 +5,7 @@ import { NewsList } from '../components/news/NewsList'
 import { Pagination } from '../components/pagination/Pagination'
 import { useShowComponent } from '../hooks/ShowComponent'
 import { icons } from '../utils/icons/icons_object';
-import image from '../utils/vector/news2.svg';
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/news2.svg?alt=media&token=c4173529-a3c3-4ac7-8b22-9e33f6be0c30';
 
 export const NewsPage = () => {
   const { showComponent, handleShowComponent } = useShowComponent()

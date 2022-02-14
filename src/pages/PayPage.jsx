@@ -14,7 +14,7 @@ import { SwapBuy } from '../components/swap-crypto/SwapBuy'
 import { SwapCrypto } from '../components/swap-crypto/SwapCrypto'
 import { useShowComponent } from '../hooks/ShowComponent';
 import { animations_object } from '../utils/animations/animations_object'
-import image from '../utils/vector/send.svg'
+const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/send.svg?alt=media&token=6c8d42e9-e58c-40b1-9156-3709a087ae1d'
 
 export const PayPage = () => {
   const [transactionSelection, setTransactionSelection] = useState({
