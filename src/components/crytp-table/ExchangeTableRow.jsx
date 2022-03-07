@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { actionWishlist } from '../../actions/actionWishlist';
@@ -13,14 +13,17 @@ import { useShowComponent } from '../../hooks/ShowComponent';
 import { scrollTop } from '../../utils/functions/scrollTop';
 import { formatNumber } from '../../utils/functions/formatNumber';
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
+import { useIntersectionObserver } from '../../hooks/useIntersection';
+import { animations_object } from '../../utils/animations/animations_object';
 
 export const ExchangeTableRow = ({ item }) => {
   const { id, name, country, image, trade_volume_24h_btc, trust_score, trust_score_rank, year_established } = item
   // debugger
   const volumeFormat = useFormatNumbers(trade_volume_24h_btc)
-
+  const { intro, exit } = animations_object
   const [score, setScore] = useState('')
-
+  const assetRef = useRef(null)
+  const isVisible = useIntersectionObserver(assetRef)
   useEffect(() => {
     if(trust_score >= 7) {
       setScore('excelent--score')
@@ -33,8 +36,8 @@ export const ExchangeTableRow = ({ item }) => {
   // debugger
   return (
     <>
-        <tbody>
-            <tr className="table__row c100 animation_animated animation_fadeIn">
+        <tbody ref={assetRef} className={`${ isVisible ? intro : exit }`}>
+            <tr className="table__row c100 ">
 
               <td className="rank">{ trust_score_rank }</td>
               <td className="coin">

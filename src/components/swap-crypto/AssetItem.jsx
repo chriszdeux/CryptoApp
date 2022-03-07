@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { DataContext } from '../../context/context';
 import { useFetchAsset } from '../../hooks/fetchHooks/useFetchAsset';
 import { useGainerLoser } from '../../hooks/useGainerLoser';
@@ -6,6 +6,8 @@ import shib from '../../temp/shib.png';
 import { Divider } from '../helpers/Divider';
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
+import { animations_object } from '../../utils/animations/animations_object';
+import { useIntersectionObserver } from '../../hooks/useIntersection';
 
 export const AssetItem = ({ values }) => {
   const { item, handleShowComponent2 } = values
@@ -20,7 +22,9 @@ export const AssetItem = ({ values }) => {
     amount_dollar,
     amount_crypto
    } = item
-   
+   const assetRef = useRef(null)
+  const isVisible = useIntersectionObserver(assetRef)
+  const { intro, exit } = animations_object
   //  const { loading, error, data } = useFetchAsset( id )
   //  const { loading, error, data } = useFetchAsset( amount_dollar && id)
   //  debugger
@@ -48,7 +52,7 @@ export const AssetItem = ({ values }) => {
   // debugger
   return (
       <>
-    <li className="asset--item c100" onClick={ handleAssetClose  }>
+    <li className={`asset--item c100 ${ isVisible ? intro : exit }`} onClick={ handleAssetClose  } ref={ assetRef }>
       <div>
         <figure className="asset--logo">
           <LazyLoadImage src={ image } alt={ name } />

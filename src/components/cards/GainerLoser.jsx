@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { DataContext } from '../../context/context'
 import { useFetchCoins } from '../../hooks/fetchHooks/useFetchCoins'
+import { useIntersectionObserver } from '../../hooks/useIntersection'
 import { animations_object } from '../../utils/animations/animations_object'
 import { SuggestedCard } from '../buttons/SuggestedCard'
 import { ErrorConnect } from '../errors/ErrorConnect'
@@ -12,10 +13,12 @@ import { RandomAssetsCard } from './RandomAssetsCard'
 export const GainerLoser = () => {
   const { currentPosition } = useContext(DataContext)
   const { loading, data, error } = useFetchCoins(currentPosition)
-  const { intro } = animations_object
+  const { intro, exit } = animations_object
+  const assetRef = useRef(null)
+  const isVisible = useIntersectionObserver(assetRef)
   // debugger
   return (
-    <div className={`feature c100 ${ intro } `} style={{ animationDelay: '.5s' }}>
+    <div className={`feature c100 ${ isVisible ? intro : exit } `}  ref={ assetRef }>
       <h2>Top 3 Gainers and Losers</h2>
       <h3 className="based--100--coins">Based on 100 coins</h3>
       <div className="gainers__losers">

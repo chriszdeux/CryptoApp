@@ -55,15 +55,17 @@ import { PortafolioPage } from '../pages/PortafolioPage';
 import { TradePage } from '../pages/TradePage';
 import { WishlistPopup } from '../pop-ups/WishlistPopup';
 import { mainDataReducer } from '../reducers/mainDataReducer';
+import { animations_object } from '../utils/animations/animations_object';
 import image from '../utils/vector/world.svg';
 
 export const MainRouter = () => {
 
   const { showComponentHook: {showComponent2, handleShowComponent2, animation2} } = useContext(DataContext)
   const { handleShowComponent, showComponent, animation } = useShowComponent()
+  const { intro } = animations_object
   return (
     <Router>
-      <div className="router">
+      <div className={`router ${ intro }`}>
         <Header />
         {/* <BackgroundImage image={ image }/> */}
         {/* <MainNewsCard /> */}
@@ -77,7 +79,7 @@ export const MainRouter = () => {
         <Routes>
           <Route  path="/crypto" element={ <HomePage /> }/>
           {/* <Route  path="/crypto/:section" element={ <HomePage /> }/> */}
-          <Route  path="/crypto/portafolio" element={ <PortafolioPage /> }/>
+          <Route  path="/crypto/portfolio" element={ <PortafolioPage /> }/>
           <Route  path="/crypto/trade" element={ <TradePage /> }></Route>
           <Route  path="/crypto/crypto-asset/:id" element={ <AssetPage /> }/>
           <Route  path="/crypto/exchange" element={ <ExchangePage /> }/>

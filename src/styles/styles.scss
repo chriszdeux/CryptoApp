@@ -57,6 +57,11 @@ body {
   // background: $main-background-color;
   // background-repeat: no-repeat;
   // height: ;
+  background: $main-background-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 a {

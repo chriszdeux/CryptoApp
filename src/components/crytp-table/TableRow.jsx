@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { actionWishlist } from '../../actions/actionWishlist';
@@ -15,6 +15,7 @@ import { formatNumber } from '../../utils/functions/formatNumber';
 import { useFormatNumbers } from '../../hooks/useFormatNumbers';
 import { WishlistPopup } from '../../pop-ups/WishlistPopup';
 import { animations_object } from '../../utils/animations/animations_object';
+import { useIntersectionObserver } from '../../hooks/useIntersection';
 
 export const TableRow = ({ item }) => {
   const { setHandleAsset } = useContext(DataContext)
@@ -72,10 +73,12 @@ export const TableRow = ({ item }) => {
     navigate(`/crypto/crypto-asset/${id}`)
   }
 
+  const assetRef = useRef(null)
+  const isVisible = useIntersectionObserver(assetRef)
   // debugger
   return (
     <>
-        <tbody>
+        <tbody ref={ assetRef } className={`${ isVisible ? intro : exit }`}>
             <tr className="table__row c100 animation_animated animation_fadeIn">
               {/* <td>1</td> */}
   

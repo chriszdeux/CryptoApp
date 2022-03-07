@@ -41,7 +41,7 @@ export const HomePage = () => {
   }, [  ])
   return (
     <>
-    <section className={` home__page `}>
+    <section className={` home__page ${ intro }` } >
       {/* <MainNewsCard />   */}
       {/* <DeskMenu/> */}
       <div className="home__main">

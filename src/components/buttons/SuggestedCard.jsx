@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { icons } from '../../utils/icons/icons_object'
 import kraken from '../../temp/kraken.png';
-import phone from '../../utils/vector/phone.svg';
+// import phone from '../../utils/vector/phone.svg';
 import { animations_object } from '../../utils/animations/animations_object';
 import { DataContext } from '../../context/context';
 import { useContext } from 'react';
@@ -12,7 +12,7 @@ import { ErrorConnect } from '../errors/ErrorConnect';
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
-
+const phone = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/phone.svg?alt=media&token=e437d5a1-7f64-4ed2-a156-c67c6370e37a'
 
 export const SuggestedCard = () => {
   const { dataAssets:{data, loading, error}, setHandleAsset } = useContext(DataContext)
@@ -54,7 +54,7 @@ export const SuggestedCard = () => {
       setCurrentPosition(currentPosition - 1)
     }
   }
-  console.log(currentPosition)
+  // console.log(currentPosition)
   return (
     <div className={`suggested`}>
       {
@@ -92,7 +92,7 @@ export const SuggestedCard = () => {
           </div>
         </div>
         <figure>
-          <LazyLoadImage src={ phone } effect='blur' alt="" />
+          <img src={ phone } effect='blur' alt="" />
         </figure>
       </div>
       <div className="glass"></div>
