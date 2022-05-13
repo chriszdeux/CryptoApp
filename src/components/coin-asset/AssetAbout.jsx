@@ -13,7 +13,7 @@ export const AssetAbout = () => {
     <div className={`asset__about mg--v pd ${ intro }`}>
       <div className="about__header mg--b">
         <h2>{ name }</h2>
-        <h2>Traducir</h2>
+        {/* <h2>Traducir</h2> */}
       </div>
       <div className='about--asset'>
         {

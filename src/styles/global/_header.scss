@@ -38,9 +38,9 @@
   align-items: center;
   width: 60%;
   height: inherit;
-  background-color: $background-color;
+  // filter: blur(1.3rem);
+  // background-color: $blur-background-color;
   overflow-x: hidden;
-  border-bottom-left-radius: 1rem;
   padding: 0 1rem;
   .list__news{
     display: flex;

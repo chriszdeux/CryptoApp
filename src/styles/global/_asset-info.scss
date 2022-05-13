@@ -13,7 +13,8 @@
         margin: .5rem;
         padding: 1rem 2rem;
         border: 1px solid $border-color;
-        border-radius: .5rem;
+        color: $font-color;
+        // border-radius: .5rem;
       }
 }
 
@@ -41,9 +42,10 @@
     position: relative;
   }
   .asset__about {
-    background-color: $glass-color;
-    border-radius: .5rem;
-    box-shadow: $box-shadow;
+    // background-color: $glass-color;
+    // border-radius: .5rem;
+    // box-shadow: $box-shadow;
+    border: 1px solid $border-color;
       color: $font-color;
       .about__header {
         display: flex;
@@ -58,8 +60,7 @@
         line-height: 2.5rem;
         word-break: break-all;
         padding: 1rem;
-        border: 1px solid $border-color;
-        border-radius: .5rem;
+        // border-radius: .5rem;
         p {
           margin-bottom: 1rem;
         }
@@ -81,8 +82,8 @@
   width: 100%;
   color: $second-font-color;
   text-align: center;
-  overflow: hidden;
-  border-radius: 1rem;
+  // overflow: hidden;
+  // border-radius: 1rem;
   margin-bottom: 5rem;
   .glass {
     top: 0;
@@ -94,7 +95,7 @@
     position: relative;
     padding: 1rem;
     border: 1px solid $border-color;
-    border-radius: 1rem;
+    // border-radius: 1rem;
     // overflow: hidden;
     z-index: 1;
     .asset__name {
@@ -178,8 +179,6 @@
     color: $font-color;
     border: 1px solid $border-color;
     overflow: hidden;
-
-      border-radius: 1rem;
     .asset__stats__top {
       display: flex;
       justify-content: space-between;
@@ -453,9 +452,9 @@
   // overflow-y: scroll;
   // height: 100vh;
   padding-bottom: 15rem;
-  background-color: $glass-color;
+  // background-color: $glass-color;
   border: 1px solid $border-color;
-  border-radius: .5rem;
+  // border-radius: .5rem;
   .tickers__header {
     position: fi;
     display: flex;
