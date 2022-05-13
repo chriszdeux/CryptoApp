@@ -21,13 +21,13 @@ export const Top10Crypto = ({ values }) => {
   return (
     <div className={`wrapper c100 ${ isVisible ? intro : exit }`} ref={ assetRef }>
       <h2 className="wrapper--title" >{ message }</h2>
-    <div className="wrapper__cards" >
-      {
-        top10.map(item => (
-          <SmallCardCoins key={ item.id } item={ item }/>     
-        ))
-      }   
+      <div className="wrapper__cards" >
+        {
+          top10.map(item => (
+            <SmallCardCoins key={ item.id } item={ item }/>     
+          ))
+        }   
+      </div>
     </div>
-        </div>
   )
 }

@@ -17,7 +17,7 @@ export const LoserCard = ( {data} ) => {
   }, [ data ])
 
   return (
-    <div className={`feature feature__losers pd `} >
+    <div className={`feature feature__assets pd `} >
       <h2 style={{ color: '#f56b6b' }}>Losers <span style={{ color: '#f56b6b' }}>{ icons.trending_down_icon }</span></h2>
       <ul className="feature__list">
       {
@@ -26,7 +26,6 @@ export const LoserCard = ( {data} ) => {
         ))  
       }
       </ul>
-      <div className="glass"></div>
 
     </div> 
   )

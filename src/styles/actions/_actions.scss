@@ -5,7 +5,7 @@
 }
 
 @mixin hover-state() {
-  border:1px solid $active-color;
+  // border:1px solid $active-color;
   transition: .2s ease-in;
 }
 

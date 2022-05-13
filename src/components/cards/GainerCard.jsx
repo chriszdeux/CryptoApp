@@ -18,7 +18,7 @@ export const GainerCard = ( { data } ) => {
   }, [data])
   // debugger
   return (
-    <div className={`feature feature__gainers  pd `}>
+    <div className={`feature feature__assets  pd `}>
       <h2>Gainers <span>{ icons.trending_up_icon }</span></h2>
       <ul className="feature__list">
         {
@@ -27,7 +27,6 @@ export const GainerCard = ( { data } ) => {
             )) 
         }
       </ul>
-      <div className="glass"></div>
     </div> 
   )
 }

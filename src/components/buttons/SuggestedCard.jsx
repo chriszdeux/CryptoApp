@@ -56,7 +56,7 @@ export const SuggestedCard = () => {
   }
   // console.log(currentPosition)
   return (
-    <div className={`suggested`}>
+    <div className={`suggested feature__assets`}>
       {
         loading
           ? <LoadingText />
@@ -95,7 +95,6 @@ export const SuggestedCard = () => {
           <img src={ phone } effect='blur' alt="" />
         </figure>
       </div>
-      <div className="glass"></div>
             </>
       }
     </div>

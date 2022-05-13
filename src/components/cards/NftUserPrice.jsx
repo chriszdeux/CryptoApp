@@ -24,6 +24,7 @@ export const NftUserPrice = ({ item }) => {
         </div>
         <h3>{ price_eth }</h3>
       </div>
+      <div className='blur--background'></div>
     </div>
   )
 }
