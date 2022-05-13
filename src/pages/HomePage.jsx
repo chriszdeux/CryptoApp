@@ -26,15 +26,11 @@ import { useScrollTop } from '../hooks/useScrollTop'
 import { animations_object } from '../utils/animations/animations_object'
 import { reducerMyInvested } from '../utils/functions/reducerFunction'
 import { scrollTop } from '../utils/functions/scrollTop'
-const image = 'https://firebasestorage.googleapis.com/v0/b/crypto-1bf30.appspot.com/o/undraw_connected_world_wuay.svg?alt=media&token=2252ae86-6c98-43dd-8d52-53b876547148'
 
 export const HomePage = () => {
   // debugger
   const { loading, error, data } = useSelector(state => state.data_reducer)
-  
-  // const redu2 = r
 
-  // debugger
   const { intro } = animations_object
   useEffect(() => {
     scrollTop()
@@ -42,10 +38,9 @@ export const HomePage = () => {
   return (
     <>
     <section className={` home__page ${ intro }` } >
-      {/* <MainNewsCard />   */}
-      {/* <DeskMenu/> */}
+
       <div className="home__main">
-        {/* <MainDisplay /> */}
+
         <GainerLoser />
         <CryptoFeature />
         <Pagination />
@@ -56,21 +51,10 @@ export const HomePage = () => {
           ? <ErrorConnect />
           : <CryptoTable data={ data }/>
         }
-        {/* <ForYou /> */}
-        {/* <GenericFooter /> */}
+
         <Pagination />
       </div>
-      {/* { swappComponent }
-    {
-      showComponent &&
-      <>
-      { console.log(`${ showComponent ? 'opened' : 'closed' }`) }
-      <SwapCrypto handleShowComponent={ handleShowComponent }/>
-      </>
-    } */}
-    {/* <VideoTest /> */}
-    <BackgroundImage image={ image }/>
-    {/* <GenericFooter /> */}
+
     </section>
     </>
   )

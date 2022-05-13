@@ -106,7 +106,7 @@ export const MainRouter = () => {
           </>
         }
         {/* <GenericFooter /> */}
-        <BackgroundWaves />
+        {/* <BackgroundWaves /> */}
         
       </div>
     </Router>
